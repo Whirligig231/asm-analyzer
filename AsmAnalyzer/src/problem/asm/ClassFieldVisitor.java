@@ -6,7 +6,10 @@ import org.objectweb.asm.Type;
 
 import problem.asm.model.IClass;
 import problem.asm.model.IClassHolder;
+import problem.asm.model.IField;
+import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
+import problem.asm.model.Field;
 
 public class ClassFieldVisitor extends ClassVisitor implements IClassHolder {
 	
@@ -31,10 +34,14 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassHolder {
 	public FieldVisitor visitField(int access, String name, String desc, String signature, Object value) {
 		FieldVisitor toDecorate = super.visitField(access, name, desc, signature, value);
 		String type = Type.getType(desc).getClassName();
-		// TODO: delete this line
-		System.out.println("	"+type+" "+ name);
-		// TODO: add this field to your internal representation of the current class.
-		// What is a good way to know what the current class is?
+
+		IField field = new Field();
+		field.setName(name);
+		field.setAccessLevel(AccessLevel.getFromOpcodes(access));
+		field.setType(type);
+		
+		this.classModel.addField(field);
+
 		return toDecorate;
 	}
 

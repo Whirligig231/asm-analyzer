@@ -9,6 +9,11 @@ public interface IClass {
 	public String getSuperClass();
 	public String[] getInterfaces();
 	
+	public void setName(String name);
+	public void setAccessLevel(AccessLevel accessLevel);
+	public void setSuperClass(String superClass);
+	public void setInterfaces(String[] interfaces);
+	
 	// Using iterators and add functionality to prevent content coupling
 	
 	public Iterator<IMethod> getMethodIterator();

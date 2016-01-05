@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.objectweb.asm.ClassVisitor;
 
 import problem.asm.model.IClass;
+import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
 import problem.asm.model.IClassHolder;
 
@@ -19,10 +20,13 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassHolde
 	
 	@Override
 	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces){
-		// TODO: delete the line below
-		System.out.println("Class: "+name+" extends "+superName+" implements "+Arrays.toString(interfaces));
-		// TODO: construct an internal representation of the class for later use by decorators
+
 		super.visit(version, access, name, signature, superName, interfaces);
+		
+		this.classModel.setName(name);
+		this.classModel.setAccessLevel(AccessLevel.getFromOpcodes(access));
+		this.classModel.setSuperClass(superName);
+		this.classModel.setInterfaces(interfaces);
 		
 	}
 
