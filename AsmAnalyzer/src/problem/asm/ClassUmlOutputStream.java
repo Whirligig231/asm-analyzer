@@ -60,7 +60,7 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 	@Override
 	public void visit(IMethod c) {
 		StringBuilder sb = new StringBuilder();
-		String line = String.format("%s %s(", c.getAccessLevel(), c.getName());
+		String line = String.format("%s %s(", c.getAccessLevel(), c.getName().replaceAll("<", "\\\\<").replaceAll(">", "\\\\>"));
 		sb.append(line);
 		boolean ran = false;
 		for(String argType : c.getArgTypes()){
