@@ -37,7 +37,8 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassHolder {
 		MethodVisitor toDecorate = super.visitMethod(access, name, desc, signature, exceptions);
 
 		IMethod method = new Method();
-
+		
+		method.setName(name);
 		addAccessLevel(method, access);
 		addReturnType(method, desc);
 		addArguments(method, desc);
