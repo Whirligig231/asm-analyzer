@@ -1,0 +1,15 @@
+digraph UMLTest {
+
+rankdir = "BT";
+
+node [shape=record];
+
+IDog [label="{ «interface»\nIDog|+ void bark()}"];
+
+Dog [label="{Dog|- int age|+ int getAge()\n+ void setAge(int)\n+ void bark()}"];
+Dog -> IDog [arrowhead=onormal];
+
+Husky [label="{Husky}"];
+Husky -> Dog;
+
+}
