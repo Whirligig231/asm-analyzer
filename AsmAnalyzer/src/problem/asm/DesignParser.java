@@ -6,7 +6,8 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 
-import problem.asm.model.IClassHolder;
+import problem.asm.model.IClass;
+import problem.asm.visitor.IVisitor;
 
 public class DesignParser {
 	/**
@@ -29,11 +30,16 @@ public class DesignParser {
 			
 			// DECORATE field visitor with method visitor
 			ClassVisitor methodVisitor = new ClassMethodVisitor(Opcodes.ASM5, fieldVisitor);
+			
+			IVisitor classUmlOutputStream = new ClassUmlOutputStream(System.out);
 
 			// TODO: add more DECORATORS here in later milestones to accomplish specific tasks
 			
 			// Tell the Reader to use our (heavily decorated) ClassVisitor to visit the class
 			reader.accept(methodVisitor, ClassReader.EXPAND_FRAMES);
+			
+			IClass clazz = ((ClassMethodVisitor) methodVisitor).getClassModel();
+			clazz.accept(classUmlOutputStream);
 
 		}
 	}

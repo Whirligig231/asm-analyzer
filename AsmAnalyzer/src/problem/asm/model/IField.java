@@ -1,6 +1,8 @@
 package problem.asm.model;
 
-public interface IField {
+import problem.asm.visitor.ITraverser;
+
+public interface IField extends ITraverser {
 	
 	public String getName();
 	public AccessLevel getAccessLevel();

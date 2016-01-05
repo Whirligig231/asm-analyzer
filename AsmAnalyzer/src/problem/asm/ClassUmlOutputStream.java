@@ -36,7 +36,7 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 	}
 	@Override
 	public void postMethodsVisit(IClass c) {
-		String line = String.format("}\"\n]");
+		String line = String.format("}\"\n]\n");
 		this.write(line);
 	}
 	@Override

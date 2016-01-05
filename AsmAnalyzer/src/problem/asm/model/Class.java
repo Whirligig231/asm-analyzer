@@ -79,8 +79,15 @@ public class Class implements IClass {
 
 	@Override
 	public void accept(IVisitor v) {
-		// TODO Auto-generated method stub
-		
+		v.preVisit(this);
+		for(IField field : this.fields){
+			v.visit(field);
+		}
+		v.postFieldsVisit(this);
+		for(IMethod method : this.methods){
+			v.visit(method);
+		}
+		v.postMethodsVisit(this);
 	}
 
 }

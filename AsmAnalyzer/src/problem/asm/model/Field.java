@@ -1,5 +1,7 @@
 package problem.asm.model;
 
+import problem.asm.visitor.IVisitor;
+
 public class Field implements IField {
 	
 	private String name;
@@ -31,6 +33,11 @@ public class Field implements IField {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	@Override
+	public void accept(IVisitor v) {
+		v.visit(this);
 	}
 
 }

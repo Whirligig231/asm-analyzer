@@ -1,6 +1,8 @@
 package problem.asm.model;
 
-public interface IMethod {
+import problem.asm.visitor.ITraverser;
+
+public interface IMethod extends ITraverser {
 	
 	public String getName();
 	public AccessLevel getAccessLevel();

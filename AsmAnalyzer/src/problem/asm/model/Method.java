@@ -1,5 +1,7 @@
 package problem.asm.model;
 
+import problem.asm.visitor.IVisitor;
+
 public class Method implements IMethod {
 	
 	private String name;
@@ -41,6 +43,11 @@ public class Method implements IMethod {
 
 	public void setArgTypes(String[] argTypes) {
 		this.argTypes = argTypes;
+	}
+
+	@Override
+	public void accept(IVisitor v) {
+		v.visit(this);
 	}
 
 }
