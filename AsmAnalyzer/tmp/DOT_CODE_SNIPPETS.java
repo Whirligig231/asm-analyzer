@@ -33,7 +33,7 @@ this.write("\n");
 
 // Visit for field:
 
-this.write(AccessLevel.getSymbol(field.getAccessLevel()));
+this.write(field.getAccessLevel().getSymbol());
 this.write(" ");
 this.write(this.trimClassName(field.getType()));
 this.write(" ");
@@ -42,7 +42,7 @@ this.write("\n");
 
 // Visit for method:
 
-this.write(AccessLevel.getSymbol(method.getAccessLevel()));
+this.write(method.getAccessLevel().getSymbol());
 this.write(" ");
 this.write(this.trimClassName(method.getReturnType()));
 this.write(" ");

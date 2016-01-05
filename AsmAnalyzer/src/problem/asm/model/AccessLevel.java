@@ -29,6 +29,19 @@ public enum AccessLevel {
 		}
 	}
 	
+	public String getSymbol() {
+		switch (this) {
+		case PUBLIC:
+			return "+";
+		case PROTECTED:
+			return "#";
+		case PRIVATE:
+			return "-";
+		default:
+			return "~";
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return this.strValue;
