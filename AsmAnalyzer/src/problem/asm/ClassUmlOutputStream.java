@@ -27,7 +27,7 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 	
 	@Override
 	public void preVisit(IClass c) {
-		String line = String.format("%s [\n\tlabel = \"{%s|", c.getName(), c.getName());
+		String line = String.format("%s [\n\tlabel = \"{%s|", c.getName().replaceAll("\\/", "_"), c.getName().replaceAll("\\/", "."));
 		this.write(line);
 	}
 	@Override
@@ -46,14 +46,14 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 			
 			this.write("edge [\n\tarrowhead = \"empty\"\n\tstyle = \"dashed\"\n]\n");
 			for(String inter : interfaces){
-				line = String.format("%s -> %s\n", c.getName(), inter);
+				line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), inter.replaceAll("\\/", "_"));
 				this.write(line);
 			}
 		}
 		
-		if(superClass != null && !superClass.equals("")){
+		if(superClass != null && !superClass.equals("") && !superClass.equals("java/lang/Object")){
 			this.write("edge [\n\tarrowhead = \"empty\"\n\tstyle = \"solid\"\n]\n");
-			line = String.format("%s -> %s\n", c.getName(), superClass);
+			line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), superClass.replaceAll("\\/", "_"));
 			this.write(line);
 		}
 	}
@@ -71,7 +71,7 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 		if(ran)
 			sb.setLength(sb.length()-2); //getting rid of the last unneeded ", "
 		
-		line = String.format(") : %s\1", c.getReturnType());
+		line = String.format(") : %s\\l", c.getReturnType());
 		
 		sb.append(line);
 		
@@ -80,7 +80,7 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 	
 	@Override
 	public void visit(IField c) {
-		String line = String.format("%s %s : %s\1", c.getAccessLevel(), c.getName(), c.getType());
+		String line = String.format("%s %s : %s\\l", c.getAccessLevel(), c.getName(), c.getType());
 		this.write(line);
 	}
 }

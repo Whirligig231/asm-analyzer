@@ -18,6 +18,8 @@ public class DesignParser {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException{
+		System.out.println("digraph G {\nnode [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\nshape = \"record\"\n]\nedge [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\n]\n");
+		
 		for(String className: args){
 			// ASM's ClassReader does the heavy lifting of parsing the compiled Java class
 			ClassReader reader=new ClassReader(className);
@@ -42,5 +44,6 @@ public class DesignParser {
 			clazz.accept(classUmlOutputStream);
 
 		}
+		System.out.println("}");
 	}
 }
