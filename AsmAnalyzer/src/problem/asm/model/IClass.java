@@ -2,7 +2,9 @@ package problem.asm.model;
 
 import java.util.Iterator;
 
-public interface IClass {
+import problem.asm.visitor.ITraverser;
+
+public interface IClass extends ITraverser {
 	
 	public String getName();
 	public AccessLevel getAccessLevel();

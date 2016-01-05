@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+import problem.asm.visitor.IVisitor;
+
 public class Class implements IClass {
 	
 	private String name;
@@ -73,6 +75,12 @@ public class Class implements IClass {
 	@Override
 	public void addField(IField field) {
 		this.fields.add(field);
+	}
+
+	@Override
+	public void accept(IVisitor v) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
