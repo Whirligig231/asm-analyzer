@@ -1,11 +1,23 @@
 package problem.asm.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+
 public class Class implements IClass {
 	
 	private String name;
 	private AccessLevel accessLevel;
 	private String superClass;
 	private String[] interfaces;
+	
+	private Collection<IMethod> methods;
+	private Collection<IField> fields;
+	
+	public Class() {
+		this.methods = new ArrayList<>();
+		this.fields = new ArrayList<>();
+	}
 
 	@Override
 	public String getName() {
@@ -41,6 +53,26 @@ public class Class implements IClass {
 
 	public void setInterfaces(String[] interfaces) {
 		this.interfaces = interfaces;
+	}
+
+	@Override
+	public Iterator<IMethod> getMethodIterator() {
+		return this.methods.iterator();
+	}
+
+	@Override
+	public void addMethod(IMethod method) {
+		this.methods.add(method);
+	}
+
+	@Override
+	public Iterator<IField> getFieldIterator() {
+		return this.fields.iterator();
+	}
+
+	@Override
+	public void addField(IField field) {
+		this.fields.add(field);
 	}
 
 }
