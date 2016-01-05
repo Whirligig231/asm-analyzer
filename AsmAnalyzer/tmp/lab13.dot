@@ -1,0 +1,85 @@
+digraph G {
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+
+lab13_problem_AppLaunchDriver [
+	label = "{lab13.problem.AppLaunchDriver||public \<init\>() : void\lpublic main(java.lang.String[]) : void\l}"
+]
+lab13_problem_AppLauncher [
+	label = "{lab13.problem.AppLauncher|private watcher : java.nio.file.WatchService\lprivate dir : java.nio.file.Path\lprivate observ : lab13.problem.DirectoryObservable\lprivate stop : boolean\lprivate processes : java.util.Collection\l|default \<init\>(java.nio.file.Path) : void\lpublic run() : void\lprotected clearEverything() : void\lpublic stopGracefully() : void\lpublic isRunning() : boolean\lpublic getApplicationsCount() : int\lpublic handleDirectoryEvent(java.lang.String, java.nio.file.Path) : void\lpublic addFileObserver(java.util.Observer) : void\lpublic startCommand(java.lang.String, java.lang.String) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+lab13_problem_AppLauncher -> java_lang_Thread
+lab13_problem_DirectoryObservable [
+	label = "{lab13.problem.DirectoryObservable|private launcher : lab13.problem.AppLauncher\l|public \<init\>(lab13.problem.AppLauncher) : void\lpublic notifyObservers(java.lang.Object) : void\lpublic launch(java.lang.String, java.lang.String) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+lab13_problem_DirectoryObservable -> java_util_Observable
+lab13_problem_FileEvent [
+	label = "{lab13.problem.FileEvent|private type : java.lang.String\lprivate fname : java.lang.String\l|public \<init\>(java.lang.String, java.lang.String) : void\lpublic getType() : java.lang.String\lpublic setType(java.lang.String) : void\lpublic getFname() : java.lang.String\lpublic setFname(java.lang.String) : void\l}"
+]
+lab13_problem_FileOpenObserver [
+	label = "{lab13.problem.FileOpenObserver|private behaviors : java.util.Map\l|public \<init\>() : void\lpublic associate(java.lang.String, lab13.problem.IFileOpenBehavior) : void\lpublic update(java.util.Observable, java.lang.Object) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+lab13_problem_FileOpenObserver -> java_util_Observer
+lab13_problem_HtmlOpenBehavior [
+	label = "{lab13.problem.HtmlOpenBehavior||public \<init\>() : void\lpublic getCommand(java.lang.String) : java.lang.String\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+lab13_problem_HtmlOpenBehavior -> lab13_problem_IFileOpenBehavior
+lab13_problem_IFileOpenBehavior [
+	label = "{lab13.problem.IFileOpenBehavior||public getCommand(java.lang.String) : java.lang.String\l}"
+]
+lab13_problem_ModificationBackwardsPrintObserver [
+	label = "{lab13.problem.ModificationBackwardsPrintObserver||public \<init\>() : void\lpublic update(java.util.Observable, java.lang.Object) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+lab13_problem_ModificationBackwardsPrintObserver -> java_util_Observer
+lab13_problem_NewNamePrinterObserver [
+	label = "{lab13.problem.NewNamePrinterObserver||public \<init\>() : void\lpublic update(java.util.Observable, java.lang.Object) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+lab13_problem_NewNamePrinterObserver -> java_util_Observer
+lab13_problem_PdfOpenBehavior [
+	label = "{lab13.problem.PdfOpenBehavior||public \<init\>() : void\lpublic getCommand(java.lang.String) : java.lang.String\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+lab13_problem_PdfOpenBehavior -> lab13_problem_IFileOpenBehavior
+lab13_problem_TxtOpenBehavior [
+	label = "{lab13.problem.TxtOpenBehavior||public \<init\>() : void\lpublic getCommand(java.lang.String) : java.lang.String\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+lab13_problem_TxtOpenBehavior -> lab13_problem_IFileOpenBehavior
+}

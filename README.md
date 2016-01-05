@@ -5,4 +5,4 @@ Authors:
 
 Steven Kneisler (Github: Stevenator1)
 
-Christian Schultz (Github: Whirligig231)
+Christian Schulz (Github: Whirligig231)
