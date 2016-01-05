@@ -6,6 +6,8 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 
+import problem.asm.model.IClassHolder;
+
 public class DesignParser {
 	/**
 	 * Reads in a list of Java Classes and reverse engineers their design.
@@ -30,10 +32,9 @@ public class DesignParser {
 
 			// TODO: add more DECORATORS here in later milestones to accomplish specific tasks
 			
-			
-			
 			// Tell the Reader to use our (heavily decorated) ClassVisitor to visit the class
 			reader.accept(methodVisitor, ClassReader.EXPAND_FRAMES);
+
 		}
 	}
 }
