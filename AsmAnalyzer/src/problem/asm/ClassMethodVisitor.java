@@ -5,14 +5,28 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-public class ClassMethodVisitor extends ClassVisitor {
+import problem.asm.model.IClass;
+import problem.asm.model.IClassHolder;
+import problem.asm.model.Class;
+
+public class ClassMethodVisitor extends ClassVisitor implements IClassHolder {
+	
+	private IClass classModel;
+	
 	public ClassMethodVisitor(int api){
 		super(api);
+		this.classModel = new Class();
 	}
 	
 	public ClassMethodVisitor(int api, ClassVisitor decorated) {
 		super(api, decorated);
-		// TODO Auto-generated constructor stub
+
+		if (!(decorated instanceof IClassHolder))
+			throw new UnsupportedOperationException("Must decorate an IClassHolder visitor!");
+		else {
+			IClassHolder classHolder = (IClassHolder)decorated;
+			this.classModel = classHolder.getClassModel();
+		}
 	}
 	
 	@Override
@@ -64,5 +78,10 @@ public class ClassMethodVisitor extends ClassVisitor {
 	    	System.out.println("		arg "+i+": "+arg);
 	    	// TODO: ADD this information to your representation of the current method.
 	    }
+	}
+
+	@Override
+	public IClass getClassModel() {
+		return this.classModel;
 	}
 }

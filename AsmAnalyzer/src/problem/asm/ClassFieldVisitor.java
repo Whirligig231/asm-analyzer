@@ -4,15 +4,28 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Type;
 
-public class ClassFieldVisitor extends ClassVisitor{
+import problem.asm.model.IClass;
+import problem.asm.model.IClassHolder;
+import problem.asm.model.Class;
+
+public class ClassFieldVisitor extends ClassVisitor implements IClassHolder {
+	
+	private IClass classModel;
 
 	public ClassFieldVisitor(int api){
 		super(api);
+		this.classModel = new Class();
 	}
 	
 	public ClassFieldVisitor(int api, ClassVisitor decorated) {
 		super(api, decorated);
-		// TODO Auto-generated constructor stub
+
+		if (!(decorated instanceof IClassHolder))
+			throw new UnsupportedOperationException("Must decorate an IClassHolder visitor!");
+		else {
+			IClassHolder classHolder = (IClassHolder)decorated;
+			this.classModel = classHolder.getClassModel();
+		}
 	}
 	
 	public FieldVisitor visitField(int access, String name, String desc, String signature, Object value) {
@@ -23,6 +36,11 @@ public class ClassFieldVisitor extends ClassVisitor{
 		// TODO: add this field to your internal representation of the current class.
 		// What is a good way to know what the current class is?
 		return toDecorate;
+	}
+
+	@Override
+	public IClass getClassModel() {
+		return this.classModel;
 	};
 
 }
