@@ -1,0 +1,23 @@
+digraph G {
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+
+problem_asm_test_classes_Car [
+	label = "{problem.asm.test.classes.Car|default engine : problem.asm.test.classes.Engine\l|public \<init\>(problem.asm.test.classes.Driver) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+problem_asm_test_classes_Car -> problem_asm_test_classes_Vehicle
+problem_asm_test_classes_Engine [
+	label = "{problem.asm.test.classes.Engine|public RPM : int\l|public \<init\>() : void\l}"
+]
+}
