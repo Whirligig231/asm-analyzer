@@ -1,4 +1,6 @@
 digraph G {
+rankdir=BT;
+
 node [
 fontname = "Bitstream Vera Sans"
 fontsize = 8
@@ -25,4 +27,9 @@ edge [
 	style = "dashed"
 ]
 problem_asm_test_classes_Vehicle -> problem_asm_test_classes_Drivable
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_test_classes_Vehicle -> problem_asm_test_classes_Driver
 }
