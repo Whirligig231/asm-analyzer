@@ -2,6 +2,7 @@ package problem.asm.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 import problem.asm.visitor.IVisitor;
@@ -12,6 +13,8 @@ public class Class implements IClass {
 	private AccessLevel accessLevel;
 	private String superClass;
 	private String[] interfaces;
+	private Collection<String> associates;
+	private Collection<String> uses;
 	
 	private Collection<IMethod> methods;
 	private Collection<IField> fields;
@@ -19,6 +22,8 @@ public class Class implements IClass {
 	public Class() {
 		this.methods = new ArrayList<>();
 		this.fields = new ArrayList<>();
+		this.associates = new ArrayList<>();
+		this.uses = new ArrayList<>();
 	}
 
 	@Override
@@ -88,6 +93,44 @@ public class Class implements IClass {
 			v.visit(method);
 		}
 		v.postMethodsVisit(this);
+	}
+
+	@Override
+	public Collection<String> getAssociates() {
+		return Collections.unmodifiableCollection(this.associates);
+	}
+
+	@Override
+	public void addAssociate(String associate) {
+		if (this.associates.contains(associate))
+			return;
+		
+		if (associate.equals(this.getName()))
+			return;
+		
+		if (associate.startsWith("java"))
+			return;
+		
+		this.associates.add(associate);
+	}
+
+	@Override
+	public Collection<String> getUses() {
+		return Collections.unmodifiableCollection(this.uses);
+	}
+
+	@Override
+	public void addUse(String classname) {
+		if (this.associates.contains(classname) || this.associates.contains(classname.replaceAll("\\/", ".")) || this.uses.contains(classname))
+			return;
+		
+		if (classname.equals(this.getName()))
+			return;
+		
+		if (classname.startsWith("java"))
+			return;
+		
+		this.uses.add(classname);
 	}
 
 }

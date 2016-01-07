@@ -1,0 +1,305 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+
+problem_asm_ClassDeclarationVisitor [
+	label = "{problem.asm.ClassDeclarationVisitor|private classModel : problem.asm.model.IClass\l|public \<init\>(int) : void\lpublic visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic getClassModel() : problem.asm.model.IClass\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_ClassDeclarationVisitor -> problem_asm_model_IClassHolder
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+problem_asm_ClassDeclarationVisitor -> org_objectweb_asm_ClassVisitor
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_ClassDeclarationVisitor -> problem_asm_model_IClass
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_ClassDeclarationVisitor -> org_objectweb_asm_ClassVisitor
+problem_asm_ClassDeclarationVisitor -> problem_asm_model_Class
+problem_asm_ClassDeclarationVisitor -> problem_asm_model_AccessLevel
+problem_asm_ClassFieldVisitor [
+	label = "{problem.asm.ClassFieldVisitor|private classModel : problem.asm.model.IClass\l|public \<init\>(int) : void\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\lpublic visitField(int, java.lang.String, java.lang.String, java.lang.String, java.lang.Object) : org.objectweb.asm.FieldVisitor\lpublic getClassModel() : problem.asm.model.IClass\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_ClassFieldVisitor -> problem_asm_model_IClassHolder
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+problem_asm_ClassFieldVisitor -> org_objectweb_asm_ClassVisitor
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_ClassFieldVisitor -> problem_asm_model_IClass
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_ClassFieldVisitor -> org_objectweb_asm_ClassVisitor
+problem_asm_ClassFieldVisitor -> problem_asm_model_Class
+problem_asm_ClassFieldVisitor -> problem_asm_model_IClassHolder
+problem_asm_ClassFieldVisitor -> org_objectweb_asm_FieldVisitor
+problem_asm_ClassFieldVisitor -> org_objectweb_asm_Type
+problem_asm_ClassFieldVisitor -> problem_asm_model_Field
+problem_asm_ClassFieldVisitor -> problem_asm_model_IField
+problem_asm_ClassFieldVisitor -> problem_asm_model_AccessLevel
+problem_asm_ClassMethodVisitor [
+	label = "{problem.asm.ClassMethodVisitor|private classModel : problem.asm.model.IClass\l|public \<init\>(int) : void\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\lpublic visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : org.objectweb.asm.MethodVisitor\ldefault addAccessLevel(problem.asm.model.IMethod, int) : void\ldefault addReturnType(problem.asm.model.IMethod, java.lang.String) : void\ldefault addArguments(problem.asm.model.IMethod, java.lang.String) : void\lpublic getClassModel() : problem.asm.model.IClass\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_ClassMethodVisitor -> problem_asm_model_IClassHolder
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+problem_asm_ClassMethodVisitor -> org_objectweb_asm_ClassVisitor
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_ClassMethodVisitor -> problem_asm_model_IClass
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_ClassMethodVisitor -> org_objectweb_asm_ClassVisitor
+problem_asm_ClassMethodVisitor -> problem_asm_model_Class
+problem_asm_ClassMethodVisitor -> problem_asm_model_IClassHolder
+problem_asm_ClassMethodVisitor -> org_objectweb_asm_MethodVisitor
+problem_asm_ClassMethodVisitor -> problem_asm_MethodUsingVisitor
+problem_asm_ClassMethodVisitor -> problem_asm_model_Method
+problem_asm_ClassMethodVisitor -> problem_asm_model_IMethod
+problem_asm_ClassMethodVisitor -> problem_asm_model_AccessLevel
+problem_asm_ClassMethodVisitor -> org_objectweb_asm_Type
+problem_asm_ClassUmlOutputStream [
+	label = "{problem.asm.ClassUmlOutputStream|private out : java.io.OutputStream\l|public \<init\>(java.io.OutputStream) : void\lprivate write(java.lang.String) : void\lpublic preVisit(problem.asm.model.IClass) : void\lpublic postFieldsVisit(problem.asm.model.IClass) : void\lpublic postMethodsVisit(problem.asm.model.IClass) : void\lpublic visit(problem.asm.model.IMethod) : void\lpublic visit(problem.asm.model.IField) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+problem_asm_ClassUmlOutputStream -> problem_asm_visitor_VisitorAdapter
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_ClassUmlOutputStream -> problem_asm_visitor_VisitorAdapter
+problem_asm_ClassUmlOutputStream -> problem_asm_model_IClass
+problem_asm_ClassUmlOutputStream -> problem_asm_model_IMethod
+problem_asm_ClassUmlOutputStream -> problem_asm_model_IField
+problem_asm_DesignParser [
+	label = "{problem.asm.DesignParser||public \<init\>() : void\lpublic main(java.lang.String[]) : void\l}"
+]
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_DesignParser -> org_objectweb_asm_ClassReader
+problem_asm_DesignParser -> problem_asm_ClassDeclarationVisitor
+problem_asm_DesignParser -> problem_asm_ClassFieldVisitor
+problem_asm_DesignParser -> problem_asm_ClassMethodVisitor
+problem_asm_DesignParser -> problem_asm_ClassUmlOutputStream
+problem_asm_DesignParser -> problem_asm_model_IClass
+problem_asm_MethodUsingVisitor [
+	label = "{problem.asm.MethodUsingVisitor|private classModel : problem.asm.model.IClass\l|public \<init\>(int) : void\lpublic \<init\>(int, org.objectweb.asm.MethodVisitor) : void\lpublic visitTypeInsn(int, java.lang.String) : void\lpublic visitFieldInsn(int, java.lang.String, java.lang.String, java.lang.String) : void\lpublic visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String, boolean) : void\lprivate processUse(java.lang.String) : void\lpublic getClassModel() : problem.asm.model.IClass\lpublic setClassModel(problem.asm.model.IClass) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_MethodUsingVisitor -> problem_asm_model_IClassHolder
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+problem_asm_MethodUsingVisitor -> org_objectweb_asm_MethodVisitor
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_MethodUsingVisitor -> problem_asm_model_IClass
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_MethodUsingVisitor -> org_objectweb_asm_MethodVisitor
+problem_asm_model_AccessLevel [
+	label = "{problem.asm.model.AccessLevel|public PUBLIC : problem.asm.model.AccessLevel\lpublic PROTECTED : problem.asm.model.AccessLevel\lpublic DEFAULT : problem.asm.model.AccessLevel\lpublic PRIVATE : problem.asm.model.AccessLevel\lprivate strValue : java.lang.String\lprivate $SWITCH_TABLE$problem$asm$model$AccessLevel : int[]\lprivate ENUM$VALUES : problem.asm.model.AccessLevel[]\l|default \<clinit\>() : void\lprivate \<init\>(java.lang.String, int, java.lang.String) : void\lpublic getFromOpcodes(int) : problem.asm.model.AccessLevel\lpublic getSymbol() : java.lang.String\lpublic toString() : java.lang.String\lpublic values() : problem.asm.model.AccessLevel[]\lpublic valueOf(java.lang.String) : problem.asm.model.AccessLevel\ldefault $SWITCH_TABLE$problem$asm$model$AccessLevel() : int[]\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "solid"
+]
+problem_asm_model_AccessLevel -> java_lang_Enum
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_model_AccessLevel -> problem_asm_model_AccessLevel
+problem_asm_model_AccessLevel -> int[]
+problem_asm_model_AccessLevel -> problem_asm_model_AccessLevel[]
+problem_asm_model_Class [
+	label = "{problem.asm.model.Class|private name : java.lang.String\lprivate accessLevel : problem.asm.model.AccessLevel\lprivate superClass : java.lang.String\lprivate interfaces : java.lang.String[]\lprivate associates : java.util.Collection\lprivate uses : java.util.Collection\lprivate methods : java.util.Collection\lprivate fields : java.util.Collection\l|public \<init\>() : void\lpublic getName() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic getSuperClass() : java.lang.String\lpublic getInterfaces() : java.lang.String[]\lpublic setName(java.lang.String) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setSuperClass(java.lang.String) : void\lpublic setInterfaces(java.lang.String[]) : void\lpublic getMethodIterator() : java.util.Iterator\lpublic addMethod(problem.asm.model.IMethod) : void\lpublic getFieldIterator() : java.util.Iterator\lpublic addField(problem.asm.model.IField) : void\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic getAssociates() : java.util.Collection\lpublic addAssociate(java.lang.String) : void\lpublic getUses() : java.util.Collection\lpublic addUse(java.lang.String) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_model_Class -> problem_asm_model_IClass
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_model_Class -> problem_asm_model_AccessLevel
+problem_asm_model_Class -> problem_asm_model_IMethod
+problem_asm_model_Class -> problem_asm_model_IField
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_model_Class -> problem_asm_visitor_IVisitor
+problem_asm_model_Field [
+	label = "{problem.asm.model.Field|private name : java.lang.String\lprivate accessLevel : problem.asm.model.AccessLevel\lprivate type : java.lang.String\l|public \<init\>() : void\lpublic getName() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic getType() : java.lang.String\lpublic setName(java.lang.String) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setType(java.lang.String) : void\lpublic accept(problem.asm.visitor.IVisitor) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_model_Field -> problem_asm_model_IField
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_model_Field -> problem_asm_model_AccessLevel
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_model_Field -> problem_asm_visitor_IVisitor
+problem_asm_model_IClass [
+	label = "{problem.asm.model.IClass||public getName() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic getSuperClass() : java.lang.String\lpublic getInterfaces() : java.lang.String[]\lpublic getAssociates() : java.util.Collection\lpublic getUses() : java.util.Collection\lpublic setName(java.lang.String) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setSuperClass(java.lang.String) : void\lpublic setInterfaces(java.lang.String[]) : void\lpublic addAssociate(java.lang.String) : void\lpublic addUse(java.lang.String) : void\lpublic getMethodIterator() : java.util.Iterator\lpublic addMethod(problem.asm.model.IMethod) : void\lpublic getFieldIterator() : java.util.Iterator\lpublic addField(problem.asm.model.IField) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_model_IClass -> problem_asm_visitor_ITraverser
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_model_IClass -> problem_asm_model_AccessLevel
+problem_asm_model_IClass -> problem_asm_model_IMethod
+problem_asm_model_IClass -> problem_asm_model_IField
+problem_asm_model_IClassHolder [
+	label = "{problem.asm.model.IClassHolder||public getClassModel() : problem.asm.model.IClass\l}"
+]
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_model_IClassHolder -> problem_asm_model_IClass
+problem_asm_model_IField [
+	label = "{problem.asm.model.IField||public getName() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic getType() : java.lang.String\lpublic setName(java.lang.String) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setType(java.lang.String) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_model_IField -> problem_asm_visitor_ITraverser
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_model_IField -> problem_asm_model_AccessLevel
+problem_asm_model_IMethod [
+	label = "{problem.asm.model.IMethod||public getName() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic getReturnType() : java.lang.String\lpublic getArgTypes() : java.lang.String[]\lpublic setName(java.lang.String) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setReturnType(java.lang.String) : void\lpublic setArgTypes(java.lang.String[]) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_model_IMethod -> problem_asm_visitor_ITraverser
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_model_IMethod -> problem_asm_model_AccessLevel
+problem_asm_model_Method [
+	label = "{problem.asm.model.Method|private name : java.lang.String\lprivate accessLevel : problem.asm.model.AccessLevel\lprivate returnType : java.lang.String\lprivate argTypes : java.lang.String[]\l|public \<init\>() : void\lpublic getName() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic getReturnType() : java.lang.String\lpublic getArgTypes() : java.lang.String[]\lpublic setName(java.lang.String) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setReturnType(java.lang.String) : void\lpublic setArgTypes(java.lang.String[]) : void\lpublic accept(problem.asm.visitor.IVisitor) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_model_Method -> problem_asm_model_IMethod
+edge [
+	arrowhead = "vee"
+	style = "solid"
+]
+problem_asm_model_Method -> problem_asm_model_AccessLevel
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_model_Method -> problem_asm_visitor_IVisitor
+problem_asm_visitor_ITraverser [
+	label = "{problem.asm.visitor.ITraverser||public accept(problem.asm.visitor.IVisitor) : void\l}"
+]
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_visitor_ITraverser -> problem_asm_visitor_IVisitor
+problem_asm_visitor_IVisitor [
+	label = "{problem.asm.visitor.IVisitor||public preVisit(problem.asm.model.IClass) : void\lpublic postFieldsVisit(problem.asm.model.IClass) : void\lpublic postMethodsVisit(problem.asm.model.IClass) : void\lpublic visit(problem.asm.model.IField) : void\lpublic visit(problem.asm.model.IMethod) : void\l}"
+]
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_visitor_IVisitor -> problem_asm_model_IClass
+problem_asm_visitor_IVisitor -> problem_asm_model_IField
+problem_asm_visitor_IVisitor -> problem_asm_model_IMethod
+problem_asm_visitor_VisitorAdapter [
+	label = "{problem.asm.visitor.VisitorAdapter||public \<init\>() : void\lpublic preVisit(problem.asm.model.IClass) : void\lpublic postFieldsVisit(problem.asm.model.IClass) : void\lpublic postMethodsVisit(problem.asm.model.IClass) : void\lpublic visit(problem.asm.model.IField) : void\lpublic visit(problem.asm.model.IMethod) : void\l}"
+]
+edge [
+	arrowhead = "empty"
+	style = "dashed"
+]
+problem_asm_visitor_VisitorAdapter -> problem_asm_visitor_IVisitor
+edge [
+	arrowhead = "vee"
+	style = "dashed"
+]
+problem_asm_visitor_VisitorAdapter -> problem_asm_model_IClass
+problem_asm_visitor_VisitorAdapter -> problem_asm_model_IField
+problem_asm_visitor_VisitorAdapter -> problem_asm_model_IMethod
+}

@@ -2,6 +2,7 @@ package problem.asm;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Collection;
 
 import problem.asm.model.IClass;
 import problem.asm.model.IField;
@@ -41,6 +42,8 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 		
 		String[] interfaces = c.getInterfaces();
 		String superClass = c.getSuperClass();
+		Collection<String> associates = c.getAssociates();
+		Collection<String> uses = c.getUses();
 		
 		if(interfaces.length != 0){
 			
@@ -55,6 +58,24 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 			this.write("edge [\n\tarrowhead = \"empty\"\n\tstyle = \"solid\"\n]\n");
 			line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), superClass.replaceAll("\\/", "_"));
 			this.write(line);
+		}
+		
+		if(associates.size() != 0){
+			
+			this.write("edge [\n\tarrowhead = \"vee\"\n\tstyle = \"solid\"\n]\n");
+			for(String assoc : associates){
+				line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), assoc.replaceAll("[./$]", "_"));
+				this.write(line);
+			}
+		}
+		
+		if(uses.size() != 0){
+			
+			this.write("edge [\n\tarrowhead = \"vee\"\n\tstyle = \"dashed\"\n]\n");
+			for(String use : uses){
+				line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), use.replaceAll("[./$]", "_"));
+				this.write(line);
+			}
 		}
 	}
 	@Override

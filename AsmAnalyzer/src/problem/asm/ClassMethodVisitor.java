@@ -1,5 +1,8 @@
 package problem.asm;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
@@ -35,8 +38,16 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassHolder {
 	@Override
 	public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions){
 		MethodVisitor toDecorate = super.visitMethod(access, name, desc, signature, exceptions);
+		MethodVisitor decorated = new MethodUsingVisitor(api, toDecorate);
+		
+		// TODO: this violates DIP, find a way to resolve?
+		((MethodUsingVisitor)decorated).setClassModel(classModel);
 
 		IMethod method = new Method();
+		
+		Matcher m = Pattern.compile("L([^<;]*);").matcher(desc);
+		while (m.find())
+			this.classModel.addUse(m.group(1));
 		
 		method.setName(name);
 		addAccessLevel(method, access);
@@ -45,7 +56,7 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassHolder {
 		
 	    this.classModel.addMethod(method);
 
-		return toDecorate;
+		return decorated;
 	}
 	
 	void addAccessLevel(IMethod method, int access){
