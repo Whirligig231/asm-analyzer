@@ -13,6 +13,7 @@ import org.objectweb.asm.Opcodes;
 
 import problem.asm.model.IModel;
 import problem.asm.model.Model;
+import problem.asm.visitor.IVisitor;
 
 public class SequenceGenerator {
 	
@@ -102,7 +103,7 @@ public class SequenceGenerator {
 		this.addMethod(this.getMethodClass(signature),
 				this.getMethodName(signature),
 				this.getMethodDesc(signature),
-				5); // TODO: make this not hard-coded but use the input parameter
+				2); // TODO: make this not hard-coded but use the input parameter
 	}
 	
 	public MethodSignature getNextMethod() {
@@ -122,10 +123,12 @@ public class SequenceGenerator {
 		while (!this.toVisit.isEmpty()) {
 			
 			ClassReader cr = new ClassReader(this.toVisit.peek().getOwner());
-			
 			cr.accept(callsVisitor, ClassReader.EXPAND_FRAMES);
 			
 		}
+		
+		IVisitor methodSDOutputStream = new MethodSDOutputStream(System.out);
+		model.accept(methodSDOutputStream);
 		
 	}
 	

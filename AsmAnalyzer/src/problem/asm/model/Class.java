@@ -50,6 +50,7 @@ public class Class implements IClass {
 	@Override
 	public void addMethod(IMethod method) {
 		this.methods.put(method.getName() + method.getDesc(), method);
+		// System.out.println(this.toString()+" add method "+method.getName() + method.getDesc());
 	}
 
 	@Override
@@ -77,6 +78,8 @@ public class Class implements IClass {
 
 	@Override
 	public IMethod getMethod(String name, String desc) {
+		// if (this.methods.get(name + desc) == null)
+			// System.out.println(this.toString()+" has no method "+name+desc);
 		return this.methods.get(name + desc);
 	}
 

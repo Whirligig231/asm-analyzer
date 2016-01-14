@@ -47,6 +47,7 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 		IMethod method = this.getClassModel().getMethod(name, desc);
 		if (method == null) {
 			method = new Method();
+			method.setOwner(this.getClassModel());
 			method.setName(name);
 			method.setDesc(desc);
 			this.getClassModel().addMethod(method);

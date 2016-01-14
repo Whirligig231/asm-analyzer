@@ -41,11 +41,13 @@ public class ClassCallsVisitor extends ClassVisitor implements IClassModelHolder
 		super.visit(version, access, name, signature, superName, interfaces);		
 		this.name = name;
 		
+		ClassVisitor dec = new ClassNoDeclarationVisitor(this.api, this);
+		
 		try {
 			if (superName != null)
-				(new ClassReader(superName)).accept(this, this.api);
+				(new ClassReader(superName)).accept(dec, this.api);
 			for (String inter : interfaces)
-				(new ClassReader(inter)).accept(this, this.api);
+				(new ClassReader(inter)).accept(dec, this.api);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
