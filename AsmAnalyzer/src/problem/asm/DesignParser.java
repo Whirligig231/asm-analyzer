@@ -7,6 +7,9 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 
 import problem.asm.model.IClass;
+import problem.asm.model.Class;
+import problem.asm.model.IModel;
+import problem.asm.model.Model;
 import problem.asm.visitor.IVisitor;
 
 public class DesignParser {
@@ -18,32 +21,38 @@ public class DesignParser {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException{
-		System.out.println("digraph G {\nrankdir=BT;\n\nnode [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\nshape = \"record\"\n]\nedge [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\n]\n");
+		
+		IModel model = new Model();
+				
+		for(String className: args){
+			IClass classModel = new Class();
+			classModel.setName(ClassNameStandardizer.standardize(className));
+			model.addClass(classModel);
+		}
 		
 		for(String className: args){
+			
 			// ASM's ClassReader does the heavy lifting of parsing the compiled Java class
 			ClassReader reader=new ClassReader(className);
 			
 			// make class declaration visitor to get superclass and interfaces
-			ClassVisitor decVisitor = new ClassDeclarationVisitor(Opcodes.ASM5);
+			ClassVisitor decVisitor = new ClassDeclarationVisitor(Opcodes.ASM5, model);
 			
 			// DECORATE declaration visitor with field visitor
 			ClassVisitor fieldVisitor = new ClassFieldVisitor(Opcodes.ASM5, decVisitor);
 			
 			// DECORATE field visitor with method visitor
 			ClassVisitor methodVisitor = new ClassMethodVisitor(Opcodes.ASM5, fieldVisitor);
-			
-			IVisitor classUmlOutputStream = new ClassUmlOutputStream(System.out);
 
 			// TODO: add more DECORATORS here in later milestones to accomplish specific tasks
 			
 			// Tell the Reader to use our (heavily decorated) ClassVisitor to visit the class
 			reader.accept(methodVisitor, ClassReader.EXPAND_FRAMES);
-			
-			IClass clazz = ((ClassMethodVisitor) methodVisitor).getClassModel();
-			clazz.accept(classUmlOutputStream);
 
 		}
-		System.out.println("}");
+		
+		IVisitor classUmlOutputStream = new ClassUmlOutputStream(System.out);
+		model.accept(classUmlOutputStream);
+		
 	}
 }

@@ -9,52 +9,57 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
 import problem.asm.model.IClass;
-import problem.asm.model.IClassHolder;
+import problem.asm.model.IClassModelHolder;
 import problem.asm.model.IMethod;
+import problem.asm.model.IModel;
+import problem.asm.model.IRelation;
 import problem.asm.model.Method;
+import problem.asm.model.Relation;
+import problem.asm.model.RelationType;
 import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
 
-public class ClassMethodVisitor extends ClassVisitor implements IClassHolder {
+public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolder {
 	
-	private IClass classModel;
+	private IClassModelHolder holder;
 	
-	public ClassMethodVisitor(int api){
-		super(api);
-		this.classModel = new Class();
-	}
-	
+	private IModel model;
+
 	public ClassMethodVisitor(int api, ClassVisitor decorated) {
 		super(api, decorated);
 
-		if (!(decorated instanceof IClassHolder))
+		if (!(decorated instanceof IClassModelHolder))
 			throw new UnsupportedOperationException("Must decorate an IClassHolder visitor!");
 		else {
-			IClassHolder classHolder = (IClassHolder)decorated;
-			this.classModel = classHolder.getClassModel();
+			IClassModelHolder classHolder = (IClassModelHolder)decorated;
+			this.model = classHolder.getModel();
+			this.holder = classHolder;
 		}
 	}
 	
 	@Override
 	public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions){
 		MethodVisitor toDecorate = super.visitMethod(access, name, desc, signature, exceptions);
-		MethodVisitor decorated = new MethodUsingVisitor(api, toDecorate);
+		MethodVisitor decorated = new MethodUsingVisitor(api, toDecorate, this);
 		
-		// TODO: this violates DIP, find a way to resolve?
-		((MethodUsingVisitor)decorated).setClassModel(classModel);
-
 		IMethod method = new Method();
 		
 		Matcher m = Pattern.compile("L([^<;]*);").matcher(desc);
-		while (m.find())
-			this.classModel.addUse(m.group(1));
+		while (m.find()) {
+			String useName = m.group(1);
+			IClass useClass = this.model.getClass(ClassNameStandardizer.standardize(useName));
+			if (useClass != null) {
+				IRelation relation = new Relation(this.getClassModel(), useClass, RelationType.USES);
+				this.model.addRelation(relation);
+			}
+		}
 		
 		method.setName(name);
 		addAccessLevel(method, access);
 		addReturnType(method, desc);
 		addArguments(method, desc);
 		
-	    this.classModel.addMethod(method);
+	    this.getClassModel().addMethod(method);
 
 		return decorated;
 	}
@@ -83,6 +88,11 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassHolder {
 
 	@Override
 	public IClass getClassModel() {
-		return this.classModel;
+		return this.holder.getClassModel();
+	}
+
+	@Override
+	public IModel getModel() {
+		return this.model;
 	}
 }

@@ -8,29 +8,30 @@ import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Type;
 
 import problem.asm.model.IClass;
-import problem.asm.model.IClassHolder;
+import problem.asm.model.IClassModelHolder;
 import problem.asm.model.IField;
+import problem.asm.model.IModel;
+import problem.asm.model.IRelation;
+import problem.asm.model.Relation;
+import problem.asm.model.RelationType;
 import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
 import problem.asm.model.Field;
 
-public class ClassFieldVisitor extends ClassVisitor implements IClassHolder {
+public class ClassFieldVisitor extends ClassVisitor implements IClassModelHolder {
 	
-	private IClass classModel;
+	private IClassModelHolder holder;
+	private IModel model;
 
-	public ClassFieldVisitor(int api){
-		super(api);
-		this.classModel = new Class();
-	}
-	
 	public ClassFieldVisitor(int api, ClassVisitor decorated) {
 		super(api, decorated);
 
-		if (!(decorated instanceof IClassHolder))
-			throw new UnsupportedOperationException("Must decorate an IClassHolder visitor!");
+		if (!(decorated instanceof IClassModelHolder))
+			throw new UnsupportedOperationException("Must decorate an IClassModelHolder visitor!");
 		else {
-			IClassHolder classHolder = (IClassHolder)decorated;
-			this.classModel = classHolder.getClassModel();
+			IClassModelHolder classHolder = (IClassModelHolder)decorated;
+			this.holder = classHolder;
+			this.model = classHolder.getModel();
 		}
 	}
 	
@@ -43,11 +44,11 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassHolder {
 			// It's a generic type; find the internal type(s) instead
 			Matcher m = Pattern.compile("L([^<;]+);").matcher(signature);
 			while (m.find()) {
-				this.classModel.addAssociate(m.group(1));
+				this.addAssociate(m.group(1));
 			}
 		}
 		else {
-			this.classModel.addAssociate(type);
+			this.addAssociate(type);
 		}
 
 		IField field = new Field();
@@ -55,14 +56,27 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassHolder {
 		field.setAccessLevel(AccessLevel.getFromOpcodes(access));
 		field.setType(type);
 		
-		this.classModel.addField(field);
+		this.getClassModel().addField(field);
 
 		return toDecorate;
 	}
 
+	private void addAssociate(String type) {
+		IClass assocClass = this.model.getClass(ClassNameStandardizer.standardize(type));
+		if (assocClass != null) {
+			IRelation relation = new Relation(this.getClassModel(), assocClass, RelationType.ASSOCIATES);
+			this.model.addRelation(relation);
+		}
+	}
+
 	@Override
 	public IClass getClassModel() {
-		return this.classModel;
+		return this.holder.getClassModel();
+	}
+
+	@Override
+	public IModel getModel() {
+		return this.model;
 	};
 
 }

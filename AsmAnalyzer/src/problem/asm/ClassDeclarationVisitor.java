@@ -7,15 +7,21 @@ import org.objectweb.asm.ClassVisitor;
 import problem.asm.model.IClass;
 import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
-import problem.asm.model.IClassHolder;
+import problem.asm.model.IClassModelHolder;
+import problem.asm.model.IModel;
+import problem.asm.model.IRelation;
+import problem.asm.model.Relation;
+import problem.asm.model.RelationType;
 
-public class ClassDeclarationVisitor extends ClassVisitor implements IClassHolder {
+public class ClassDeclarationVisitor extends ClassVisitor implements IClassModelHolder {
 	
+	private IModel model;
 	private IClass classModel;
 	
-	public ClassDeclarationVisitor(int api){
+	public ClassDeclarationVisitor(int api, IModel model){
 		super(api);
-		this.classModel = new Class();
+		this.model = model;
+		this.classModel = null;
 	}
 	
 	@Override
@@ -23,15 +29,34 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassHolde
 
 		super.visit(version, access, name, signature, superName, interfaces);
 		
-		this.classModel.setName(name);
+		this.classModel = this.model.getClass(ClassNameStandardizer.standardize(name));
 		this.classModel.setAccessLevel(AccessLevel.getFromOpcodes(access));
-		this.classModel.setSuperClass(superName);
-		this.classModel.setInterfaces(interfaces);
+		
+		// Add super class relation
+		IClass superClass = this.model.getClass(ClassNameStandardizer.standardize(superName));
+		if (superClass != null) {
+			IRelation relation = new Relation(this.classModel, superClass, RelationType.EXTENDS);
+			this.model.addRelation(relation);
+		}
+		
+		// Add interface relations
+		for (String inter : interfaces) {
+			IClass superInter = this.model.getClass(ClassNameStandardizer.standardize(inter));
+			if (superInter != null) {
+				IRelation relation = new Relation(this.classModel, superInter, RelationType.IMPLEMENTS);
+				this.model.addRelation(relation);
+			}
+		}
 		
 	}
 
 	@Override
 	public IClass getClassModel() {
 		return this.classModel;
+	}
+
+	@Override
+	public IModel getModel() {
+		return this.model;
 	}
 }

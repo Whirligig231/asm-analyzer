@@ -1,7 +1,8 @@
 package problem.asm.model;
 
-public interface IClassHolder {
+public interface IClassModelHolder {
 	
 	public IClass getClassModel();
+	public IModel getModel();
 
 }

@@ -1,6 +1,7 @@
 package problem.asm.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -11,10 +12,6 @@ public class Class implements IClass {
 	
 	private String name;
 	private AccessLevel accessLevel;
-	private String superClass;
-	private String[] interfaces;
-	private Collection<String> associates;
-	private Collection<String> uses;
 	
 	private Collection<IMethod> methods;
 	private Collection<IField> fields;
@@ -22,8 +19,6 @@ public class Class implements IClass {
 	public Class() {
 		this.methods = new ArrayList<>();
 		this.fields = new ArrayList<>();
-		this.associates = new ArrayList<>();
-		this.uses = new ArrayList<>();
 	}
 
 	@Override
@@ -36,30 +31,12 @@ public class Class implements IClass {
 		return this.accessLevel;
 	}
 
-	@Override
-	public String getSuperClass() {
-		return this.superClass;
-	}
-
-	@Override
-	public String[] getInterfaces() {
-		return this.interfaces;
-	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	public void setAccessLevel(AccessLevel accessLevel) {
 		this.accessLevel = accessLevel;
-	}
-
-	public void setSuperClass(String superClass) {
-		this.superClass = superClass;
-	}
-
-	public void setInterfaces(String[] interfaces) {
-		this.interfaces = interfaces;
 	}
 
 	@Override
@@ -86,51 +63,13 @@ public class Class implements IClass {
 	public void accept(IVisitor v) {
 		v.preVisit(this);
 		for(IField field : this.fields){
-			v.visit(field);
+			field.accept(v);
 		}
 		v.postFieldsVisit(this);
 		for(IMethod method : this.methods){
-			v.visit(method);
+			method.accept(v);
 		}
 		v.postMethodsVisit(this);
-	}
-
-	@Override
-	public Collection<String> getAssociates() {
-		return Collections.unmodifiableCollection(this.associates);
-	}
-
-	@Override
-	public void addAssociate(String associate) {
-		if (this.associates.contains(associate))
-			return;
-		
-		if (associate.equals(this.getName()))
-			return;
-		
-		if (associate.startsWith("java"))
-			return;
-		
-		this.associates.add(associate);
-	}
-
-	@Override
-	public Collection<String> getUses() {
-		return Collections.unmodifiableCollection(this.uses);
-	}
-
-	@Override
-	public void addUse(String classname) {
-		if (this.associates.contains(classname) || this.associates.contains(classname.replaceAll("\\/", ".")) || this.uses.contains(classname))
-			return;
-		
-		if (classname.equals(this.getName()))
-			return;
-		
-		if (classname.startsWith("java"))
-			return;
-		
-		this.uses.add(classname);
 	}
 
 }

@@ -3,20 +3,21 @@ package problem.asm;
 import org.objectweb.asm.MethodVisitor;
 
 import problem.asm.model.IClass;
-import problem.asm.model.IClassHolder;
+import problem.asm.model.IClassModelHolder;
+import problem.asm.model.IModel;
+import problem.asm.model.IRelation;
+import problem.asm.model.Relation;
+import problem.asm.model.RelationType;
 
-public class MethodUsingVisitor extends MethodVisitor implements IClassHolder {
+public class MethodUsingVisitor extends MethodVisitor implements IClassModelHolder {
 	
+	private IModel model;
 	private IClass classModel;
 
-	public MethodUsingVisitor(int api) {
-		super(api);
-		// TODO Auto-generated constructor stub
-	}
-
-	public MethodUsingVisitor(int api, MethodVisitor mv) {
-		super(api, mv);
-		// TODO Auto-generated constructor stub
+	public MethodUsingVisitor(int api, MethodVisitor toDecorate, ClassMethodVisitor classMethodVisitor) {
+		super(api, toDecorate);
+		this.model = classMethodVisitor.getModel();
+		this.classModel = classMethodVisitor.getClassModel();
 	}
 
 	@Override
@@ -38,7 +39,11 @@ public class MethodUsingVisitor extends MethodVisitor implements IClassHolder {
 	}
 	
 	private void processUse(String classname) {
-		this.classModel.addUse(classname);
+		IClass useClass = this.model.getClass(ClassNameStandardizer.standardize(classname));
+		if (useClass != null) {
+			IRelation relation = new Relation(this.classModel, useClass, RelationType.USES);
+			this.model.addRelation(relation);
+		}
 	}
 
 	@Override
@@ -46,8 +51,9 @@ public class MethodUsingVisitor extends MethodVisitor implements IClassHolder {
 		return this.classModel;
 	}
 
-	public void setClassModel(IClass classModel) {
-		this.classModel = classModel;
+	@Override
+	public IModel getModel() {
+		return this.model;
 	}
 
 }

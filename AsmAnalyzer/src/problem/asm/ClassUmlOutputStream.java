@@ -7,6 +7,9 @@ import java.util.Collection;
 import problem.asm.model.IClass;
 import problem.asm.model.IField;
 import problem.asm.model.IMethod;
+import problem.asm.model.IModel;
+import problem.asm.model.IRelation;
+import problem.asm.model.RelationType;
 import problem.asm.visitor.VisitorAdapter;
 
 public class ClassUmlOutputStream extends VisitorAdapter {
@@ -39,44 +42,6 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 	public void postMethodsVisit(IClass c) {
 		String line = String.format("}\"\n]\n");
 		this.write(line);
-		
-		String[] interfaces = c.getInterfaces();
-		String superClass = c.getSuperClass();
-		Collection<String> associates = c.getAssociates();
-		Collection<String> uses = c.getUses();
-		
-		if(interfaces.length != 0){
-			
-			this.write("edge [\n\tarrowhead = \"empty\"\n\tstyle = \"dashed\"\n]\n");
-			for(String inter : interfaces){
-				line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), inter.replaceAll("\\/", "_"));
-				this.write(line);
-			}
-		}
-		
-		if(superClass != null && !superClass.equals("") && !superClass.equals("java/lang/Object")){
-			this.write("edge [\n\tarrowhead = \"empty\"\n\tstyle = \"solid\"\n]\n");
-			line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), superClass.replaceAll("\\/", "_"));
-			this.write(line);
-		}
-		
-		if(associates.size() != 0){
-			
-			this.write("edge [\n\tarrowhead = \"vee\"\n\tstyle = \"solid\"\n]\n");
-			for(String assoc : associates){
-				line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), assoc.replaceAll("[./$]", "_"));
-				this.write(line);
-			}
-		}
-		
-		if(uses.size() != 0){
-			
-			this.write("edge [\n\tarrowhead = \"vee\"\n\tstyle = \"dashed\"\n]\n");
-			for(String use : uses){
-				line = String.format("%s -> %s\n", c.getName().replaceAll("\\/", "_"), use.replaceAll("[./$]", "_"));
-				this.write(line);
-			}
-		}
 	}
 	@Override
 	public void visit(IMethod c) {
@@ -103,5 +68,37 @@ public class ClassUmlOutputStream extends VisitorAdapter {
 	public void visit(IField c) {
 		String line = String.format("%s %s : %s\\l", c.getAccessLevel(), c.getName(), c.getType());
 		this.write(line);
+	}
+
+	@Override
+	public void visit(IRelation relation) {
+		this.write(relation.getFirstClass().getName());
+		this.write(" -> ");
+		this.write(relation.getSecondClass().getName());
+		switch (relation.getType()) {
+		case EXTENDS:
+			this.write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"solid\"\n]\n\n");
+			break;
+		case IMPLEMENTS:
+			this.write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"dashed\"\n]\n\n");
+			break;
+		case ASSOCIATES:
+			this.write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"solid\"\n]\n\n");
+			break;
+		case USES:
+			this.write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"dashed\"\n]\n\n");
+			break;
+		}
+	}
+
+	@Override
+	public void preVisit(IModel model) {
+		this.write("digraph G {\nrankdir=BT;\n\nnode [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\nshape = \"record\"\n]\nedge [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\n]\n");
+
+	}
+
+	@Override
+	public void postVisit(IModel model) {
+		this.write("}");	
 	}
 }
