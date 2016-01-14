@@ -17,6 +17,7 @@ public interface IClass extends ITraverser {
 	
 	public Iterator<IMethod> getMethodIterator();
 	public void addMethod(IMethod method);
+	public IMethod getMethod(String name, String desc);
 	
 	public Iterator<IField> getFieldIterator();
 	public void addField(IField field);

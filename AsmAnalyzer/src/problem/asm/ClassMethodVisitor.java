@@ -42,7 +42,13 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 		MethodVisitor toDecorate = super.visitMethod(access, name, desc, signature, exceptions);
 		MethodVisitor decorated = new MethodUsingVisitor(api, toDecorate, this);
 		
-		IMethod method = new Method();
+		IMethod method = this.getClassModel().getMethod(name, desc);
+		if (method == null) {
+			method = new Method();
+			method.setName(name);
+			method.setDesc(desc);
+			this.getClassModel().addMethod(method);
+		}
 		
 		Matcher m = Pattern.compile("L([^<;]*);").matcher(desc);
 		while (m.find()) {
@@ -53,13 +59,10 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 				this.model.addRelation(relation);
 			}
 		}
-		
-		method.setName(name);
+
 		addAccessLevel(method, access);
 		addReturnType(method, desc);
 		addArguments(method, desc);
-		
-	    this.getClassModel().addMethod(method);
 
 		return decorated;
 	}

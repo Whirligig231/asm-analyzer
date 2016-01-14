@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 import problem.asm.visitor.IVisitor;
 
@@ -13,11 +16,11 @@ public class Class implements IClass {
 	private String name;
 	private AccessLevel accessLevel;
 	
-	private Collection<IMethod> methods;
+	private Map<String, IMethod> methods;
 	private Collection<IField> fields;
 	
 	public Class() {
-		this.methods = new ArrayList<>();
+		this.methods = new HashMap<>();
 		this.fields = new ArrayList<>();
 	}
 
@@ -41,12 +44,12 @@ public class Class implements IClass {
 
 	@Override
 	public Iterator<IMethod> getMethodIterator() {
-		return this.methods.iterator();
+		return this.methods.values().iterator();
 	}
 
 	@Override
 	public void addMethod(IMethod method) {
-		this.methods.add(method);
+		this.methods.put(method.getName() + method.getDesc(), method);
 	}
 
 	@Override
@@ -66,10 +69,15 @@ public class Class implements IClass {
 			field.accept(v);
 		}
 		v.postFieldsVisit(this);
-		for(IMethod method : this.methods){
+		for(IMethod method : this.methods.values()){
 			method.accept(v);
 		}
 		v.postMethodsVisit(this);
+	}
+
+	@Override
+	public IMethod getMethod(String name, String desc) {
+		return this.methods.get(name + desc);
 	}
 
 }
