@@ -11,6 +11,7 @@ import org.objectweb.asm.Type;
 import problem.asm.model.IClass;
 import problem.asm.model.IClassModelHolder;
 import problem.asm.model.IMethod;
+import problem.asm.model.IMethodHolder;
 import problem.asm.model.IModel;
 import problem.asm.model.IRelation;
 import problem.asm.model.Method;
@@ -19,11 +20,12 @@ import problem.asm.model.RelationType;
 import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
 
-public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolder {
+public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolder, IMethodHolder {
 	
 	private IClassModelHolder holder;
 	
 	private IModel model;
+	private IMethod method;
 
 	public ClassMethodVisitor(int api, ClassVisitor decorated) {
 		super(api, decorated);
@@ -63,6 +65,8 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 		addAccessLevel(method, access);
 		addReturnType(method, desc);
 		addArguments(method, desc);
+		
+		this.method = method;
 
 		return decorated;
 	}
@@ -97,5 +101,10 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 	@Override
 	public IModel getModel() {
 		return this.model;
+	}
+
+	@Override
+	public IMethod getMethod() {
+		return this.method;
 	}
 }

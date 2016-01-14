@@ -4,12 +4,14 @@ import org.objectweb.asm.MethodVisitor;
 
 import problem.asm.model.IClass;
 import problem.asm.model.IClassModelHolder;
+import problem.asm.model.IMethod;
+import problem.asm.model.IMethodHolder;
 import problem.asm.model.IModel;
 import problem.asm.model.IRelation;
 import problem.asm.model.Relation;
 import problem.asm.model.RelationType;
 
-public class MethodUsingVisitor extends MethodVisitor implements IClassModelHolder {
+public class MethodUsingVisitor extends MethodVisitor implements IClassModelHolder{
 	
 	private IModel model;
 	private IClass classModel;

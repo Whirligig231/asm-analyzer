@@ -1,15 +1,25 @@
 package problem.asm;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassVisitor;
+import org.objectweb.asm.Opcodes;
+
+import problem.asm.model.IModel;
+import problem.asm.model.Model;
 
 public class SequenceGenerator {
 	
 	private static SequenceGenerator instance;
 	
 	private Queue<MethodSignature> toVisit;
+	private IModel model;
 	
 	private String getASMClass(String dottedClass) {
 		return dottedClass.replaceAll("\\.","/");
@@ -81,6 +91,7 @@ public class SequenceGenerator {
 	
 	private SequenceGenerator() {
 		this.toVisit = new LinkedList<>();
+		this.model = new Model();
 	}
 	
 	public void addMethod(String owner, String name, String desc, int level) {
@@ -91,7 +102,31 @@ public class SequenceGenerator {
 		this.addMethod(this.getMethodClass(signature),
 				this.getMethodName(signature),
 				this.getMethodDesc(signature),
-				5);
+				5); // TODO: make this not hard-coded but use the input parameter
+	}
+	
+	public MethodSignature getNextMethod() {
+		return this.toVisit.peek();
+	}
+	
+	public MethodSignature popNextMethod() {
+		return this.toVisit.remove();
+	}
+	
+	public void writeSequence(OutputStream out) throws IOException {
+		
+		ClassVisitor decVisitor = new ClassDeclarationVisitor(Opcodes.ASM5, model);
+		ClassMethodVisitor methodVisitor = new ClassMethodVisitor(Opcodes.ASM5, decVisitor);
+		ClassVisitor callsVisitor = new ClassCallsVisitor(Opcodes.ASM5, methodVisitor, this);
+		
+		while (!this.toVisit.isEmpty()) {
+			
+			ClassReader cr = new ClassReader(this.toVisit.peek().getOwner());
+			
+			cr.accept(callsVisitor, ClassReader.EXPAND_FRAMES);
+			
+		}
+		
 	}
 	
 	public static SequenceGenerator getInstance() {
@@ -101,10 +136,11 @@ public class SequenceGenerator {
 		return instance;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		String method = args[0];
 		SequenceGenerator instance = getInstance();
 		instance.addMethodFromString(method);
+		instance.writeSequence(System.out);
 	}
 
 }

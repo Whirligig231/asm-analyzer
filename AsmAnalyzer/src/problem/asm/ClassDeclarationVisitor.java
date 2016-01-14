@@ -30,6 +30,11 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassModel
 		super.visit(version, access, name, signature, superName, interfaces);
 		
 		this.classModel = this.model.getClass(ClassNameStandardizer.standardize(name));
+		if (this.classModel == null) {
+			this.classModel = new Class();
+			this.classModel.setName(name);
+			this.model.addClass(this.classModel);
+		}
 		this.classModel.setAccessLevel(AccessLevel.getFromOpcodes(access));
 		
 		// Add super class relation

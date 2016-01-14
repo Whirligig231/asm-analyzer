@@ -6,16 +6,18 @@ import problem.asm.model.IClass;
 import problem.asm.model.Class;
 import problem.asm.model.IClassModelHolder;
 import problem.asm.model.IMethod;
+import problem.asm.model.IMethodHolder;
 import problem.asm.model.IModel;
 import problem.asm.model.IRelation;
 import problem.asm.model.Method;
 import problem.asm.model.Relation;
 import problem.asm.model.RelationType;
 
-public class MethodCallsVisitor extends MethodVisitor implements IClassModelHolder {
+public class MethodCallsVisitor extends MethodVisitor implements IClassModelHolder, IMethodHolder {
 	
 	private IModel model;
 	private IClass classModel;
+	private IMethod method;
 	private SequenceGenerator sg;
 	private int level;
 
@@ -24,6 +26,7 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 		super(api, toDecorate);
 		this.model = classMethodVisitor.getModel();
 		this.classModel = classMethodVisitor.getClassModel();
+		this.method = classMethodVisitor.getMethod();
 		this.sg = sg;
 		this.level = level;
 	}
@@ -47,9 +50,14 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 			destClass.addMethod(destMethod);
 		}
 		
-		// TODO: Add the call to the method
+		// TODO: remove this debug line at some point
+		System.out.println(this.method.getName() + " calls "+destMethod.getName());
 		
-		this.sg.addMethod(owner, name, desc, this.level - 1);
+		this.method.addCall(destMethod);
+		
+		if (this.level > 0)
+			this.sg.addMethod(owner, name, desc, this.level - 1);
+		
 	}
 
 	@Override
@@ -60,6 +68,11 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 	@Override
 	public IModel getModel() {
 		return this.model;
+	}
+
+	@Override
+	public IMethod getMethod() {
+		return this.method;
 	}
 
 }
