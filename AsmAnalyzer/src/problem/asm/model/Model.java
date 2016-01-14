@@ -44,6 +44,20 @@ public class Model implements IModel {
 
 	@Override
 	public void addRelation(IRelation relation) {
+		// Association overrides use
+		if (relation.getType() == RelationType.USES) {
+			IRelation assoc = new Relation(relation.getFirstClass(), relation.getSecondClass(),
+					RelationType.ASSOCIATES);
+			if (this.relations.contains(assoc))
+				return;
+		}
+		else if (relation.getType() == RelationType.ASSOCIATES) {
+			IRelation use = new Relation(relation.getFirstClass(), relation.getSecondClass(),
+					RelationType.USES);
+			if (this.relations.contains(use))
+				this.relations.remove(use);
+		}
+		
 		this.relations.add(relation);
 	}
 

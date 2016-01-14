@@ -35,7 +35,8 @@ public class MethodUsingVisitor extends MethodVisitor implements IClassModelHold
 	@Override
 	public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf) {
 		super.visitMethodInsn(opcode, owner, name, desc, itf);
-		this.processUse(owner);
+		if (!name.equals("<init>"))
+			this.processUse(owner);
 	}
 	
 	private void processUse(String classname) {
