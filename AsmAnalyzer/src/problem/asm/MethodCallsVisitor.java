@@ -35,10 +35,10 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 	public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf) {
 		super.visitMethodInsn(opcode, owner, name, desc, itf);
 		
-		IClass destClass = this.model.getClass(owner);
+		IClass destClass = this.model.getClass(ClassNameStandardizer.standardize(owner));
 		if (destClass == null) {
 			destClass = new Class();
-			destClass.setName(owner);
+			destClass.setName(ClassNameStandardizer.standardize(owner));
 			this.model.addClass(destClass);
 		}
 		
@@ -57,7 +57,7 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 		this.method.addCall(destMethod);
 		
 		if (this.level > 0)
-			this.sg.addMethod(owner, name, desc, this.level - 1);
+			this.sg.addMethod(ClassNameStandardizer.standardize(owner), name, desc, this.level - 1);
 		
 	}
 

@@ -8,4 +8,10 @@ public class ClassNameStandardizer {
 		return className.replaceAll("[./$]", "_");
 	}
 
+	public static String forASM(String className) {
+		if (className == null)
+			return null;
+		return ClassNameStandardizer.standardize(className).replaceAll("_", "/");
+	}
+
 }

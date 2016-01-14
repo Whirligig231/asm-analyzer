@@ -103,7 +103,7 @@ public class SequenceGenerator {
 		this.addMethod(this.getMethodClass(signature),
 				this.getMethodName(signature),
 				this.getMethodDesc(signature),
-				2); // TODO: make this not hard-coded but use the input parameter
+				3); // TODO: make this not hard-coded but use the input parameter
 	}
 	
 	public MethodSignature getNextMethod() {
@@ -122,7 +122,7 @@ public class SequenceGenerator {
 		
 		while (!this.toVisit.isEmpty()) {
 			
-			ClassReader cr = new ClassReader(this.toVisit.peek().getOwner());
+			ClassReader cr = new ClassReader(ClassNameStandardizer.forASM(this.toVisit.peek().getOwner()));
 			cr.accept(callsVisitor, ClassReader.EXPAND_FRAMES);
 			
 		}
