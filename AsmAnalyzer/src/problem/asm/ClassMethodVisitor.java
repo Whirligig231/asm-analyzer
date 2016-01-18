@@ -17,6 +17,7 @@ import problem.asm.model.IRelation;
 import problem.asm.model.Method;
 import problem.asm.model.Relation;
 import problem.asm.model.RelationType;
+import problem.asm.tests.Testable;
 import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
 

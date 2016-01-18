@@ -26,6 +26,7 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassModel
 	
 	@Override
 	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces){
+		//System.out.println("version: "+version+" access: "+access+" name: "+name+" signature: "+signature+" superName: "+superName+" interfaces: "+ interfaces);
 
 		super.visit(version, access, name, signature, superName, interfaces);
 		
