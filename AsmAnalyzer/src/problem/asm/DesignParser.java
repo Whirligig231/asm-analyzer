@@ -31,7 +31,7 @@ public class DesignParser {
 		}
 		
 		for(String className: args){
-			
+			//System.out.println("Loading class: " + className);
 			// ASM's ClassReader does the heavy lifting of parsing the compiled Java class
 			ClassReader reader=new ClassReader(className);
 			

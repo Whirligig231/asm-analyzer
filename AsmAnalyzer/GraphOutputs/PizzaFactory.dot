@@ -1,0 +1,946 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+headfirst_factory_pizzaaf_PlumTomatoSauce [
+	label = "{headfirst_factory_pizzaaf_PlumTomatoSauce||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_VeggiePizza [
+	label = "{headfirst_factory_pizzas_VeggiePizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_Pizza [
+	label = "{headfirst_factory_pizzas_Pizza|default name : java.lang.String\ldefault dough : java.lang.String\ldefault sauce : java.lang.String\ldefault toppings : java.util.ArrayList\l|public box() : void\lpublic cut() : void\lpublic getName() : java.lang.String\lpublic bake() : void\lpublic prepare() : void\lpublic toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_VeggiePizza [
+	label = "{headfirst_factory_pizzaaf_VeggiePizza|default ingredientFactory : headfirst.factory.pizzaaf.PizzaIngredientFactory\l|default prepare() : void\lpublic \<init\>(headfirst.factory.pizzaaf.PizzaIngredientFactory) : void\l}"
+]
+headfirst_factory_pizzaaf_Clams [
+	label = "{headfirst_factory_pizzaaf_Clams||public toString() : java.lang.String\l}"
+]
+headfirst_factory_pizzaaf_ReggianoCheese [
+	label = "{headfirst_factory_pizzaaf_ReggianoCheese||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_ThinCrustDough [
+	label = "{headfirst_factory_pizzaaf_ThinCrustDough||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_PizzaStore [
+	label = "{headfirst_factory_pizzaaf_PizzaStore||public orderPizza(java.lang.String) : headfirst.factory.pizzaaf.Pizza\lprotected createPizza(java.lang.String) : headfirst.factory.pizzaaf.Pizza\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_Pizza [
+	label = "{headfirst_factory_pizzafm_Pizza|default name : java.lang.String\ldefault dough : java.lang.String\ldefault sauce : java.lang.String\ldefault toppings : java.util.ArrayList\l|default box() : void\ldefault cut() : void\ldefault bake() : void\lpublic getName() : java.lang.String\ldefault prepare() : void\lpublic toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_ClamPizza [
+	label = "{headfirst_factory_pizzaaf_ClamPizza|default ingredientFactory : headfirst.factory.pizzaaf.PizzaIngredientFactory\l|default prepare() : void\lpublic \<init\>(headfirst.factory.pizzaaf.PizzaIngredientFactory) : void\l}"
+]
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory [
+	label = "{headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory||public createSauce() : headfirst.factory.pizzaaf.Sauce\lpublic createClam() : headfirst.factory.pizzaaf.Clams\lpublic createDough() : headfirst.factory.pizzaaf.Dough\lpublic createCheese() : headfirst.factory.pizzaaf.Cheese\lpublic createPepperoni() : headfirst.factory.pizzaaf.Pepperoni\lpublic \<init\>() : void\lpublic createVeggies() : headfirst.factory.pizzaaf.Veggies[]\l}"
+]
+headfirst_factory_pizzaaf_BlackOlives [
+	label = "{headfirst_factory_pizzaaf_BlackOlives||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Dough [
+	label = "{headfirst_factory_pizzaaf_Dough||public toString() : java.lang.String\l}"
+]
+headfirst_factory_pizzaaf_ParmesanCheese [
+	label = "{headfirst_factory_pizzaaf_ParmesanCheese||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_PizzaTestDrive [
+	label = "{headfirst_factory_pizzafm_PizzaTestDrive||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Pizza [
+	label = "{headfirst_factory_pizzaaf_Pizza|default name : java.lang.String\ldefault dough : headfirst.factory.pizzaaf.Dough\ldefault sauce : headfirst.factory.pizzaaf.Sauce\ldefault veggies : headfirst.factory.pizzaaf.Veggies[]\ldefault cheese : headfirst.factory.pizzaaf.Cheese\ldefault pepperoni : headfirst.factory.pizzaaf.Pepperoni\ldefault clam : headfirst.factory.pizzaaf.Clams\l|default box() : void\ldefault cut() : void\ldefault bake() : void\ldefault getName() : java.lang.String\ldefault prepare() : void\lpublic toString() : java.lang.String\lpublic \<init\>() : void\ldefault setName(java.lang.String) : void\l}"
+]
+headfirst_factory_pizzafm_PizzaStore [
+	label = "{headfirst_factory_pizzafm_PizzaStore||default createPizza(java.lang.String) : headfirst.factory.pizzafm.Pizza\lpublic \<init\>() : void\lpublic orderPizza(java.lang.String) : headfirst.factory.pizzafm.Pizza\l}"
+]
+headfirst_factory_pizzaaf_Eggplant [
+	label = "{headfirst_factory_pizzaaf_Eggplant||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory [
+	label = "{headfirst_factory_pizzaaf_NYPizzaIngredientFactory||public createSauce() : headfirst.factory.pizzaaf.Sauce\lpublic createClam() : headfirst.factory.pizzaaf.Clams\lpublic createDough() : headfirst.factory.pizzaaf.Dough\lpublic createCheese() : headfirst.factory.pizzaaf.Cheese\lpublic createPepperoni() : headfirst.factory.pizzaaf.Pepperoni\lpublic \<init\>() : void\lpublic createVeggies() : headfirst.factory.pizzaaf.Veggies[]\l}"
+]
+headfirst_factory_pizzaaf_Mushroom [
+	label = "{headfirst_factory_pizzaaf_Mushroom||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_PizzaTestDrive [
+	label = "{headfirst_factory_pizzaaf_PizzaTestDrive||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_ChicagoStyleClamPizza [
+	label = "{headfirst_factory_pizzafm_ChicagoStyleClamPizza||default cut() : void\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_SimplePizzaFactory [
+	label = "{headfirst_factory_pizzas_SimplePizzaFactory||public createPizza(java.lang.String) : headfirst.factory.pizzas.Pizza\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_PizzaTestDrive [
+	label = "{headfirst_factory_pizzas_PizzaTestDrive||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_RedPepper [
+	label = "{headfirst_factory_pizzaaf_RedPepper||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_SlicedPepperoni [
+	label = "{headfirst_factory_pizzaaf_SlicedPepperoni||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_DependentPizzaStore [
+	label = "{headfirst_factory_pizzafm_DependentPizzaStore||public createPizza(java.lang.String, java.lang.String) : headfirst.factory.pizzafm.Pizza\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_ClamPizza [
+	label = "{headfirst_factory_pizzas_ClamPizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Garlic [
+	label = "{headfirst_factory_pizzaaf_Garlic||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Spinach [
+	label = "{headfirst_factory_pizzaaf_Spinach||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_ChicagoPizzaStore [
+	label = "{headfirst_factory_pizzafm_ChicagoPizzaStore||default createPizza(java.lang.String) : headfirst.factory.pizzafm.Pizza\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_ChicagoStyleCheesePizza [
+	label = "{headfirst_factory_pizzafm_ChicagoStyleCheesePizza||default cut() : void\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_PizzaStore [
+	label = "{headfirst_factory_pizzas_PizzaStore|default factory : headfirst.factory.pizzas.SimplePizzaFactory\l|public \<init\>(headfirst.factory.pizzas.SimplePizzaFactory) : void\lpublic orderPizza(java.lang.String) : headfirst.factory.pizzas.Pizza\l}"
+]
+headfirst_factory_pizzaaf_PepperoniPizza [
+	label = "{headfirst_factory_pizzaaf_PepperoniPizza|default ingredientFactory : headfirst.factory.pizzaaf.PizzaIngredientFactory\l|default prepare() : void\lpublic \<init\>(headfirst.factory.pizzaaf.PizzaIngredientFactory) : void\l}"
+]
+headfirst_factory_pizzaaf_PizzaIngredientFactory [
+	label = "{headfirst_factory_pizzaaf_PizzaIngredientFactory||public createSauce() : headfirst.factory.pizzaaf.Sauce\lpublic createClam() : headfirst.factory.pizzaaf.Clams\lpublic createDough() : headfirst.factory.pizzaaf.Dough\lpublic createCheese() : headfirst.factory.pizzaaf.Cheese\lpublic createPepperoni() : headfirst.factory.pizzaaf.Pepperoni\lpublic createVeggies() : headfirst.factory.pizzaaf.Veggies[]\l}"
+]
+headfirst_factory_pizzaaf_MarinaraSauce [
+	label = "{headfirst_factory_pizzaaf_MarinaraSauce||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_PepperoniPizza [
+	label = "{headfirst_factory_pizzas_PepperoniPizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_NYStyleVeggiePizza [
+	label = "{headfirst_factory_pizzafm_NYStyleVeggiePizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Veggies [
+	label = "{headfirst_factory_pizzaaf_Veggies||public toString() : java.lang.String\l}"
+]
+headfirst_factory_pizzaaf_MozzarellaCheese [
+	label = "{headfirst_factory_pizzaaf_MozzarellaCheese||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_ChicagoPizzaStore [
+	label = "{headfirst_factory_pizzaaf_ChicagoPizzaStore||protected createPizza(java.lang.String) : headfirst.factory.pizzaaf.Pizza\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_NYPizzaStore [
+	label = "{headfirst_factory_pizzaaf_NYPizzaStore||protected createPizza(java.lang.String) : headfirst.factory.pizzaaf.Pizza\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Pepperoni [
+	label = "{headfirst_factory_pizzaaf_Pepperoni||public toString() : java.lang.String\l}"
+]
+headfirst_factory_pizzaaf_ThickCrustDough [
+	label = "{headfirst_factory_pizzaaf_ThickCrustDough||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_ChicagoStyleVeggiePizza [
+	label = "{headfirst_factory_pizzafm_ChicagoStyleVeggiePizza||default cut() : void\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_FreshClams [
+	label = "{headfirst_factory_pizzaaf_FreshClams||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Sauce [
+	label = "{headfirst_factory_pizzaaf_Sauce||public toString() : java.lang.String\l}"
+]
+headfirst_factory_pizzafm_ChicagoStylePepperoniPizza [
+	label = "{headfirst_factory_pizzafm_ChicagoStylePepperoniPizza||default cut() : void\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_NYStyleCheesePizza [
+	label = "{headfirst_factory_pizzafm_NYStyleCheesePizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_NYPizzaStore [
+	label = "{headfirst_factory_pizzafm_NYPizzaStore||default createPizza(java.lang.String) : headfirst.factory.pizzafm.Pizza\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_NYStyleClamPizza [
+	label = "{headfirst_factory_pizzafm_NYStyleClamPizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzafm_NYStylePepperoniPizza [
+	label = "{headfirst_factory_pizzafm_NYStylePepperoniPizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_CheesePizza [
+	label = "{headfirst_factory_pizzaaf_CheesePizza|default ingredientFactory : headfirst.factory.pizzaaf.PizzaIngredientFactory\l|default prepare() : void\lpublic \<init\>(headfirst.factory.pizzaaf.PizzaIngredientFactory) : void\l}"
+]
+headfirst_factory_pizzaaf_Cheese [
+	label = "{headfirst_factory_pizzaaf_Cheese||public toString() : java.lang.String\l}"
+]
+headfirst_factory_pizzaaf_Onion [
+	label = "{headfirst_factory_pizzaaf_Onion||public toString() : java.lang.String\lpublic \<init\>() : void\l}"
+]
+headfirst_factory_pizzas_CheesePizza [
+	label = "{headfirst_factory_pizzas_CheesePizza||public \<init\>() : void\l}"
+]
+headfirst_factory_pizzaaf_Pizza -> headfirst_factory_pizzaaf_Pepperoni [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzas_PizzaStore -> headfirst_factory_pizzas_SimplePizzaFactory [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_ClamPizza -> headfirst_factory_pizzaaf_PizzaIngredientFactory [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_NYStyleClamPizza -> headfirst_factory_pizzafm_NYStyleClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_CheesePizza -> headfirst_factory_pizzaaf_CheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaIngredientFactory -> headfirst_factory_pizzaaf_Pepperoni [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaStore -> headfirst_factory_pizzaaf_ClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoStylePepperoniPizza -> headfirst_factory_pizzafm_ChicagoStylePepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_SlicedPepperoni [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_SlicedPepperoni -> headfirst_factory_pizzaaf_Pepperoni [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PepperoniPizza -> headfirst_factory_pizzaaf_PepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_CheesePizza -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_ParmesanCheese -> headfirst_factory_pizzaaf_Cheese [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PepperoniPizza -> headfirst_factory_pizzaaf_PizzaIngredientFactory [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_VeggiePizza -> headfirst_factory_pizzaaf_PizzaIngredientFactory [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_PizzaTestDrive -> headfirst_factory_pizzafm_ChicagoPizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_ThickCrustDough [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_SlicedPepperoni [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaStore -> headfirst_factory_pizzaaf_PizzaStore [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_FreshClams -> headfirst_factory_pizzaaf_Clams [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_ClamPizza -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_PizzaStore -> headfirst_factory_pizzaaf_PizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Clams [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_PizzaTestDrive -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Sauce [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaStore -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Spinach -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYPizzaStore -> headfirst_factory_pizzafm_NYStyleClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Cheese [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Pizza -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaStore -> headfirst_factory_pizzaaf_CheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Mushroom -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ClamPizza -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_PizzaTestDrive -> headfirst_factory_pizzafm_NYPizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Pizza -> headfirst_factory_pizzaaf_Dough [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Spinach [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoStyleCheesePizza -> headfirst_factory_pizzafm_ChicagoStyleCheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_VeggiePizza -> headfirst_factory_pizzas_VeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_NYStyleVeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaStore -> headfirst_factory_pizzaaf_CheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Garlic [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_SimplePizzaFactory -> headfirst_factory_pizzas_VeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaStore -> headfirst_factory_pizzaaf_NYPizzaIngredientFactory [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_RedPepper [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaStore -> headfirst_factory_pizzaaf_ClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYPizzaStore -> headfirst_factory_pizzafm_NYStyleCheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_PlumTomatoSauce [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaStore -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_SimplePizzaFactory -> headfirst_factory_pizzas_ClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Pizza -> headfirst_factory_pizzaaf_Cheese [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_NYStyleCheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaStore -> headfirst_factory_pizzaaf_PizzaStore [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_NYStyleClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_ReggianoCheese [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_SimplePizzaFactory -> headfirst_factory_pizzas_PepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYPizzaStore -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYPizzaStore -> headfirst_factory_pizzafm_NYStyleVeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_CheesePizza -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_Eggplant -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Dough [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaIngredientFactory -> headfirst_factory_pizzaaf_Dough [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ThickCrustDough -> headfirst_factory_pizzaaf_Dough [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Pizza -> headfirst_factory_pizzaaf_Clams [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_ChicagoPizzaStore -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_BlackOlives -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoPizzaStore -> headfirst_factory_pizzafm_PizzaStore [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_NYPizzaStore -> headfirst_factory_pizzafm_PizzaStore [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzas_PizzaStore -> headfirst_factory_pizzas_PizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaIngredientFactory -> headfirst_factory_pizzaaf_Sauce [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYStyleCheesePizza -> headfirst_factory_pizzafm_NYStyleCheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_PizzaTestDrive -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_VeggiePizza -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzas_VeggiePizza -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Cheese [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Eggplant [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_FreshClams [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaStore -> headfirst_factory_pizzaaf_PepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Clams [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_RedPepper -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Sauce [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoPizzaStore -> headfirst_factory_pizzafm_ChicagoStyleClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ReggianoCheese -> headfirst_factory_pizzaaf_Cheese [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaStore -> headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaTestDrive -> headfirst_factory_pizzaaf_ChicagoPizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_ChicagoStyleClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Dough [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_MarinaraSauce -> headfirst_factory_pizzaaf_Sauce [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoStyleClamPizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_ChicagoStyleCheesePizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_Pizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoStylePepperoniPizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_PizzaTestDrive -> headfirst_factory_pizzafm_PizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_PizzaStore -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaTestDrive -> headfirst_factory_pizzaaf_PizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYStyleVeggiePizza -> headfirst_factory_pizzafm_NYStyleVeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_PepperoniPizza -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzas_Pizza -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Pepperoni [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_SimplePizzaFactory -> headfirst_factory_pizzas_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_SimplePizzaFactory -> headfirst_factory_pizzas_CheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_MozzarellaCheese -> headfirst_factory_pizzaaf_Cheese [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaStore -> headfirst_factory_pizzaaf_PepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Pizza -> headfirst_factory_pizzaaf_Sauce [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_NYStyleCheesePizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_ThinCrustDough -> headfirst_factory_pizzaaf_Dough [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_CheesePizza -> headfirst_factory_pizzaaf_PizzaIngredientFactory [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_factory_pizzas_CheesePizza -> headfirst_factory_pizzas_CheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaTestDrive -> headfirst_factory_pizzaaf_NYPizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Onion [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoStyleVeggiePizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_NYStyleClamPizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_NYStyleVeggiePizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzaaf_ClamPizza -> headfirst_factory_pizzaaf_ClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaIngredientFactory -> headfirst_factory_pizzaaf_Clams [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoStyleClamPizza -> headfirst_factory_pizzafm_ChicagoStyleClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_ClamPizza -> headfirst_factory_pizzas_ClamPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaStore -> headfirst_factory_pizzaaf_VeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYPizzaStore -> headfirst_factory_pizzafm_NYStylePepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaStore -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoPizzaStore -> headfirst_factory_pizzafm_ChicagoStyleVeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_PizzaIngredientFactory [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaIngredientFactory -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_ChicagoStyleVeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_PepperoniPizza -> headfirst_factory_pizzas_PepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_PizzaTestDrive -> headfirst_factory_pizzas_PizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PizzaIngredientFactory -> headfirst_factory_pizzaaf_Cheese [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoPizzaStore -> headfirst_factory_pizzafm_ChicagoStylePepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_NYStylePepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_PizzaStore -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_MarinaraSauce [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_VeggiePizza -> headfirst_factory_pizzaaf_VeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYStylePepperoniPizza -> headfirst_factory_pizzafm_NYStylePepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_BlackOlives [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Garlic -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_ThinCrustDough [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_ChicagoStylePepperoniPizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PlumTomatoSauce -> headfirst_factory_pizzaaf_Sauce [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_PizzaStore -> headfirst_factory_pizzafm_PizzaStore [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_PepperoniPizza -> headfirst_factory_pizzaaf_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_DependentPizzaStore -> headfirst_factory_pizzafm_ChicagoStyleCheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_PizzaIngredientFactory [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaIngredientFactory -> headfirst_factory_pizzaaf_Mushroom [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzas_PizzaTestDrive -> headfirst_factory_pizzas_SimplePizzaFactory [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_NYPizzaStore -> headfirst_factory_pizzaaf_VeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_ChicagoStyleVeggiePizza -> headfirst_factory_pizzafm_ChicagoStyleVeggiePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_Pepperoni [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzafm_NYStylePepperoniPizza -> headfirst_factory_pizzafm_Pizza [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_factory_pizzafm_ChicagoPizzaStore -> headfirst_factory_pizzafm_ChicagoStyleCheesePizza [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_Onion -> headfirst_factory_pizzaaf_Veggies [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+headfirst_factory_pizzaaf_ChicagoPizzaIngredientFactory -> headfirst_factory_pizzaaf_MozzarellaCheese [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+}
