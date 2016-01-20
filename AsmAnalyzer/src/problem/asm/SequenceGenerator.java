@@ -2,6 +2,8 @@ package problem.asm;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.regex.Matcher;
@@ -11,6 +13,8 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 
+import problem.asm.model.IClass;
+import problem.asm.model.IMethod;
 import problem.asm.model.IModel;
 import problem.asm.model.Model;
 import problem.asm.visitor.IVisitor;
@@ -99,11 +103,11 @@ public class SequenceGenerator {
 		this.toVisit.add(new MethodSignature(owner, name, desc, level));
 	}
 	
-	public void addMethodFromString(String signature) {
+	public void addMethodFromString(String signature, int depth) {
 		this.addMethod(this.getMethodClass(signature),
 				this.getMethodName(signature),
 				this.getMethodDesc(signature),
-				3); // TODO: make this not hard-coded but use the input parameter
+				depth); // TODO: make this not hard-coded but use the input parameter
 	}
 	
 	public MethodSignature getNextMethod() {
@@ -114,22 +118,39 @@ public class SequenceGenerator {
 		return this.toVisit.remove();
 	}
 	
-	public void writeSequence(OutputStream out) throws IOException {
+	public void writeSequence(String method, OutputStream out) throws IOException {
 		
 		ClassVisitor decVisitor = new ClassDeclarationVisitor(Opcodes.ASM5, model);
 		ClassMethodVisitor methodVisitor = new ClassMethodVisitor(Opcodes.ASM5, decVisitor);
 		ClassVisitor callsVisitor = new ClassCallsVisitor(Opcodes.ASM5, methodVisitor, this);
 		
 		while (!this.toVisit.isEmpty()) {
-			
+
 			ClassReader cr = new ClassReader(ClassNameStandardizer.forASM(this.toVisit.peek().getOwner()));
 			cr.accept(callsVisitor, ClassReader.EXPAND_FRAMES);
 			
 		}
 		
-		IVisitor methodSDOutputStream = new MethodSDOutputStream(System.out);
-		model.accept(methodSDOutputStream);
+		IVisitor classSDOutputStream = new ClassSDOutputStream(System.out);
+		model.accept(classSDOutputStream);
 		
+		IVisitor methodSDOutputStream = new MethodSDOutputStream(System.out);
+		
+		// Find the appropriate method to visit first
+		String className = ClassNameStandardizer.standardize(this.getMethodClass(method));
+		IClass classModel = model.getClass(className);
+		
+		String methodName = this.getMethodName(method);
+		String methodDesc = this.getMethodDesc(method);
+		Iterator<IMethod> it = classModel.getMethodIterator();
+		IMethod methodModel = null;
+		while (it.hasNext()) {
+			IMethod thisMethod = it.next();
+			if (thisMethod.getName().equals(methodName) && thisMethod.getDesc().startsWith(methodDesc)) 
+				methodModel = thisMethod;
+		}
+		
+		methodModel.accept(methodSDOutputStream);
 	}
 	
 	public static SequenceGenerator getInstance() {
@@ -140,10 +161,24 @@ public class SequenceGenerator {
 	}
 
 	public static void main(String[] args) throws IOException {
+		if (args.length < 1) {
+			System.out.println("Usage: SequenceGenerator <methodSignature> [depth=5]");
+		}
 		String method = args[0];
+		
+		int depth = 5;
+		if (args.length > 1) {
+			try {
+				depth = Integer.parseInt(args[1]);
+			}
+			catch (NumberFormatException ex) {
+				depth = 5;
+			}
+		}
+		
 		SequenceGenerator instance = getInstance();
-		instance.addMethodFromString(method);
-		instance.writeSequence(System.out);
+		instance.addMethodFromString(method, depth);
+		instance.writeSequence(method, System.out);
 	}
 
 }

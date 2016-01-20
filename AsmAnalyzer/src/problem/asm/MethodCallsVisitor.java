@@ -1,8 +1,10 @@
 package problem.asm;
 
 import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Type;
 
 import problem.asm.model.IClass;
+import problem.asm.model.AccessLevel;
 import problem.asm.model.Class;
 import problem.asm.model.IClassModelHolder;
 import problem.asm.model.IMethod;
@@ -48,6 +50,10 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 			destMethod.setOwner(destClass);
 			destMethod.setName(name);
 			destMethod.setDesc(desc);
+
+			addReturnType(destMethod, desc);
+			addArguments(destMethod, desc);
+			
 			destClass.addMethod(destMethod);
 		}
 		
@@ -74,6 +80,22 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 	@Override
 	public IMethod getMethod() {
 		return this.method;
+	}
+	
+	void addReturnType(IMethod method, String desc){
+		
+		String returnType = Type.getReturnType(desc).getClassName();
+		method.setReturnType(returnType);
+
+	}
+	
+	void addArguments(IMethod method, String desc){
+		Type[] args = Type.getArgumentTypes(desc);
+		String[] argStrings = new String[args.length];
+	    for (int i=0; i < args.length; i++){
+	    	argStrings[i] = args[i].getClassName();
+	    }
+	    method.setArgTypes(argStrings);
 	}
 
 }

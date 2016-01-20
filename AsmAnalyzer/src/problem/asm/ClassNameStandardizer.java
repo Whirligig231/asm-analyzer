@@ -7,13 +7,13 @@ public class ClassNameStandardizer {
 	public static String standardize(String className) {
 		if (className == null)
 			return null;
-		return className.replaceAll("[./$]", "_");
+		return className.replaceAll("[$]", "__").replaceAll("[./]", "_");
 	}
 
 	public static String forASM(String className) {
 		if (className == null)
 			return null;
-		return ClassNameStandardizer.standardize(className).replaceAll("_", "/");
+		return ClassNameStandardizer.standardize(className).replaceAll("__", "\\$").replaceAll("_", "/");
 	}
 
 }

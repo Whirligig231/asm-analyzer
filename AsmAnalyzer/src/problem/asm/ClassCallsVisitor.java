@@ -40,7 +40,7 @@ public class ClassCallsVisitor extends ClassVisitor implements IClassModelHolder
 	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces){
 		super.visit(version, access, name, signature, superName, interfaces);		
 		this.name = name;
-		
+
 		ClassVisitor dec = new ClassNoDeclarationVisitor(this.api, this);
 		
 		try {

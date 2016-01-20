@@ -51,8 +51,15 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 			method.setOwner(this.getClassModel());
 			method.setName(name);
 			method.setDesc(desc);
+
+			addReturnType(method, desc);
+			addArguments(method, desc);
+			
 			this.getClassModel().addMethod(method);
 		}
+		
+
+		addAccessLevel(method, access);
 		
 		Matcher m = Pattern.compile("L([^<;]*);").matcher(desc);
 		while (m.find()) {
@@ -64,10 +71,6 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 			}
 		}
 
-		addAccessLevel(method, access);
-		addReturnType(method, desc);
-		addArguments(method, desc);
-		
 		this.method = method;
 
 		return decorated;
