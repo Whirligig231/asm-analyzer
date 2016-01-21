@@ -76,9 +76,9 @@ public class ClassFieldVisitorTest {
 		while(relationIterator.hasNext()){
 			IRelation relation = relationIterator.next();
 			try{
-				System.out.println(relation.getFirstClass().getName());
-				System.out.println(relation.getSecondClass().getName());
-				System.out.println(relation.getType());
+//				System.out.println(relation.getFirstClass().getName());
+//				System.out.println(relation.getSecondClass().getName());
+//				System.out.println(relation.getType());
 				assertTrue(relation.getFirstClass().getName().equals("problem_asm_tests_classes_Car") &&
 						relation.getSecondClass().getName().equals("problem_asm_tests_classes_Engine") &&
 						relation.getType() == RelationType.ASSOCIATES);
