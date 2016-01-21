@@ -28,6 +28,36 @@ java_util_Random:java_util_concurrent_atomic_AtomicLong.compareAndSet(long, long
 java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLong(java.lang.Object, long, long, long)\: boolean
 java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLong(java.lang.Object, long, long, long)\: boolean
 java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLong(java.lang.Object, long, long, long)\: boolean
+java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLjava_util_List:java_util_List[a]
+java_util_ListIterator:java_util_ListIterator[a]
+java_lang_Throwable:java_lang_Throwable[a]
+java_lang_IllegalArgumentException:java_lang_IllegalArgumentException[a]
+java_util_concurrent_atomic_AtomicLong:java_util_concurrent_atomic_AtomicLong[a]
+java_util_Random:java_util_Random[a]
+java_lang_Exception:java_lang_Exception[a]
+java_lang_Object:java_lang_Object[a]
+java_util_Collections:java_util_Collections[a]
+sun_misc_Unsafe:sun_misc_Unsafe[a]
+
+java_util_Collections:java_util_Random.<init>()\: void
+java_util_Collections:java_util_Collections.shuffle(java.util.List, java.util.Random)\: void
+java_util_Collections:java_util_List.size()\: int
+java_util_Collections:java_util_Random.nextInt(int)\: int
+java_util_Random:java_lang_IllegalArgumentException.<init>(java.lang.String)\: void
+java_lang_IllegalArgumentException:java_lang_Exception.<init>(java.lang.String)\: void
+java_lang_Exception:java_lang_Object.<init>()\: void
+java_lang_Exception:java_lang_Throwable.fillInStackTrace()\: java.lang.Throwable
+java_lang_Throwable:java_lang_Throwable.fillInStackTrace(int)\: java.lang.Throwable
+java_lang_Throwable:java_lang_Throwable.fillInStackTrace(int)\: java.lang.Throwable
+java_lang_Exception:java_lang_Object.<init>()\: void
+java_lang_Exception:java_lang_Throwable.fillInStackTrace()\: java.lang.Throwable
+java_lang_IllegalArgumentException:java_lang_Exception.<init>(java.lang.String)\: void
+java_util_Random:java_util_Random.next(int)\: int
+java_util_Random:java_util_concurrent_atomic_AtomicLong.get()\: long
+java_util_Random:java_util_concurrent_atomic_AtomicLong.compareAndSet(long, long)\: boolean
+java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLong(java.lang.Object, long, long, long)\: boolean
+java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLong(java.lang.Object, long, long, long)\: boolean
+java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLong(java.lang.Object, long, long, long)\: boolean
 java_util_concurrent_atomic_AtomicLong:sun_misc_Unsafe.compareAndSwapLong(java.lang.Object, long, long, long)\: boolean
 java_util_Random:java_util_concurrent_atomic_AtomicLong.get()\: long
 java_util_Random:java_util_concurrent_atomic_AtomicLong.compareAndSet(long, long)\: boolean
@@ -49,4 +79,3 @@ java_util_Collections:java_util_Collections.swap(java.lang.Object[], int, int)\:
 java_util_Collections:java_util_List.listIterator()\: java.util.ListIterator
 java_util_Collections:java_util_ListIterator.next()\: java.lang.Object
 java_util_Collections:java_util_ListIterator.set(java.lang.Object)\: void
-

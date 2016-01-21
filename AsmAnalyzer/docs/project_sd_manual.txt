@@ -19,6 +19,12 @@ statcns:ClassNameStandardizer[a]
 /decorated2:MethodUsingVisitor "decorated:MethodUsingVisitor"
 /cv:Visitor "visitor:Visitor"
 /mv:Visitor "visitor:Visitor"
+/pvcm:IVisitMethod "command:IVisitMethod"
+/pvmm:IVisitMethod "command:IVisitMethod"
+/vmm:IVisitMethod "command:IVisitMethod"
+/pvck:LookupKey "key:LookupKey"
+/pvmk:LookupKey "key:LookupKey"
+/vmk:LookupKey "key:LookupKey"
 
 statm:instance=statm.getInstance
 statm:instance=instance.new
@@ -88,33 +94,63 @@ callsVisitor:statm.getInstance
 callsVisitor:ms.getLevel
 callsVisitor:decorated=decorated.new
 cr:decorated2.visitTypeInsn
-# TODO Fill in code for visitTypeInsn
+decorated2:decorated2.processUse
+decorated2:statcns.standardize
+decorated2:model.getClass
+decorated2:model.addRelation
 cr:decorated2.visitFieldInsn
-# TODO Fill in code for visitFieldInsn
+decorated2:decorated2.processUse
+decorated2:statcns.standardize
+decorated2:model.getClass
+decorated2:model.addRelation
 cr:decorated2.visitMethodInsn
-# TODO Fill in code for visitMethodInsn
+decorated2:decorated2.processUse
+decorated2:statcns.standardize
+decorated2:model.getClass
+decorated2:model.addRelation
 cr:decorated.visitMethodInsn
-# TODO Fill in code blah blah you get the idea
+decorated:statcns.standardize
+decorated:destClass=model.getClass
+decorated:statcns.standardize
+decorated:classModel.setName
+decorated:model.addClass
+decorated:destMethod=classModel.getMethod
+decorated:method.setOwner
+decorated:method.setName
+decorated:method.setDesc
+decorated:decorated.addReturnType
+decorated:method.setReturnType
+decorated:decorated.addArguments
+decorated:method.setArgTypes
+decorated:classModel.addMethod
+decorated:statcns.standardize
+decorated:instance.addMethod
 instance:classSDOutputStream=classSDOutputStream.new
 classSDOutputStream:visitor=cv.new
 classSDOutputStream:classSDOutputStream.setupPostVisitModel
-# TODO Fill in code for the above
+classSDOutputStream:command=pvmm.new
+classSDOutputStream:cv.addVisit
 classSDOutputStream:classSDOutputStream.setupPreVisitClass
-# TODO Take a wild guess what you have to do here
+classSDOutputStream:command=pvcm.new
+classSDOutputStream:cv.addVisit
 instance:classSDOutputStream.write
 classSDOutputStream:model.accept
 model:cv.preVisit
-# TODO Blah blah etc etc
+cv:cv.doVisit
+cv:key=pvck.new
+cv:pvcm.execute
 model:classModel.accept
-# TODO Wheeeee
+classModel:method.accept
 model:relation.accept
-# TODO Insert unprofessional comment here
 model:cv.postVisit
-# TODO I hope you made lots of spaghetti!
+cv:cv.doVisit
+cv:key=pvmk.new
+cv:pvmm.execute
 instance:methodSDOutputStream=methodSDOutputStream.new
 methodSDOutputStream:visitor=mv.new
 methodSDOutputStream:methodSDOutputStream.setupVisitMethod
-# TODO Alphys is my waifu
+methodSDOutputStream:command=vmm.new
+methodSDOutputStream:mv.addVisit
 instance:instance.getMethodClass
 instance[1]:className=statcns.standardize
 instance:classModel=model.getClass
@@ -125,5 +161,17 @@ instance:method.getName
 instance:method.getDesc
 instance:methodSDOutputStream.write
 methodSDOutputStream:method.accept
-method:cv.visit
-# TODO One last one here
+method:mv.visit
+mv:mv.doVisit
+mv:key=vmk.new
+mv:vmm.execute
+vmm:method.getCallIterator
+vmm:method.getOwner
+vmm:classModel.getName
+vmm:method.getOwner
+vmm:classModel.getName
+vmm:method.getName
+vmm:method.getArgTypes
+vmm:method.getArgTypes
+vmm:method.getReturnType
+vmm:method.accept
