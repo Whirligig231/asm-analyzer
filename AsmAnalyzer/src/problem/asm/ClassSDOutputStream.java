@@ -1,24 +1,25 @@
 package problem.asm;
 
+import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Collection;
-import java.util.Iterator;
 
 import problem.asm.model.IClass;
-import problem.asm.model.IField;
-import problem.asm.model.IMethod;
 import problem.asm.model.IModel;
-import problem.asm.model.IRelation;
-import problem.asm.model.RelationType;
-import problem.asm.visitor.VisitorAdapter;
+import problem.asm.visitor.ITraverser;
+import problem.asm.visitor.IVisitMethod;
+import problem.asm.visitor.IVisitor;
+import problem.asm.visitor.VisitType;
+import problem.asm.visitor.Visitor;
 
-public class ClassSDOutputStream extends VisitorAdapter {
-
-	private final OutputStream out;
+public class ClassSDOutputStream extends FilterOutputStream {
+	private final IVisitor visitor;
 	
 	public ClassSDOutputStream(OutputStream out) throws IOException {
-		this.out = out;
+		super(out);
+		this.visitor = new Visitor();
+		this.setupPostVisitModel();
+		this.setupPreVisitClass();
 	}
 	
 	private void write(String m) {
@@ -30,16 +31,32 @@ public class ClassSDOutputStream extends VisitorAdapter {
 		}
 	}
 	
-	@Override
-	public void preVisit(IClass c) {
-		// System.out.println("CLASS IS "+c+" "+c.getName());
-		String line = String.format("%s:%s[a]\n", c.getName(), c.getName());
-		this.write(line);
+	public void write(IModel m) {
+		ITraverser t = (ITraverser) m;
+		t.accept(this.visitor);
+	}
+	
+	private void setupPreVisitClass() {
+		IVisitMethod command = new IVisitMethod() {
+			@Override
+			public void execute(ITraverser t) {
+				IClass c = (IClass)t;
+				String line = String.format("%s:%s[a]\n", c.getName(), c.getName());
+				write(line);
+			}
+		};
+		this.visitor.addVisit(VisitType.PreVisit, IClass.class, command);
 	}
 
-	@Override
-	public void postVisit(IModel m) {
-		this.write("\n");
+	private void setupPostVisitModel() {
+		IVisitMethod command = new IVisitMethod() {
+			@Override
+			public void execute(ITraverser t) {
+				IModel c = (IModel)t;
+				write("\n");
+			}
+		};
+		this.visitor.addVisit(VisitType.PostVisit, IModel.class, command);
 	}
 	
 }

@@ -131,10 +131,10 @@ public class SequenceGenerator {
 			
 		}
 		
-		IVisitor classSDOutputStream = new ClassSDOutputStream(System.out);
-		model.accept(classSDOutputStream);
+		ClassSDOutputStream classSDOutputStream = new ClassSDOutputStream(System.out);
+		classSDOutputStream.write(model);
 		
-		IVisitor methodSDOutputStream = new MethodSDOutputStream(System.out);
+		MethodSDOutputStream methodSDOutputStream = new MethodSDOutputStream(System.out);
 		
 		// Find the appropriate method to visit first
 		String className = ClassNameStandardizer.standardize(this.getMethodClass(method));
@@ -150,7 +150,7 @@ public class SequenceGenerator {
 				methodModel = thisMethod;
 		}
 		
-		methodModel.accept(methodSDOutputStream);
+		methodSDOutputStream.write(methodModel);
 	}
 	
 	public static SequenceGenerator getInstance() {
