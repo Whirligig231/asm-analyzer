@@ -45,4 +45,6 @@ Steven helped to add these additional arrows to the DOT conversion visitor and r
 
 In this milestone, sequence diagramming was added. This code works by keeping a queue of which methods need to be found. The code, created by Christian, visits these methods' classes, finds the appropriate methods, and adds them into the model. Christian also added a calls list for each method, giving the calls to other methods that it makes.
 
-Steven then created a new visitor, **STEVEN PLEASE PUT YOUR VISITOR NAME HERE**, to traverse the modelled structure and build the SDEdit sequence diagram. **MAYBE EXPLAIN WHAT IT'S DOING A BIT?**
+Christian then proceeded to create two new visitors, ClassSDOutputStream and MethodSDOutputStream, which are used to generate sequence diagrams. ClassSDOutputStream traverses the IModel in a similar manner to ClassUmlOutputStream to create SDEdit declarations for all of the classes. MethodSDOutputStream finds the specific method that the SequenceGenerator gives it and recursively visits all of the methods that it calls.
+
+Steven, meanwhile, refactored our visitor code to use the Command pattern, so that we can continue to develop visitors for our IModel model without having a large number of different visit() methods, with different signatures, in IVisitor and VisitorAdapter. In the new design, VisitorAdapter is replaced by Visitor, a concrete class, and the various OutputStream classes compose a Visitor rather than extending one.
