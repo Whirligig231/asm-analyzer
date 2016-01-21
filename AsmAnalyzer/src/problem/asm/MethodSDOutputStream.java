@@ -16,12 +16,10 @@ import problem.asm.visitor.Visitor;
 
 public class MethodSDOutputStream extends FilterOutputStream {
 	private final IVisitor visitor;
-	private StringBuilder methodSection;
 	private Set<IMethod> visited; // This is to avoid endless loops otherwise caused by recursive functions
 	
 	public MethodSDOutputStream(OutputStream out) throws IOException {
 		super(out);
-		this.methodSection = new StringBuilder();
 		this.visited = new HashSet<IMethod>();
 		this.visitor = new Visitor();
 		this.setupVisitMethod();
