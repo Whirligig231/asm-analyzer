@@ -5,7 +5,6 @@ java_util_regex_Pattern__SliceS:java_util_regex_Pattern__SliceS[a]
 java_util_regex_Pattern:java_util_regex_Pattern[a]
 java_lang_Float:java_lang_Float[a]
 java_util_regex_Pattern__BranchConn:java_util_regex_Pattern__BranchConn[a]
-java_util_HashSet:java_util_HashSet[a]
 sun_nio_ch_Interruptible:sun_nio_ch_Interruptible[a]
 java_lang_StringBuilder:java_lang_StringBuilder[a]
 problem_asm_ClassDeclarationVisitor:problem_asm_ClassDeclarationVisitor[a]
@@ -13,9 +12,9 @@ java_io_OutputStreamWriter:java_io_OutputStreamWriter[a]
 java_net_URLStreamHandler:java_net_URLStreamHandler[a]
 java_util_Arrays:java_util_Arrays[a]
 java_util_ArrayList:java_util_ArrayList[a]
+problem_asm_visitor_ITraverser:problem_asm_visitor_ITraverser[a]
 java_lang_SecurityManager:java_lang_SecurityManager[a]
 java_util_regex_Pattern__SliceI:java_util_regex_Pattern__SliceI[a]
-problem_asm_visitor_VisitorAdapter:problem_asm_visitor_VisitorAdapter[a]
 java_lang_RuntimeException:java_lang_RuntimeException[a]
 org_objectweb_asm_Context:org_objectweb_asm_Context[a]
 java_util_regex_Pattern__Start:java_util_regex_Pattern__Start[a]
@@ -64,7 +63,6 @@ java_lang_String:java_lang_String[a]
 org_objectweb_asm_Label:org_objectweb_asm_Label[a]
 java_util_regex_Pattern__BnM:java_util_regex_Pattern__BnM[a]
 java_util_regex_Matcher:java_util_regex_Matcher[a]
-java_util_AbstractCollection:java_util_AbstractCollection[a]
 java_text_Normalizer:java_text_Normalizer[a]
 problem_asm_model_IModel:problem_asm_model_IModel[a]
 java_lang_Integer:java_lang_Integer[a]
@@ -121,6 +119,7 @@ java_io_PrintStream:java_io_IOException.<init>(java.lang.String)\: void
 java_io_PrintStream:java_io_IOException.<init>(java.lang.String)\: void
 java_io_PrintStream:java_io_IOException.<init>(java.lang.String)\: void
 java_io_PrintStream:java_io_IOException.<init>(java.lang.String)\: void
+java_io_PrintStream:java_io_IOException.<init>(java.lang.String)\: void
 java_io_PrintStream:java_io_BufferedWriter.write(java.lang.String)\: void
 java_io_PrintStream:java_io_BufferedWriter.flushBuffer()\: void
 java_io_BufferedWriter:java_io_BufferedWriter.ensureOpen()\: void
@@ -128,6 +127,8 @@ java_io_BufferedWriter:java_io_IOException.<init>(java.lang.String)\: void
 java_io_BufferedWriter:java_io_IOException.<init>(java.lang.String)\: void
 java_io_BufferedWriter:java_io_IOException.<init>(java.lang.String)\: void
 java_io_BufferedWriter:java_io_IOException.<init>(java.lang.String)\: void
+java_io_BufferedWriter:java_io_Writer.write(char[], int, int)\: void
+java_io_BufferedWriter:java_io_BufferedWriter.ensureOpen()\: void
 java_io_BufferedWriter:java_io_Writer.write(char[], int, int)\: void
 java_io_BufferedWriter:java_io_BufferedWriter.ensureOpen()\: void
 java_io_BufferedWriter:java_io_Writer.write(char[], int, int)\: void
@@ -154,6 +155,7 @@ sun_nio_cs_StreamEncoder:java_io_IOException.<init>(java.lang.String)\: void
 sun_nio_cs_StreamEncoder:sun_nio_cs_StreamEncoder.isOpen()\: boolean
 sun_nio_cs_StreamEncoder:sun_nio_cs_StreamEncoder.implFlushBuffer()\: void
 sun_nio_cs_StreamEncoder:java_io_IOException.<init>(java.lang.String)\: void
+java_io_OutputStreamWriter:sun_nio_cs_StreamEncoder.flushBuffer()\: void
 java_io_OutputStreamWriter:sun_nio_cs_StreamEncoder.flushBuffer()\: void
 java_io_OutputStreamWriter:sun_nio_cs_StreamEncoder.flushBuffer()\: void
 java_io_OutputStreamWriter:sun_nio_cs_StreamEncoder.flushBuffer()\: void
@@ -199,6 +201,11 @@ java_lang_Thread:java_lang_Thread.checkAccess()\: void
 java_lang_Thread:java_lang_Thread.interrupt0()\: void
 java_lang_Thread:sun_nio_ch_Interruptible.interrupt(java.lang.Thread)\: void
 java_lang_Thread:java_lang_Thread.interrupt0()\: void
+java_lang_Thread:java_lang_Thread.currentThread()\: java.lang.Thread
+java_lang_Thread:java_lang_Thread.checkAccess()\: void
+java_lang_Thread:java_lang_Thread.interrupt0()\: void
+java_lang_Thread:sun_nio_ch_Interruptible.interrupt(java.lang.Thread)\: void
+java_lang_Thread:java_lang_Thread.interrupt0()\: void
 java_io_PrintStream:java_io_PrintStream.ensureOpen()\: void
 java_io_PrintStream:java_io_BufferedWriter.write(java.lang.String)\: void
 java_io_PrintStream:java_io_BufferedWriter.flushBuffer()\: void
@@ -215,6 +222,15 @@ java_io_PrintStream:java_lang_String.indexOf(int)\: int
 java_io_PrintStream:java_io_OutputStream.flush()\: void
 java_io_PrintStream:java_lang_Thread.currentThread()\: java.lang.Thread
 java_io_PrintStream:java_lang_Thread.interrupt()\: void
+java_io_PrintStream:java_io_PrintStream.ensureOpen()\: void
+java_io_PrintStream:java_io_BufferedWriter.write(java.lang.String)\: void
+java_io_PrintStream:java_io_BufferedWriter.flushBuffer()\: void
+java_io_PrintStream:java_io_OutputStreamWriter.flushBuffer()\: void
+java_io_PrintStream:java_lang_String.indexOf(int)\: int
+java_io_PrintStream:java_io_OutputStream.flush()\: void
+java_io_PrintStream:java_lang_Thread.currentThread()\: java.lang.Thread
+java_io_PrintStream:java_lang_Thread.interrupt()\: void
+java_io_PrintStream:java_io_PrintStream.write(java.lang.String)\: void
 java_io_PrintStream:java_io_PrintStream.newLine()\: void
 java_io_PrintStream:java_io_PrintStream.ensureOpen()\: void
 java_io_PrintStream:java_io_BufferedWriter.newLine()\: void
@@ -244,6 +260,22 @@ java_io_PrintStream:java_io_OutputStreamWriter.flushBuffer()\: void
 java_io_PrintStream:java_io_OutputStream.flush()\: void
 java_io_PrintStream:java_lang_Thread.currentThread()\: java.lang.Thread
 java_io_PrintStream:java_lang_Thread.interrupt()\: void
+java_io_PrintStream:java_io_PrintStream.ensureOpen()\: void
+java_io_PrintStream:java_io_BufferedWriter.newLine()\: void
+java_io_PrintStream:java_io_BufferedWriter.flushBuffer()\: void
+java_io_PrintStream:java_io_OutputStreamWriter.flushBuffer()\: void
+java_io_PrintStream:java_io_OutputStream.flush()\: void
+java_io_PrintStream:java_lang_Thread.currentThread()\: java.lang.Thread
+java_io_PrintStream:java_lang_Thread.interrupt()\: void
+java_io_PrintStream:java_io_PrintStream.ensureOpen()\: void
+java_io_PrintStream:java_io_BufferedWriter.newLine()\: void
+java_io_PrintStream:java_io_BufferedWriter.flushBuffer()\: void
+java_io_PrintStream:java_io_OutputStreamWriter.flushBuffer()\: void
+java_io_PrintStream:java_io_OutputStream.flush()\: void
+java_io_PrintStream:java_lang_Thread.currentThread()\: java.lang.Thread
+java_io_PrintStream:java_lang_Thread.interrupt()\: void
+java_io_PrintStream:java_io_PrintStream.print(java.lang.String)\: void
+java_io_PrintStream:java_io_PrintStream.newLine()\: void
 problem_asm_SequenceGenerator:java_lang_Integer.parseInt(java.lang.String)\: int
 java_lang_Integer:java_lang_Integer.parseInt(java.lang.String, int)\: int
 java_lang_Integer:java_lang_NumberFormatException.<init>(java.lang.String)\: void
@@ -3609,13 +3641,11 @@ org_objectweb_asm_ClassVisitor:org_objectweb_asm_ClassVisitor.visitEnd()\: void
 org_objectweb_asm_ClassVisitor:org_objectweb_asm_ClassVisitor.visitEnd()\: void
 problem_asm_SequenceGenerator:java_util_Queue.isEmpty()\: boolean
 problem_asm_SequenceGenerator:problem_asm_ClassSDOutputStream.<init>(java.io.OutputStream)\: void
-problem_asm_ClassSDOutputStream:problem_asm_visitor_VisitorAdapter.<init>()\: void
-problem_asm_visitor_VisitorAdapter:java_lang_Object.<init>()\: void
-problem_asm_SequenceGenerator:problem_asm_model_IModel.accept(problem.asm.visitor.IVisitor)\: void
+problem_asm_ClassSDOutputStream:java_io_OutputStream.<init>()\: void
+problem_asm_SequenceGenerator:problem_asm_ClassSDOutputStream.write(problem.asm.model.IModel)\: void
+problem_asm_ClassSDOutputStream:problem_asm_visitor_ITraverser.accept(problem.asm.visitor.IVisitor)\: void
 problem_asm_SequenceGenerator:problem_asm_MethodSDOutputStream.<init>(java.io.OutputStream)\: void
-problem_asm_MethodSDOutputStream:problem_asm_visitor_VisitorAdapter.<init>()\: void
-problem_asm_MethodSDOutputStream:java_util_HashSet.<init>()\: void
-java_util_HashSet:java_util_AbstractCollection.<init>()\: void
+problem_asm_MethodSDOutputStream:java_io_OutputStream.<init>()\: void
 problem_asm_SequenceGenerator:problem_asm_SequenceGenerator.getMethodClass(java.lang.String)\: java.lang.String
 problem_asm_SequenceGenerator:problem_asm_ClassNameStandardizer.standardize(java.lang.String)\: java.lang.String
 problem_asm_SequenceGenerator:problem_asm_model_IModel.getClass(java.lang.String)\: problem.asm.model.IClass
@@ -3629,4 +3659,6 @@ problem_asm_SequenceGenerator:problem_asm_model_IMethod.getDesc()\: java.lang.St
 problem_asm_SequenceGenerator:java_lang_String.startsWith(java.lang.String)\: boolean
 java_lang_String:java_lang_String.startsWith(java.lang.String, int)\: boolean
 problem_asm_SequenceGenerator:java_util_Iterator.hasNext()\: boolean
-problem_asm_SequenceGenerator:problem_asm_model_IMethod.accept(problem.asm.visitor.IVisitor)\: void
+problem_asm_SequenceGenerator:problem_asm_MethodSDOutputStream.write(problem.asm.model.IMethod)\: void
+problem_asm_MethodSDOutputStream:java_io_PrintStream.println(java.lang.String)\: void
+problem_asm_MethodSDOutputStream:problem_asm_visitor_ITraverser.accept(problem.asm.visitor.IVisitor)\: void

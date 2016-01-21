@@ -1,0 +1,129 @@
+statm:SequenceGenerator[a]
+/instance:SequenceGenerator
+/ms:MethodSignature[a]
+/decVisitor:ClassDeclarationVisitor
+/methodVisitor:ClassMethodVisitor
+/callsVisitor:ClassCallsVisitor
+statcns:ClassNameStandardizer[a]
+/cr:ClassReader
+/classSDOutputStream:ClassSDOutputStream
+/methodSDOutputStream:MethodSDOutputStream
+/model:Model
+/classModel:Class
+/relation:Relation
+/method:Method
+/dec:ClassNoDeclarationVisitor
+/cr1:ClassReader[a]
+/cr2:ClassReader[a]
+/decorated:MethodCallsVisitor
+/decorated2:MethodUsingVisitor "decorated:MethodUsingVisitor"
+/cv:Visitor "visitor:Visitor"
+/mv:Visitor "visitor:Visitor"
+
+statm:instance=statm.getInstance
+statm:instance=instance.new
+statm:model=model.new
+statm[1]:instance.addMethodFromString
+instance:instance.getMethodClass
+instance[1]:instance.getMethodName
+instance[1]:instance.getMethodDesc
+instance[1]:instance.addMethod
+instance:ms.new
+statm:instance.writeSequence
+instance:decVisitor=decVisitor.new
+instance:methodVisitor=methodVisitor.new
+instance:callsVisitor=callsVisitor.new
+instance:ms.getOwner
+instance:statcns.forASM
+instance:cr=cr.new
+instance:cr.accept
+cr:callsVisitor.visit
+callsVisitor:decVisitor.visit
+decVisitor:statcns.standardize
+decVisitor:classModel=model.getClass
+decVisitor:classModel=classModel.new
+decVisitor:statcns.standardize
+decVisitor:model.addClass
+decVisitor:classModel.setAccessLevel
+decVisitor:statcns.standardize
+decVisitor:model.getClass
+decVisitor:relation=relation.new
+decVisitor:model.addRelation
+decVisitor:statcns.standardize
+decVisitor:model.getClass
+decVisitor:model.addRelation
+callsVisitor:dec.new
+callsVisitor:cr1.new
+callsVisitor:cr1.accept
+callsVisitor:cr2.new
+callsVisitor:cr2.accept
+cr:callsVisitor.visitMethod
+callsVisitor:methodVisitor.visitMethod
+methodVisitor:decorated=decorated2.new
+methodVisitor:methodVisitor.getClassModel
+methodVisitor[1]:method=classModel.getMethod
+methodVisitor:method=method.new
+methodVisitor:methodVisitor.getClassModel
+methodVisitor[1]:method.setOwner
+methodVisitor:method.setName
+methodVisitor:method.setDesc
+methodVisitor:methodVisitor.addReturnType
+methodVisitor:method.setReturnType
+methodVisitor:methodVisitor.addArguments
+methodVisitor:method.setArgTypes
+methodVisitor:methodVisitor.getClassModel
+methodVisitor[1]:classModel.addMethod
+methodVisitor:methodVisitor.addAccessLevel
+methodVisitor:method.setAccessLevel
+methodVisitor:statcns.standardize
+methodVisitor:model.getClass
+methodVisitor:methodVisitor.getClassModel
+methodVisitor[1]:model.addRelation
+model:relation.getType
+callsVisitor:next=instance.getNextMethod
+callsVisitor:ms.getName
+callsVisitor:ms.getDesc
+callsVisitor:instance.popNextMethod
+callsVisitor:statm.getInstance
+callsVisitor:ms.getLevel
+callsVisitor:decorated=decorated.new
+cr:decorated2.visitTypeInsn
+# TODO Fill in code for visitTypeInsn
+cr:decorated2.visitFieldInsn
+# TODO Fill in code for visitFieldInsn
+cr:decorated2.visitMethodInsn
+# TODO Fill in code for visitMethodInsn
+cr:decorated.visitMethodInsn
+# TODO Fill in code blah blah you get the idea
+instance:classSDOutputStream=classSDOutputStream.new
+classSDOutputStream:visitor=cv.new
+classSDOutputStream:classSDOutputStream.setupPostVisitModel
+# TODO Fill in code for the above
+classSDOutputStream:classSDOutputStream.setupPreVisitClass
+# TODO Take a wild guess what you have to do here
+instance:classSDOutputStream.write
+classSDOutputStream:model.accept
+model:cv.preVisit
+# TODO Blah blah etc etc
+model:classModel.accept
+# TODO Wheeeee
+model:relation.accept
+# TODO Insert unprofessional comment here
+model:cv.postVisit
+# TODO I hope you made lots of spaghetti!
+instance:methodSDOutputStream=methodSDOutputStream.new
+methodSDOutputStream:visitor=mv.new
+methodSDOutputStream:methodSDOutputStream.setupVisitMethod
+# TODO Alphys is my waifu
+instance:instance.getMethodClass
+instance[1]:className=statcns.standardize
+instance:classModel=model.getClass
+instance:methodName=instance.getMethodName
+instance[1]:methodDesc=instance.getMethodDesc
+instance:it=classModel.getMethodIterator
+instance:method.getName
+instance:method.getDesc
+instance:methodSDOutputStream.write
+methodSDOutputStream:method.accept
+method:cv.visit
+# TODO One last one here
