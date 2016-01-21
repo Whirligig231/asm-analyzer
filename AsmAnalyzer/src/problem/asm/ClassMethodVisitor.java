@@ -5,9 +5,9 @@ import java.util.regex.Pattern;
 
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
+import problem.asm.model.AccessLevel;
 import problem.asm.model.IClass;
 import problem.asm.model.IClassModelHolder;
 import problem.asm.model.IMethod;
@@ -17,9 +17,6 @@ import problem.asm.model.IRelation;
 import problem.asm.model.Method;
 import problem.asm.model.Relation;
 import problem.asm.model.RelationType;
-import problem.asm.tests.Testable;
-import problem.asm.model.AccessLevel;
-import problem.asm.model.Class;
 
 public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolder, IMethodHolder {
 	

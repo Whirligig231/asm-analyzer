@@ -1,0 +1,24 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+Vehicle [
+	label = "{Vehicle||}"
+]
+Drivable [
+	label = "{Drivable||}"
+]
+Vehicle -> Drivable [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+}

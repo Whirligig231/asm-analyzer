@@ -1,7 +1,5 @@
 package problem.asm;
 
-import problem.asm.tests.Testable;
-
 public class ClassNameStandardizer {
 
 	public static String standardize(String className) {

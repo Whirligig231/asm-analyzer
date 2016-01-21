@@ -1,0 +1,24 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+Vehicle [
+	label = "{Vehicle||}"
+]
+Car [
+	label = "{Car|private engine : Engine\l|public start() : void\l}"
+]
+Car -> Vehicle [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+}
