@@ -1,16 +1,16 @@
 package problem.asm;
 
+import java.io.FilterOutputStream;
 import java.io.IOException;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 
-import problem.asm.model.IClass;
 import problem.asm.model.Class;
+import problem.asm.model.IClass;
 import problem.asm.model.IModel;
 import problem.asm.model.Model;
-import problem.asm.visitor.IVisitor;
 
 public class DesignParser {
 	/**
@@ -25,6 +25,7 @@ public class DesignParser {
 		IModel model = new Model();
 				
 		for(String className: args){
+			//System.out.println("Loading class: "+className);
 			IClass classModel = new Class();
 			classModel.setName(ClassNameStandardizer.standardize(className));
 			model.addClass(classModel);
@@ -51,8 +52,8 @@ public class DesignParser {
 
 		}
 		
-		IVisitor classUmlOutputStream = new ClassUmlOutputStream(System.out);
-		model.accept(classUmlOutputStream);
+		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
+		classUmlOutputStream.write(model);
 		
 	}
 }

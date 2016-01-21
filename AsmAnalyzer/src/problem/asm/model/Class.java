@@ -69,11 +69,11 @@ public class Class implements IClass {
 		for(IField field : this.fields){
 			field.accept(v);
 		}
-		v.postFieldsVisit(this);
+		v.visit(this);
 		for(IMethod method : this.methods.values()){
 			method.accept(v);
 		}
-		v.postMethodsVisit(this);
+		v.postVisit(this);
 	}
 
 	@Override

@@ -1,11 +1,11 @@
 package problem.asm.tests;
 
-import problem.asm.test.classes.ClassNameStandardizerTest;
+import problem.asm.test.classes.*;
 
 public class UnitTester {
 
 	public static void main(String[] args) {
-		Testable[] testingObjects = {new ClassNameStandardizerTest()};
+		Testable[] testingObjects = {new ClassNameStandardizerTest(), new AccessLevelTest(), new ClassUmlOutputStreamTest()};
 		int testsAttempted = 0;
 		int testsPassed = 0;
 		
@@ -15,7 +15,7 @@ public class UnitTester {
 				testsPassed++;
 		}
 		
-		System.out.println("Tests passed: "+testsAttempted+"/"+testsPassed);
+		System.out.println("Tests passed: "+testsPassed+"/"+testsAttempted);
 	}
 
 }
