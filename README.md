@@ -25,6 +25,12 @@ asm-analyzer's UML diagram tool currently supports:
 
 asm-analyzer's sequence diagram tool currently supports only class method calls, with no control structure.
 
+# Use
+
+To use asm-analyzer's UML diagram tool, pass DesignParser.main a list of class names you want to include in the diagram. This must be a fully qualified name, including the package.
+
+To use asm-analyzer's sequence diagram tool, pass SequenceGenerator.main a fully qualified method signature, including the owner class (with its package), the method name, and fully qualified argument types (but *not* the return type).
+
 # Design and implementation
 
 ## Milestone 1
