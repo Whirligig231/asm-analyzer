@@ -17,11 +17,11 @@ public class Class implements IClass {
 	private AccessLevel accessLevel;
 	
 	private Map<String, IMethod> methods;
-	private Collection<IField> fields;
+	private Map<String, IField> fields;
 	
 	public Class() {
 		this.methods = new HashMap<>();
-		this.fields = new ArrayList<>();
+		this.fields = new HashMap<>();
 	}
 
 	@Override
@@ -55,18 +55,18 @@ public class Class implements IClass {
 
 	@Override
 	public Iterator<IField> getFieldIterator() {
-		return this.fields.iterator();
+		return this.fields.values().iterator();
 	}
 
 	@Override
 	public void addField(IField field) {
-		this.fields.add(field);
+		this.fields.put(field.getName() + ": " + field.getType(), field);
 	}
 
 	@Override
 	public void accept(IVisitor v) {
 		v.preVisit(this);
-		for(IField field : this.fields){
+		for(IField field : this.fields.values()){
 			field.accept(v);
 		}
 		v.visit(this);
@@ -81,6 +81,11 @@ public class Class implements IClass {
 		// if (this.methods.get(name + desc) == null)
 			// System.out.println(this.toString()+" has no method "+name+desc);
 		return this.methods.get(name + desc);
+	}
+
+	@Override
+	public IField getField(String name, String type) {
+		return this.fields.get(name + ": " + type);
 	}
 
 }

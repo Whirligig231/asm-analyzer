@@ -21,5 +21,6 @@ public interface IClass extends ITraverser {
 	
 	public Iterator<IField> getFieldIterator();
 	public void addField(IField field);
+	public IField getField(String name, String type);
 
 }
