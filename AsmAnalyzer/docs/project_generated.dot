@@ -10,115 +10,144 @@ edge [
 fontname = "Bitstream Vera Sans"
 fontsize = 8
 ]
+problem_asm_model_IMethod
 problem_asm_model_IMethod [
-	label = "{problem.asm.model.IMethod||public setOwner(problem.asm.model.IClass) : void\lpublic getOwner() : problem.asm.model.IClass\lpublic getArgTypes() : java.lang.String[]\lpublic getReturnType() : java.lang.String\lpublic setName(java.lang.String) : void\lpublic setDesc(java.lang.String) : void\lpublic getDesc() : java.lang.String\lpublic setArgTypes(java.lang.String[]) : void\lpublic addStatement(problem.asm.model.IStatement) : void\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setReturnType(java.lang.String) : void\lpublic getName() : java.lang.String\lnull accept(problem.asm.visitor.IVisitor) : void\lpublic getStatementIterator() : java.util.ListIterator\l}"
+	label = "{problem.asm.model.IMethod||public setOwner(problem.asm.model.IClass) : void\lpublic getOwner() : problem.asm.model.IClass\lpublic getArgTypes() : java.lang.String[]\lpublic getReturnType() : java.lang.String\lpublic isStatic() : boolean\lpublic setName(java.lang.String) : void\lpublic setDesc(java.lang.String) : void\lpublic getDesc() : java.lang.String\lpublic setStatic(boolean) : void\lpublic setArgTypes(java.lang.String[]) : void\lpublic addStatement(problem.asm.model.IStatement) : void\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setReturnType(java.lang.String) : void\lpublic getName() : java.lang.String\lnull accept(problem.asm.visitor.IVisitor) : void\lpublic getStatementIterator() : java.util.ListIterator\l}"
 ]
+problem_asm_model_Relation
 problem_asm_model_Relation [
 	label = "{problem.asm.model.Relation|private firstClass : problem.asm.model.IClass\lprivate secondClass : problem.asm.model.IClass\lprivate type : problem.asm.model.RelationType\l|public getSecondClass() : problem.asm.model.IClass\lpublic getType() : problem.asm.model.RelationType\lpublic setSecondClass(problem.asm.model.IClass) : void\lpublic hashCode() : int\lpublic equals(java.lang.Object) : boolean\lpublic getFirstClass() : problem.asm.model.IClass\lpublic setType(problem.asm.model.RelationType) : void\lpublic \<init\>(problem.asm.model.IClass, problem.asm.model.IClass, problem.asm.model.RelationType) : void\lpublic setFirstClass(problem.asm.model.IClass) : void\lpublic accept(problem.asm.visitor.IVisitor) : void\l}"
 ]
+problem_asm_visitor_VisitType
 problem_asm_visitor_VisitType [
 	label = "{problem.asm.visitor.VisitType|public PreVisit : problem.asm.visitor.VisitType\lpublic PostVisit : problem.asm.visitor.VisitType\lpublic Visit : problem.asm.visitor.VisitType\lprivate ENUM$VALUES : problem.asm.visitor.VisitType[]\l|null hashCode() : int\lpublic valueOf(java.lang.String) : problem.asm.visitor.VisitType\ldefault \<clinit\>() : void\lprivate \<init\>(java.lang.String, int) : void\lpublic values() : problem.asm.visitor.VisitType[]\l}"
 ]
+problem_asm_model_IField
 problem_asm_model_IField [
-	label = "{problem.asm.model.IField||public setOwner(problem.asm.model.IClass) : void\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getOwner() : problem.asm.model.IClass\lpublic getName() : java.lang.String\lpublic getType() : java.lang.String\lpublic setType(java.lang.String) : void\lnull accept(problem.asm.visitor.IVisitor) : void\lpublic setName(java.lang.String) : void\l}"
+	label = "{problem.asm.model.IField||public setOwner(problem.asm.model.IClass) : void\lpublic setStatic(boolean) : void\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getOwner() : problem.asm.model.IClass\lpublic isStatic() : boolean\lpublic getName() : java.lang.String\lpublic getType() : java.lang.String\lpublic setType(java.lang.String) : void\lnull accept(problem.asm.visitor.IVisitor) : void\lpublic setName(java.lang.String) : void\l}"
 ]
+problem_asm_visitor_Visitor
 problem_asm_visitor_Visitor [
 	label = "{problem.asm.visitor.Visitor|default keyToVisitMethodMap : java.util.Map\l|public postVisit(problem.asm.visitor.ITraverser) : void\lpublic preVisit(problem.asm.visitor.ITraverser) : void\lprivate doVisit(problem.asm.visitor.VisitType, problem.asm.visitor.ITraverser) : void\lpublic addVisit(problem.asm.visitor.VisitType, java.lang.Class, problem.asm.visitor.IVisitMethod) : void\lpublic \<init\>() : void\lpublic visit(problem.asm.visitor.ITraverser) : void\lpublic removeVisit(problem.asm.visitor.VisitType, java.lang.Class) : void\l}"
 ]
+problem_asm_ClassDeclarationVisitor
 problem_asm_ClassDeclarationVisitor [
 	label = "{problem.asm.ClassDeclarationVisitor|private classModel : problem.asm.model.IClass\lprivate model : problem.asm.model.IModel\l|public \<init\>(int, problem.asm.model.IModel) : void\lpublic visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic getClassModel() : problem.asm.model.IClass\lpublic getModel() : problem.asm.model.IModel\l}"
 ]
+problem_asm_model_Class
 problem_asm_model_Class [
-	label = "{problem.asm.model.Class|private accessLevel : problem.asm.model.AccessLevel\lprivate name : java.lang.String\lprivate methods : java.util.Map\lprivate fields : java.util.Map\l|public getMethodIterator() : java.util.Iterator\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getFieldIterator() : java.util.Iterator\lpublic getName() : java.lang.String\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\lpublic setName(java.lang.String) : void\lpublic addField(problem.asm.model.IField) : void\lpublic getMethod(java.lang.String, java.lang.String) : problem.asm.model.IMethod\lpublic getField(java.lang.String, java.lang.String) : problem.asm.model.IField\lpublic addMethod(problem.asm.model.IMethod) : void\l}"
+	label = "{problem.asm.model.Class|private accessLevel : problem.asm.model.AccessLevel\lprivate name : java.lang.String\lprivate model : problem.asm.model.IModel\lprivate methods : java.util.Map\lprivate fields : java.util.Map\l|public getFieldIterator() : java.util.Iterator\lpublic setOwner(problem.asm.model.IModel) : void\lpublic setName(java.lang.String) : void\lpublic getMethod(java.lang.String, java.lang.String) : problem.asm.model.IMethod\lpublic getField(java.lang.String, java.lang.String) : problem.asm.model.IField\lpublic getOwner() : problem.asm.model.IModel\lpublic getMethodIterator() : java.util.Iterator\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getName() : java.lang.String\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\lpublic addField(problem.asm.model.IField) : void\lpublic addMethod(problem.asm.model.IMethod) : void\l}"
 ]
+problem_asm_model_RelationType
 problem_asm_model_RelationType [
 	label = "{problem.asm.model.RelationType|public USES : problem.asm.model.RelationType\lprivate strValue : java.lang.String\lpublic EXTENDS : problem.asm.model.RelationType\lpublic IMPLEMENTS : problem.asm.model.RelationType\lprivate ENUM$VALUES : problem.asm.model.RelationType[]\lpublic ASSOCIATES : problem.asm.model.RelationType\l|public values() : problem.asm.model.RelationType[]\lpublic valueOf(java.lang.String) : problem.asm.model.RelationType\lnull hashCode() : int\ldefault \<clinit\>() : void\lpublic toString() : java.lang.String\lprivate \<init\>(java.lang.String, int, java.lang.String) : void\l}"
 ]
+problem_asm_visitor_ITraverser
 problem_asm_visitor_ITraverser [
 	label = "{problem.asm.visitor.ITraverser||public accept(problem.asm.visitor.IVisitor) : void\l}"
 ]
+problem_asm_MethodCallsVisitor
 problem_asm_MethodCallsVisitor [
 	label = "{problem.asm.MethodCallsVisitor|private classModel : problem.asm.model.IClass\lprivate model : problem.asm.model.IModel\lprivate sg : problem.asm.SequenceGenerator\lprivate level : int\lprivate method : problem.asm.model.IMethod\l|default addReturnType(problem.asm.model.IMethod, java.lang.String) : void\lpublic \<init\>(int, org.objectweb.asm.MethodVisitor, problem.asm.ClassMethodVisitor, problem.asm.SequenceGenerator, int) : void\lpublic visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String, boolean) : void\lpublic getClassModel() : problem.asm.model.IClass\ldefault addArguments(problem.asm.model.IMethod, java.lang.String) : void\lpublic getModel() : problem.asm.model.IModel\lpublic getMethod() : problem.asm.model.IMethod\l}"
 ]
+problem_asm_ClassUmlOutputStream
 problem_asm_ClassUmlOutputStream [
-	label = "{problem.asm.ClassUmlOutputStream|private visitor : problem.asm.visitor.IVisitor\lprivate classNames : java.util.Collection\l|private setupPreVisitMethod() : void\ldefault access$0(problem.asm.ClassUmlOutputStream) : java.util.Collection\lprivate setupPostFieldsVisitClass() : void\lprivate setupVisitField() : void\lprivate setupPreVisitClass() : void\lpublic \<init\>(java.io.OutputStream) : void\lpublic write(problem.asm.model.IModel) : void\lprivate setupPreVisitModel() : void\lprivate setupPostMethodsVisitClass() : void\lpublic addClassName(java.lang.String) : void\lprivate setupVisitRelation() : void\lprivate setupPostVisitModel() : void\ldefault access$1(problem.asm.ClassUmlOutputStream, java.lang.String) : void\lprivate write(java.lang.String) : void\l}"
+	label = "{problem.asm.ClassUmlOutputStream|private visitor : problem.asm.visitor.IVisitor\lprivate classNames : java.util.Collection\l|private setupPreVisitMethod() : void\ldefault access$0(problem.asm.ClassUmlOutputStream) : java.util.Collection\lprivate setupPostFieldsVisitClass() : void\lprivate setupVisitField() : void\lprivate setupPreVisitClass() : void\lpublic \<init\>(java.io.OutputStream) : void\lpublic write(problem.asm.model.IModel) : void\lprivate setupPreVisitModel() : void\lprivate setupPostMethodsVisitClass() : void\lprotected classFormatHook(problem.asm.model.IClass) : java.lang.String\lpublic addClassName(java.lang.String) : void\lprivate setupVisitRelation() : void\lprivate setupPostVisitModel() : void\lprotected classNameHook(problem.asm.model.IClass) : java.lang.String\ldefault access$1(problem.asm.ClassUmlOutputStream, java.lang.String) : void\lnull \<init\>(problem.asm.ClassUmlOutputStream) : void\lprivate write(java.lang.String) : void\l}"
 ]
+problem_asm_model_Field
 problem_asm_model_Field [
-	label = "{problem.asm.model.Field|private owner : problem.asm.model.IClass\lprivate accessLevel : problem.asm.model.AccessLevel\lprivate name : java.lang.String\lprivate type : java.lang.String\l|public setOwner(problem.asm.model.IClass) : void\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getOwner() : problem.asm.model.IClass\lpublic getName() : java.lang.String\lpublic getType() : java.lang.String\lpublic setType(java.lang.String) : void\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\lpublic setName(java.lang.String) : void\l}"
+	label = "{problem.asm.model.Field|private owner : problem.asm.model.IClass\lprivate accessLevel : problem.asm.model.AccessLevel\lprivate name : java.lang.String\lprivate type : java.lang.String\lprivate isStatic : boolean\l|public setOwner(problem.asm.model.IClass) : void\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setStatic(boolean) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getOwner() : problem.asm.model.IClass\lpublic isStatic() : boolean\lpublic getName() : java.lang.String\lpublic getType() : java.lang.String\lpublic setType(java.lang.String) : void\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\lpublic setName(java.lang.String) : void\l}"
 ]
+problem_asm_ClassSDOutputStream
 problem_asm_ClassSDOutputStream [
-	label = "{problem.asm.ClassSDOutputStream|private visitor : problem.asm.visitor.IVisitor\lnull out : java.io.OutputStream\l|private setupPostVisitModel() : void\lprivate setupPreVisitClass() : void\lpublic \<init\>(java.io.OutputStream) : void\lprivate write(java.lang.String) : void\lpublic write(problem.asm.model.IModel) : void\ldefault access$0(problem.asm.ClassSDOutputStream, java.lang.String) : void\l}"
+	label = "{problem.asm.ClassSDOutputStream|private visitor : problem.asm.visitor.IVisitor\lnull out : java.io.OutputStream\l|private setupPostVisitModel() : void\lprivate setupPreVisitClass() : void\lnull \<init\>(problem.asm.ClassSDOutputStream) : void\lpublic \<init\>(java.io.OutputStream) : void\lprivate write(java.lang.String) : void\lpublic write(problem.asm.model.IModel) : void\ldefault access$0(problem.asm.ClassSDOutputStream, java.lang.String) : void\l}"
 ]
+problem_asm_ClassCallsVisitor
 problem_asm_ClassCallsVisitor [
 	label = "{problem.asm.ClassCallsVisitor|private name : java.lang.String\lnull api : int\lprivate decorated : problem.asm.ClassMethodVisitor\lprivate sg : problem.asm.SequenceGenerator\l|public \<init\>(int, problem.asm.ClassMethodVisitor, problem.asm.SequenceGenerator) : void\lpublic visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : org.objectweb.asm.MethodVisitor\lpublic getClassModel() : problem.asm.model.IClass\lpublic getModel() : problem.asm.model.IModel\lpublic getMethod() : problem.asm.model.IMethod\l}"
 ]
+problem_asm_visitor_IVisitor
 problem_asm_visitor_IVisitor [
 	label = "{problem.asm.visitor.IVisitor||public postVisit(problem.asm.visitor.ITraverser) : void\lpublic preVisit(problem.asm.visitor.ITraverser) : void\lpublic addVisit(problem.asm.visitor.VisitType, java.lang.Class, problem.asm.visitor.IVisitMethod) : void\lpublic visit(problem.asm.visitor.ITraverser) : void\lpublic removeVisit(problem.asm.visitor.VisitType, java.lang.Class) : void\l}"
 ]
+problem_asm_model_IMethodHolder
 problem_asm_model_IMethodHolder [
 	label = "{problem.asm.model.IMethodHolder||public getMethod() : problem.asm.model.IMethod\l}"
 ]
+problem_asm_MethodUsingVisitor
 problem_asm_MethodUsingVisitor [
 	label = "{problem.asm.MethodUsingVisitor|private classModel : problem.asm.model.IClass\lprivate model : problem.asm.model.IModel\l|private processUse(java.lang.String) : void\lpublic visitFieldInsn(int, java.lang.String, java.lang.String, java.lang.String) : void\lpublic \<init\>(int, org.objectweb.asm.MethodVisitor, problem.asm.ClassMethodVisitor) : void\lpublic visitTypeInsn(int, java.lang.String) : void\lpublic visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String, boolean) : void\lpublic getClassModel() : problem.asm.model.IClass\lpublic getModel() : problem.asm.model.IModel\l}"
 ]
+problem_asm_ClassMethodVisitor
 problem_asm_ClassMethodVisitor [
 	label = "{problem.asm.ClassMethodVisitor|null api : int\lprivate model : problem.asm.model.IModel\lprivate holder : problem.asm.model.IClassModelHolder\lprivate method : problem.asm.model.IMethod\l|default addAccessLevel(problem.asm.model.IMethod, int) : void\ldefault addReturnType(problem.asm.model.IMethod, java.lang.String) : void\lpublic visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : org.objectweb.asm.MethodVisitor\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\lpublic getClassModel() : problem.asm.model.IClass\ldefault addArguments(problem.asm.model.IMethod, java.lang.String) : void\lpublic getModel() : problem.asm.model.IModel\lpublic getMethod() : problem.asm.model.IMethod\l}"
 ]
+problem_asm_SequenceGenerator
 problem_asm_SequenceGenerator [
-	label = "{problem.asm.SequenceGenerator|private instance : problem.asm.SequenceGenerator\lprivate model : problem.asm.model.IModel\lprivate toVisit : java.util.Queue\l|public writeSequence(java.lang.String, java.io.OutputStream) : void\lprivate getMethodName(java.lang.String) : java.lang.String\lprivate getASMClass(java.lang.String) : java.lang.String\lpublic addMethodFromString(java.lang.String, int) : void\lpublic addMethod(java.lang.String, java.lang.String, java.lang.String, int) : void\lprivate getASMDesc(java.lang.String) : java.lang.String\lprivate getMethodClass(java.lang.String) : java.lang.String\lprivate getMethodDesc(java.lang.String) : java.lang.String\lpublic popNextMethod() : problem.asm.MethodSignature\lpublic getInstance() : problem.asm.SequenceGenerator\lpublic main(java.lang.String[]) : void\lpublic getNextMethod() : problem.asm.MethodSignature\lprivate \<init\>() : void\lprivate getASMType(java.lang.String) : java.lang.String\l}"
-]
+	label = "{problem.asm.SequenceGenerator\n\<\<Singleton\>\>|private instance : problem.asm.SequenceGenerator\lprivate model : problem.asm.model.IModel\lprivate toVisit : java.util.Queue\l|public writeSequence(java.lang.String, java.io.OutputStream) : void\lprivate getMethodName(java.lang.String) : java.lang.String\lprivate getASMClass(java.lang.String) : java.lang.String\lpublic addMethodFromString(java.lang.String, int) : void\lpublic addMethod(java.lang.String, java.lang.String, java.lang.String, int) : void\lprivate getASMDesc(java.lang.String) : java.lang.String\lprivate getMethodClass(java.lang.String) : java.lang.String\lprivate getMethodDesc(java.lang.String) : java.lang.String\lpublic popNextMethod() : problem.asm.MethodSignature\lpublic getInstance() : problem.asm.SequenceGenerator\lpublic main(java.lang.String[]) : void\lpublic getNextMethod() : problem.asm.MethodSignature\lprivate \<init\>() : void\lprivate getASMType(java.lang.String) : java.lang.String\l}"
+, color="#0000ff"]
+problem_asm_ClassNoDeclarationVisitor
 problem_asm_ClassNoDeclarationVisitor [
 	label = "{problem.asm.ClassNoDeclarationVisitor||public visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\l}"
 ]
+problem_asm_model_IClass
 problem_asm_model_IClass [
-	label = "{problem.asm.model.IClass||public getMethodIterator() : java.util.Iterator\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getFieldIterator() : java.util.Iterator\lpublic getName() : java.lang.String\lnull accept(problem.asm.visitor.IVisitor) : void\lpublic setName(java.lang.String) : void\lpublic addField(problem.asm.model.IField) : void\lpublic getMethod(java.lang.String, java.lang.String) : problem.asm.model.IMethod\lpublic getField(java.lang.String, java.lang.String) : problem.asm.model.IField\lpublic addMethod(problem.asm.model.IMethod) : void\l}"
+	label = "{problem.asm.model.IClass||public getFieldIterator() : java.util.Iterator\lpublic setOwner(problem.asm.model.IModel) : void\lpublic setName(java.lang.String) : void\lpublic getMethod(java.lang.String, java.lang.String) : problem.asm.model.IMethod\lpublic getField(java.lang.String, java.lang.String) : problem.asm.model.IField\lpublic getOwner() : problem.asm.model.IModel\lpublic getMethodIterator() : java.util.Iterator\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic getName() : java.lang.String\lnull accept(problem.asm.visitor.IVisitor) : void\lpublic addField(problem.asm.model.IField) : void\lpublic addMethod(problem.asm.model.IMethod) : void\l}"
 ]
+problem_asm_model_Model
 problem_asm_model_Model [
-	label = "{problem.asm.model.Model|private relations : java.util.Collection\lprivate classes : java.util.Map\l|public addClass(problem.asm.model.IClass) : void\lpublic getRelationIterator() : java.util.Iterator\lpublic addRelation(problem.asm.model.IRelation) : void\lpublic getClass(java.lang.String) : problem.asm.model.IClass\lpublic getClassIterator() : java.util.Iterator\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\l}"
+	label = "{problem.asm.model.Model|private relations : java.util.Collection\lprivate classes : java.util.Map\lprivate patterns : java.util.Collection\l|public addClass(problem.asm.model.IClass) : void\lpublic addPattern(problem.asm.pattern.IPattern) : void\lpublic getRelationIterator() : java.util.Iterator\lpublic addRelation(problem.asm.model.IRelation) : void\lpublic getPatterns(problem.asm.model.IClass) : java.util.Collection\lpublic getClass(java.lang.String) : problem.asm.model.IClass\lpublic getClassIterator() : java.util.Iterator\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\l}"
 ]
+problem_asm_ClassNameStandardizer
 problem_asm_ClassNameStandardizer [
 	label = "{problem.asm.ClassNameStandardizer||public standardize(java.lang.String) : java.lang.String\lpublic forASM(java.lang.String) : java.lang.String\lpublic \<init\>() : void\l}"
 ]
+problem_asm_MethodSignature
 problem_asm_MethodSignature [
 	label = "{problem.asm.MethodSignature|private name : java.lang.String\lprivate desc : java.lang.String\lprivate owner : java.lang.String\lprivate level : int\l|public getDesc() : java.lang.String\lpublic getLevel() : int\lpublic \<init\>(java.lang.String, java.lang.String, java.lang.String, int) : void\lpublic getName() : java.lang.String\lpublic getOwner() : java.lang.String\l}"
 ]
+problem_asm_model_Method
 problem_asm_model_Method [
-	label = "{problem.asm.model.Method|private argTypes : java.lang.String[]\lprivate owner : problem.asm.model.IClass\lprivate accessLevel : problem.asm.model.AccessLevel\lprivate name : java.lang.String\lprivate desc : java.lang.String\lprivate statements : java.util.List\lprivate returnType : java.lang.String\l|public setOwner(problem.asm.model.IClass) : void\lpublic getArgTypes() : java.lang.String[]\lpublic getOwner() : problem.asm.model.IClass\lpublic getReturnType() : java.lang.String\lpublic setName(java.lang.String) : void\lpublic setDesc(java.lang.String) : void\lpublic getDesc() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setArgTypes(java.lang.String[]) : void\lpublic addStatement(problem.asm.model.IStatement) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setReturnType(java.lang.String) : void\lpublic getName() : java.lang.String\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\lpublic getStatementIterator() : java.util.ListIterator\l}"
+	label = "{problem.asm.model.Method|private argTypes : java.lang.String[]\lprivate owner : problem.asm.model.IClass\lprivate accessLevel : problem.asm.model.AccessLevel\lprivate name : java.lang.String\lprivate desc : java.lang.String\lprivate isStatic : boolean\lprivate statements : java.util.List\lprivate returnType : java.lang.String\l|public setOwner(problem.asm.model.IClass) : void\lpublic getArgTypes() : java.lang.String[]\lpublic getOwner() : problem.asm.model.IClass\lpublic getReturnType() : java.lang.String\lpublic isStatic() : boolean\lpublic setName(java.lang.String) : void\lpublic setDesc(java.lang.String) : void\lpublic getDesc() : java.lang.String\lpublic getAccessLevel() : problem.asm.model.AccessLevel\lpublic setArgTypes(java.lang.String[]) : void\lpublic addStatement(problem.asm.model.IStatement) : void\lpublic setStatic(boolean) : void\lpublic setAccessLevel(problem.asm.model.AccessLevel) : void\lpublic setReturnType(java.lang.String) : void\lpublic getName() : java.lang.String\lpublic accept(problem.asm.visitor.IVisitor) : void\lpublic \<init\>() : void\lpublic getStatementIterator() : java.util.ListIterator\l}"
 ]
+problem_asm_model_AccessLevel
 problem_asm_model_AccessLevel [
 	label = "{problem.asm.model.AccessLevel|public PRIVATE : problem.asm.model.AccessLevel\lprivate strValue : java.lang.String\lpublic PROTECTED : problem.asm.model.AccessLevel\lpublic PUBLIC : problem.asm.model.AccessLevel\lpublic DEFAULT : problem.asm.model.AccessLevel\lprivate $SWITCH_TABLE$problem$asm$model$AccessLevel : int[]\lprivate ENUM$VALUES : problem.asm.model.AccessLevel[]\l|public values() : problem.asm.model.AccessLevel[]\lpublic valueOf(java.lang.String) : problem.asm.model.AccessLevel\lpublic getSymbol() : java.lang.String\lnull ordinal() : int\lpublic getFromOpcodes(int) : problem.asm.model.AccessLevel\ldefault \<clinit\>() : void\lpublic toString() : java.lang.String\lprivate \<init\>(java.lang.String, int, java.lang.String) : void\ldefault $SWITCH_TABLE$problem$asm$model$AccessLevel() : int[]\l}"
 ]
+problem_asm_model_IModel
 problem_asm_model_IModel [
-	label = "{problem.asm.model.IModel||public addClass(problem.asm.model.IClass) : void\lpublic getRelationIterator() : java.util.Iterator\lpublic addRelation(problem.asm.model.IRelation) : void\lpublic getClass(java.lang.String) : problem.asm.model.IClass\lpublic getClassIterator() : java.util.Iterator\l}"
+	label = "{problem.asm.model.IModel||public addClass(problem.asm.model.IClass) : void\lpublic addPattern(problem.asm.pattern.IPattern) : void\lpublic getRelationIterator() : java.util.Iterator\lpublic addRelation(problem.asm.model.IRelation) : void\lpublic getPatterns(problem.asm.model.IClass) : java.util.Collection\lpublic getClass(java.lang.String) : problem.asm.model.IClass\lpublic getClassIterator() : java.util.Iterator\l}"
 ]
+problem_asm_ClassFieldVisitor
 problem_asm_ClassFieldVisitor [
 	label = "{problem.asm.ClassFieldVisitor|private model : problem.asm.model.IModel\lprivate holder : problem.asm.model.IClassModelHolder\l|public \<init\>(int, org.objectweb.asm.ClassVisitor) : void\lpublic getClassModel() : problem.asm.model.IClass\lprivate addAssociate(java.lang.String) : void\lpublic getModel() : problem.asm.model.IModel\lpublic visitField(int, java.lang.String, java.lang.String, java.lang.String, java.lang.Object) : org.objectweb.asm.FieldVisitor\l}"
 ]
+problem_asm_DesignParser
 problem_asm_DesignParser [
 	label = "{problem.asm.DesignParser||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
 ]
+problem_asm_MethodSDOutputStream
 problem_asm_MethodSDOutputStream [
-	label = "{problem.asm.MethodSDOutputStream|private visitor : problem.asm.visitor.IVisitor\lprivate visited : java.util.Set\l|private setupPreVisitMethod() : void\lpublic write(problem.asm.model.IMethod) : void\ldefault access$0(problem.asm.MethodSDOutputStream) : java.util.Set\lpublic \<init\>(java.io.OutputStream) : void\ldefault access$1(problem.asm.MethodSDOutputStream) : problem.asm.visitor.IVisitor\lpublic write(java.lang.String) : void\lprivate setupVisitStatement() : void\l}"
+	label = "{problem.asm.MethodSDOutputStream|private visitor : problem.asm.visitor.IVisitor\lprivate visited : java.util.Set\l|private setupPreVisitMethod() : void\lpublic write(problem.asm.model.IMethod) : void\ldefault access$0(problem.asm.MethodSDOutputStream) : java.util.Set\lnull \<init\>(problem.asm.MethodSDOutputStream) : void\lpublic \<init\>(java.io.OutputStream) : void\ldefault access$1(problem.asm.MethodSDOutputStream) : problem.asm.visitor.IVisitor\lpublic write(java.lang.String) : void\lprivate setupVisitStatement() : void\l}"
 ]
+problem_asm_visitor_LookupKey
 problem_asm_visitor_LookupKey [
 	label = "{problem.asm.visitor.LookupKey|default clazz : java.lang.Class\ldefault visitType : problem.asm.visitor.VisitType\l|public hashCode() : int\lpublic equals(java.lang.Object) : boolean\lpublic \<init\>(problem.asm.visitor.VisitType, java.lang.Class) : void\l}"
 ]
+problem_asm_model_IClassModelHolder
 problem_asm_model_IClassModelHolder [
 	label = "{problem.asm.model.IClassModelHolder||public getClassModel() : problem.asm.model.IClass\lpublic getModel() : problem.asm.model.IModel\l}"
 ]
+problem_asm_visitor_IVisitMethod
 problem_asm_visitor_IVisitMethod [
 	label = "{problem.asm.visitor.IVisitMethod||public execute(problem.asm.visitor.ITraverser) : void\l}"
 ]
+problem_asm_model_IRelation
 problem_asm_model_IRelation [
 	label = "{problem.asm.model.IRelation||public getSecondClass() : problem.asm.model.IClass\lpublic getType() : problem.asm.model.RelationType\lpublic setSecondClass(problem.asm.model.IClass) : void\lpublic getFirstClass() : problem.asm.model.IClass\lpublic setType(problem.asm.model.RelationType) : void\lpublic setFirstClass(problem.asm.model.IClass) : void\lnull accept(problem.asm.visitor.IVisitor) : void\l}"
 ]
 problem_asm_model_IClass -> problem_asm_visitor_ITraverser [
 	arrowhead = "empty"
-	style = "dashed"
-]
-
-problem_asm_MethodSDOutputStream -> problem_asm_visitor_VisitType [
-	arrowhead = "vee"
 	style = "dashed"
 ]
 
@@ -128,6 +157,11 @@ problem_asm_model_Method -> problem_asm_model_IClass [
 ]
 
 problem_asm_ClassMethodVisitor -> problem_asm_model_Relation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_asm_SequenceGenerator -> problem_asm_MethodSDOutputStream [
 	arrowhead = "vee"
 	style = "dashed"
 ]
@@ -160,16 +194,6 @@ problem_asm_model_IField -> problem_asm_model_IClass [
 problem_asm_visitor_Visitor -> problem_asm_visitor_IVisitor [
 	arrowhead = "empty"
 	style = "dashed"
-]
-
-problem_asm_MethodSDOutputStream -> problem_asm_visitor_Visitor [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_asm_visitor_Visitor -> problem_asm_visitor_LookupKey [
-	arrowhead = "vee"
-	style = "solid"
 ]
 
 problem_asm_ClassSDOutputStream -> problem_asm_visitor_VisitType [
@@ -207,6 +231,11 @@ problem_asm_model_Method -> problem_asm_visitor_IVisitor [
 	style = "dashed"
 ]
 
+problem_asm_visitor_IVisitor -> problem_asm_visitor_IVisitMethod [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
 problem_asm_model_Field -> problem_asm_model_IClass [
 	arrowhead = "vee"
 	style = "solid"
@@ -227,11 +256,6 @@ problem_asm_ClassCallsVisitor -> problem_asm_ClassMethodVisitor [
 	style = "solid"
 ]
 
-problem_asm_visitor_IVisitMethod -> problem_asm_visitor_ITraverser [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
 problem_asm_DesignParser -> problem_asm_model_IModel [
 	arrowhead = "vee"
 	style = "dashed"
@@ -247,9 +271,14 @@ problem_asm_SequenceGenerator -> problem_asm_ClassDeclarationVisitor [
 	style = "dashed"
 ]
 
-problem_asm_visitor_Visitor -> problem_asm_visitor_IVisitMethod [
+problem_asm_model_IModel -> problem_asm_model_IRelation [
 	arrowhead = "vee"
-	style = "solid"
+	style = "dashed"
+]
+
+problem_asm_model_IRelation -> problem_asm_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
 ]
 
 problem_asm_MethodCallsVisitor -> problem_asm_model_IClassModelHolder [
@@ -257,9 +286,9 @@ problem_asm_MethodCallsVisitor -> problem_asm_model_IClassModelHolder [
 	style = "dashed"
 ]
 
-problem_asm_MethodSDOutputStream -> problem_asm_visitor_ITraverser [
+problem_asm_MethodSDOutputStream -> problem_asm_model_IMethod [
 	arrowhead = "vee"
-	style = "dashed"
+	style = "solid"
 ]
 
 problem_asm_visitor_IVisitor -> problem_asm_visitor_VisitType [
@@ -272,6 +301,11 @@ problem_asm_SequenceGenerator -> problem_asm_model_IModel [
 	style = "solid"
 ]
 
+problem_asm_ClassUmlOutputStream -> problem_asm_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
 problem_asm_ClassMethodVisitor -> problem_asm_model_AccessLevel [
 	arrowhead = "vee"
 	style = "dashed"
@@ -282,7 +316,7 @@ problem_asm_DesignParser -> problem_asm_ClassFieldVisitor [
 	style = "dashed"
 ]
 
-problem_asm_model_IRelation -> problem_asm_model_RelationType [
+problem_asm_model_IClass -> problem_asm_model_IModel [
 	arrowhead = "vee"
 	style = "dashed"
 ]
@@ -377,6 +411,11 @@ problem_asm_ClassUmlOutputStream -> problem_asm_visitor_VisitType [
 	style = "dashed"
 ]
 
+problem_asm_model_Model -> problem_asm_model_IRelation [
+	arrowhead = "vee"
+	style = "solid"
+]
+
 problem_asm_ClassMethodVisitor -> problem_asm_ClassNameStandardizer [
 	arrowhead = "vee"
 	style = "dashed"
@@ -412,6 +451,11 @@ problem_asm_MethodUsingVisitor -> problem_asm_ClassMethodVisitor [
 	style = "dashed"
 ]
 
+problem_asm_model_IRelation -> problem_asm_model_RelationType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
 problem_asm_visitor_IVisitor -> problem_asm_visitor_ITraverser [
 	arrowhead = "vee"
 	style = "dashed"
@@ -437,6 +481,11 @@ problem_asm_ClassFieldVisitor -> problem_asm_model_IClassModelHolder [
 	style = "solid"
 ]
 
+problem_asm_model_Relation -> problem_asm_model_IRelation [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
 problem_asm_ClassUmlOutputStream -> problem_asm_visitor_Visitor [
 	arrowhead = "vee"
 	style = "dashed"
@@ -445,6 +494,11 @@ problem_asm_ClassUmlOutputStream -> problem_asm_visitor_Visitor [
 problem_asm_model_Model -> problem_asm_model_IModel [
 	arrowhead = "empty"
 	style = "dashed"
+]
+
+problem_asm_model_Class -> problem_asm_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
 ]
 
 problem_asm_ClassCallsVisitor -> problem_asm_MethodCallsVisitor [
@@ -482,11 +536,6 @@ problem_asm_model_Class -> problem_asm_model_IClass [
 	style = "dashed"
 ]
 
-problem_asm_model_Relation -> problem_asm_model_IRelation [
-	arrowhead = "empty"
-	style = "dashed"
-]
-
 problem_asm_SequenceGenerator -> problem_asm_model_IClass [
 	arrowhead = "vee"
 	style = "dashed"
@@ -500,11 +549,6 @@ problem_asm_MethodUsingVisitor -> problem_asm_model_IModel [
 problem_asm_ClassDeclarationVisitor -> problem_asm_model_Relation [
 	arrowhead = "vee"
 	style = "dashed"
-]
-
-problem_asm_visitor_LookupKey -> problem_asm_visitor_VisitType [
-	arrowhead = "vee"
-	style = "solid"
 ]
 
 problem_asm_ClassFieldVisitor -> problem_asm_model_Relation [
@@ -547,7 +591,22 @@ problem_asm_ClassFieldVisitor -> problem_asm_model_IClass [
 	style = "dashed"
 ]
 
+problem_asm_visitor_Visitor -> problem_asm_visitor_IVisitMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
 problem_asm_model_Model -> problem_asm_model_Relation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_asm_MethodSDOutputStream -> problem_asm_visitor_Visitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_asm_MethodSDOutputStream -> problem_asm_visitor_VisitType [
 	arrowhead = "vee"
 	style = "dashed"
 ]
@@ -562,9 +621,9 @@ problem_asm_ClassFieldVisitor -> problem_asm_model_RelationType [
 	style = "dashed"
 ]
 
-problem_asm_MethodSDOutputStream -> problem_asm_visitor_IVisitor [
+problem_asm_MethodSDOutputStream -> problem_asm_visitor_ITraverser [
 	arrowhead = "vee"
-	style = "solid"
+	style = "dashed"
 ]
 
 problem_asm_ClassCallsVisitor -> problem_asm_model_IClassModelHolder [
@@ -597,22 +656,7 @@ problem_asm_ClassFieldVisitor -> problem_asm_model_IClassModelHolder [
 	style = "dashed"
 ]
 
-problem_asm_model_IModel -> problem_asm_model_IRelation [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_asm_model_IRelation -> problem_asm_model_IClass [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
 problem_asm_ClassFieldVisitor -> problem_asm_model_AccessLevel [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_asm_visitor_IVisitor -> problem_asm_visitor_IVisitMethod [
 	arrowhead = "vee"
 	style = "dashed"
 ]
@@ -642,11 +686,6 @@ problem_asm_model_IClass -> problem_asm_model_IMethod [
 	style = "dashed"
 ]
 
-problem_asm_SequenceGenerator -> problem_asm_MethodSDOutputStream [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
 problem_asm_model_IMethod -> problem_asm_model_AccessLevel [
 	arrowhead = "vee"
 	style = "dashed"
@@ -662,9 +701,9 @@ problem_asm_model_IModel -> problem_asm_visitor_ITraverser [
 	style = "dashed"
 ]
 
-problem_asm_MethodSDOutputStream -> problem_asm_model_IMethod [
-	arrowhead = "vee"
-	style = "solid"
+problem_asm_model_IRelation -> problem_asm_visitor_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
 ]
 
 problem_asm_ClassDeclarationVisitor -> problem_asm_model_AccessLevel [
@@ -707,13 +746,13 @@ problem_asm_MethodCallsVisitor -> problem_asm_ClassNameStandardizer [
 	style = "dashed"
 ]
 
-problem_asm_model_IRelation -> problem_asm_visitor_ITraverser [
+problem_asm_MethodCallsVisitor -> problem_asm_model_IMethodHolder [
 	arrowhead = "empty"
 	style = "dashed"
 ]
 
-problem_asm_MethodCallsVisitor -> problem_asm_model_IMethodHolder [
-	arrowhead = "empty"
+problem_asm_visitor_IVisitMethod -> problem_asm_visitor_ITraverser [
+	arrowhead = "vee"
 	style = "dashed"
 ]
 
@@ -737,12 +776,22 @@ problem_asm_ClassCallsVisitor -> problem_asm_ClassNoDeclarationVisitor [
 	style = "dashed"
 ]
 
+problem_asm_visitor_LookupKey -> problem_asm_visitor_VisitType [
+	arrowhead = "vee"
+	style = "solid"
+]
+
 problem_asm_ClassCallsVisitor -> problem_asm_model_IModel [
 	arrowhead = "vee"
 	style = "dashed"
 ]
 
 problem_asm_ClassMethodVisitor -> problem_asm_model_IMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+problem_asm_MethodSDOutputStream -> problem_asm_visitor_IVisitor [
 	arrowhead = "vee"
 	style = "solid"
 ]
@@ -770,11 +819,6 @@ problem_asm_model_IModel -> problem_asm_model_IClass [
 problem_asm_ClassFieldVisitor -> problem_asm_ClassNameStandardizer [
 	arrowhead = "vee"
 	style = "dashed"
-]
-
-problem_asm_model_Model -> problem_asm_model_IRelation [
-	arrowhead = "vee"
-	style = "solid"
 ]
 
 problem_asm_ClassMethodVisitor -> problem_asm_model_RelationType [
@@ -835,6 +879,11 @@ problem_asm_DesignParser -> problem_asm_model_Model [
 problem_asm_model_Relation -> problem_asm_visitor_IVisitor [
 	arrowhead = "vee"
 	style = "dashed"
+]
+
+problem_asm_visitor_Visitor -> problem_asm_visitor_LookupKey [
+	arrowhead = "vee"
+	style = "solid"
 ]
 
 }

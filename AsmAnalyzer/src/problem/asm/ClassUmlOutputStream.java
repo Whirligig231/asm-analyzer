@@ -62,7 +62,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
 					return;
 				
-				String line = String.format("%s [\n\tlabel = \"{%s|", ClassNameStandardizer.standardize(c.getName()), ClassNameStandardizer.standardize(c.getName()).replaceAll("_", "."));
+				String line = String.format("%s [\n\tlabel = \"{%s%s|", ClassNameStandardizer.standardize(c.getName()), ClassNameStandardizer.standardize(c.getName()).replaceAll("_", "."), ClassUmlOutputStream.this.classNameHook(c));
 				write(line);
 			}
 		};
@@ -89,13 +89,13 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 				IClass c = (IClass)t;
 				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
 					return;
-				String line = String.format("}\"\n]\n");
+				String line = String.format("}\"\n%s]\n", ClassUmlOutputStream.this.classFormatHook(c));
 				write(line);
 			}
 		};
 		this.visitor.addVisit(VisitType.PostVisit, IClass.class, command);
 	}
-	
+
 	private void setupPreVisitMethod() {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
@@ -191,4 +191,13 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 		};
 		this.visitor.addVisit(VisitType.PostVisit, IModel.class, command);
 	}
+	
+	protected String classNameHook(IClass c) {
+		return "";
+	}
+	
+	protected String classFormatHook(IClass c) {
+		return "";
+	}
+	
 }

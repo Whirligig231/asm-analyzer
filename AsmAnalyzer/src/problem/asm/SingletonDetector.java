@@ -81,7 +81,6 @@ public class SingletonDetector {
 					Pattern pattern = new SingletonPattern();
 					pattern.addClass(SingletonDetector.this.currentClass);
 					SingletonDetector.this.model.addPattern(pattern);
-					System.out.println("SINGLETON WOOP WOOP WOOP "+currentClass.getName());
 				}
 			}
 		};

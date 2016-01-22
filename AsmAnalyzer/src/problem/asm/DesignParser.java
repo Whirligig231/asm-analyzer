@@ -28,6 +28,7 @@ public class DesignParser {
 			//System.out.println("Loading class: "+className);
 			IClass classModel = new Class();
 			classModel.setName(ClassNameStandardizer.standardize(className));
+			classModel.setOwner(model);
 			model.addClass(classModel);
 		}
 		
@@ -57,10 +58,12 @@ public class DesignParser {
 		sd.detect(model);
 		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
+		ClassUmlOutputStream annotatedUmlOutputStream = new AnnotatedUmlOutputStream(classUmlOutputStream);
+		
 		for (String className : args) {
-			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
+			annotatedUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
 		}
-		//classUmlOutputStream.write(model);
+		annotatedUmlOutputStream.write(model);
 		
 	}
 }
