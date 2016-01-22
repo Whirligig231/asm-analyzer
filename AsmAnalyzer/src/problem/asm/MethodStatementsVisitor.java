@@ -40,6 +40,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 	
 	@Override
 	public void visitTypeInsn(int opcode, String type) {
+
 		super.visitTypeInsn(opcode, type);
 		
 		if (opcode != Opcodes.NEW && opcode != Opcodes.NEWARRAY)
