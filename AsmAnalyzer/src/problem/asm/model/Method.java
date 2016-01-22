@@ -15,6 +15,7 @@ public class Method implements IMethod {
 	private String desc;
 
 	private AccessLevel accessLevel;
+	private boolean isStatic;
 	private String returnType;
 	private String[] argTypes;
 	
@@ -94,6 +95,16 @@ public class Method implements IMethod {
 	@Override
 	public ListIterator<IStatement> getStatementIterator() {
 		return this.statements.listIterator();
+	}
+
+	@Override
+	public boolean isStatic() {
+		return this.isStatic;
+	}
+
+	@Override
+	public void setStatic(boolean isStatic) {
+		this.isStatic = isStatic;
 	}
 
 }

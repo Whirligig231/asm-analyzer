@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
 import problem.asm.model.AccessLevel;
@@ -56,6 +57,7 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 		}
 		
 
+		method.setStatic((Opcodes.ACC_STATIC & access) > 0);
 		addAccessLevel(method, access);
 		
 		Matcher m = Pattern.compile("L([^<;]*);").matcher(desc);

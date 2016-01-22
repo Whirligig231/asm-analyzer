@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
 import problem.asm.model.IClass;
@@ -54,6 +55,7 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassModelHolder
 		IField field = new Field();
 		field.setName(name);
 		field.setAccessLevel(AccessLevel.getFromOpcodes(access));
+		field.setStatic((Opcodes.ACC_STATIC & access) > 0);
 		field.setType(type);
 		field.setOwner(this.getClassModel());
 		

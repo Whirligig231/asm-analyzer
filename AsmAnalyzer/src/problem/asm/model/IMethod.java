@@ -11,6 +11,7 @@ public interface IMethod extends ITraverser {
 	public String getName();
 	public String getDesc();
 	public AccessLevel getAccessLevel();
+	public boolean isStatic();
 	public String getReturnType();
 	public String[] getArgTypes();
 	
@@ -18,6 +19,7 @@ public interface IMethod extends ITraverser {
 	public void setName(String name);
 	public void setDesc(String desc);
 	public void setAccessLevel(AccessLevel accessLevel);
+	public void setStatic(boolean isStatic);
 	public void setReturnType(String returnType);
 	public void setArgTypes(String[] argTypes);
 	

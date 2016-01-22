@@ -6,6 +6,7 @@ public class Field implements IField {
 	
 	private String name;
 	private AccessLevel accessLevel;
+	private boolean isStatic;
 	private String type;
 	private IClass owner;
 
@@ -49,6 +50,16 @@ public class Field implements IField {
 	@Override
 	public void setOwner(IClass owner) {
 		this.owner = owner;
+	}
+
+	@Override
+	public boolean isStatic() {
+		return isStatic;
+	}
+
+	@Override
+	public void setStatic(boolean isStatic) {
+		this.isStatic = isStatic;
 	}
 
 }
