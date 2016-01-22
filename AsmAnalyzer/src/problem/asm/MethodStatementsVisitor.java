@@ -50,6 +50,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 		if (destClass == null) {
 			destClass = new Class();
 			destClass.setName(ClassNameStandardizer.standardize(type));
+			destClass.setOwner(this.model);
 			this.model.addClass(destClass);
 		}
 		
@@ -70,6 +71,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 		if (destClass == null) {
 			destClass = new Class();
 			destClass.setName(ClassNameStandardizer.standardize(owner));
+			destClass.setOwner(this.model);
 			this.model.addClass(destClass);
 		}
 		
@@ -103,6 +105,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 		if (destClass == null) {
 			destClass = new Class();
 			destClass.setName(ClassNameStandardizer.standardize(owner));
+			destClass.setOwner(this.model);
 			this.model.addClass(destClass);
 		}
 		

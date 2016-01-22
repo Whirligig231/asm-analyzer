@@ -13,6 +13,9 @@ public interface IClass extends ITraverser {
 	public void setName(String name);
 	public void setAccessLevel(AccessLevel accessLevel);
 	
+	public IModel getOwner();
+	public void setOwner(IModel model);
+	
 	// Using iterators and add functionality to prevent content coupling
 	
 	public Iterator<IMethod> getMethodIterator();

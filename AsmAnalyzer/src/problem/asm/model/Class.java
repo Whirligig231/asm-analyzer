@@ -15,6 +15,7 @@ public class Class implements IClass {
 	
 	private String name;
 	private AccessLevel accessLevel;
+	private IModel model;
 	
 	private Map<String, IMethod> methods;
 	private Map<String, IField> fields;
@@ -86,6 +87,16 @@ public class Class implements IClass {
 	@Override
 	public IField getField(String name, String type) {
 		return this.fields.get(name + ": " + type);
+	}
+
+	@Override
+	public IModel getOwner() {
+		return this.model;
+	}
+
+	@Override
+	public void setOwner(IModel model) {
+		this.model = model;
 	}
 
 }

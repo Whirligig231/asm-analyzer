@@ -34,6 +34,7 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassModel
 		if (this.classModel == null) {
 			this.classModel = new Class();
 			this.classModel.setName(ClassNameStandardizer.standardize(name));
+			this.classModel.setOwner(model);
 			this.model.addClass(this.classModel);
 		}
 		this.classModel.setAccessLevel(AccessLevel.getFromOpcodes(access));

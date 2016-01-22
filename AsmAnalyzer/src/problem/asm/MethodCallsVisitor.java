@@ -43,6 +43,7 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 		if (destClass == null) {
 			destClass = new Class();
 			destClass.setName(ClassNameStandardizer.standardize(owner));
+			destClass.setOwner(this.model);
 			this.model.addClass(destClass);
 		}
 		
