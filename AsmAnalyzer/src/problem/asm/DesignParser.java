@@ -54,6 +54,9 @@ public class DesignParser {
 		}
 		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
+		for (String className : args) {
+			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
+		}
 		classUmlOutputStream.write(model);
 		
 	}

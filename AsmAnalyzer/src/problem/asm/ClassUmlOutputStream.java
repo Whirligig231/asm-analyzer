@@ -3,6 +3,8 @@ package problem.asm;
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import problem.asm.model.IClass;
 import problem.asm.model.IField;
@@ -18,6 +20,8 @@ import problem.asm.visitor.Visitor;
 public class ClassUmlOutputStream extends FilterOutputStream {
 	private final IVisitor visitor;
 	
+	private Collection<String> classNames;
+	
 	public ClassUmlOutputStream(OutputStream out) throws IOException {
 		super(out);
 		this.visitor = new Visitor();
@@ -29,6 +33,11 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 		this.setupVisitField();
 		this.setupPreVisitMethod();
 		this.setupVisitRelation();
+		this.classNames = new ArrayList<>();
+	}
+	
+	public void addClassName(String name) {
+		this.classNames.add(name);
 	}
 	
 	private void write(String m) {
@@ -50,7 +59,10 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
-				String line = String.format("%s [\n\tlabel = \"{%s|", c.getName().replaceAll("\\/", "_"), c.getName().replaceAll("\\/", "."));
+				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
+					return;
+				
+				String line = String.format("%s [\n\tlabel = \"{%s|", ClassNameStandardizer.standardize(c.getName()), ClassNameStandardizer.standardize(c.getName()).replaceAll("_", "."));
 				write(line);
 			}
 		};
@@ -61,6 +73,9 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
+				IClass c = (IClass)t;
+				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
+					return;
 				write("|");
 			}
 		};
@@ -71,6 +86,9 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
+				IClass c = (IClass)t;
+				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
+					return;
 				String line = String.format("}\"\n]\n");
 				write(line);
 			}
@@ -83,6 +101,8 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 			@Override
 			public void execute(ITraverser t) {
 				IMethod c = (IMethod)t;
+				if (!ClassUmlOutputStream.this.classNames.contains(c.getOwner().getName()))
+					return;
 				StringBuilder sb = new StringBuilder();
 				String line = String.format("%s %s(", c.getAccessLevel(), c.getName().replaceAll("<", "\\\\<").replaceAll(">", "\\\\>"));
 				sb.append(line);
@@ -110,6 +130,8 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 			@Override
 			public void execute(ITraverser t) {
 				IField c = (IField)t;
+				if (!ClassUmlOutputStream.this.classNames.contains(c.getOwner().getName()))
+					return;
 				String line = String.format("%s %s : %s\\l", c.getAccessLevel(), c.getName(), c.getType());
 				write(line);
 			}
@@ -124,6 +146,10 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 				IRelation relation = (IRelation)t;
 				String firstClass = relation.getFirstClass().getName();
 				String secondClass = relation.getSecondClass().getName();
+				if (!ClassUmlOutputStream.this.classNames.contains(firstClass))
+					return;
+				if (!ClassUmlOutputStream.this.classNames.contains(secondClass))
+					return;
 				if(!firstClass.equals(secondClass)){
 					write(firstClass + " -> " + secondClass);
 					switch (relation.getType()) {
