@@ -44,20 +44,23 @@ public class DesignParser {
 			
 			// DECORATE field visitor with method visitor
 			ClassVisitor methodVisitor = new ClassMethodVisitor(Opcodes.ASM5, fieldVisitor);
+			
+			// DECORATE method visitor with statement visitor
 			ClassVisitor statementsVisitor = new ClassStatementsVisitor(Opcodes.ASM5, methodVisitor);
-
-			// TODO: add more DECORATORS here in later milestones to accomplish specific tasks
 			
 			// Tell the Reader to use our (heavily decorated) ClassVisitor to visit the class
 			reader.accept(statementsVisitor, ClassReader.EXPAND_FRAMES);
 
 		}
 		
+		SingletonDetector sd = SingletonDetector.getInstance();
+		sd.detect(model);
+		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
 		for (String className : args) {
 			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
 		}
-		classUmlOutputStream.write(model);
+		//classUmlOutputStream.write(model);
 		
 	}
 }

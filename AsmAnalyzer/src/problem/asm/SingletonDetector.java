@@ -6,11 +6,17 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import problem.asm.model.AccessLevel;
 import problem.asm.model.IClass;
 import problem.asm.model.IField;
+import problem.asm.model.IFieldStatement;
 import problem.asm.model.IMethod;
 import problem.asm.model.IModel;
 import problem.asm.model.IRelation;
+import problem.asm.model.IStatement;
+import problem.asm.model.StatementType;
+import problem.asm.pattern.Pattern;
+import problem.asm.pattern.SingletonPattern;
 import problem.asm.visitor.ITraverser;
 import problem.asm.visitor.IVisitMethod;
 import problem.asm.visitor.IVisitor;
@@ -25,6 +31,9 @@ public class SingletonDetector {
 	private IModel model;
 	private IClass currentClass;
 	private IField instanceField;
+	private boolean methodIsInstance;
+	private boolean hasPrivateCtor;
+	private boolean hasInstanceGetter;
 
 	private SingletonDetector() {
 		this.visitor = new Visitor();
@@ -35,23 +44,17 @@ public class SingletonDetector {
 		this.setupPreVisitMethod();
 		this.setupVisitStatement();
 	}
-	
-	public void addClassName(String name) {
-		this.classNames.add(name);
+
+	public static SingletonDetector getInstance() {
+		if (SingletonDetector.instance == null) {
+			SingletonDetector.instance = new SingletonDetector();
+		}
+		
+		return SingletonDetector.instance;
 	}
 	
-	private void write(String m) {
-		try {
-			super.write(m.getBytes());
-		}
-		catch(IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
-	
-	public void write (IModel model) {
-		ITraverser t = (ITraverser) model;
-		t.accept(this.visitor);
+	public void detect(IModel model) {
+		model.accept(this.visitor);
 	}
 	
 	private void setupPreVisitClass() {
@@ -59,38 +62,27 @@ public class SingletonDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
-				if (!SingletonDetector.this.classNames.contains(c.getName()))
-					return;
-				
-				String line = String.format("%s [\n\tlabel = \"{%s|", ClassNameStandardizer.standardize(c.getName()), ClassNameStandardizer.standardize(c.getName()).replaceAll("_", "."));
-				write(line);
+				SingletonDetector.this.currentClass = c;
+				SingletonDetector.this.hasInstanceGetter = false;
+				SingletonDetector.this.hasPrivateCtor = false;
+				SingletonDetector.this.instanceField = null;
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IClass.class, command);
-	}
-	
-	private void setupPostFieldsVisitClass() {
-		IVisitMethod command = new IVisitMethod() {
-			@Override
-			public void execute(ITraverser t) {
-				IClass c = (IClass)t;
-				if (!SingletonDetector.this.classNames.contains(c.getName()))
-					return;
-				write("|");
-			}
-		};
-		this.visitor.addVisit(VisitType.Visit, IClass.class, command);
 	}
 	
 	private void setupPostMethodsVisitClass() {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				IClass c = (IClass)t;
-				if (!SingletonDetector.this.classNames.contains(c.getName()))
-					return;
-				String line = String.format("}\"\n]\n");
-				write(line);
+				if (SingletonDetector.this.instanceField != null
+						&& SingletonDetector.this.hasPrivateCtor
+						&& SingletonDetector.this.hasInstanceGetter) {
+					Pattern pattern = new SingletonPattern();
+					pattern.addClass(SingletonDetector.this.currentClass);
+					SingletonDetector.this.model.addPattern(pattern);
+					System.out.println("SINGLETON WOOP WOOP WOOP "+currentClass.getName());
+				}
 			}
 		};
 		this.visitor.addVisit(VisitType.PostVisit, IClass.class, command);
@@ -101,25 +93,14 @@ public class SingletonDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IMethod c = (IMethod)t;
-				if (!SingletonDetector.this.classNames.contains(c.getOwner().getName()))
-					return;
-				StringBuilder sb = new StringBuilder();
-				String line = String.format("%s %s(", c.getAccessLevel(), c.getName().replaceAll("<", "\\\\<").replaceAll(">", "\\\\>"));
-				sb.append(line);
-				boolean ran = false;
-				for(String argType : c.getArgTypes()){
-					ran=true;
-					sb.append(argType);
-					sb.append(", ");
-				}
-				if(ran)
-					sb.setLength(sb.length()-2); //getting rid of the last unneeded ", "
+				if (c.getAccessLevel() == AccessLevel.PRIVATE
+						&& c.getName().equals("<init>"))
+					SingletonDetector.this.hasPrivateCtor = true;
 				
-				line = String.format(") : %s\\l", c.getReturnType());
-				
-				sb.append(line);
-				
-				write(sb.toString());
+				SingletonDetector.this.methodIsInstance =
+						c.getAccessLevel() == AccessLevel.PUBLIC
+						&& c.isStatic()
+						&& ClassNameStandardizer.standardize(c.getReturnType()).equals(SingletonDetector.this.currentClass.getName());
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IMethod.class, command);
@@ -130,65 +111,42 @@ public class SingletonDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IField c = (IField)t;
-				if (!SingletonDetector.this.classNames.contains(c.getOwner().getName()))
-					return;
-				String line = String.format("%s %s : %s\\l", c.getAccessLevel(), c.getName(), c.getType());
-				write(line);
+				if (c.isStatic()
+						&& c.getAccessLevel() == AccessLevel.PRIVATE
+						&& ClassNameStandardizer.standardize(c.getType()).equals(SingletonDetector.this.currentClass.getName()))
+					SingletonDetector.this.instanceField = c;
 			}
 		};
 		this.visitor.addVisit(VisitType.Visit, IField.class, command);
-	}
-
-	private void setupVisitRelation() {
-		IVisitMethod command = new IVisitMethod() {
-			@Override
-			public void execute(ITraverser t) {
-				IRelation relation = (IRelation)t;
-				String firstClass = relation.getFirstClass().getName();
-				String secondClass = relation.getSecondClass().getName();
-				if (!SingletonDetector.this.classNames.contains(firstClass))
-					return;
-				if (!SingletonDetector.this.classNames.contains(secondClass))
-					return;
-				if(!firstClass.equals(secondClass)){
-					write(firstClass + " -> " + secondClass);
-					switch (relation.getType()) {
-					case EXTENDS:
-						write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"solid\"\n]\n\n");
-						break;
-					case IMPLEMENTS:
-						write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"dashed\"\n]\n\n");
-						break;
-					case ASSOCIATES:
-						write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"solid\"\n]\n\n");
-						break;
-					case USES:
-						write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"dashed\"\n]\n\n");
-						break;
-					}
-				}
-			}
-		};
-		this.visitor.addVisit(VisitType.Visit, IRelation.class, command);
 	}
 
 	private void setupPreVisitModel() {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				write("digraph G {\nrankdir=BT;\n\nnode [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\nshape = \"record\"\n]\nedge [\nfontname = \"Bitstream Vera Sans\"\nfontsize = 8\n]\n");
+				SingletonDetector.this.model = (IModel)t;
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IModel.class, command);
 	}
-
-	private void setupPostVisitModel() {
+	
+	
+	private void setupVisitStatement() {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				write("}\n");
+				IStatement c = (IStatement)t;
+				
+				if (c instanceof IFieldStatement) {
+					IFieldStatement fs = (IFieldStatement)c;
+					if (SingletonDetector.this.methodIsInstance
+							&& fs.getType() == StatementType.GET_FIELD
+							&& fs.getField() == SingletonDetector.this.instanceField)
+						SingletonDetector.this.hasInstanceGetter = true;
+				}
 			}
 		};
-		this.visitor.addVisit(VisitType.PostVisit, IModel.class, command);
+		this.visitor.addVisit(VisitType.Visit, IStatement.class, command);
 	}
+
 }
