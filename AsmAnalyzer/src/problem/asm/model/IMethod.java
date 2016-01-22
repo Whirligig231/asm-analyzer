@@ -21,7 +21,7 @@ public interface IMethod extends ITraverser {
 	public void setReturnType(String returnType);
 	public void setArgTypes(String[] argTypes);
 	
-	public void addCall(IMethod dest);
-	public ListIterator<IMethod> getCallIterator();
+	public void addStatement(IStatement stat);
+	public ListIterator<IStatement> getStatementIterator();
 
 }

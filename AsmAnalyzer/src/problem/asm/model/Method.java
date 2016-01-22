@@ -18,10 +18,10 @@ public class Method implements IMethod {
 	private String returnType;
 	private String[] argTypes;
 	
-	private List<IMethod> calls;
+	private List<IStatement> statements;
 	
 	public Method() {
-		this.calls = new ArrayList<>();
+		this.statements = new ArrayList<>();
 	}
 
 	@Override
@@ -70,21 +70,10 @@ public class Method implements IMethod {
 
 	@Override
 	public void accept(IVisitor v) {
-		v.visit(this);
-	}
-
-	@Override
-	public void addCall(IMethod dest) {
-		// System.out.println("OWNER IS "+this.getOwner()+" "+this.getOwner().getName());
-		// System.out.println("ADDING CALL TO "+this.getOwner()+" METHOD "+this.getName()+this.getDesc());
-		this.calls.add(dest);
-		// System.out.println("WE NOW HAVE "+this.calls.size()+" CALLS");
-	}
-
-	@Override
-	public ListIterator<IMethod> getCallIterator() {
-		// System.out.println("WE HAVE "+this.calls.size()+" CALLS");
-		return Collections.unmodifiableList(this.calls).listIterator();
+		v.preVisit(this);
+		for (IStatement stat : this.statements)
+			stat.accept(v);
+		v.postVisit(this);
 	}
 
 	@Override
@@ -95,6 +84,16 @@ public class Method implements IMethod {
 	@Override
 	public void setOwner(IClass owner) {
 		this.owner = owner;
+	}
+
+	@Override
+	public void addStatement(IStatement stat) {
+		this.statements.add(stat);
+	}
+
+	@Override
+	public ListIterator<IStatement> getStatementIterator() {
+		return this.statements.listIterator();
 	}
 
 }

@@ -7,6 +7,7 @@ public class Field implements IField {
 	private String name;
 	private AccessLevel accessLevel;
 	private String type;
+	private IClass owner;
 
 	@Override
 	public String getName() {
@@ -38,6 +39,16 @@ public class Field implements IField {
 	@Override
 	public void accept(IVisitor v) {
 		v.visit(this);
+	}
+
+	@Override
+	public IClass getOwner() {
+		return this.owner;
+	}
+
+	@Override
+	public void setOwner(IClass owner) {
+		this.owner = owner;
 	}
 
 }

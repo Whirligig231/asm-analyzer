@@ -27,7 +27,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 		this.setupPreVisitClass();
 		this.setupPreVisitModel();
 		this.setupVisitField();
-		this.setupVisitMethod();
+		this.setupPreVisitMethod();
 		this.setupVisitRelation();
 	}
 	
@@ -78,7 +78,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 		this.visitor.addVisit(VisitType.PostVisit, IClass.class, command);
 	}
 	
-	private void setupVisitMethod() {
+	private void setupPreVisitMethod() {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
@@ -102,7 +102,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 				write(sb.toString());
 			}
 		};
-		this.visitor.addVisit(VisitType.Visit, IMethod.class, command);
+		this.visitor.addVisit(VisitType.PreVisit, IMethod.class, command);
 	}
 	
 	private void setupVisitField() {

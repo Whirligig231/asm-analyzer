@@ -9,9 +9,11 @@ import problem.asm.model.Class;
 import problem.asm.model.IClassModelHolder;
 import problem.asm.model.IMethod;
 import problem.asm.model.IMethodHolder;
+import problem.asm.model.IMethodStatement;
 import problem.asm.model.IModel;
 import problem.asm.model.IRelation;
 import problem.asm.model.Method;
+import problem.asm.model.MethodStatement;
 import problem.asm.model.Relation;
 import problem.asm.model.RelationType;
 
@@ -60,7 +62,10 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 		// TODO: remove this debug line at some point
 		// System.out.println(this.method.getName() + " calls "+destMethod.getName());
 		
-		this.method.addCall(destMethod);
+		IMethodStatement mst = new MethodStatement();
+		mst.setMethod(destMethod);
+		
+		this.method.addStatement(mst);
 		
 		if (this.level > 0)
 			this.sg.addMethod(ClassNameStandardizer.standardize(owner), name, desc, this.level - 1);
