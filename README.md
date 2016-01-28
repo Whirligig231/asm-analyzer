@@ -15,7 +15,7 @@ asm-analyzer also includes a tool for automated sequence diagrams using the SDEd
 
 # Design (UML Class Diagram)
 
-![UML Class Diagram for the project](./project_manual.png)
+![UML Class Diagram for the project](./AsmAnalyzer/docs/project_manual.png)
 
 # Features
 
