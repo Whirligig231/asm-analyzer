@@ -1,0 +1,26 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+headfirst_singleton_chocolate_ChocolateController
+headfirst_singleton_chocolate_ChocolateController [
+	label = "{headfirst.singleton.chocolate.ChocolateController||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+headfirst_singleton_chocolate_ChocolateBoiler
+headfirst_singleton_chocolate_ChocolateBoiler [
+	label = "{headfirst.singleton.chocolate.ChocolateBoiler\n\<\<Singleton\>\>|private boiled : boolean\lprivate empty : boolean\lprivate uniqueInstance : headfirst.singleton.chocolate.ChocolateBoiler\l|public boil() : void\lpublic getInstance() : headfirst.singleton.chocolate.ChocolateBoiler\lpublic drain() : void\lpublic isEmpty() : boolean\lpublic isBoiled() : boolean\lprivate \<init\>() : void\lpublic fill() : void\l}"
+, color="#0000ff"]
+headfirst_singleton_chocolate_ChocolateController -> headfirst_singleton_chocolate_ChocolateBoiler [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+}
