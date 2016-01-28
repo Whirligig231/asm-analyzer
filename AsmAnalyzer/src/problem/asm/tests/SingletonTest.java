@@ -26,8 +26,6 @@ import problem.asm.model.Model;
 import problem.asm.pattern.IPattern;
 import problem.asm.pattern.SingletonPattern;
 
-import java.awt.Desktop;
-
 public class SingletonTest {
 	ClassDeclarationVisitor cdv;
 	IModel model;
