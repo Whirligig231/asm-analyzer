@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.3">
+<diagram program="umlet" version="14.1.1">
   <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -444,6 +444,7 @@ problem.asm.visitor::ITraverser
       <h>196</h>
     </coordinates>
     <panel_attributes>problem.asm: SequenceGenerator
+&lt;&lt;Singleton&gt;&gt;
 --
 -toVisit: Queue&lt;MethodSignature&gt;
 -model: IModel
@@ -460,7 +461,8 @@ problem.asm.visitor::ITraverser
 +getNextMethod(): MethodSignature
 +popNextMethod(): MethodSignature
 +writeSequence(OutputStream out): void
-+main(String[] args): void</panel_attributes>
++main(String[] args): void
+fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -1802,6 +1804,7 @@ problem.asm.model::IMethod
       <h>224</h>
     </coordinates>
     <panel_attributes>problem.asm::SingletonDetector
+&lt;&lt;Singleton&gt;&gt;
 --
 -instance: SingletonDetector
 -visitor: IVisitor
@@ -1822,6 +1825,7 @@ problem.asm.model::IMethod
 -setupPreVisitModel(): void
 -setupVisitStatement(): void
 --
+fg=blue
 </panel_attributes>
     <additional_attributes/>
   </element>
