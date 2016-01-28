@@ -87,7 +87,6 @@ public class SingletonTest {
 		Collection<IPattern> patterns = model.getPatterns(classModel);
 		for(IPattern pattern : patterns){
 			if (pattern instanceof SingletonPattern){
-				SingletonPattern singletonPattern = (SingletonPattern) pattern;
 				return true;
 			}
 		}
