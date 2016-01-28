@@ -13,6 +13,10 @@ asm-analyzer is a program that uses the ASM library to produce an automatic UML 
 
 asm-analyzer also includes a tool for automated sequence diagrams using the SDEdit format. To use this tool, pass SequenceGenerator an argument containing the full signature of the method, without the return type but including everything else, with fully qualified class names, e.g. "java.lang.String.substring(int, int)" is a valid parameter. Optionally, pass a second argument indicating the number of levels of method calls to show; this defaults to 5.
 
+# Design (UML Class Diagram)
+
+![UML Class Diagram for the project](./project_manual.png)
+
 # Features
 
 asm-analyzer's UML diagram tool currently supports:
