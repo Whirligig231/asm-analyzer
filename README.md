@@ -26,6 +26,7 @@ asm-analyzer's UML diagram tool currently supports:
 - Methods and fields
 - Method signatures and field types
 - Inheritance and implementation relationships
+- Detection and annotation of Singleton classes
 
 asm-analyzer's sequence diagram tool currently supports only class method calls, with no control structure.
 
@@ -58,3 +59,7 @@ In this milestone, sequence diagramming was added. This code works by keeping a 
 Christian then proceeded to create two new visitors, ClassSDOutputStream and MethodSDOutputStream, which are used to generate sequence diagrams. ClassSDOutputStream traverses the IModel in a similar manner to ClassUmlOutputStream to create SDEdit declarations for all of the classes. MethodSDOutputStream finds the specific method that the SequenceGenerator gives it and recursively visits all of the methods that it calls.
 
 Steven, meanwhile, refactored our visitor code to use the Command pattern, so that we can continue to develop visitors for our IModel model without having a large number of different visit() methods, with different signatures, in IVisitor and VisitorAdapter. In the new design, VisitorAdapter is replaced by Visitor, a concrete class, and the various OutputStream classes compose a Visitor rather than extending one.
+
+## Milestone 4
+
+In this milestone, Christian added a way to detect Singleton classes, while Steven added test classes for this new functionality. The first step was to refactor our handling of method calls, making them a subtype of a new model type called IStatement, representing a statement within a method body. The second step for this was to add an IPattern interface to the model, allowing IModel objects to contain information about which patterns are present in the design. The third step was to create a new visitor-based class called SingletonDetector, which visits an IModel and adds detected singleton classes to it. The last step was to add a new type of OutputStream, AnnotatedUmlOutputStream, that adds color outlines and <<Singleton>> annotations to the UML diagram.
