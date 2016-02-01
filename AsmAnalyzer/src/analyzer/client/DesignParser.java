@@ -62,7 +62,7 @@ public class DesignParser {
 
 		}
 		
-		SingletonDetector sd = SingletonDetector.getInstance();
+		SingletonDetector sd = new SingletonDetector();
 		sd.detect(model);
 		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);

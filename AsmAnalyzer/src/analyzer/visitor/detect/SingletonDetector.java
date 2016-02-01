@@ -26,8 +26,6 @@ import analyzer.visitor.common.Visitor;
 
 public class SingletonDetector {
 	
-	private static SingletonDetector instance;
-	
 	private final IVisitor visitor;
 	private IModel model;
 	private IClass currentClass;
@@ -36,7 +34,7 @@ public class SingletonDetector {
 	private boolean hasPrivateCtor;
 	private boolean hasInstanceGetter;
 
-	private SingletonDetector() {
+	public SingletonDetector() {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 		this.setupPostMethodsVisitClass();
@@ -44,14 +42,6 @@ public class SingletonDetector {
 		this.setupVisitField();
 		this.setupPreVisitMethod();
 		this.setupVisitStatement();
-	}
-
-	public static SingletonDetector getInstance() {
-		if (SingletonDetector.instance == null) {
-			SingletonDetector.instance = new SingletonDetector();
-		}
-		
-		return SingletonDetector.instance;
 	}
 	
 	public void detect(IModel model) {

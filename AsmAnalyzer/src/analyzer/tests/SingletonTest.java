@@ -73,7 +73,7 @@ public class SingletonTest {
 
 		}
 
-		SingletonDetector sd = SingletonDetector.getInstance();
+		SingletonDetector sd = new SingletonDetector();
 		sd.detect(model);
 	}
 
