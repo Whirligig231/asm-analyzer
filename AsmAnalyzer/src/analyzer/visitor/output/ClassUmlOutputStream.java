@@ -12,6 +12,7 @@ import analyzer.model.IField;
 import analyzer.model.IMethod;
 import analyzer.model.IModel;
 import analyzer.model.IRelation;
+import analyzer.model.RelationType;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
 import analyzer.visitor.common.IVisitor;
@@ -151,7 +152,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 					return;
 				if (!ClassUmlOutputStream.this.classNames.contains(secondClass))
 					return;
-				if(!firstClass.equals(secondClass)){
+				if(!firstClass.equals(secondClass) || !relation.getType().equals(RelationType.USES)){
 					write(firstClass + " -> " + secondClass);
 					switch (relation.getType()) {
 					case EXTENDS:

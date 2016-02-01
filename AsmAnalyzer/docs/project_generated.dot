@@ -1,0 +1,1300 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+analyzer_model_Class
+analyzer_model_Class [
+	label = "{analyzer.model.Class|private name : java.lang.String\lprivate accessLevel : analyzer.model.AccessLevel\lprivate model : analyzer.model.IModel\lprivate methods : java.util.Map\lprivate fields : java.util.Map\l|public getAccessLevel() : analyzer.model.AccessLevel\lpublic getFieldIterator() : java.util.Iterator\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic addField(analyzer.model.IField) : void\lpublic getOwner() : analyzer.model.IModel\lpublic getField(java.lang.String, java.lang.String) : analyzer.model.IField\lpublic setName(java.lang.String) : void\lpublic getMethodIterator() : java.util.Iterator\lpublic setOwner(analyzer.model.IModel) : void\lpublic getName() : java.lang.String\lpublic addMethod(analyzer.model.IMethod) : void\lpublic \<init\>() : void\lpublic getMethod(java.lang.String, java.lang.String) : analyzer.model.IMethod\l}"
+]
+analyzer_model_IFieldStatement
+analyzer_model_IFieldStatement [
+	label = "{analyzer.model.IFieldStatement||public getField() : analyzer.model.IField\lpublic setField(analyzer.model.IField) : void\lpublic setType(analyzer.model.StatementType) : void\l}"
+]
+analyzer_visitor_output_ClassSDOutputStream
+analyzer_visitor_output_ClassSDOutputStream [
+	label = "{analyzer.visitor.output.ClassSDOutputStream|null out : java.io.OutputStream\lprivate visitor : analyzer.visitor.common.IVisitor\l|public write(analyzer.model.IModel) : void\ldefault access$0(analyzer.visitor.output.ClassSDOutputStream, java.lang.String) : void\lprivate setupPostVisitModel() : void\lprivate setupPreVisitClass() : void\lpublic \<init\>(java.io.OutputStream) : void\lprivate write(java.lang.String) : void\lnull \<init\>(analyzer.visitor.output.ClassSDOutputStream) : void\l}"
+]
+analyzer_model_MethodStatement
+analyzer_model_MethodStatement [
+	label = "{analyzer.model.MethodStatement|private method : analyzer.model.IMethod\l|public setMethod(analyzer.model.IMethod) : void\lpublic getType() : analyzer.model.StatementType\lpublic getMethod() : analyzer.model.IMethod\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getOwner() : analyzer.model.IClass\lpublic \<init\>() : void\l}"
+]
+analyzer_model_RelationType
+analyzer_model_RelationType [
+	label = "{analyzer.model.RelationType|private ENUM$VALUES : analyzer.model.RelationType[]\lprivate strValue : java.lang.String\lpublic ASSOCIATES : analyzer.model.RelationType\lpublic EXTENDS : analyzer.model.RelationType\lpublic USES : analyzer.model.RelationType\lpublic IMPLEMENTS : analyzer.model.RelationType\l|null hashCode() : int\ldefault \<clinit\>() : void\lpublic toString() : java.lang.String\lprivate \<init\>(java.lang.String, int, java.lang.String) : void\lpublic values() : analyzer.model.RelationType[]\lpublic valueOf(java.lang.String) : analyzer.model.RelationType\l}"
+]
+analyzer_asmvisitor_visitclass_ClassCallsVisitor
+analyzer_asmvisitor_visitclass_ClassCallsVisitor [
+	label = "{analyzer.asmvisitor.visitclass.ClassCallsVisitor|private decorated : analyzer.asmvisitor.visitclass.ClassMethodVisitor\lprivate name : java.lang.String\lnull api : int\lprivate sg : analyzer.client.SequenceGenerator\l|public visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic getMethod() : analyzer.model.IMethod\lpublic getModel() : analyzer.model.IModel\lpublic visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : org.objectweb.asm.MethodVisitor\lpublic \<init\>(int, analyzer.asmvisitor.visitclass.ClassMethodVisitor, analyzer.client.SequenceGenerator) : void\lpublic getClassModel() : analyzer.model.IClass\l}"
+]
+analyzer_common_MethodSignature
+analyzer_common_MethodSignature [
+	label = "{analyzer.common.MethodSignature|private name : java.lang.String\lprivate desc : java.lang.String\lprivate owner : java.lang.String\lprivate level : int\l|public getDesc() : java.lang.String\lpublic getLevel() : int\lpublic \<init\>(java.lang.String, java.lang.String, java.lang.String, int) : void\lpublic getName() : java.lang.String\lpublic getOwner() : java.lang.String\l}"
+]
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor [
+	label = "{analyzer.asmvisitor.visitmethod.MethodUsingVisitor|private model : analyzer.model.IModel\lprivate classModel : analyzer.model.IClass\l|private processUse(java.lang.String) : void\lpublic visitFieldInsn(int, java.lang.String, java.lang.String, java.lang.String) : void\lpublic getModel() : analyzer.model.IModel\lpublic visitTypeInsn(int, java.lang.String) : void\lpublic visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String, boolean) : void\lpublic \<init\>(int, org.objectweb.asm.MethodVisitor, analyzer.asmvisitor.visitclass.ClassMethodVisitor) : void\lpublic getClassModel() : analyzer.model.IClass\l}"
+]
+analyzer_model_IInstantiationStatement
+analyzer_model_IInstantiationStatement [
+	label = "{analyzer.model.IInstantiationStatement||public setOwner(analyzer.model.IClass) : void\l}"
+]
+analyzer_asmvisitor_visitclass_ClassNoDeclarationVisitor
+analyzer_asmvisitor_visitclass_ClassNoDeclarationVisitor [
+	label = "{analyzer.asmvisitor.visitclass.ClassNoDeclarationVisitor||public visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\l}"
+]
+analyzer_model_pattern_Pattern
+analyzer_model_pattern_Pattern [
+	label = "{analyzer.model.pattern.Pattern|default classes : java.util.ArrayList\l|public getClasses() : java.util.Collection\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getName() : java.lang.String\lpublic removeClass(analyzer.model.IClass) : void\lpublic \<init\>() : void\lpublic getColor() : java.awt.Color\lpublic addClass(analyzer.model.IClass) : void\l}"
+]
+analyzer_visitor_output_AnnotatedUmlOutputStream
+analyzer_visitor_output_AnnotatedUmlOutputStream [
+	label = "{analyzer.visitor.output.AnnotatedUmlOutputStream|default decorated : analyzer.visitor.output.ClassUmlOutputStream\l|protected classFormatHook(analyzer.model.IClass) : java.lang.String\lpublic \<init\>(analyzer.visitor.output.ClassUmlOutputStream) : void\lprotected classNameHook(analyzer.model.IClass) : java.lang.String\l}"
+]
+analyzer_model_IClassModelHolder
+analyzer_model_IClassModelHolder [
+	label = "{analyzer.model.IClassModelHolder||public getModel() : analyzer.model.IModel\lpublic getClassModel() : analyzer.model.IClass\l}"
+]
+analyzer_visitor_common_ITraverser
+analyzer_visitor_common_ITraverser [
+	label = "{analyzer.visitor.common.ITraverser||public accept(analyzer.visitor.common.IVisitor) : void\l}"
+]
+analyzer_visitor_common_IVisitMethod
+analyzer_visitor_common_IVisitMethod [
+	label = "{analyzer.visitor.common.IVisitMethod||public execute(analyzer.visitor.common.ITraverser) : void\l}"
+]
+analyzer_model_InstantiationStatement
+analyzer_model_InstantiationStatement [
+	label = "{analyzer.model.InstantiationStatement|private owner : analyzer.model.IClass\l|public getType() : analyzer.model.StatementType\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic setOwner(analyzer.model.IClass) : void\lpublic getOwner() : analyzer.model.IClass\lpublic \<init\>() : void\l}"
+]
+analyzer_model_Method
+analyzer_model_Method [
+	label = "{analyzer.model.Method|private argTypes : java.lang.String[]\lprivate name : java.lang.String\lprivate accessLevel : analyzer.model.AccessLevel\lprivate desc : java.lang.String\lprivate isStatic : boolean\lprivate statements : java.util.List\lprivate owner : analyzer.model.IClass\lprivate returnType : java.lang.String\l|public getAccessLevel() : analyzer.model.AccessLevel\lpublic addStatement(analyzer.model.IStatement) : void\lpublic getArgTypes() : java.lang.String[]\lpublic getReturnType() : java.lang.String\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic isStatic() : boolean\lpublic getOwner() : analyzer.model.IClass\lpublic setName(java.lang.String) : void\lpublic setDesc(java.lang.String) : void\lpublic getDesc() : java.lang.String\lpublic setArgTypes(java.lang.String[]) : void\lpublic setStatic(boolean) : void\lpublic setReturnType(java.lang.String) : void\lpublic getName() : java.lang.String\lpublic setOwner(analyzer.model.IClass) : void\lpublic \<init\>() : void\lpublic getStatementIterator() : java.util.ListIterator\l}"
+]
+analyzer_visitor_common_VisitType
+analyzer_visitor_common_VisitType [
+	label = "{analyzer.visitor.common.VisitType|public PreVisit : analyzer.visitor.common.VisitType\lprivate ENUM$VALUES : analyzer.visitor.common.VisitType[]\lpublic PostVisit : analyzer.visitor.common.VisitType\lpublic Visit : analyzer.visitor.common.VisitType\l|null hashCode() : int\ldefault \<clinit\>() : void\lpublic valueOf(java.lang.String) : analyzer.visitor.common.VisitType\lpublic values() : analyzer.visitor.common.VisitType[]\lprivate \<init\>(java.lang.String, int) : void\l}"
+]
+analyzer_model_IStatement
+analyzer_model_IStatement [
+	label = "{analyzer.model.IStatement||public getType() : analyzer.model.StatementType\lnull accept(analyzer.visitor.common.IVisitor) : void\lpublic getOwner() : analyzer.model.IClass\l}"
+]
+analyzer_model_AccessLevel
+analyzer_model_AccessLevel [
+	label = "{analyzer.model.AccessLevel|public PRIVATE : analyzer.model.AccessLevel\lprivate $SWITCH_TABLE$analyzer$model$AccessLevel : int[]\lprivate strValue : java.lang.String\lprivate ENUM$VALUES : analyzer.model.AccessLevel[]\lpublic DEFAULT : analyzer.model.AccessLevel\lpublic PROTECTED : analyzer.model.AccessLevel\lpublic PUBLIC : analyzer.model.AccessLevel\l|public getSymbol() : java.lang.String\lpublic values() : analyzer.model.AccessLevel[]\ldefault $SWITCH_TABLE$analyzer$model$AccessLevel() : int[]\lnull ordinal() : int\lpublic getFromOpcodes(int) : analyzer.model.AccessLevel\ldefault \<clinit\>() : void\lpublic toString() : java.lang.String\lpublic valueOf(java.lang.String) : analyzer.model.AccessLevel\lprivate \<init\>(java.lang.String, int, java.lang.String) : void\l}"
+]
+analyzer_asmvisitor_visitclass_ClassMethodVisitor
+analyzer_asmvisitor_visitclass_ClassMethodVisitor [
+	label = "{analyzer.asmvisitor.visitclass.ClassMethodVisitor|null api : int\lprivate model : analyzer.model.IModel\lprivate holder : analyzer.model.IClassModelHolder\lprivate method : analyzer.model.IMethod\l|default addReturnType(analyzer.model.IMethod, java.lang.String) : void\lpublic getMethod() : analyzer.model.IMethod\lpublic getModel() : analyzer.model.IModel\lpublic visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : org.objectweb.asm.MethodVisitor\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\ldefault addAccessLevel(analyzer.model.IMethod, int) : void\lpublic getClassModel() : analyzer.model.IClass\ldefault addArguments(analyzer.model.IMethod, java.lang.String) : void\l}"
+]
+analyzer_asmvisitor_visitclass_ClassFieldVisitor
+analyzer_asmvisitor_visitclass_ClassFieldVisitor [
+	label = "{analyzer.asmvisitor.visitclass.ClassFieldVisitor|private model : analyzer.model.IModel\lprivate holder : analyzer.model.IClassModelHolder\l|public getModel() : analyzer.model.IModel\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\lprivate addAssociate(java.lang.String) : void\lpublic getClassModel() : analyzer.model.IClass\lpublic visitField(int, java.lang.String, java.lang.String, java.lang.String, java.lang.Object) : org.objectweb.asm.FieldVisitor\l}"
+]
+analyzer_model_pattern_SingletonPattern
+analyzer_model_pattern_SingletonPattern [
+	label = "{analyzer.model.pattern.SingletonPattern||public getName() : java.lang.String\lpublic \<init\>() : void\lpublic getColor() : java.awt.Color\l}"
+]
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor [
+	label = "{analyzer.asmvisitor.visitmethod.MethodStatementsVisitor|private model : analyzer.model.IModel\lprivate classModel : analyzer.model.IClass\lprivate method : analyzer.model.IMethod\l|public visitFieldInsn(int, java.lang.String, java.lang.String, java.lang.String) : void\ldefault addReturnType(analyzer.model.IMethod, java.lang.String) : void\lpublic getMethod() : analyzer.model.IMethod\lpublic getModel() : analyzer.model.IModel\lpublic visitTypeInsn(int, java.lang.String) : void\lpublic visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String, boolean) : void\lpublic getClassModel() : analyzer.model.IClass\ldefault addArguments(analyzer.model.IMethod, java.lang.String) : void\lpublic \<init\>(int, org.objectweb.asm.MethodVisitor, analyzer.asmvisitor.visitclass.ClassStatementsVisitor) : void\l}"
+]
+analyzer_common_ClassNameStandardizer
+analyzer_common_ClassNameStandardizer [
+	label = "{analyzer.common.ClassNameStandardizer||public standardize(java.lang.String) : java.lang.String\lpublic forASM(java.lang.String) : java.lang.String\lpublic \<init\>() : void\l}"
+]
+analyzer_model_IRelation
+analyzer_model_IRelation [
+	label = "{analyzer.model.IRelation||public setSecondClass(analyzer.model.IClass) : void\lpublic getSecondClass() : analyzer.model.IClass\lnull accept(analyzer.visitor.common.IVisitor) : void\lpublic getType() : analyzer.model.RelationType\lpublic getFirstClass() : analyzer.model.IClass\lpublic setFirstClass(analyzer.model.IClass) : void\lpublic setType(analyzer.model.RelationType) : void\l}"
+]
+analyzer_model_IClass
+analyzer_model_IClass [
+	label = "{analyzer.model.IClass||public getAccessLevel() : analyzer.model.AccessLevel\lpublic getFieldIterator() : java.util.Iterator\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lnull accept(analyzer.visitor.common.IVisitor) : void\lpublic addField(analyzer.model.IField) : void\lpublic getOwner() : analyzer.model.IModel\lpublic getField(java.lang.String, java.lang.String) : analyzer.model.IField\lpublic setName(java.lang.String) : void\lpublic getMethodIterator() : java.util.Iterator\lpublic setOwner(analyzer.model.IModel) : void\lpublic getName() : java.lang.String\lpublic addMethod(analyzer.model.IMethod) : void\lpublic getMethod(java.lang.String, java.lang.String) : analyzer.model.IMethod\l}"
+]
+analyzer_model_IMethodStatement
+analyzer_model_IMethodStatement [
+	label = "{analyzer.model.IMethodStatement||public setMethod(analyzer.model.IMethod) : void\lpublic getMethod() : analyzer.model.IMethod\l}"
+]
+analyzer_visitor_common_IVisitor
+analyzer_visitor_common_IVisitor [
+	label = "{analyzer.visitor.common.IVisitor||public addVisit(analyzer.visitor.common.VisitType, java.lang.Class, analyzer.visitor.common.IVisitMethod) : void\lpublic postVisit(analyzer.visitor.common.ITraverser) : void\lpublic removeVisit(analyzer.visitor.common.VisitType, java.lang.Class) : void\lpublic visit(analyzer.visitor.common.ITraverser) : void\lpublic preVisit(analyzer.visitor.common.ITraverser) : void\l}"
+]
+analyzer_visitor_common_LookupKey
+analyzer_visitor_common_LookupKey [
+	label = "{analyzer.visitor.common.LookupKey|default visitType : analyzer.visitor.common.VisitType\ldefault clazz : java.lang.Class\l|public hashCode() : int\lpublic equals(java.lang.Object) : boolean\lpublic \<init\>(analyzer.visitor.common.VisitType, java.lang.Class) : void\l}"
+]
+analyzer_visitor_detect_SingletonDetector
+analyzer_visitor_detect_SingletonDetector [
+	label = "{analyzer.visitor.detect.SingletonDetector|private currentClass : analyzer.model.IClass\lprivate instanceField : analyzer.model.IField\lprivate model : analyzer.model.IModel\lprivate methodIsInstance : boolean\lprivate hasPrivateCtor : boolean\lprivate hasInstanceGetter : boolean\lprivate visitor : analyzer.visitor.common.IVisitor\l|public detect(analyzer.model.IModel) : void\lprivate setupPreVisitMethod() : void\ldefault access$5(analyzer.visitor.detect.SingletonDetector) : boolean\ldefault access$9(analyzer.visitor.detect.SingletonDetector, boolean) : void\ldefault access$10(analyzer.visitor.detect.SingletonDetector, analyzer.model.IModel) : void\ldefault access$6(analyzer.visitor.detect.SingletonDetector) : boolean\lprivate setupVisitField() : void\lprivate setupPreVisitClass() : void\ldefault access$1(analyzer.visitor.detect.SingletonDetector, boolean) : void\lprivate setupPreVisitModel() : void\lprivate setupPostMethodsVisitClass() : void\ldefault access$2(analyzer.visitor.detect.SingletonDetector, boolean) : void\ldefault access$7(analyzer.visitor.detect.SingletonDetector) : analyzer.model.IClass\ldefault access$8(analyzer.visitor.detect.SingletonDetector) : analyzer.model.IModel\ldefault access$0(analyzer.visitor.detect.SingletonDetector, analyzer.model.IClass) : void\ldefault access$4(analyzer.visitor.detect.SingletonDetector) : analyzer.model.IField\lnull \<init\>(analyzer.visitor.detect.SingletonDetector) : void\ldefault access$3(analyzer.visitor.detect.SingletonDetector, analyzer.model.IField) : void\ldefault access$11(analyzer.visitor.detect.SingletonDetector) : boolean\lpublic \<init\>() : void\lprivate setupVisitStatement() : void\l}"
+]
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor [
+	label = "{analyzer.asmvisitor.visitmethod.MethodCallsVisitor|private model : analyzer.model.IModel\lprivate classModel : analyzer.model.IClass\lprivate sg : analyzer.client.SequenceGenerator\lprivate method : analyzer.model.IMethod\lprivate level : int\l|default addReturnType(analyzer.model.IMethod, java.lang.String) : void\lpublic \<init\>(int, org.objectweb.asm.MethodVisitor, analyzer.asmvisitor.visitclass.ClassMethodVisitor, analyzer.client.SequenceGenerator, int) : void\lpublic getMethod() : analyzer.model.IMethod\lpublic getModel() : analyzer.model.IModel\lpublic visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String, boolean) : void\lpublic getClassModel() : analyzer.model.IClass\ldefault addArguments(analyzer.model.IMethod, java.lang.String) : void\l}"
+]
+analyzer_visitor_output_MethodSDOutputStream
+analyzer_visitor_output_MethodSDOutputStream [
+	label = "{analyzer.visitor.output.MethodSDOutputStream|private visited : java.util.Set\lprivate visitor : analyzer.visitor.common.IVisitor\l|private setupPreVisitMethod() : void\ldefault access$0(analyzer.visitor.output.MethodSDOutputStream) : java.util.Set\ldefault access$1(analyzer.visitor.output.MethodSDOutputStream) : analyzer.visitor.common.IVisitor\lnull \<init\>(analyzer.visitor.output.MethodSDOutputStream) : void\lpublic \<init\>(java.io.OutputStream) : void\lpublic write(java.lang.String) : void\lpublic write(analyzer.model.IMethod) : void\lprivate setupVisitStatement() : void\l}"
+]
+analyzer_model_pattern_IPattern
+analyzer_model_pattern_IPattern [
+	label = "{analyzer.model.pattern.IPattern||public getClasses() : java.util.Collection\lpublic getName() : java.lang.String\lpublic removeClass(analyzer.model.IClass) : void\lpublic getColor() : java.awt.Color\lpublic addClass(analyzer.model.IClass) : void\l}"
+]
+analyzer_visitor_output_ClassUmlOutputStream
+analyzer_visitor_output_ClassUmlOutputStream [
+	label = "{analyzer.visitor.output.ClassUmlOutputStream|private classNames : java.util.Collection\lprivate visitor : analyzer.visitor.common.IVisitor\l|private setupPreVisitMethod() : void\lprivate setupPostFieldsVisitClass() : void\lprivate setupVisitField() : void\lnull \<init\>(analyzer.visitor.output.ClassUmlOutputStream) : void\lprivate setupPreVisitClass() : void\lpublic \<init\>(java.io.OutputStream) : void\lprotected classNameHook(analyzer.model.IClass) : java.lang.String\ldefault access$1(analyzer.visitor.output.ClassUmlOutputStream, java.lang.String) : void\ldefault access$0(analyzer.visitor.output.ClassUmlOutputStream) : java.util.Collection\lprivate setupPreVisitModel() : void\lprivate setupPostMethodsVisitClass() : void\lpublic addClassName(java.lang.String) : void\lpublic write(analyzer.model.IModel) : void\lprivate setupVisitRelation() : void\lprivate setupPostVisitModel() : void\lprotected classFormatHook(analyzer.model.IClass) : java.lang.String\lprivate write(java.lang.String) : void\l}"
+]
+analyzer_visitor_common_Visitor
+analyzer_visitor_common_Visitor [
+	label = "{analyzer.visitor.common.Visitor|default keyToVisitMethodMap : java.util.Map\l|public addVisit(analyzer.visitor.common.VisitType, java.lang.Class, analyzer.visitor.common.IVisitMethod) : void\lprivate doVisit(analyzer.visitor.common.VisitType, analyzer.visitor.common.ITraverser) : void\lpublic postVisit(analyzer.visitor.common.ITraverser) : void\lpublic removeVisit(analyzer.visitor.common.VisitType, java.lang.Class) : void\lpublic visit(analyzer.visitor.common.ITraverser) : void\lpublic preVisit(analyzer.visitor.common.ITraverser) : void\lpublic \<init\>() : void\l}"
+]
+analyzer_client_DesignParser
+analyzer_client_DesignParser [
+	label = "{analyzer.client.DesignParser||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+analyzer_model_Relation
+analyzer_model_Relation [
+	label = "{analyzer.model.Relation|private type : analyzer.model.RelationType\lprivate firstClass : analyzer.model.IClass\lprivate secondClass : analyzer.model.IClass\l|public hashCode() : int\lpublic equals(java.lang.Object) : boolean\lpublic \<init\>(analyzer.model.IClass, analyzer.model.IClass, analyzer.model.RelationType) : void\lpublic setSecondClass(analyzer.model.IClass) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getSecondClass() : analyzer.model.IClass\lpublic getType() : analyzer.model.RelationType\lpublic getFirstClass() : analyzer.model.IClass\lpublic setFirstClass(analyzer.model.IClass) : void\lpublic setType(analyzer.model.RelationType) : void\l}"
+]
+analyzer_model_IMethodHolder
+analyzer_model_IMethodHolder [
+	label = "{analyzer.model.IMethodHolder||public getMethod() : analyzer.model.IMethod\l}"
+]
+analyzer_model_Model
+analyzer_model_Model [
+	label = "{analyzer.model.Model|private relations : java.util.Collection\lprivate classes : java.util.Map\lprivate patterns : java.util.Collection\l|public addRelation(analyzer.model.IRelation) : void\lpublic getRelationIterator() : java.util.Iterator\lpublic getClass(java.lang.String) : analyzer.model.IClass\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getClassIterator() : java.util.Iterator\lpublic \<init\>() : void\lpublic addPattern(analyzer.model.pattern.IPattern) : void\lpublic getPatterns(analyzer.model.IClass) : java.util.Collection\lpublic addClass(analyzer.model.IClass) : void\l}"
+]
+analyzer_model_IField
+analyzer_model_IField [
+	label = "{analyzer.model.IField||public getAccessLevel() : analyzer.model.AccessLevel\lpublic setStatic(boolean) : void\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lnull accept(analyzer.visitor.common.IVisitor) : void\lpublic isStatic() : boolean\lpublic getName() : java.lang.String\lpublic getType() : java.lang.String\lpublic setType(java.lang.String) : void\lpublic setOwner(analyzer.model.IClass) : void\lpublic getOwner() : analyzer.model.IClass\lpublic setName(java.lang.String) : void\l}"
+]
+analyzer_model_IModel
+analyzer_model_IModel [
+	label = "{analyzer.model.IModel||public addRelation(analyzer.model.IRelation) : void\lpublic getRelationIterator() : java.util.Iterator\lpublic getClass(java.lang.String) : analyzer.model.IClass\lnull accept(analyzer.visitor.common.IVisitor) : void\lpublic getClassIterator() : java.util.Iterator\lpublic addPattern(analyzer.model.pattern.IPattern) : void\lpublic getPatterns(analyzer.model.IClass) : java.util.Collection\lpublic addClass(analyzer.model.IClass) : void\l}"
+]
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor [
+	label = "{analyzer.asmvisitor.visitclass.ClassDeclarationVisitor|private model : analyzer.model.IModel\lprivate classModel : analyzer.model.IClass\l|public \<init\>(int, analyzer.model.IModel) : void\lpublic visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic getModel() : analyzer.model.IModel\lpublic getClassModel() : analyzer.model.IClass\l}"
+]
+analyzer_model_IMethod
+analyzer_model_IMethod [
+	label = "{analyzer.model.IMethod||public getAccessLevel() : analyzer.model.AccessLevel\lpublic addStatement(analyzer.model.IStatement) : void\lpublic getArgTypes() : java.lang.String[]\lpublic getReturnType() : java.lang.String\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lnull accept(analyzer.visitor.common.IVisitor) : void\lpublic isStatic() : boolean\lpublic getOwner() : analyzer.model.IClass\lpublic setName(java.lang.String) : void\lpublic setDesc(java.lang.String) : void\lpublic getDesc() : java.lang.String\lpublic setStatic(boolean) : void\lpublic setArgTypes(java.lang.String[]) : void\lpublic setReturnType(java.lang.String) : void\lpublic getName() : java.lang.String\lpublic setOwner(analyzer.model.IClass) : void\lpublic getStatementIterator() : java.util.ListIterator\l}"
+]
+analyzer_client_SequenceGenerator
+analyzer_client_SequenceGenerator [
+	label = "{analyzer.client.SequenceGenerator\n\<\<Singleton\>\>|private instance : analyzer.client.SequenceGenerator\lprivate model : analyzer.model.IModel\lprivate toVisit : java.util.Queue\l|public writeSequence(java.lang.String, java.io.OutputStream) : void\lprivate getMethodName(java.lang.String) : java.lang.String\lprivate getASMClass(java.lang.String) : java.lang.String\lpublic addMethodFromString(java.lang.String, int) : void\lpublic getNextMethod() : analyzer.common.MethodSignature\lpublic addMethod(java.lang.String, java.lang.String, java.lang.String, int) : void\lprivate getASMDesc(java.lang.String) : java.lang.String\lprivate getMethodClass(java.lang.String) : java.lang.String\lprivate getMethodDesc(java.lang.String) : java.lang.String\lpublic popNextMethod() : analyzer.common.MethodSignature\lpublic getInstance() : analyzer.client.SequenceGenerator\lpublic main(java.lang.String[]) : void\lprivate \<init\>() : void\lprivate getASMType(java.lang.String) : java.lang.String\l}"
+, color="#0000ff"]
+analyzer_model_FieldStatement
+analyzer_model_FieldStatement [
+	label = "{analyzer.model.FieldStatement|private type : analyzer.model.StatementType\lprivate field : analyzer.model.IField\lprivate owner : analyzer.model.IClass\l|public getField() : analyzer.model.IField\lpublic getType() : analyzer.model.StatementType\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getOwner() : analyzer.model.IClass\lpublic \<init\>() : void\lpublic setField(analyzer.model.IField) : void\lpublic setType(analyzer.model.StatementType) : void\l}"
+]
+analyzer_model_StatementType
+analyzer_model_StatementType [
+	label = "{analyzer.model.StatementType|public INSTANTIATE : analyzer.model.StatementType\lpublic SET_FIELD : analyzer.model.StatementType\lpublic CALL_METHOD : analyzer.model.StatementType\lpublic GET_FIELD : analyzer.model.StatementType\lprivate ENUM$VALUES : analyzer.model.StatementType[]\l|public values() : analyzer.model.StatementType[]\ldefault \<clinit\>() : void\lpublic valueOf(java.lang.String) : analyzer.model.StatementType\lprivate \<init\>(java.lang.String, int) : void\l}"
+]
+analyzer_model_Field
+analyzer_model_Field [
+	label = "{analyzer.model.Field|private name : java.lang.String\lprivate accessLevel : analyzer.model.AccessLevel\lprivate type : java.lang.String\lprivate isStatic : boolean\lprivate owner : analyzer.model.IClass\l|public getAccessLevel() : analyzer.model.AccessLevel\lpublic setStatic(boolean) : void\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic isStatic() : boolean\lpublic getName() : java.lang.String\lpublic getType() : java.lang.String\lpublic setType(java.lang.String) : void\lpublic setOwner(analyzer.model.IClass) : void\lpublic getOwner() : analyzer.model.IClass\lpublic \<init\>() : void\lpublic setName(java.lang.String) : void\l}"
+]
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_Class [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IClass -> analyzer_visitor_common_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_visitor_detect_SingletonDetector -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_Relation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_client_DesignParser -> analyzer_asmvisitor_visitclass_ClassDeclarationVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_InstantiationStatement -> analyzer_model_IInstantiationStatement [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IMethodStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassUmlOutputStream -> analyzer_visitor_common_ITraverser [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassUmlOutputStream -> analyzer_visitor_common_Visitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IStatement -> analyzer_model_StatementType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_Class [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_AnnotatedUmlOutputStream -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_common_IVisitMethod -> analyzer_visitor_common_ITraverser [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IFieldStatement -> analyzer_model_IField [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_common_Visitor -> analyzer_visitor_common_IVisitMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassSDOutputStream -> analyzer_visitor_common_Visitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_asmvisitor_visitclass_ClassMethodVisitor [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_IMethodStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_MethodSDOutputStream -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_StatementType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_RelationType -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_visitor_common_IVisitor -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_IClass -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_model_IMethodHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_visitor_common_Visitor -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IMethodStatement -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_MethodSDOutputStream -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Model -> analyzer_model_Relation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_asmvisitor_visitclass_ClassMethodVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_AnnotatedUmlOutputStream -> analyzer_visitor_output_ClassUmlOutputStream [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_Class -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_FieldStatement -> analyzer_model_IField [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_MethodStatement -> analyzer_model_StatementType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IStatement -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Model -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_Method [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Method -> analyzer_model_IStatement [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_Class -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_asmvisitor_visitmethod_MethodCallsVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_Class [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IMethod -> analyzer_visitor_common_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_Field [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_pattern_SingletonPattern -> analyzer_model_pattern_Pattern [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+analyzer_model_IRelation -> analyzer_visitor_common_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_visitor_common_IVisitor -> analyzer_visitor_common_IVisitMethod [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_MethodStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_detect_SingletonDetector -> analyzer_model_IField [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_Relation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_Method [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_AnnotatedUmlOutputStream -> analyzer_visitor_output_ClassUmlOutputStream [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IFieldStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IClass -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_pattern_IPattern -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Relation -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_Relation -> analyzer_model_IRelation [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_client_DesignParser -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_common_VisitType -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_FieldStatement -> analyzer_model_StatementType [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_MethodStatement -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_FieldStatement -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_Method [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_FieldStatement -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_detect_SingletonDetector -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IMethod -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_common_MethodSignature [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IModel -> analyzer_visitor_common_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Class -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_Field -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_IClassModelHolder -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IRelation -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Model -> analyzer_model_pattern_IPattern [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_client_DesignParser -> analyzer_model_Class [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_DesignParser -> analyzer_visitor_output_AnnotatedUmlOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassSDOutputStream -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassSDOutputStream -> analyzer_visitor_common_ITraverser [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IModel -> analyzer_model_pattern_IPattern [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_visitor_output_MethodSDOutputStream -> analyzer_visitor_common_ITraverser [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IFieldStatement -> analyzer_model_StatementType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_common_Visitor -> analyzer_visitor_common_ITraverser [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IModel -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassUmlOutputStream -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IField [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Model -> analyzer_model_IModel [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_model_Relation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IMethodHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_Relation -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassUmlOutputStream -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_MethodStatement -> analyzer_model_IMethodStatement [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_Method -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_Field -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IMethod -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_visitor_output_ClassSDOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IField -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_common_Visitor -> analyzer_visitor_common_IVisitor [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_Model -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassSDOutputStream -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_IField [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Class -> analyzer_model_IField [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_Method -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Field -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_IMethodStatement -> analyzer_model_IStatement [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_StatementType -> analyzer_model_StatementType [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_pattern_Pattern -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_asmvisitor_visitclass_ClassDeclarationVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassUmlOutputStream -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_visitor_output_MethodSDOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_client_SequenceGenerator [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_pattern_Pattern -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Model -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_visitor_output_AnnotatedUmlOutputStream -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_DesignParser -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_pattern_IPattern -> analyzer_visitor_common_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_IStatement -> analyzer_visitor_common_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_Field [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_DesignParser -> analyzer_visitor_detect_SingletonDetector [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Method -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_InstantiationStatement -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_asmvisitor_visitmethod_MethodUsingVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_common_Visitor -> analyzer_visitor_common_LookupKey [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_IMethodHolder -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IClassModelHolder -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_asmvisitor_visitclass_ClassMethodVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_InstantiationStatement -> analyzer_model_StatementType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_model_Model [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_detect_SingletonDetector -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_asmvisitor_visitclass_ClassMethodVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_common_IVisitor -> analyzer_visitor_common_ITraverser [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IRelation -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_AccessLevel -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_visitor_common_LookupKey -> analyzer_visitor_common_VisitType [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_InstantiationStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_client_SequenceGenerator [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_client_DesignParser -> analyzer_visitor_output_ClassUmlOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_asmvisitor_visitclass_ClassCallsVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_IMethodHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_Class -> analyzer_model_IClass [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_MethodStatement -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassUmlOutputStream -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_Relation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Class -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IModel -> analyzer_model_IRelation [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_MethodStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_ClassSDOutputStream -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_FieldStatement -> analyzer_model_IFieldStatement [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_Relation -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_model_MethodStatement -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IInstantiationStatement -> analyzer_model_IStatement [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_IMethod -> analyzer_model_IStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_client_SequenceGenerator [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_RelationType [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IFieldStatement -> analyzer_model_IStatement [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_IField -> analyzer_visitor_common_ITraverser [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_Model -> analyzer_model_IRelation [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassFieldVisitor -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_MethodSDOutputStream -> analyzer_visitor_common_Visitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_DesignParser -> analyzer_asmvisitor_visitclass_ClassFieldVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_detect_SingletonDetector -> analyzer_visitor_common_Visitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IClass -> analyzer_model_IMethod [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_InstantiationStatement -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_DesignParser -> analyzer_asmvisitor_visitclass_ClassMethodVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_client_DesignParser -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IInstantiationStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_visitor_output_AnnotatedUmlOutputStream -> analyzer_model_pattern_IPattern [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IClass -> analyzer_model_IField [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_IMethodHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_visitor_common_ITraverser -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_asmvisitor_visitclass_ClassNoDeclarationVisitor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_pattern_Pattern -> analyzer_model_pattern_IPattern [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_model_IInstantiationStatement -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Field -> analyzer_model_IField [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitmethod_MethodStatementsVisitor -> analyzer_model_FieldStatement [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_IField -> analyzer_model_AccessLevel [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Method -> analyzer_model_IMethod [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_client_SequenceGenerator -> analyzer_common_MethodSignature [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_visitor_detect_SingletonDetector -> analyzer_model_IClass [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_client_DesignParser -> analyzer_model_Model [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_IClassModelHolder [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_asmvisitor_visitclass_ClassMethodVisitor -> analyzer_model_IModel [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_visitor_output_MethodSDOutputStream -> analyzer_visitor_common_IVisitor [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+}
