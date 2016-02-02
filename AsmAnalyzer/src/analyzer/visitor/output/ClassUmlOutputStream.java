@@ -13,7 +13,9 @@ import analyzer.model.IMethod;
 import analyzer.model.IModel;
 import analyzer.model.IRelation;
 import analyzer.model.RelationType;
+import analyzer.model.pattern.AnnotatedRelation;
 import analyzer.model.pattern.IAnnotatedClass;
+import analyzer.model.pattern.IAnnotatedRelation;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
 import analyzer.visitor.common.IVisitor;
@@ -157,18 +159,25 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 					write(firstClass + " -> " + secondClass);
 					switch (relation.getType()) {
 					case EXTENDS:
-						write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"solid\"\n]\n\n");
+						write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"solid\"");
 						break;
 					case IMPLEMENTS:
-						write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"dashed\"\n]\n\n");
+						write(" [\n\tarrowhead = \"empty\"\n\tstyle = \"dashed\"");
 						break;
 					case ASSOCIATES:
-						write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"solid\"\n]\n\n");
+						write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"solid\"");
 						break;
 					case USES:
-						write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"dashed\"\n]\n\n");
+						write(" [\n\tarrowhead = \"vee\"\n\tstyle = \"dashed\"");
 						break;
 					}
+					
+					if (relation instanceof IAnnotatedRelation) {
+						IAnnotatedRelation ar = (IAnnotatedRelation)relation;
+						write("\n\tlabel = \"\\<\\<" + ar.getAnnotation() + "\\>\\>\"");
+					}
+					
+					write("\n]\n\n");
 				}
 			}
 		};
