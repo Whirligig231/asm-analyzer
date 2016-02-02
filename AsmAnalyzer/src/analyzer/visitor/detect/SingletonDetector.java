@@ -16,8 +16,7 @@ import analyzer.model.IModel;
 import analyzer.model.IRelation;
 import analyzer.model.IStatement;
 import analyzer.model.StatementType;
-import analyzer.model.pattern.Pattern;
-import analyzer.model.pattern.SingletonPattern;
+import analyzer.model.pattern.SingletonClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
 import analyzer.visitor.common.IVisitor;
@@ -69,9 +68,8 @@ public class SingletonDetector {
 				if (SingletonDetector.this.instanceField != null
 						&& SingletonDetector.this.hasPrivateCtor
 						&& SingletonDetector.this.hasInstanceGetter) {
-					Pattern pattern = new SingletonPattern();
-					pattern.addClass(SingletonDetector.this.currentClass);
-					SingletonDetector.this.model.addPattern(pattern);
+					IClass annotated = new SingletonClass(SingletonDetector.this.currentClass);
+					SingletonDetector.this.model.addClass(annotated);
 				}
 			}
 		};

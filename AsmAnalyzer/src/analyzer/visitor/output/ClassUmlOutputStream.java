@@ -13,6 +13,7 @@ import analyzer.model.IMethod;
 import analyzer.model.IModel;
 import analyzer.model.IRelation;
 import analyzer.model.RelationType;
+import analyzer.model.pattern.IAnnotatedClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
 import analyzer.visitor.common.IVisitor;
@@ -64,7 +65,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
 					return;
 				
-				String line = String.format("%s [\n\tlabel = \"{%s%s|", ClassNameStandardizer.standardize(c.getName()), ClassNameStandardizer.standardize(c.getName()).replaceAll("_", "."), ClassUmlOutputStream.this.classNameHook(c));
+				String line = String.format("%s [\n\tlabel = \"{%s%s|", ClassNameStandardizer.standardize(c.getName()), ClassNameStandardizer.standardize(c.getName()).replaceAll("_", "."), ClassUmlOutputStream.this.getAnnotation(c));
 				write(line);
 			}
 		};
@@ -91,7 +92,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 				IClass c = (IClass)t;
 				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
 					return;
-				String line = String.format("}\"\n%s]\n", ClassUmlOutputStream.this.classFormatHook(c));
+				String line = String.format("}\"\n%s]\n", ClassUmlOutputStream.this.getFormatting(c));
 				write(line);
 			}
 		};
@@ -194,12 +195,26 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 		this.visitor.addVisit(VisitType.PostVisit, IModel.class, command);
 	}
 	
-	protected String classNameHook(IClass c) {
-		return "";
+	private String getAnnotation(IClass c) {
+		String out = "";
+		System.out.println(c.getName());
+		if (c instanceof IAnnotatedClass) {
+			IAnnotatedClass ac = (IAnnotatedClass)c;
+			out += "\\n\\<\\<" + ac.getAnnotation() + "\\>\\>";
+		}
+		return out;
 	}
-	
-	protected String classFormatHook(IClass c) {
-		return "";
+
+	private String getFormatting(IClass c) {
+		String out = "";
+		if (c instanceof IAnnotatedClass) {
+			IAnnotatedClass ac = (IAnnotatedClass)c;
+			out += String.format(", color=\"#%02x%02x%02x\"", 
+					ac.getColor().getRed(),
+					ac.getColor().getGreen(),
+					ac.getColor().getBlue());
+		}
+		return out;
 	}
 	
 }

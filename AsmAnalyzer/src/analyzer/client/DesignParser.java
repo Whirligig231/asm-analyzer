@@ -17,7 +17,6 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.visitor.detect.SingletonDetector;
-import analyzer.visitor.output.AnnotatedUmlOutputStream;
 import analyzer.visitor.output.ClassUmlOutputStream;
 
 public class DesignParser {
@@ -66,12 +65,11 @@ public class DesignParser {
 		sd.detect(model);
 		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
-		ClassUmlOutputStream annotatedUmlOutputStream = new AnnotatedUmlOutputStream(classUmlOutputStream);
 		
 		for (String className : args) {
-			annotatedUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
+			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
 		}
-		annotatedUmlOutputStream.write(model);
+		classUmlOutputStream.write(model);
 		
 	}
 }

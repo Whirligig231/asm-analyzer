@@ -9,19 +9,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import analyzer.model.pattern.IPattern;
 import analyzer.visitor.common.IVisitor;
 
 public class Model implements IModel {
 	
 	private Map<String, IClass> classes;
 	private Collection<IRelation> relations;
-	private Collection<IPattern> patterns;
 
 	public Model() {
 		this.classes = new HashMap<>();
 		this.relations = new HashSet<>();
-		this.patterns = new HashSet<>();
 	}
 
 	@Override
@@ -73,22 +70,6 @@ public class Model implements IModel {
 	@Override
 	public IClass getClass(String className) {
 		return this.classes.get(className);
-	}
-
-	@Override
-	public Collection<IPattern> getPatterns(IClass classModel) {
-		Collection<IPattern> coll = new ArrayList<>();
-		for (IPattern pattern : this.patterns) {
-			if (pattern.getClasses().contains(classModel))
-				coll.add(pattern);
-		}
-		
-		return Collections.unmodifiableCollection(coll);
-	}
-
-	@Override
-	public void addPattern(IPattern pattern) {
-		this.patterns.add(pattern);
 	}
 
 }
