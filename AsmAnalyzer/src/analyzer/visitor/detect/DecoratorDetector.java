@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.AccessLevel;
@@ -28,10 +32,7 @@ public class DecoratorDetector {
 	private final IVisitor visitor;
 	private IModel model;
 	private IClass currentClass;
-	private IField instanceField;
-	private boolean methodIsInstance;
-	private boolean hasPrivateCtor;
-	private boolean hasInstanceGetter;
+	private Map<IClass, Set<IClass>> possibleDecorated;
 
 	public DecoratorDetector() {
 		this.visitor = new Visitor();
@@ -44,6 +45,7 @@ public class DecoratorDetector {
 	}
 	
 	public void detect(IModel model) {
+		this.possibleDecorated = new HashMap<>();
 		model.accept(this.visitor);
 	}
 	
@@ -53,9 +55,6 @@ public class DecoratorDetector {
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
 				DecoratorDetector.this.currentClass = c;
-				DecoratorDetector.this.hasInstanceGetter = false;
-				DecoratorDetector.this.hasPrivateCtor = false;
-				DecoratorDetector.this.instanceField = null;
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IClass.class, command);
@@ -99,10 +98,11 @@ public class DecoratorDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IField c = (IField)t;
-				if (c.isStatic()
-						&& c.getAccessLevel() == AccessLevel.PRIVATE
-						&& ClassNameStandardizer.standardize(c.getType()).equals(DecoratorDetector.this.currentClass.getName()))
-					DecoratorDetector.this.instanceField = c;
+				Map<IClass, Set<IClass>> pd = DecoratorDetector.this.possibleDecorated;
+				if (pd.get(DecoratorDetector.this.currentClass) == null)
+					pd.put(currentClass, new HashSet<IClass>());
+				
+				pd.get(currentClass).add(model.getClass(c.getName()));
 			}
 		};
 		this.visitor.addVisit(VisitType.Visit, IField.class, command);
