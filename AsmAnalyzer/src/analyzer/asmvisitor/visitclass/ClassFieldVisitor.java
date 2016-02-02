@@ -67,7 +67,7 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassModelHolder
 	private void addAssociate(String type) {
 		IClass assocClass = this.model.getClass(ClassNameStandardizer.standardize(type));
 		if (assocClass != null) {
-			IRelation relation = new Relation(this.getClassModel(), assocClass, RelationType.ASSOCIATES);
+			IRelation relation = new Relation(this.getClassModel(), assocClass, RelationType.ASSOCIATES, this.model);
 			this.model.addRelation(relation);
 		}
 	}

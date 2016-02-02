@@ -41,7 +41,7 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassModel
 		// Add super class relation
 		IClass superClass = this.model.getClass(ClassNameStandardizer.standardize(superName));
 		if (superClass != null) {
-			IRelation relation = new Relation(this.classModel, superClass, RelationType.EXTENDS);
+			IRelation relation = new Relation(this.classModel, superClass, RelationType.EXTENDS, this.model);
 			this.model.addRelation(relation);
 		}
 		
@@ -49,7 +49,7 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassModel
 		for (String inter : interfaces) {
 			IClass superInter = this.model.getClass(ClassNameStandardizer.standardize(inter));
 			if (superInter != null) {
-				IRelation relation = new Relation(this.classModel, superInter, RelationType.IMPLEMENTS);
+				IRelation relation = new Relation(this.classModel, superInter, RelationType.IMPLEMENTS, this.model);
 				this.model.addRelation(relation);
 			}
 		}

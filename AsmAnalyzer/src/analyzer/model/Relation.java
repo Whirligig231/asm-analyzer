@@ -4,14 +4,16 @@ import analyzer.visitor.common.IVisitor;
 
 public class Relation implements IRelation {
 
-	private IClass firstClass;
-	private IClass secondClass;
+	private String firstClass;
+	private String secondClass;
 	private RelationType type;
+	private IModel owner;
 	
-	public Relation(IClass firstClass, IClass secondClass, RelationType type) {
-		this.firstClass = firstClass;
-		this.secondClass = secondClass;
+	public Relation(IClass firstClass, IClass secondClass, RelationType type, IModel owner) {
+		this.firstClass = firstClass.getName();
+		this.secondClass = secondClass.getName();
 		this.type = type;
+		this.owner = owner;
 	}
 
 	@Override
@@ -21,12 +23,12 @@ public class Relation implements IRelation {
 
 	@Override
 	public IClass getFirstClass() {
-		return this.firstClass;
+		return this.owner.getClass(this.firstClass);
 	}
 
 	@Override
 	public IClass getSecondClass() {
-		return this.secondClass;
+		return this.owner.getClass(this.secondClass);
 	}
 
 	@Override
@@ -36,12 +38,12 @@ public class Relation implements IRelation {
 
 	@Override
 	public void setFirstClass(IClass firstClass) {
-		this.firstClass = firstClass;
+		this.firstClass = firstClass.getName();
 	}
 
 	@Override
 	public void setSecondClass(IClass secondClass) {
-		this.secondClass = secondClass;
+		this.secondClass = secondClass.getName();
 	}
 
 	@Override

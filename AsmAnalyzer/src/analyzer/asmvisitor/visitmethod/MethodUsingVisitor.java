@@ -44,7 +44,7 @@ public class MethodUsingVisitor extends MethodVisitor implements IClassModelHold
 	private void processUse(String classname) {
 		IClass useClass = this.model.getClass(ClassNameStandardizer.standardize(classname));
 		if (useClass != null) {
-			IRelation relation = new Relation(this.classModel, useClass, RelationType.USES);
+			IRelation relation = new Relation(this.classModel, useClass, RelationType.USES, this.model);
 			this.model.addRelation(relation);
 		}
 	}

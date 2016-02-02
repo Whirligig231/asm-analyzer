@@ -67,7 +67,7 @@ public class ClassMethodVisitor extends ClassVisitor implements IClassModelHolde
 			String useName = m.group(1);
 			IClass useClass = this.model.getClass(ClassNameStandardizer.standardize(useName));
 			if (useClass != null) {
-				IRelation relation = new Relation(this.getClassModel(), useClass, RelationType.USES);
+				IRelation relation = new Relation(this.getClassModel(), useClass, RelationType.USES, this.model);
 				this.model.addRelation(relation);
 			}
 		}

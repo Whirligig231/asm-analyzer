@@ -48,13 +48,13 @@ public class Model implements IModel {
 		// Association overrides use
 		if (relation.getType() == RelationType.USES) {
 			IRelation assoc = new Relation(relation.getFirstClass(), relation.getSecondClass(),
-					RelationType.ASSOCIATES);
+					RelationType.ASSOCIATES, this);
 			if (this.relations.contains(assoc))
 				return;
 		}
 		else if (relation.getType() == RelationType.ASSOCIATES) {
 			IRelation use = new Relation(relation.getFirstClass(), relation.getSecondClass(),
-					RelationType.USES);
+					RelationType.USES, this);
 			if (this.relations.contains(use))
 				this.relations.remove(use);
 		}
