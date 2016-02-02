@@ -16,6 +16,12 @@ public interface IClass extends ITraverser {
 	public IModel getOwner();
 	public void setOwner(IModel model);
 	
+	public IClass getSuperClass();
+	public void setSuperClass(IClass superClass);
+	
+	public Iterator<IClass> getInterfacesIterator();
+	public void addInterface(IClass myInterface);
+	
 	// Using iterators and add functionality to prevent content coupling
 	
 	public Iterator<IMethod> getMethodIterator();

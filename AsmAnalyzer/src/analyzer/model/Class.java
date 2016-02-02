@@ -16,6 +16,8 @@ public class Class implements IClass {
 	private String name;
 	private AccessLevel accessLevel;
 	private IModel model;
+	private String superClass;
+	private Collection<String> interfaces;
 	
 	private Map<String, IMethod> methods;
 	private Map<String, IField> fields;
@@ -23,6 +25,7 @@ public class Class implements IClass {
 	public Class() {
 		this.methods = new HashMap<>();
 		this.fields = new HashMap<>();
+		this.interfaces = new ArrayList<>();
 	}
 
 	@Override
@@ -97,6 +100,26 @@ public class Class implements IClass {
 	@Override
 	public void setOwner(IModel model) {
 		this.model = model;
+	}
+
+	@Override
+	public IClass getSuperClass() {
+		return this.model.getClass(this.superClass);
+	}
+
+	@Override
+	public void setSuperClass(IClass superClass) {
+		this.superClass = superClass.getName();
+	}
+
+	@Override
+	public Iterator<IClass> getInterfacesIterator() {
+		return new ClassModelIterator(this.interfaces.iterator(), this.model);
+	}
+
+	@Override
+	public void addInterface(IClass myInterface) {
+		this.interfaces.add(myInterface.getName());
 	}
 
 }

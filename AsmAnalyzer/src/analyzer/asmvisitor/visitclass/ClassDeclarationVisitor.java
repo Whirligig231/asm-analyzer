@@ -43,6 +43,8 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassModel
 		if (superClass != null) {
 			IRelation relation = new Relation(this.classModel, superClass, RelationType.EXTENDS, this.model);
 			this.model.addRelation(relation);
+			
+			this.classModel.setSuperClass(superClass);
 		}
 		
 		// Add interface relations
@@ -51,6 +53,8 @@ public class ClassDeclarationVisitor extends ClassVisitor implements IClassModel
 			if (superInter != null) {
 				IRelation relation = new Relation(this.classModel, superInter, RelationType.IMPLEMENTS, this.model);
 				this.model.addRelation(relation);
+				
+				this.classModel.addInterface(superInter);
 			}
 		}
 		
