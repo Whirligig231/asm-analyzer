@@ -59,6 +59,8 @@ public class Model implements IModel {
 				this.relations.remove(use);
 		}
 		
+		if (this.relations.contains(relation))
+			this.relations.remove(relation);
 		this.relations.add(relation);
 	}
 

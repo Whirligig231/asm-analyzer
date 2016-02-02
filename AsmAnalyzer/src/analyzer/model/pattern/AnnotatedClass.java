@@ -97,4 +97,24 @@ public class AnnotatedClass implements IAnnotatedClass {
 		this.decorated.accept(v);
 	}
 
+	@Override
+	public IClass getSuperClass() {
+		return this.decorated.getSuperClass();
+	}
+
+	@Override
+	public void setSuperClass(IClass superClass) {
+		this.decorated.setSuperClass(superClass);
+	}
+
+	@Override
+	public Iterator<IClass> getInterfacesIterator() {
+		return this.decorated.getInterfacesIterator();
+	}
+
+	@Override
+	public void addInterface(IClass myInterface) {
+		this.decorated.addInterface(myInterface);
+	}
+
 }
