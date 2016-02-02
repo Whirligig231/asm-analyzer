@@ -5,7 +5,7 @@ import analyzer.visitor.common.IVisitor;
 public class FieldStatement implements IFieldStatement {
 
 	private StatementType type;
-	private IClass owner;
+	private String owner;
 	private IField field;
 
 	@Override

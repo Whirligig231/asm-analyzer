@@ -52,7 +52,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 			this.model.addClass(destClass);
 		}
 		
-		IInstantiationStatement mst = new InstantiationStatement();
+		IInstantiationStatement mst = new InstantiationStatement(this.getModel());
 		mst.setOwner(destClass);
 		
 		this.method.addStatement(mst);
@@ -75,7 +75,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 		
 		IField destField = destClass.getField(name, type);
 		if (destField == null) {
-			destField = new Field();
+			destField = new Field(this.getModel());
 			destField.setOwner(destClass);
 			destField.setName(name);
 			destField.setType(type);
@@ -109,7 +109,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 		
 		IMethod destMethod = destClass.getMethod(name, desc);
 		if (destMethod == null) {
-			destMethod = new Method();
+			destMethod = new Method(this.getModel());
 			destMethod.setOwner(destClass);
 			destMethod.setName(name);
 			destMethod.setDesc(desc);

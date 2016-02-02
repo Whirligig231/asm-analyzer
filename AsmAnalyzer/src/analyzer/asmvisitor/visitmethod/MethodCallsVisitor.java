@@ -48,7 +48,7 @@ public class MethodCallsVisitor extends MethodVisitor implements IClassModelHold
 		
 		IMethod destMethod = destClass.getMethod(name, desc);
 		if (destMethod == null) {
-			destMethod = new Method();
+			destMethod = new Method(this.getModel());
 			destMethod.setOwner(destClass);
 			destMethod.setName(name);
 			destMethod.setDesc(desc);

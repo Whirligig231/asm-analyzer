@@ -4,7 +4,12 @@ import analyzer.visitor.common.IVisitor;
 
 public class InstantiationStatement implements IInstantiationStatement {
 
-	private IClass owner;
+	private String owner;
+	private IModel model;
+	
+	public InstantiationStatement(IModel model) {
+		this.model = model;
+	}
 
 	@Override
 	public void accept(IVisitor v) {
@@ -18,12 +23,12 @@ public class InstantiationStatement implements IInstantiationStatement {
 
 	@Override
 	public IClass getOwner() {
-		return this.owner;
+		return this.model.getClass(this.owner);
 	}
 
 	@Override
 	public void setOwner(IClass owner) {
-		this.owner = owner;
+		this.owner = owner.getName();
 	}
 
 }

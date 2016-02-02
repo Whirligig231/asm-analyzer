@@ -10,7 +10,9 @@ import analyzer.visitor.common.IVisitor;
 
 public class Method implements IMethod {
 	
-	private IClass owner;
+	private IModel model;
+	
+	private String owner;
 	private String name;
 	private String desc;
 
@@ -21,8 +23,9 @@ public class Method implements IMethod {
 	
 	private List<IStatement> statements;
 	
-	public Method() {
+	public Method(IModel model) {
 		this.statements = new ArrayList<>();
+		this.model = model;
 	}
 
 	@Override
@@ -79,12 +82,12 @@ public class Method implements IMethod {
 
 	@Override
 	public IClass getOwner() {
-		return this.owner;
+		return this.model.getClass(this.owner);
 	}
 
 	@Override
 	public void setOwner(IClass owner) {
-		this.owner = owner;
+		this.owner = owner.getName();
 	}
 
 	@Override

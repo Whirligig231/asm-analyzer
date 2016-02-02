@@ -40,7 +40,7 @@ public class ClassUmlOutputStreamTest {
 		IClass carClass = new Class();
 		carClass.setName(ClassNameStandardizer.standardize("Car"));
 		singleClassModel.addClass(carClass);
-		IMethod startMethod = new Method();
+		IMethod startMethod = new Method(singleClassModel);
 		startMethod.setName("start");
 		startMethod.setAccessLevel(AccessLevel.PUBLIC);
 		startMethod.setReturnType("void");
@@ -48,7 +48,7 @@ public class ClassUmlOutputStreamTest {
 		startMethod.setArgTypes(argTypes);
 		startMethod.setOwner(carClass);
 		carClass.addMethod(startMethod);
-		IField engineField = new Field();
+		IField engineField = new Field(singleClassModel);
 		engineField.setAccessLevel(AccessLevel.PRIVATE);
 		engineField.setName("engine");
 		engineField.setType("Engine");

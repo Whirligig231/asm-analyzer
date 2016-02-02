@@ -8,7 +8,12 @@ public class Field implements IField {
 	private AccessLevel accessLevel;
 	private boolean isStatic;
 	private String type;
-	private IClass owner;
+	private IModel model;
+	private String owner;
+	
+	public Field(IModel model) {
+		this.model = model;
+	}
 
 	@Override
 	public String getName() {
@@ -44,12 +49,12 @@ public class Field implements IField {
 
 	@Override
 	public IClass getOwner() {
-		return this.owner;
+		return this.model.getClass(this.owner);
 	}
 
 	@Override
 	public void setOwner(IClass owner) {
-		this.owner = owner;
+		this.owner = owner.getName();
 	}
 
 	@Override

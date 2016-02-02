@@ -52,7 +52,7 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassModelHolder
 			this.addAssociate(type);
 		}
 
-		IField field = new Field();
+		IField field = new Field(this.getModel());
 		field.setName(name);
 		field.setAccessLevel(AccessLevel.getFromOpcodes(access));
 		field.setStatic((Opcodes.ACC_STATIC & access) > 0);
