@@ -20,8 +20,8 @@ analyzer_visitor_output_ClassSDOutputStream [
 	label = "{analyzer.visitor.output.ClassSDOutputStream|null out : java_io_OutputStream\lnull visitor : analyzer_visitor_common_IVisitor\l|public write(analyzer.model.IModel) : void\ldefault access$0(analyzer.visitor.output.ClassSDOutputStream, java.lang.String) : void\lprivate setupPostVisitModel() : void\lprivate setupPreVisitClass() : void\lpublic \<init\>(java.io.OutputStream) : void\lprivate write(java.lang.String) : void\lnull \<init\>(analyzer.visitor.output.ClassSDOutputStream) : void\l}"
 ]
 analyzer_model_pattern_ComponentClass [
-	label = "{analyzer.model.pattern.ComponentClass||public \<init\>(analyzer.model.IClass) : void\l}"
-]
+	label = "{analyzer.model.pattern.ComponentClass\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ff00"]
 analyzer_model_MethodStatement [
 	label = "{analyzer.model.MethodStatement|null method : analyzer_model_IMethod\l|public setMethod(analyzer.model.IMethod) : void\lpublic getType() : analyzer.model.StatementType\lpublic getMethod() : analyzer.model.IMethod\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getOwner() : analyzer.model.IClass\lpublic \<init\>() : void\l}"
 ]
@@ -44,11 +44,11 @@ analyzer_asmvisitor_visitclass_ClassNoDeclarationVisitor [
 	label = "{analyzer.asmvisitor.visitclass.ClassNoDeclarationVisitor||public visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\l}"
 ]
 analyzer_model_pattern_TargetClass [
-	label = "{analyzer.model.pattern.TargetClass||public \<init\>(analyzer.model.IClass) : void\l}"
-]
+	label = "{analyzer.model.pattern.TargetClass\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ff00"]
 analyzer_model_pattern_DecoratorClass [
-	label = "{analyzer.model.pattern.DecoratorClass||public \<init\>(analyzer.model.IClass) : void\l}"
-]
+	label = "{analyzer.model.pattern.DecoratorClass\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ff00"]
 analyzer_model_ClassModelIterator [
 	label = "{analyzer.model.ClassModelIterator|null it : java_util_Iterator\lnull model : analyzer_model_IModel\l|public next() : analyzer.model.IClass\lpublic hasNext() : boolean\lpublic next() : java.lang.Object\lpublic \<init\>(java.util.Iterator, analyzer.model.IModel) : void\l}"
 ]
@@ -83,14 +83,14 @@ analyzer_asmvisitor_visitclass_ClassFieldVisitor [
 	label = "{analyzer.asmvisitor.visitclass.ClassFieldVisitor|null holder : analyzer_model_IClassModelHolder\lnull model : analyzer_model_IModel\l|public getModel() : analyzer.model.IModel\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\lprivate addAssociate(java.lang.String) : void\lpublic getClassModel() : analyzer.model.IClass\lpublic visitField(int, java.lang.String, java.lang.String, java.lang.String, java.lang.Object) : org.objectweb.asm.FieldVisitor\l}"
 ]
 analyzer_model_pattern_SingletonClass [
-	label = "{analyzer.model.pattern.SingletonClass||public \<init\>(analyzer.model.IClass) : void\l}"
-]
+	label = "{analyzer.model.pattern.SingletonClass\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ff00"]
 analyzer_visitor_detect_DecoratorDetector [
 	label = "{analyzer.visitor.detect.DecoratorDetector|null currentMethod : analyzer_model_IMethod\lnull badMethods : java_util_Map\lnull interFields : java_util_Map\lprivate hasMS : boolean\lnull goodMethods : java_util_Map\lnull searchClass : analyzer_model_IClass\lprivate hasFS : boolean\lnull currentClass : analyzer_model_IClass\lnull visitor : analyzer_visitor_common_IVisitor\lnull model : analyzer_model_IModel\lnull methodsToFind : java_util_Map\l|public detect(analyzer.model.IModel) : void\lprivate setupPreVisitMethod() : void\ldefault access$7(analyzer.visitor.detect.DecoratorDetector) : java.util.Map\ldefault access$20(analyzer.visitor.detect.DecoratorDetector, analyzer.model.IModel) : void\lprivate setupVisitField() : void\lprivate addInterface(analyzer.model.IClass) : void\ldefault access$13(analyzer.visitor.detect.DecoratorDetector, boolean) : void\lprivate setupPreVisitClass() : void\ldefault access$19(analyzer.visitor.detect.DecoratorDetector) : java.util.Map\lprivate setupPostMethodsVisitClass() : void\ldefault access$16(analyzer.visitor.detect.DecoratorDetector) : boolean\ldefault access$2(analyzer.visitor.detect.DecoratorDetector, java.util.Map) : void\ldefault access$5(analyzer.visitor.detect.DecoratorDetector, analyzer.model.IClass) : void\ldefault access$8(analyzer.visitor.detect.DecoratorDetector) : java.util.Map\ldefault access$4(analyzer.visitor.detect.DecoratorDetector, java.util.Map) : void\ldefault access$17(analyzer.visitor.detect.DecoratorDetector) : analyzer.model.IClass\ldefault access$0(analyzer.visitor.detect.DecoratorDetector, analyzer.model.IClass) : void\ldefault access$11(analyzer.visitor.detect.DecoratorDetector, analyzer.model.IClass) : void\ldefault access$15(analyzer.visitor.detect.DecoratorDetector) : boolean\lprivate setupVisitStatement() : void\ldefault access$9(analyzer.visitor.detect.DecoratorDetector) : analyzer.model.IModel\lnull \<init\>(analyzer.visitor.detect.DecoratorDetector) : void\ldefault access$12(analyzer.visitor.detect.DecoratorDetector, boolean) : void\ldefault access$10(analyzer.visitor.detect.DecoratorDetector) : analyzer.model.IClass\lprivate setupPostVisitMethod() : void\ldefault access$18(analyzer.visitor.detect.DecoratorDetector) : analyzer.model.IMethod\lprivate setupPreVisitModel() : void\ldefault access$14(analyzer.visitor.detect.DecoratorDetector, analyzer.model.IMethod) : void\ldefault access$1(analyzer.visitor.detect.DecoratorDetector, java.util.Map) : void\ldefault access$3(analyzer.visitor.detect.DecoratorDetector, java.util.Map) : void\ldefault access$6(analyzer.visitor.detect.DecoratorDetector) : java.util.Map\lpublic \<init\>() : void\lprivate addInterfaces(analyzer.model.IClass) : void\l}"
 ]
 analyzer_model_pattern_AdapterClass [
-	label = "{analyzer.model.pattern.AdapterClass||public \<init\>(analyzer.model.IClass) : void\l}"
-]
+	label = "{analyzer.model.pattern.AdapterClass\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ff00"]
 analyzer_asmvisitor_visitmethod_MethodStatementsVisitor [
 	label = "{analyzer.asmvisitor.visitmethod.MethodStatementsVisitor|null method : analyzer_model_IMethod\lnull classModel : analyzer_model_IClass\lnull model : analyzer_model_IModel\l|public visitFieldInsn(int, java.lang.String, java.lang.String, java.lang.String) : void\ldefault addReturnType(analyzer.model.IMethod, java.lang.String) : void\lpublic getMethod() : analyzer.model.IMethod\lpublic getModel() : analyzer.model.IModel\lpublic visitTypeInsn(int, java.lang.String) : void\lpublic visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String, boolean) : void\lpublic getClassModel() : analyzer.model.IClass\ldefault addArguments(analyzer.model.IMethod, java.lang.String) : void\lpublic \<init\>(int, org.objectweb.asm.MethodVisitor, analyzer.asmvisitor.visitclass.ClassStatementsVisitor) : void\l}"
 ]
@@ -140,7 +140,7 @@ analyzer_model_Relation [
 	label = "{analyzer.model.Relation|null secondClass : java_lang_String\lnull type : analyzer_model_RelationType\lnull owner : analyzer_model_IModel\lnull firstClass : java_lang_String\l|public hashCode() : int\lpublic equals(java.lang.Object) : boolean\lpublic setSecondClass(analyzer.model.IClass) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getSecondClass() : analyzer.model.IClass\lpublic getType() : analyzer.model.RelationType\lpublic getFirstClass() : analyzer.model.IClass\lpublic setFirstClass(analyzer.model.IClass) : void\lpublic setType(analyzer.model.RelationType) : void\lpublic \<init\>(analyzer.model.IClass, analyzer.model.IClass, analyzer.model.RelationType, analyzer.model.IModel) : void\l}"
 ]
 analyzer_model_pattern_AnnotatedRelation [
-	label = "{analyzer.model.pattern.AnnotatedRelation\n\<\<Decorator\>\>|null annotation : java_lang_String\lnull decorated : analyzer_model_IRelation\l|public setSecondClass(analyzer.model.IClass) : void\lpublic getSecondClass() : analyzer.model.IClass\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getType() : analyzer.model.RelationType\lpublic getFirstClass() : analyzer.model.IClass\lpublic setFirstClass(analyzer.model.IClass) : void\lpublic \<init\>(analyzer.model.IRelation, java.lang.String) : void\lpublic setType(analyzer.model.RelationType) : void\lpublic getAnnotation() : java.lang.String\l}"
+	label = "{analyzer.model.pattern.AnnotatedRelation\n\<\<Decorator\>\>|null annotation : java_lang_String\lnull decorated : analyzer_model_IRelation\l|public hashCode() : int\lpublic equals(java.lang.Object) : boolean\lpublic setSecondClass(analyzer.model.IClass) : void\lpublic getSecondClass() : analyzer.model.IClass\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getType() : analyzer.model.RelationType\lpublic getFirstClass() : analyzer.model.IClass\lpublic setFirstClass(analyzer.model.IClass) : void\lpublic \<init\>(analyzer.model.IRelation, java.lang.String) : void\lpublic setType(analyzer.model.RelationType) : void\lpublic getAnnotation() : java.lang.String\l}"
 , color="#00ff00"]
 analyzer_model_IMethodHolder [
 	label = "{analyzer.model.IMethodHolder||public getMethod() : analyzer.model.IMethod\l}"
@@ -161,8 +161,8 @@ analyzer_model_IMethod [
 	label = "{analyzer.model.IMethod||public getAccessLevel() : analyzer.model.AccessLevel\lpublic addStatement(analyzer.model.IStatement) : void\lpublic getArgTypes() : java.lang.String[]\lpublic getReturnType() : java.lang.String\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lnull accept(analyzer.visitor.common.IVisitor) : void\lpublic isStatic() : boolean\lpublic getOwner() : analyzer.model.IClass\lpublic setName(java.lang.String) : void\lpublic setDesc(java.lang.String) : void\lpublic getDesc() : java.lang.String\lpublic setStatic(boolean) : void\lpublic setArgTypes(java.lang.String[]) : void\lpublic setReturnType(java.lang.String) : void\lpublic getName() : java.lang.String\lpublic setOwner(analyzer.model.IClass) : void\lpublic getStatementIterator() : java.util.ListIterator\l}"
 ]
 analyzer_model_pattern_AdaptsRelation [
-	label = "{analyzer.model.pattern.AdaptsRelation||public \<init\>(analyzer.model.IRelation) : void\l}"
-]
+	label = "{analyzer.model.pattern.AdaptsRelation\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IRelation) : void\l}"
+, color="#00ff00"]
 analyzer_model_pattern_AnnotatedClass [
 	label = "{analyzer.model.pattern.AnnotatedClass\n\<\<Decorator\>\>|null annotation : java_lang_String\lnull color : java_awt_Color\lnull decorated : analyzer_model_IClass\l|public getAccessLevel() : analyzer.model.AccessLevel\lpublic getFieldIterator() : java.util.Iterator\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getOwner() : analyzer.model.IModel\lpublic addField(analyzer.model.IField) : void\lpublic addInterface(analyzer.model.IClass) : void\lpublic getInterfacesIterator() : java.util.Iterator\lpublic getField(java.lang.String, java.lang.String) : analyzer.model.IField\lpublic getColor() : java.awt.Color\lpublic setName(java.lang.String) : void\lpublic setSuperClass(analyzer.model.IClass) : void\lpublic getMethodIterator() : java.util.Iterator\lpublic \<init\>(analyzer.model.IClass, java.lang.String, java.awt.Color) : void\lpublic setOwner(analyzer.model.IModel) : void\lpublic getName() : java.lang.String\lpublic getSuperClass() : analyzer.model.IClass\lpublic addMethod(analyzer.model.IMethod) : void\lpublic getAnnotation() : java.lang.String\lpublic getMethod(java.lang.String, java.lang.String) : analyzer.model.IMethod\l}"
 , color="#00ff00"]
@@ -170,8 +170,8 @@ analyzer_client_SequenceGenerator [
 	label = "{analyzer.client.SequenceGenerator|null instance : analyzer_client_SequenceGenerator\lnull toVisit : java_util_Queue\lnull model : analyzer_model_IModel\l|public writeSequence(java.lang.String, java.io.OutputStream) : void\lprivate getMethodName(java.lang.String) : java.lang.String\lprivate getASMClass(java.lang.String) : java.lang.String\lpublic addMethodFromString(java.lang.String, int) : void\lpublic getNextMethod() : analyzer.common.MethodSignature\lpublic addMethod(java.lang.String, java.lang.String, java.lang.String, int) : void\lprivate getASMDesc(java.lang.String) : java.lang.String\lprivate getMethodClass(java.lang.String) : java.lang.String\lprivate getMethodDesc(java.lang.String) : java.lang.String\lpublic popNextMethod() : analyzer.common.MethodSignature\lpublic getInstance() : analyzer.client.SequenceGenerator\lpublic main(java.lang.String[]) : void\lprivate \<init\>() : void\lprivate getASMType(java.lang.String) : java.lang.String\l}"
 ]
 analyzer_model_pattern_AdapteeClass [
-	label = "{analyzer.model.pattern.AdapteeClass||public \<init\>(analyzer.model.IClass) : void\l}"
-]
+	label = "{analyzer.model.pattern.AdapteeClass\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ff00"]
 analyzer_model_FieldStatement [
 	label = "{analyzer.model.FieldStatement|null type : analyzer_model_StatementType\lprivate owner : java_lang_String\lnull field : analyzer_model_IField\l|public getField() : analyzer.model.IField\lpublic getType() : analyzer.model.StatementType\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getOwner() : analyzer.model.IClass\lpublic \<init\>() : void\lpublic setField(analyzer.model.IField) : void\lpublic setType(analyzer.model.StatementType) : void\l}"
 ]
@@ -182,8 +182,8 @@ analyzer_model_Field [
 	label = "{analyzer.model.Field|null type : java_lang_String\lnull name : java_lang_String\lnull owner : java_lang_String\lprivate isStatic : boolean\lnull accessLevel : analyzer_model_AccessLevel\lnull model : analyzer_model_IModel\l|public getAccessLevel() : analyzer.model.AccessLevel\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic isStatic() : boolean\lpublic getType() : java.lang.String\lpublic getOwner() : analyzer.model.IClass\lpublic setName(java.lang.String) : void\lpublic setStatic(boolean) : void\lpublic equals(java.lang.Object) : boolean\lpublic getName() : java.lang.String\lpublic setType(java.lang.String) : void\lpublic setOwner(analyzer.model.IClass) : void\lpublic \<init\>(analyzer.model.IModel) : void\l}"
 ]
 analyzer_model_pattern_DecoratesRelation [
-	label = "{analyzer.model.pattern.DecoratesRelation||public \<init\>(analyzer.model.IRelation) : void\l}"
-]
+	label = "{analyzer.model.pattern.DecoratesRelation\n\<\<Decorator\>\>||public \<init\>(analyzer.model.IRelation) : void\l}"
+, color="#00ff00"]
 analyzer_asmvisitor_visitmethod_MethodCallsVisitor -> analyzer_model_IClass [
 	arrowhead = "vee"
 	style = "solid"
@@ -419,12 +419,6 @@ analyzer_asmvisitor_visitclass_ClassDeclarationVisitor -> analyzer_model_IModel 
 	style = "solid"
 ]
 
-analyzer_model_pattern_AnnotatedRelation -> analyzer_model_IRelation [
-	arrowhead = "vee"
-	style = "solid"
-	label = "\<\<decorates\>\>"
-]
-
 analyzer_client_SequenceGenerator -> analyzer_asmvisitor_visitclass_ClassDeclarationVisitor [
 	arrowhead = "vee"
 	style = "dashed"
@@ -513,12 +507,6 @@ analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_asmvisitor_visitc
 analyzer_model_Field -> analyzer_model_IField [
 	arrowhead = "empty"
 	style = "dashed"
-]
-
-analyzer_model_pattern_AnnotatedClass -> analyzer_model_IClass [
-	arrowhead = "vee"
-	style = "solid"
-	label = "\<\<decorates\>\>"
 ]
 
 analyzer_model_IMethod -> analyzer_model_IClass [
@@ -914,6 +902,7 @@ analyzer_model_Field -> analyzer_visitor_common_IVisitor [
 analyzer_model_pattern_AnnotatedClass -> analyzer_model_IClass [
 	arrowhead = "vee"
 	style = "solid"
+	label = "\<\<decorates\>\>"
 ]
 
 analyzer_model_IFieldStatement -> analyzer_model_StatementType [
@@ -1002,6 +991,11 @@ analyzer_asmvisitor_visitclass_ClassCallsVisitor -> analyzer_model_IModel [
 ]
 
 analyzer_asmvisitor_visitmethod_MethodUsingVisitor -> analyzer_common_ClassNameStandardizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_model_Relation -> analyzer_model_IRelation [
 	arrowhead = "vee"
 	style = "dashed"
 ]
@@ -1249,6 +1243,7 @@ analyzer_visitor_output_ClassSDOutputStream -> analyzer_visitor_common_VisitType
 analyzer_model_pattern_AnnotatedRelation -> analyzer_model_IRelation [
 	arrowhead = "vee"
 	style = "solid"
+	label = "\<\<decorates\>\>"
 ]
 
 analyzer_client_DesignParser -> analyzer_model_IClass [
