@@ -17,6 +17,7 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.visitor.detect.DecoratorDetector;
+import analyzer.visitor.detect.DecoratorSubclassDetector;
 import analyzer.visitor.detect.SingletonDetector;
 import analyzer.visitor.output.ClassUmlOutputStream;
 
@@ -67,6 +68,10 @@ public class DesignParser {
 		
 		DecoratorDetector dd = new DecoratorDetector();
 		dd.detect(model);
+		
+		// Propagates detection down to subclasses
+		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
+		dsd.detect(model);
 		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
 		
