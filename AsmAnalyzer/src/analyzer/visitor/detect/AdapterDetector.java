@@ -54,9 +54,14 @@ public class AdapterDetector {
 		public IField getField() {
 			return this.field;
 		}
-		
+
 		public IClass getSupertype() {
 			return this.supertype;
+		}
+		
+		@Override
+		public String toString() {
+			return "FieldClassPair [field=" + field.getName() + ", supertype=" + supertype.getName() + "]";
 		}
 
 		@Override
@@ -123,6 +128,7 @@ public class AdapterDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
+				// System.out.println("\n\n\n\nNOW IN CLASS: "+c.getName()+"\n-----------\n\n\n\n");
 				currentClass = c;
 				supertypes = new HashSet<>();
 				loadSupertypes(c);
@@ -156,8 +162,10 @@ public class AdapterDetector {
 				if (f.isStatic())
 					return;
 				fields.add(f);
+				// System.out.println("Add field "+f.getName());
 				for (IClass i : supertypes) {
 					FieldClassPair fcp = new FieldClassPair(f, i);
+					// System.out.println("Adding " + fcp);
 					Set<String> methods = new HashSet<>();
 					Iterator<IMethod> it = i.getMethodIterator();
 					while (it.hasNext()) {
@@ -178,8 +186,10 @@ public class AdapterDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IMethod m = (IMethod)t;
+				searchClass = null;
 				for (IClass i : supertypes) {
 					if (i.getMethod(m.getName(), m.getDesc()) != null) {
+						// System.out.println("Search class is "+i.getName());
 						searchClass = i;
 					}
 				}
@@ -218,6 +228,7 @@ public class AdapterDetector {
 				for (IField f : fields) {
 					boolean success = hasFS.get(f);
 					FieldClassPair fcp = new FieldClassPair(f, searchClass);
+					// System.out.println("Getting "+fcp);
 					int currentGood = goodMethods.get(fcp);
 					int currentBad = badMethods.get(fcp);
 					Set<String> s = methodsToFind.get(fcp);
@@ -248,12 +259,15 @@ public class AdapterDetector {
 						model.addClass(new AdapterClass(adapter));
 						IClass target = fcp.getSupertype();
 						model.addClass(new TargetClass(target));
-						IClass adaptee = fcp.getField().getOwner();
+						IClass adaptee = model.getClass(fcp.getField().getType());
 						if (adaptee != null) {
+							// System.out.println(adapter.getName() + " adapts " + adaptee.getName() + " " + fcp.getField().getName() + " for " + target.getName());
 							model.addClass(new AdapteeClass(adaptee));
 							IRelation adapts = new Relation(adapter, adaptee, RelationType.ASSOCIATES, model);
 							model.addRelation(new AdaptsRelation(adapts));
 						}
+						else
+							System.out.println(adapter.getName() + " adapts for " + target.getName());
 					}
 				}
 			}

@@ -16,6 +16,7 @@ import analyzer.model.Class;
 import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
+import analyzer.visitor.detect.AdapterDetector;
 import analyzer.visitor.detect.DecoratorDetector;
 import analyzer.visitor.detect.DecoratorSubclassDetector;
 import analyzer.visitor.detect.SingletonDetector;
@@ -65,6 +66,9 @@ public class DesignParser {
 		
 		SingletonDetector sd = new SingletonDetector();
 		sd.detect(model);
+		
+		AdapterDetector ad = new AdapterDetector();
+		ad.detect(model);
 		
 		DecoratorDetector dd = new DecoratorDetector();
 		dd.detect(model);

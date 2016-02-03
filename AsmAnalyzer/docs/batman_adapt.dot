@@ -1,0 +1,49 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+analyzer_tests_classes_Man [
+	label = "{analyzer.tests.classes.Man||public speak() : void\lpublic \<init\>() : void\l}"
+]
+analyzer_tests_classes_IBat [
+	label = "{analyzer.tests.classes.IBat\n\<\<Target\>\>||public squeak() : void\lpublic fly() : void\l}"
+, color="#ff0000"]
+analyzer_tests_classes_IMan [
+	label = "{analyzer.tests.classes.IMan\n\<\<Adaptee\>\>||public speak() : void\l}"
+, color="#ff0000"]
+analyzer_tests_classes_BatMan [
+	label = "{analyzer.tests.classes.BatMan\n\<\<Adapter\>\>|null man : analyzer_tests_classes_IMan\l|public squeak() : void\lpublic fly() : void\lpublic \<init\>(analyzer.tests.classes.IMan) : void\l}"
+, color="#ff0000"]
+analyzer_tests_classes_Bat [
+	label = "{analyzer.tests.classes.Bat||public squeak() : void\lpublic fly() : void\lpublic \<init\>() : void\l}"
+]
+analyzer_tests_classes_Bat -> analyzer_tests_classes_IBat [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_tests_classes_Man -> analyzer_tests_classes_IMan [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_tests_classes_BatMan -> analyzer_tests_classes_IMan [
+	arrowhead = "vee"
+	style = "solid"
+	label = "\<\<adapts\>\>"
+]
+
+analyzer_tests_classes_BatMan -> analyzer_tests_classes_IBat [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+}
