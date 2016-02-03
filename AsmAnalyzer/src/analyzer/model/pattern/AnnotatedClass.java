@@ -94,7 +94,15 @@ public class AnnotatedClass implements IAnnotatedClass {
 
 	@Override
 	public void accept(IVisitor v) {
-		this.decorated.accept(v);
+		v.preVisit(this);
+		Iterator<IField> it = this.decorated.getFieldIterator();
+		while (it.hasNext())
+			it.next().accept(v);
+		v.visit(this);
+		Iterator<IMethod> it2 = this.decorated.getMethodIterator();
+		while (it2.hasNext())
+			it2.next().accept(v);
+		v.postVisit(this);
 	}
 
 	@Override

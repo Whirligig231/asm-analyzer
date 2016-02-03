@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.IClass;
@@ -64,6 +65,7 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
+				
 				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
 					return;
 				
@@ -206,7 +208,6 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 	
 	private String getAnnotation(IClass c) {
 		String out = "";
-		System.out.println(c.getName());
 		if (c instanceof IAnnotatedClass) {
 			IAnnotatedClass ac = (IAnnotatedClass)c;
 			out += "\\n\\<\\<" + ac.getAnnotation() + "\\>\\>";

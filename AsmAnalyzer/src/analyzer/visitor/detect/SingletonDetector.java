@@ -16,6 +16,7 @@ import analyzer.model.IModel;
 import analyzer.model.IRelation;
 import analyzer.model.IStatement;
 import analyzer.model.StatementType;
+import analyzer.model.pattern.IAnnotatedClass;
 import analyzer.model.pattern.SingletonClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
@@ -70,6 +71,7 @@ public class SingletonDetector {
 						&& SingletonDetector.this.hasInstanceGetter) {
 					IClass annotated = new SingletonClass(SingletonDetector.this.currentClass);
 					SingletonDetector.this.model.addClass(annotated);
+					// System.out.println(currentClass.getName() + " IS A SINGLETON! DECORATING!");
 				}
 			}
 		};

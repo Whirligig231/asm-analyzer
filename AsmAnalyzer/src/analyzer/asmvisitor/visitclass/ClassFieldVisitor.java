@@ -56,7 +56,7 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassModelHolder
 		field.setName(name);
 		field.setAccessLevel(AccessLevel.getFromOpcodes(access));
 		field.setStatic((Opcodes.ACC_STATIC & access) > 0);
-		field.setType(type);
+		field.setType(ClassNameStandardizer.standardize(type));
 		field.setOwner(this.getClassModel());
 		
 		this.getClassModel().addField(field);

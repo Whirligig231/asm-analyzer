@@ -2,6 +2,7 @@ package analyzer.model.pattern;
 
 import analyzer.model.IClass;
 import analyzer.model.IRelation;
+import analyzer.model.Relation;
 import analyzer.model.RelationType;
 import analyzer.visitor.common.IVisitor;
 
@@ -47,7 +48,7 @@ public class AnnotatedRelation implements IAnnotatedRelation {
 
 	@Override
 	public void accept(IVisitor v) {
-		this.decorated.accept(v);
+		v.visit(this);
 	}
 
 	@Override
@@ -55,4 +56,14 @@ public class AnnotatedRelation implements IAnnotatedRelation {
 		return this.annotation;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		return this.decorated.equals(obj);
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.decorated.hashCode();
+	}
+	
 }

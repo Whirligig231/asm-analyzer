@@ -19,9 +19,10 @@ public class ClassModelIterator implements Iterator<IClass> {
 
 	@Override
 	public IClass next() {
-		if (this.it.next() == null)
+		String next = this.it.next();
+		if (next == null)
 			return null;
-		return model.getClass(this.it.next());
+		return model.getClass(next);
 	}
 
 }

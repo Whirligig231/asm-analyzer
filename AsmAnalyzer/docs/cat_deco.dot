@@ -1,0 +1,56 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+analyzer_tests_classes_ConcreteCat [
+	label = "{analyzer.tests.classes.ConcreteCat||public meow() : void\lpublic \<init\>() : void\l}"
+]
+analyzer_tests_classes_ICat [
+	label = "{analyzer.tests.classes.ICat\n\<\<Component\>\>||public meow() : void\l}"
+, color="#00ff00"]
+analyzer_tests_classes_DecoratorCat [
+	label = "{analyzer.tests.classes.DecoratorCat\n\<\<Decorator\>\>|null decorated : analyzer_tests_classes_ICat\l|public \<init\>(analyzer.tests.classes.ICat) : void\lpublic meow() : void\l}"
+, color="#00ff00"]
+analyzer_tests_classes_TabbyCat [
+	label = "{analyzer.tests.classes.TabbyCat||public getStripes() : java.lang.String\lpublic \<init\>(analyzer.tests.classes.ICat) : void\l}"
+]
+analyzer_tests_classes_DecoratorCat -> analyzer_tests_classes_ICat [
+	arrowhead = "vee"
+	style = "solid"
+	label = "\<\<decorates\>\>"
+]
+
+analyzer_tests_classes_ConcreteCat -> analyzer_tests_classes_ICat [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+analyzer_tests_classes_DecoratorCat -> analyzer_tests_classes_ICat [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+analyzer_tests_classes_TabbyCat -> analyzer_tests_classes_DecoratorCat [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+analyzer_tests_classes_TabbyCat -> analyzer_tests_classes_ICat [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+analyzer_tests_classes_DecoratorCat -> analyzer_tests_classes_ICat [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+}

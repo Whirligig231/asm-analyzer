@@ -78,7 +78,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 			destField = new Field(this.getModel());
 			destField.setOwner(destClass);
 			destField.setName(name);
-			destField.setType(type);
+			destField.setType(ClassNameStandardizer.standardize(type));
 			
 			destClass.addField(destField);
 		}

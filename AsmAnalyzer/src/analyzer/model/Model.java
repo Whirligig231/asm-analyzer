@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import analyzer.model.pattern.IAnnotatedClass;
 import analyzer.visitor.common.IVisitor;
 
 public class Model implements IModel {

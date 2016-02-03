@@ -67,20 +67,20 @@ public class Relation implements IRelation {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof IRelation))
 			return false;
-		Relation other = (Relation) obj;
-		if (firstClass == null) {
-			if (other.firstClass != null)
+		IRelation other = (IRelation) obj;
+		if (getFirstClass() == null) {
+			if (other.getFirstClass() != null)
 				return false;
-		} else if (!firstClass.equals(other.firstClass))
+		} else if (!getFirstClass().equals(other.getFirstClass()))
 			return false;
-		if (secondClass == null) {
-			if (other.secondClass != null)
+		if (getSecondClass() == null) {
+			if (other.getSecondClass() != null)
 				return false;
-		} else if (!secondClass.equals(other.secondClass))
+		} else if (!getSecondClass().equals(other.getSecondClass()))
 			return false;
-		if (type != other.type)
+		if (getType() != other.getType())
 			return false;
 		return true;
 	}
