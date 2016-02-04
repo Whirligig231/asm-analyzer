@@ -63,3 +63,7 @@ Steven, meanwhile, refactored our visitor code to use the Command pattern, so th
 ## Milestone 4
 
 In this milestone, Christian added a way to detect Singleton classes, while Steven added test classes for this new functionality. The first step was to refactor our handling of method calls, making them a subtype of a new model type called IStatement, representing a statement within a method body. The second step for this was to add an IPattern interface to the model, allowing IModel objects to contain information about which patterns are present in the design. The third step was to create a new visitor-based class called SingletonDetector, which visits an IModel and adds detected singleton classes to it. The last step was to add a new type of OutputStream, AnnotatedUmlOutputStream, that adds color outlines and <<Singleton>> annotations to the UML diagram.
+
+## Milestone 5
+
+In this milestone, Christian added the logic for Adapter and Decorator detection.  This included a refactoring of our model design, with the new inclusion of AnnotatedRelation, AnnotatedClass, and their related classes.  AdapterDetector, DecoratorDetector, and DecoratorSubclassDetector contain the logic for the model visitor, and created AnnotatedClasses and AnnotatedRelations to include in the model.  Steven updated the project documentation and manual UML diagram, as well as created the testing for the Adapter and Decorator patterns.
