@@ -23,19 +23,20 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.model.pattern.IAnnotatedClass;
-import analyzer.visitor.detect.AdapterDetector;
+import analyzer.visitor.detect.DecoratorDetector;
+import analyzer.visitor.detect.DecoratorSubclassDetector;
 
-public class AdapterTest {
+public class DecoratorTest {
 	IModel model = new Model();
 	Map<String, String> annotationClassMap = new HashMap<String, String>();
 	@Before
 	public void setUp() throws Exception {
 		
-		annotationClassMap.put("analyzer.tests.classes.IBat", "Target");
-		annotationClassMap.put("analyzer.tests.classes.IMan", "Adaptee");
-		annotationClassMap.put("analyzer.tests.classes.BatMan", "Adapter");
+		annotationClassMap.put("analyzer.tests.classes.ICat", "Component");
+		annotationClassMap.put("analyzer.tests.classes.DecoratorCat", "Decorator");
+		annotationClassMap.put("analyzer.tests.classes.TabbyCat", "Decorator");
 		
-		String[] classes = {"analyzer.tests.classes.IBat", "analyzer.tests.classes.Bat", "analyzer.tests.classes.BatMan", "analyzer.tests.classes.Man", "analyzer.tests.classes.IMan"};
+		String[] classes = {"analyzer.tests.classes.ICat", "analyzer.tests.classes.DecoratorCat", "analyzer.tests.classes.TabbyCat", "analyzer.tests.classes.ConcreteCat"};
 		
 		for(String className: classes){
 			//System.out.println("Loading class: "+className);
@@ -67,8 +68,12 @@ public class AdapterTest {
 
 		}
 		
-		AdapterDetector ad = new AdapterDetector();
-		ad.detect(model);
+		DecoratorDetector dd = new DecoratorDetector();
+		dd.detect(model);
+		
+		// Propagates detection down to subclasses
+		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
+		dsd.detect(model);
 	}
 
 	@After
