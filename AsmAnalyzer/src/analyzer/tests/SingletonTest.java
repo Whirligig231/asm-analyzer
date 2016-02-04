@@ -1,9 +1,10 @@
 package analyzer.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.junit.After;
@@ -22,8 +23,11 @@ import analyzer.model.Class;
 import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
-import analyzer.model.pattern.IPattern;
-import analyzer.model.pattern.SingletonPattern;
+import analyzer.model.pattern.IAnnotatedClass;
+import analyzer.model.pattern.SingletonClass;
+import analyzer.visitor.detect.AdapterDetector;
+import analyzer.visitor.detect.DecoratorDetector;
+import analyzer.visitor.detect.DecoratorSubclassDetector;
 import analyzer.visitor.detect.SingletonDetector;
 
 public class SingletonTest {
@@ -36,11 +40,11 @@ public class SingletonTest {
 	public void setUp() throws Exception {
 		model = new Model();
 		
-		isSingletonMap.put("java.lang.Runtime", true);
+		isSingletonMap.put("java.lang.Runtime", false);
 		isSingletonMap.put("java.awt.Desktop", false);
 		isSingletonMap.put("java.util.Calendar", false);
 		isSingletonMap.put("java.io.FilterInputStream", false);
-		isSingletonMap.put("problem.asm.tests.classes.EagerSingleton", true);
+		isSingletonMap.put("analyzer.tests.classes.EagerSingleton", false);
 		
 		for(String className: isSingletonMap.keySet()){
 			//System.out.println("Loading class: "+className);
@@ -75,6 +79,18 @@ public class SingletonTest {
 
 		SingletonDetector sd = new SingletonDetector();
 		sd.detect(model);
+		
+		AdapterDetector ad = new AdapterDetector();
+		ad.detect(model);
+		
+		DecoratorDetector dd = new DecoratorDetector();
+		dd.detect(model);
+		
+		// Propagates detection down to subclasses
+		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
+		dsd.detect(model);
+		
+		
 	}
 
 	@After
@@ -82,10 +98,15 @@ public class SingletonTest {
 	}
 	
 	public boolean hasSingletonPattern(IModel model, IClass classModel){
-		Collection<IPattern> patterns = model.getPatterns(classModel);
-		for(IPattern pattern : patterns){
-			if (pattern instanceof SingletonPattern){
-				return true;
+		Iterator<IClass> classIterator = model.getClassIterator();
+		while (classIterator.hasNext()){
+			IClass clazz = classIterator.next();
+			if (clazz instanceof IAnnotatedClass) {
+				IAnnotatedClass aClass = (IAnnotatedClass) clazz;
+				System.out.println(aClass.getAnnotation());
+				if (aClass.getAnnotation().equals("Singleton")) {
+					return true;
+				}
 			}
 		}
 		return false;

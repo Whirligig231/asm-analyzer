@@ -83,6 +83,7 @@ public class DesignParser {
 			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
 		}
 		classUmlOutputStream.write(model);
+		classUmlOutputStream.close();
 		
 	}
 }

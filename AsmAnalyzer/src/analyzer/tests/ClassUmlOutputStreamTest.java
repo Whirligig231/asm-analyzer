@@ -60,7 +60,7 @@ public class ClassUmlOutputStreamTest {
 		vehicleClass.setName(ClassNameStandardizer.standardize("Vehicle"));
 		extendsModel.addClass(vehicleClass);
 		extendsModel.addClass(carClass);
-		IRelation relation = new Relation(carClass, vehicleClass, RelationType.EXTENDS);
+		IRelation relation = new Relation(carClass, vehicleClass, RelationType.EXTENDS, extendsModel);
 		extendsModel.addRelation(relation);
 		
 		implementsModel = new Model();
@@ -68,7 +68,7 @@ public class ClassUmlOutputStreamTest {
 		drivableClass.setName(ClassNameStandardizer.standardize("Drivable"));
 		implementsModel.addClass(vehicleClass);
 		implementsModel.addClass(drivableClass);
-		IRelation drivableVehicleRelation = new Relation(vehicleClass, drivableClass, RelationType.IMPLEMENTS);
+		IRelation drivableVehicleRelation = new Relation(vehicleClass, drivableClass, RelationType.IMPLEMENTS, implementsModel);
 		implementsModel.addRelation(drivableVehicleRelation);
 		
 	}

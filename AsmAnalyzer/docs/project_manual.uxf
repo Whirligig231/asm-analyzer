@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.1.1">
-  <zoom_level>7</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1225</x>
-      <y>1232</y>
-      <w>336</w>
-      <h>182</h>
+      <x>1575</x>
+      <y>1584</y>
+      <w>432</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>problem.asm.model::Relation
 --
@@ -32,10 +32,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>1428</y>
-      <w>462</w>
-      <h>161</h>
+      <x>936</x>
+      <y>1836</y>
+      <w>594</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassMethodVisitor
 --
@@ -58,10 +58,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>56</x>
-      <y>1645</y>
-      <w>595</w>
-      <h>147</h>
+      <x>72</x>
+      <y>2115</y>
+      <w>765</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>problem.asm::MethodCallsVisitor
 --
@@ -83,10 +83,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1792</x>
-      <y>1673</y>
-      <w>231</w>
-      <h>140</h>
+      <x>2304</x>
+      <y>2151</y>
+      <w>297</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>problem.asm.model::Field
 --
@@ -108,10 +108,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1638</x>
-      <y>1071</y>
-      <w>231</w>
-      <h>147</h>
+      <x>2106</x>
+      <y>1377</y>
+      <w>297</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IClass
@@ -133,10 +133,10 @@ problem.asm.model::IClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>1645</y>
-      <w>462</w>
-      <h>140</h>
+      <x>936</x>
+      <y>2115</y>
+      <w>594</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassCallsVisitor
 --
@@ -157,10 +157,10 @@ problem.asm.model::IClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1862</x>
-      <y>280</y>
-      <w>336</w>
-      <h>140</h>
+      <x>2394</x>
+      <y>360</y>
+      <w>432</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>problem.asm::MethodSignature
 --
@@ -181,10 +181,10 @@ problem.asm.model::IClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
-      <y>1428</y>
-      <w>455</w>
-      <h>140</h>
+      <x>252</x>
+      <y>1836</y>
+      <w>585</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>problem.asm::MethodUsingVisitor
 --
@@ -205,10 +205,10 @@ problem.asm.model::IClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2667</x>
-      <y>567</y>
-      <w>301</w>
-      <h>98</h>
+      <x>3429</x>
+      <y>729</y>
+      <w>387</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.visitor::IVisitor
@@ -226,10 +226,10 @@ problem.asm.visitor::IVisitor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>1260</y>
-      <w>413</w>
-      <h>119</h>
+      <x>936</x>
+      <y>1620</y>
+      <w>531</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassFieldVisitor
 --
@@ -248,10 +248,10 @@ problem.asm.visitor::IVisitor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1792</x>
-      <y>1512</y>
-      <w>231</w>
-      <h>119</h>
+      <x>2304</x>
+      <y>1944</y>
+      <w>297</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IField
@@ -270,10 +270,10 @@ problem.asm.model::IField
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1288</x>
-      <y>1071</y>
-      <w>210</w>
-      <h>119</h>
+      <x>1656</x>
+      <y>1377</y>
+      <w>270</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IRelation
@@ -292,10 +292,10 @@ problem.asm.model::IRelation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>1106</y>
-      <w>462</w>
-      <h>105</h>
+      <x>936</x>
+      <y>1422</y>
+      <w>594</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassDeclarationVisitor
 --
@@ -313,10 +313,10 @@ problem.asm.model::IRelation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1561</x>
-      <y>728</y>
-      <w>196</w>
-      <h>119</h>
+      <x>2007</x>
+      <y>936</y>
+      <w>252</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IModel
@@ -336,10 +336,10 @@ problem.asm.model::IModel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>973</y>
-      <w>196</w>
-      <h>70</h>
+      <x>765</x>
+      <y>1251</y>
+      <w>252</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IClassModelHolder
@@ -354,10 +354,10 @@ problem.asm.model::IClassModelHolder
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1498</x>
+      <x>1926</x>
       <y>0</y>
-      <w>189</w>
-      <h>63</h>
+      <w>243</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassNameStandardizer
 --
@@ -371,10 +371,10 @@ problem.asm.model::IClassModelHolder
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>1841</y>
-      <w>462</w>
-      <h>56</h>
+      <x>936</x>
+      <y>2367</y>
+      <w>594</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassNoDeclarationVisitor
 --
@@ -388,10 +388,10 @@ problem.asm.model::IClassModelHolder
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>105</x>
-      <y>973</y>
-      <w>175</w>
-      <h>63</h>
+      <x>135</x>
+      <y>1251</y>
+      <w>225</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IMethodHolder
@@ -405,10 +405,10 @@ problem.asm.model::IMethodHolder
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1827</x>
-      <y>609</y>
-      <w>154</w>
-      <h>56</h>
+      <x>2349</x>
+      <y>783</y>
+      <w>198</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.visitor::ITraverser
@@ -422,10 +422,10 @@ problem.asm.visitor::ITraverser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1071</x>
-      <y>504</y>
-      <w>140</w>
-      <h>49</h>
+      <x>1377</x>
+      <y>648</y>
+      <w>180</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>problem.asm::DesignParser
 --
@@ -438,10 +438,10 @@ problem.asm.visitor::ITraverser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1421</x>
-      <y>357</y>
-      <w>350</w>
-      <h>196</h>
+      <x>1827</x>
+      <y>459</y>
+      <w>450</w>
+      <h>261</h>
     </coordinates>
     <panel_attributes>problem.asm: SequenceGenerator
 &lt;&lt;Singleton&gt;&gt;
@@ -468,10 +468,10 @@ fg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2674</x>
-      <y>882</y>
-      <w>126</w>
-      <h>126</h>
+      <x>3438</x>
+      <y>1134</y>
+      <w>162</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;160.0;10.0;80.0;160.0;80.0;160.0;10.0</additional_attributes>
@@ -479,10 +479,10 @@ fg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2779</x>
-      <y>931</y>
-      <w>147</w>
-      <h>63</h>
+      <x>3573</x>
+      <y>1197</y>
+      <w>189</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>190.0;70.0;190.0;10.0;10.0;10.0</additional_attributes>
@@ -490,10 +490,10 @@ fg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2793</x>
-      <y>658</y>
-      <w>21</w>
-      <h>133</h>
+      <x>3591</x>
+      <y>846</y>
+      <w>27</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
@@ -501,10 +501,10 @@ fg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1764</x>
-      <y>357</y>
-      <w>112</w>
-      <h>21</h>
+      <x>2268</x>
+      <y>459</y>
+      <w>144</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
@@ -512,10 +512,10 @@ fg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2667</x>
-      <y>777</y>
-      <w>301</w>
-      <h>112</h>
+      <x>3429</x>
+      <y>999</y>
+      <w>387</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>problem.asm.visitor::Visitor
 --
@@ -534,10 +534,10 @@ Map&lt;LookupKey, IVisitMethod&gt; keyToVisitMethodMap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2548</x>
-      <y>994</y>
-      <w>231</w>
-      <h>112</h>
+      <x>3276</x>
+      <y>1278</y>
+      <w>297</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>problem.asm::MethodSDOutputStream
 --
@@ -555,10 +555,10 @@ Map&lt;LookupKey, IVisitMethod&gt; keyToVisitMethodMap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2226</x>
-      <y>994</y>
-      <w>224</w>
-      <h>112</h>
+      <x>2862</x>
+      <y>1278</y>
+      <w>288</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassSDOutputStream
 --
@@ -576,10 +576,10 @@ Map&lt;LookupKey, IVisitMethod&gt; keyToVisitMethodMap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2352</x>
-      <y>931</y>
-      <w>343</w>
-      <h>77</h>
+      <x>3024</x>
+      <y>1197</y>
+      <w>441</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0;470.0;10.0</additional_attributes>
@@ -587,10 +587,10 @@ Map&lt;LookupKey, IVisitMethod&gt; keyToVisitMethodMap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3066</x>
-      <y>693</y>
-      <w>154</w>
-      <h>63</h>
+      <x>3942</x>
+      <y>891</y>
+      <w>198</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.visitor::IVisitMethod
@@ -604,10 +604,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3066</x>
-      <y>567</y>
-      <w>252</w>
-      <h>98</h>
+      <x>3942</x>
+      <y>729</y>
+      <w>324</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>problem.asm.visitor::LookupKey
 --
@@ -624,10 +624,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2961</x>
-      <y>742</y>
-      <w>119</w>
-      <h>56</h>
+      <x>3807</x>
+      <y>954</y>
+      <w>153</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;60.0;90.0;60.0;90.0;10.0;150.0;10.0</additional_attributes>
@@ -635,10 +635,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3017</x>
-      <y>574</y>
-      <w>63</w>
-      <h>189</h>
+      <x>3879</x>
+      <y>738</y>
+      <w>81</w>
+      <h>243</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;250.0;10.0;10.0;70.0;10.0</additional_attributes>
@@ -646,10 +646,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1386</x>
-      <y>1183</y>
-      <w>21</w>
-      <h>63</h>
+      <x>1782</x>
+      <y>1521</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -657,10 +657,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1638</x>
-      <y>1260</y>
-      <w>231</w>
-      <h>175</h>
+      <x>2106</x>
+      <y>1620</y>
+      <w>297</w>
+      <h>225</h>
     </coordinates>
     <panel_attributes>problem.asm.model::Class
 --
@@ -685,10 +685,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1750</x>
-      <y>1211</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2250</x>
+      <y>1557</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -696,10 +696,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>686</x>
-      <y>1036</y>
-      <w>56</w>
-      <h>826</h>
+      <x>882</x>
+      <y>1332</y>
+      <w>72</w>
+      <h>1062</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1160.0;60.0;1160.0</additional_attributes>
@@ -707,10 +707,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>644</x>
-      <y>1645</y>
-      <w>98</w>
-      <h>21</h>
+      <x>828</x>
+      <y>2115</y>
+      <w>126</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
@@ -718,10 +718,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>644</x>
-      <y>1428</y>
-      <w>98</w>
-      <h>21</h>
+      <x>828</x>
+      <y>1836</y>
+      <w>126</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
@@ -729,10 +729,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>686</x>
-      <y>1260</y>
-      <w>56</w>
-      <h>21</h>
+      <x>882</x>
+      <y>1620</y>
+      <w>72</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
@@ -740,10 +740,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>686</x>
-      <y>1106</y>
-      <w>56</w>
-      <h>21</h>
+      <x>882</x>
+      <y>1422</y>
+      <w>72</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
@@ -751,10 +751,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>154</x>
-      <y>1029</y>
-      <w>21</w>
-      <h>630</h>
+      <x>198</x>
+      <y>1323</y>
+      <w>27</w>
+      <h>810</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;880.0</additional_attributes>
@@ -762,10 +762,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>154</x>
-      <y>1393</y>
-      <w>602</w>
-      <h>49</h>
+      <x>198</x>
+      <y>1791</y>
+      <w>774</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;840.0;10.0;840.0;50.0</additional_attributes>
@@ -773,10 +773,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>1036</y>
-      <w>42</w>
-      <h>266</h>
+      <x>900</x>
+      <y>1332</y>
+      <w>54</w>
+      <h>342</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;360.0;10.0;360.0;10.0;10.0</additional_attributes>
@@ -784,10 +784,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>1281</y>
-      <w>42</w>
-      <h>203</h>
+      <x>900</x>
+      <y>1647</y>
+      <w>54</w>
+      <h>261</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;270.0;10.0;270.0;10.0;10.0</additional_attributes>
@@ -795,10 +795,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>952</x>
-      <y>1582</y>
-      <w>21</w>
-      <h>77</h>
+      <x>1224</x>
+      <y>2034</y>
+      <w>27</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
@@ -806,10 +806,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>644</x>
-      <y>1484</y>
-      <w>98</w>
-      <h>21</h>
+      <x>828</x>
+      <y>1908</y>
+      <w>126</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
@@ -817,10 +817,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>1575</y>
-      <w>112</w>
-      <h>84</h>
+      <x>810</x>
+      <y>2025</y>
+      <w>144</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>140.0;10.0;10.0;10.0;10.0;100.0</additional_attributes>
@@ -828,10 +828,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1561</x>
-      <y>889</y>
-      <w>196</w>
-      <h>140</h>
+      <x>2007</x>
+      <y>1143</y>
+      <w>252</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>problem.asm.model::Model
 --
@@ -853,10 +853,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>1946</y>
-      <w>455</w>
-      <h>105</h>
+      <x>936</x>
+      <y>2502</y>
+      <w>585</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassStatementsVisitor
 --
@@ -875,10 +875,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>1841</y>
-      <w>511</w>
-      <h>161</h>
+      <x>180</x>
+      <y>2367</y>
+      <w>657</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>problem.asm::MethodStatementsVisitor
 --
@@ -902,10 +902,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>1463</y>
-      <w>42</w>
-      <h>504</h>
+      <x>900</x>
+      <y>1881</y>
+      <w>54</w>
+      <h>648</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;700.0;10.0;700.0;10.0;10.0</additional_attributes>
@@ -914,9 +914,9 @@ problem.asm.visitor::IVisitMethod
     <id>Relation</id>
     <coordinates>
       <x>0</x>
-      <y>1029</y>
-      <w>742</w>
-      <h>1022</h>
+      <y>1323</y>
+      <w>954</w>
+      <h>1314</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>1040.0;1440.0;10.0;1440.0;10.0;780.0;180.0;780.0;180.0;10.0</additional_attributes>
@@ -924,10 +924,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>686</x>
-      <y>1841</y>
-      <w>56</w>
-      <h>147</h>
+      <x>882</x>
+      <y>2367</y>
+      <w>72</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;190.0;60.0;190.0</additional_attributes>
@@ -935,10 +935,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>154</x>
-      <y>1610</y>
-      <w>588</w>
-      <h>406</h>
+      <x>198</x>
+      <y>2070</y>
+      <w>756</w>
+      <h>522</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;740.0;10.0;740.0;560.0;820.0;560.0</additional_attributes>
@@ -946,10 +946,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>644</x>
-      <y>1841</y>
-      <w>63</w>
-      <h>21</h>
+      <x>828</x>
+      <y>2367</y>
+      <w>81</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
@@ -957,10 +957,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>35</x>
-      <y>1610</y>
-      <w>140</w>
-      <h>259</h>
+      <x>45</x>
+      <y>2070</y>
+      <w>180</w>
+      <h>333</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>180.0;10.0;10.0;10.0;10.0;350.0;150.0;350.0</additional_attributes>
@@ -968,10 +968,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>1995</y>
-      <w>112</w>
-      <h>35</h>
+      <x>810</x>
+      <y>2565</y>
+      <w>144</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>140.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
@@ -979,10 +979,10 @@ problem.asm.visitor::IVisitMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1491</x>
-      <y>2114</y>
-      <w>154</w>
-      <h>77</h>
+      <x>1917</x>
+      <y>2718</y>
+      <w>198</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IStatement
@@ -997,10 +997,10 @@ problem.asm.model::IStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1204</x>
-      <y>2233</y>
-      <w>203</w>
-      <h>63</h>
+      <x>1548</x>
+      <y>2871</y>
+      <w>261</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IInstantiationStatement
@@ -1014,10 +1014,10 @@ problem.asm.model::IInstantiationStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1477</x>
-      <y>2233</y>
-      <w>189</w>
-      <h>63</h>
+      <x>1899</x>
+      <y>2871</y>
+      <w>243</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IMethodStatement
@@ -1032,10 +1032,10 @@ problem.asm.model::IMethodStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1477</x>
-      <y>2338</y>
-      <w>182</w>
-      <h>112</h>
+      <x>1899</x>
+      <y>3006</y>
+      <w>234</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>problem.asm.model::MethodStatement
 --
@@ -1053,10 +1053,10 @@ problem.asm.model::IMethodStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1204</x>
-      <y>2338</y>
-      <w>203</w>
-      <h>105</h>
+      <x>1548</x>
+      <y>3006</y>
+      <w>261</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>problem.asm.model::InstantiationStatement
 --
@@ -1073,10 +1073,10 @@ problem.asm.model::IMethodStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1736</x>
-      <y>2233</y>
-      <w>175</w>
-      <h>91</h>
+      <x>2232</x>
+      <y>2871</y>
+      <w>225</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IFieldStatement
@@ -1092,10 +1092,10 @@ problem.asm.model::IFieldStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1736</x>
-      <y>2366</y>
-      <w>168</w>
-      <h>154</h>
+      <x>2232</x>
+      <y>3042</y>
+      <w>216</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>problem.asm.model::FieldStatement
 --
@@ -1116,10 +1116,10 @@ problem.asm.model::IFieldStatement
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1652</x>
-      <y>840</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2124</x>
+      <y>1080</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1127,10 +1127,10 @@ problem.asm.model::IFieldStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1946</x>
-      <y>1225</y>
-      <w>161</w>
-      <h>140</h>
+      <x>2502</x>
+      <y>1575</y>
+      <w>207</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>/problem.asm.pattern::Pattern/
 --
@@ -1150,10 +1150,10 @@ problem.asm.model::IFieldStatement
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1946</x>
-      <y>1071</y>
-      <w>161</w>
-      <h>112</h>
+      <x>2502</x>
+      <y>1377</y>
+      <w>207</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.pattern::IPattern
@@ -1171,10 +1171,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1939</x>
-      <y>1407</y>
-      <w>182</w>
-      <h>63</h>
+      <x>2493</x>
+      <y>1809</y>
+      <w>234</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>problem.asm.pattern::SingletonPattern
 --
@@ -1188,10 +1188,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2016</x>
-      <y>1176</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2592</x>
+      <y>1512</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1199,10 +1199,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2016</x>
-      <y>1358</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2592</x>
+      <y>1746</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1210,10 +1210,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1904</x>
-      <y>1624</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2448</x>
+      <y>2088</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1221,10 +1221,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1540</x>
-      <y>1722</y>
-      <w>21</w>
-      <h>63</h>
+      <x>1980</x>
+      <y>2214</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1232,10 +1232,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1813</x>
-      <y>2317</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2331</x>
+      <y>2979</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1243,10 +1243,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1561</x>
-      <y>2289</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2007</x>
+      <y>2943</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1254,10 +1254,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1295</x>
-      <y>2289</y>
-      <w>21</w>
-      <h>63</h>
+      <x>1665</x>
+      <y>2943</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1265,10 +1265,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1561</x>
-      <y>2184</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2007</x>
+      <y>2808</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1276,10 +1276,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1295</x>
-      <y>2205</y>
-      <w>539</w>
-      <h>42</h>
+      <x>1665</x>
+      <y>2835</y>
+      <w>693</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>750.0;40.0;750.0;10.0;10.0;10.0;10.0;40.0</additional_attributes>
@@ -1287,10 +1287,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1652</x>
-      <y>1022</y>
-      <w>21</w>
-      <h>63</h>
+      <x>2124</x>
+      <y>1314</y>
+      <w>27</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -1298,10 +1298,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1393</x>
-      <y>1043</y>
-      <w>644</w>
-      <h>42</h>
+      <x>1791</x>
+      <y>1341</y>
+      <w>828</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0;900.0;10.0;900.0;40.0</additional_attributes>
@@ -1309,10 +1309,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1554</x>
-      <y>1204</y>
-      <w>98</w>
-      <h>49</h>
+      <x>1998</x>
+      <y>1548</y>
+      <w>126</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;50.0;70.0;50.0;70.0;10.0;120.0;10.0</additional_attributes>
@@ -1320,10 +1320,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1862</x>
-      <y>1204</y>
-      <w>98</w>
-      <h>42</h>
+      <x>2394</x>
+      <y>1548</y>
+      <w>126</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;40.0;70.0;40.0;70.0;10.0;10.0;10.0</additional_attributes>
@@ -1331,10 +1331,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1652</x>
-      <y>1428</y>
-      <w>21</w>
-      <h>98</h>
+      <x>2124</x>
+      <y>1836</y>
+      <w>27</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -1342,10 +1342,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1827</x>
-      <y>1428</y>
-      <w>21</w>
-      <h>98</h>
+      <x>2349</x>
+      <y>1836</y>
+      <w>27</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -1353,10 +1353,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1659</x>
-      <y>1428</y>
-      <w>91</w>
-      <h>364</h>
+      <x>2133</x>
+      <y>1836</y>
+      <w>117</w>
+      <h>468</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;500.0;110.0;500.0;110.0;10.0</additional_attributes>
@@ -1364,10 +1364,10 @@ problem.asm.pattern::IPattern
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1435</x>
-      <y>1512</y>
-      <w>231</w>
-      <h>217</h>
+      <x>1845</x>
+      <y>1944</y>
+      <w>297</w>
+      <h>279</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 problem.asm.model::IMethod
@@ -1396,10 +1396,10 @@ problem.asm.model::IMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1435</x>
-      <y>1771</y>
-      <w>231</w>
-      <h>294</h>
+      <x>1845</x>
+      <y>2277</y>
+      <w>297</w>
+      <h>378</h>
     </coordinates>
     <panel_attributes>problem.asm.model::Method
 --
@@ -1435,10 +1435,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1561</x>
-      <y>2058</y>
-      <w>21</w>
-      <h>70</h>
+      <x>2007</x>
+      <y>2646</y>
+      <w>27</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -1446,10 +1446,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1400</x>
-      <y>1771</y>
-      <w>350</w>
-      <h>602</h>
+      <x>1800</x>
+      <y>2277</y>
+      <w>450</w>
+      <h>774</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;840.0;70.0;840.0;70.0;780.0;420.0;780.0;420.0;540.0;480.0;540.0;480.0;10.0</additional_attributes>
@@ -1457,10 +1457,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1687</x>
-      <y>2310</y>
-      <w>63</w>
-      <h>98</h>
+      <x>2169</x>
+      <y>2970</y>
+      <w>81</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;120.0;10.0;120.0;10.0;10.0</additional_attributes>
@@ -1468,10 +1468,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1652</x>
-      <y>2037</y>
-      <w>42</w>
-      <h>336</h>
+      <x>2124</x>
+      <y>2619</y>
+      <w>54</w>
+      <h>432</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;460.0;40.0;460.0;40.0;10.0;20.0;10.0</additional_attributes>
@@ -1479,10 +1479,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1897</x>
-      <y>1806</y>
-      <w>63</w>
-      <h>602</h>
+      <x>2439</x>
+      <y>2322</y>
+      <w>81</w>
+      <h>774</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;840.0;70.0;840.0;70.0;10.0</additional_attributes>
@@ -1490,10 +1490,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1750</x>
-      <y>658</y>
-      <w>168</w>
-      <h>98</h>
+      <x>2250</x>
+      <y>846</y>
+      <w>216</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>220.0;10.0;220.0;120.0;10.0;120.0</additional_attributes>
@@ -1501,10 +1501,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1897</x>
-      <y>735</y>
-      <w>189</w>
-      <h>350</h>
+      <x>2439</x>
+      <y>945</y>
+      <w>243</w>
+      <h>450</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;400.0;250.0;400.0;250.0;480.0</additional_attributes>
@@ -1512,10 +1512,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1470</x>
-      <y>1008</y>
-      <w>448</w>
-      <h>77</h>
+      <x>1890</x>
+      <y>1296</y>
+      <w>576</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>620.0;10.0;620.0;40.0;10.0;40.0;10.0;90.0</additional_attributes>
@@ -1523,10 +1523,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1834</x>
-      <y>1029</y>
-      <w>21</w>
-      <h>56</h>
+      <x>2358</x>
+      <y>1323</y>
+      <w>27</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -1534,10 +1534,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1897</x>
-      <y>1029</y>
-      <w>21</w>
-      <h>497</h>
+      <x>2439</x>
+      <y>1323</y>
+      <w>27</w>
+      <h>639</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;690.0</additional_attributes>
@@ -1545,10 +1545,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1582</x>
-      <y>1463</y>
-      <w>336</w>
-      <h>63</h>
+      <x>2034</x>
+      <y>1881</y>
+      <w>432</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>460.0;10.0;10.0;10.0;10.0;70.0</additional_attributes>
@@ -1556,10 +1556,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1603</x>
-      <y>1463</y>
-      <w>175</w>
-      <h>665</h>
+      <x>2061</x>
+      <y>1881</y>
+      <w>225</w>
+      <h>855</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>230.0;10.0;230.0;890.0;10.0;890.0;10.0;930.0</additional_attributes>
@@ -1567,21 +1567,21 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1645</x>
-      <y>546</y>
-      <w>21</w>
-      <h>196</h>
+      <x>2115</x>
+      <y>711</y>
+      <w>27</w>
+      <h>243</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1183</x>
-      <y>735</y>
-      <w>392</w>
-      <h>392</h>
+      <x>1521</x>
+      <y>945</y>
+      <w>504</w>
+      <h>504</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;540.0;70.0;540.0;70.0;10.0;540.0;10.0</additional_attributes>
@@ -1589,10 +1589,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1526</x>
-      <y>735</y>
-      <w>126</w>
-      <h>364</h>
+      <x>1962</x>
+      <y>945</y>
+      <w>162</w>
+      <h>468</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;500.0;160.0;500.0</additional_attributes>
@@ -1600,10 +1600,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1134</x>
-      <y>791</y>
-      <w>441</w>
-      <h>490</h>
+      <x>1458</x>
+      <y>1017</y>
+      <w>567</w>
+      <h>630</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;680.0;110.0;680.0;110.0;10.0;610.0;10.0</additional_attributes>
@@ -1611,10 +1611,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1176</x>
-      <y>1260</y>
-      <w>21</w>
-      <h>182</h>
+      <x>1512</x>
+      <y>1620</y>
+      <w>27</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;240.0;10.0;10.0</additional_attributes>
@@ -1622,10 +1622,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1183</x>
-      <y>1519</y>
-      <w>266</w>
-      <h>21</h>
+      <x>1521</x>
+      <y>1953</y>
+      <w>342</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;360.0;10.0</additional_attributes>
@@ -1633,10 +1633,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>1064</y>
-      <w>658</w>
-      <h>378</h>
+      <x>756</x>
+      <y>1368</y>
+      <w>846</w>
+      <h>486</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;520.0;10.0;10.0;920.0;10.0</additional_attributes>
@@ -1644,10 +1644,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>168</x>
-      <y>1372</y>
-      <w>441</w>
-      <h>287</h>
+      <x>216</x>
+      <y>1764</y>
+      <w>567</w>
+      <h>369</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;390.0;10.0;10.0;610.0;10.0</additional_attributes>
@@ -1655,10 +1655,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>1596</y>
-      <w>875</w>
-      <h>63</h>
+      <x>738</x>
+      <y>2052</y>
+      <w>1125</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;70.0;10.0;10.0;1230.0;10.0</additional_attributes>
@@ -1666,10 +1666,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>623</x>
-      <y>1596</y>
-      <w>665</w>
-      <h>259</h>
+      <x>801</x>
+      <y>2052</y>
+      <w>855</w>
+      <h>333</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;350.0;10.0;310.0;930.0;310.0;930.0;10.0</additional_attributes>
@@ -1677,10 +1677,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>357</y>
-      <w>1295</w>
-      <h>1302</h>
+      <x>180</x>
+      <y>459</y>
+      <w>1665</w>
+      <h>1674</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;1840.0;10.0;1090.0;540.0;1090.0;540.0;10.0;1830.0;10.0</additional_attributes>
@@ -1688,10 +1688,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>1225</y>
-      <w>1092</w>
-      <h>448</h>
+      <x>180</x>
+      <y>1575</y>
+      <w>1404</w>
+      <h>576</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>1500.0;620.0;1540.0;620.0;1540.0;120.0;1510.0;120.0;1510.0;10.0;10.0;10.0</additional_attributes>
@@ -1699,10 +1699,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>1995</y>
-      <w>1239</w>
-      <h>588</h>
+      <x>756</x>
+      <y>2565</y>
+      <w>1593</w>
+      <h>756</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>1750.0;750.0;1750.0;820.0;10.0;820.0;10.0;10.0</additional_attributes>
@@ -1710,10 +1710,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1561</x>
-      <y>2443</y>
-      <w>21</w>
-      <h>140</h>
+      <x>2007</x>
+      <y>3141</y>
+      <w>27</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
@@ -1721,10 +1721,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1295</x>
-      <y>2436</y>
-      <w>21</w>
-      <h>147</h>
+      <x>1665</x>
+      <y>3132</y>
+      <w>27</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
@@ -1732,10 +1732,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1134</x>
-      <y>546</y>
-      <w>441</w>
-      <h>231</h>
+      <x>1458</x>
+      <y>702</y>
+      <w>567</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>610.0;310.0;10.0;310.0;10.0;10.0</additional_attributes>
@@ -1743,10 +1743,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1505</x>
-      <y>756</y>
-      <w>147</w>
-      <h>364</h>
+      <x>1935</x>
+      <y>972</y>
+      <w>189</w>
+      <h>468</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>190.0;500.0;10.0;500.0;10.0;10.0</additional_attributes>
@@ -1754,10 +1754,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1134</x>
-      <y>756</y>
-      <w>21</w>
-      <h>364</h>
+      <x>1458</x>
+      <y>972</y>
+      <w>27</w>
+      <h>468</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;500.0;10.0;10.0</additional_attributes>
@@ -1765,10 +1765,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>1078</y>
-      <w>504</w>
-      <h>266</h>
+      <x>837</x>
+      <y>1386</y>
+      <w>648</w>
+      <h>342</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>110.0;360.0;10.0;360.0;10.0;10.0;700.0;10.0</additional_attributes>
@@ -1776,10 +1776,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>1323</y>
-      <w>84</w>
-      <h>217</h>
+      <x>846</x>
+      <y>1701</y>
+      <w>108</w>
+      <h>279</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>100.0;290.0;10.0;290.0;10.0;10.0</additional_attributes>
@@ -1787,10 +1787,10 @@ problem.asm.model::IMethod
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>679</x>
-      <y>1519</y>
-      <w>63</w>
-      <h>483</h>
+      <x>873</x>
+      <y>1953</y>
+      <w>81</w>
+      <h>621</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>70.0;670.0;10.0;670.0;10.0;10.0</additional_attributes>
@@ -1798,15 +1798,13 @@ problem.asm.model::IMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3143</x>
-      <y>994</y>
-      <w>175</w>
-      <h>224</h>
+      <x>4041</x>
+      <y>1278</y>
+      <w>225</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes>problem.asm::SingletonDetector
-&lt;&lt;Singleton&gt;&gt;
 --
--instance: SingletonDetector
 -visitor: IVisitor
 -model: IModel
 -currentClass: IClass
@@ -1825,17 +1823,16 @@ problem.asm.model::IMethod
 -setupPreVisitModel(): void
 -setupVisitStatement(): void
 --
-fg=blue
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2905</x>
-      <y>931</y>
-      <w>301</w>
-      <h>77</h>
+      <x>3735</x>
+      <y>1197</y>
+      <w>387</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
@@ -1843,10 +1840,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1750</x>
-      <y>784</y>
-      <w>490</w>
-      <h>231</h>
+      <x>2250</x>
+      <y>1008</y>
+      <w>630</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;620.0;10.0;620.0;310.0;680.0;310.0</additional_attributes>
@@ -1854,21 +1851,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1659</x>
-      <y>994</y>
-      <w>903</w>
-      <h>672</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;940.0;1150.0;940.0;1150.0;10.0;1270.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2177</x>
-      <y>896</y>
-      <w>686</w>
-      <h>217</h>
+      <x>2799</x>
+      <y>1152</y>
+      <w>882</w>
+      <h>279</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;900.0;10.0;900.0;290.0;960.0;290.0</additional_attributes>
@@ -1876,62 +1862,21 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2800</x>
-      <y>896</y>
-      <w>357</w>
-      <h>231</h>
+      <x>3600</x>
+      <y>1152</y>
+      <w>459</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;430.0;10.0;430.0;310.0;490.0;310.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1862</x>
-      <y>1190</y>
-      <w>1295</w>
-      <h>21</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;1830.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2016</x>
-      <y>1190</y>
-      <w>406</w>
-      <h>350</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;480.0;560.0;480.0;560.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2800</x>
-      <y>1232</y>
-      <w>294</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>problem.asm::AnnotatedUmlOutputStream
---
-~decorated: ClassUmlOutputStream
---
-+AnnotatedUmlOutputStream(ClassUmlOutputStream out): ctor
-#classNameHook(IClass c): String
-#classFormatHook(IClass c): String
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2849</x>
-      <y>980</y>
-      <w>224</w>
-      <h>203</h>
+      <x>3663</x>
+      <y>1260</y>
+      <w>288</w>
+      <h>261</h>
     </coordinates>
     <panel_attributes>problem.asm::ClassUmlOutputStream
 --
@@ -1959,21 +1904,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2940</x>
-      <y>1176</y>
-      <w>21</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1505</x>
-      <y>861</y>
-      <w>1386</w>
-      <h>133</h>
+      <x>1935</x>
+      <y>1107</y>
+      <w>1782</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>1960.0;170.0;1960.0;130.0;1540.0;130.0;1540.0;10.0;10.0;10.0</additional_attributes>
@@ -1981,21 +1915,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2821</x>
-      <y>945</y>
-      <w>21</w>
-      <h>301</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;410.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2870</x>
-      <y>945</y>
-      <w>308</w>
-      <h>63</h>
+      <x>3690</x>
+      <y>1215</y>
+      <w>396</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
@@ -2003,43 +1926,21 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1834</x>
-      <y>1211</y>
-      <w>980</w>
-      <h>196</h>
+      <x>1422</x>
+      <y>531</y>
+      <w>423</w>
+      <h>909</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;80.0;40.0;80.0;260.0;1270.0;260.0;1270.0;40.0;1380.0;40.0</additional_attributes>
+    <additional_attributes>10.0;990.0;10.0;230.0;300.0;230.0;300.0;10.0;450.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>938</x>
-      <y>413</y>
-      <w>497</w>
-      <h>707</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;990.0;10.0;10.0;690.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>672</x>
-      <y>1050</y>
-      <w>287</w>
-      <h>420</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>80.0;580.0;10.0;580.0;10.0;10.0;390.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>672</x>
-      <y>1449</y>
-      <w>70</w>
-      <h>287</h>
+      <x>864</x>
+      <y>1863</y>
+      <w>90</w>
+      <h>369</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>80.0;390.0;10.0;390.0;10.0;10.0</additional_attributes>
@@ -2047,10 +1948,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1764</x>
-      <y>490</y>
-      <w>560</w>
-      <h>518</h>
+      <x>2268</x>
+      <y>630</y>
+      <w>720</w>
+      <h>666</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>780.0;720.0;780.0;10.0;10.0;10.0</additional_attributes>
@@ -2058,10 +1959,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2303</x>
-      <y>966</y>
-      <w>336</w>
-      <h>42</h>
+      <x>2961</x>
+      <y>1242</y>
+      <w>432</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>460.0;40.0;460.0;10.0;10.0;10.0</additional_attributes>
@@ -2069,10 +1970,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1589</x>
-      <y>56</y>
-      <w>21</w>
-      <h>315</h>
+      <x>2043</x>
+      <y>72</y>
+      <w>27</w>
+      <h>405</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;430.0</additional_attributes>
@@ -2080,10 +1981,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1190</x>
-      <y>147</y>
-      <w>420</w>
-      <h>371</h>
+      <x>1530</x>
+      <y>189</y>
+      <w>540</w>
+      <h>477</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>580.0;10.0;10.0;10.0;10.0;510.0</additional_attributes>
@@ -2091,10 +1992,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>378</y>
-      <w>637</w>
-      <h>798</h>
+      <x>738</x>
+      <y>486</y>
+      <w>819</w>
+      <h>1026</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>890.0;10.0;10.0;10.0;10.0;1120.0;220.0;1120.0</additional_attributes>
@@ -2102,10 +2003,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>1155</y>
-      <w>168</w>
-      <h>168</h>
+      <x>738</x>
+      <y>1485</y>
+      <w>216</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;220.0;220.0;220.0</additional_attributes>
@@ -2113,10 +2014,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>1302</y>
-      <w>224</w>
-      <h>140</h>
+      <x>738</x>
+      <y>1674</y>
+      <w>288</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0;100.0;90.0;100.0;120.0;300.0;120.0;300.0;180.0</additional_attributes>
@@ -2124,10 +2025,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>21</x>
-      <y>1330</y>
-      <w>574</w>
-      <h>133</h>
+      <x>27</x>
+      <y>1710</y>
+      <w>738</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>800.0;10.0;10.0;10.0;10.0;170.0;250.0;170.0</additional_attributes>
@@ -2135,10 +2036,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>21</x>
-      <y>1442</y>
-      <w>49</w>
-      <h>238</h>
+      <x>27</x>
+      <y>1854</y>
+      <w>63</w>
+      <h>306</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;320.0;50.0;320.0</additional_attributes>
@@ -2146,10 +2047,10 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>21</x>
-      <y>1659</y>
-      <w>133</w>
-      <h>238</h>
+      <x>27</x>
+      <y>2133</y>
+      <w>171</w>
+      <h>306</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;320.0;170.0;320.0</additional_attributes>
@@ -2157,23 +2058,629 @@ fg=blue
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1589</x>
-      <y>126</y>
-      <w>1274</w>
-      <h>875</h>
+      <x>3465</x>
+      <y>1179</y>
+      <w>594</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;610.0;10.0;610.0;120.0;640.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2043</x>
+      <y>162</y>
+      <w>1638</w>
+      <h>1125</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;1270.0;10.0;1270.0;1140.0;1590.0;1140.0;1590.0;1230.0;1800.0;1230.0</additional_attributes>
   </element>
   <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2871</x>
+      <y>1674</y>
+      <w>414</w>
+      <h>405</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::AnnotatedClass
+--
+-decorated: IClass
+-annotation: String
+-color: Color
+--
++AnnotatedClass(IClass decorated, String annotation, Color color): ctor
++getAnnotation(): String
++getColor(): Color
++getName(): String
++getAccessLevel(): AccessLevel
++setName(String name): void
++setAccessLevel(AccessLevel accessLevel): void
++getOwner(): IModel
++setOwner(IModel model): void
++getMethodIterator(): Iterator&lt;IMethod&gt;
++addMethod(IMethod method): void
++getMethod(String name, String desc): IMethod
++getFieldIterator(): Iterator&lt;IField&gt;
++addField(IField field): void
++getField(String name, String type): IField
++accept(IVisitor v): void
++getSuperClass(): IClass
++setSuperClass(IClass superClass): void
++getInterfacesIterator(): Iterator&lt;IClass&gt;
++addInterface(IClass myInterface): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2799</x>
+      <y>1521</y>
+      <w>243</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.model.pattern::IAnnotatedClass
+--
+--
++getAnnotation(): String
++getColor(): Color
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1089</x>
+      <y>1233</y>
+      <w>261</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.model.pattern::IAnnotatedRelation
+--
+--
++getAnnotation(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2988</x>
+      <y>2124</y>
+      <w>234</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::AdapteeClass
+--
+--
++AdapteeClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2988</x>
+      <y>2214</y>
+      <w>234</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::AdapterClass
+--
+--
++AdapterClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2700</x>
+      <y>2214</y>
+      <w>252</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::ComponentClass
+--
+--
++ComponentClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2709</x>
+      <y>2124</y>
+      <w>243</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::DecoratorClass
+--
+--
++DecoratorClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2718</x>
+      <y>2304</y>
+      <w>234</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::SingletonClass
+--
+--
++SingletonClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2988</x>
+      <y>2304</y>
+      <w>234</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::TargetClass
+--
+--
++TargetClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>Relation</id>
     <coordinates>
-      <x>2695</x>
-      <y>917</y>
-      <w>462</w>
-      <h>98</h>
+      <x>2916</x>
+      <y>1611</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2961</x>
+      <y>2070</y>
+      <w>45</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0;30.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2943</x>
+      <y>2169</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2943</x>
+      <y>2241</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2943</x>
+      <y>2331</y>
+      <w>45</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2394</x>
+      <y>1530</y>
+      <w>423</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;450.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>1350</y>
+      <w>585</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>80.0;580.0;10.0;580.0;10.0;10.0;630.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>963</x>
+      <y>945</y>
+      <w>378</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::AnnotatedRelation
+--
+-decorated: IRelation
+-annotation: String
+--
++AnnotatedRelation(IRelation decorated, String annotation): ctor
++getFirstClass(): IClass
++getSecondClass(): IClass
++getType(): RelationType
++setFirstClass(IClass firstClass): void
++setSecondClass(IClass secondClass): void
++setType(RelationType type): void
++accept(IVisitor v): void
++getAnnotation(): String
++equals(Object obj): boolean
++hashCode(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>828</y>
+      <w>261</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::AdaptsRelation
+--
+--
++AdaptsRelation(IRelation decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>747</y>
+      <w>279</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::DecoratesRelation
+--
+--
++DecoratesRelation(IRelation decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>963</x>
+      <y>774</y>
+      <w>72</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>963</x>
+      <y>855</y>
+      <w>72</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1341</x>
+      <y>1278</y>
+      <w>369</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>390.0;110.0;390.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1233</x>
+      <y>1188</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4320</x>
+      <y>1278</y>
+      <w>261</w>
+      <h>369</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.detect::DecoratorDetector
+--
+-visitor: IVisitor
+-model: IModel
+-currentClass: IClass
+-currentMethod: IMethod
+-methodsToFind: Map&lt;IClass, Set&lt;String&gt;&gt;
+-goodMethods: Map&lt;IClass, Integer&gt;
+-badMethods: Map&lt;IClass, Integer&gt;
+-interFields: Map&lt;IClass, IField&gt;
+-searchClass: IClass
+-hasFS = false, hasMS = false: boolean
+--
++DecoratorDetector(): ctor
++detect(IModel model): void
+-setupPreVisitClass(): void
+-addInterfaces(IClass c): void
+-addInterface(IClass i): void
+-setupPostMethodsVisitClass(): void
+-setupPreVisitMethod(): void
+-setupPostVisitMethod(): void
+-setupVisitField(): void
+-setupPreVisitModel(): void
+-setupVisitStatement(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4626</x>
+      <y>1278</y>
+      <w>306</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.detect::AdapterDetector
+--
+-visitor: IVisitor
+-model: IModel
+-currentClass: IClass
+-searchClass: IClass
+-supertypes: Set&lt;IClass&gt;
+-fields: Set&lt;IField&gt;
+-methodsToFind: Map&lt;FieldClassPair, Set&lt;String&gt;&gt;
+-goodMethods: Map&lt;FieldClassPair, Integer&gt;
+-badMethods: Map&lt;FieldClassPair, Integer&gt;
+-hasFS: Map&lt;IField, Boolean&gt;
+--
++AdapterDetector(): ctor
++detect(IModel model): void
+-setupPreVisitClass(): void
+-loadSupertypes(IClass c): void
+-setupVisitField(): void
+-setupPreVisitMethod(): void
+-setupVisitFieldStatement(): void
+-setupPostVisitMethod(): void
+-setupPostMethodsVisitClass(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4977</x>
+      <y>1278</y>
+      <w>297</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.detect::DecoratorSubclassDetector
+--
+-visitor: IVisitor
+-model: IModel
+--
++DecoratorSubclassDetector(): ctor
++detect(IModel model): void
+-setupPreVisitClass(): void
+-isDecorator(IClass c): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4095</x>
+      <y>1197</y>
+      <w>387</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4068</x>
+      <y>1215</y>
+      <w>396</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3978</x>
+      <y>1152</y>
+      <w>360</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;610.0;10.0;610.0;120.0;640.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;340.0;10.0;340.0;310.0;380.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4455</x>
+      <y>1197</y>
+      <w>387</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4815</x>
+      <y>1197</y>
+      <w>387</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4275</x>
+      <y>1152</y>
+      <w>369</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;10.0;360.0;310.0;390.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4590</x>
+      <y>1152</y>
+      <w>405</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0;400.0;170.0;430.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4437</x>
+      <y>1215</y>
+      <w>369</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>390.0;70.0;390.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4779</x>
+      <y>1215</y>
+      <w>396</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2664</x>
+      <y>1539</y>
+      <w>1395</w>
+      <h>900</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>60.0;890.0;10.0;890.0;10.0;980.0;1000.0;980.0;1010.0;10.0;1530.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2619</x>
+      <y>1611</y>
+      <w>1719</w>
+      <h>918</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>100.0;600.0;10.0;600.0;10.0;1000.0;1090.0;1000.0;1100.0;10.0;1890.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2619</x>
+      <y>2241</y>
+      <w>99</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3213</x>
+      <y>1602</y>
+      <w>1530</w>
+      <h>576</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;620.0;480.0;620.0;480.0;80.0;1680.0;90.0;1680.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3213</x>
+      <y>2151</y>
+      <w>99</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;90.0;100.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3213</x>
+      <y>2232</y>
+      <w>99</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;90.0;100.0;90.0;10.0</additional_attributes>
   </element>
 </diagram>
