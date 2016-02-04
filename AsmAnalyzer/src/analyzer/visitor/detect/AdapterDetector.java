@@ -222,22 +222,22 @@ public class AdapterDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IMethod m = (IMethod)t;
-				if (searchClass == null)
-					return;
-				
+
 				for (IField f : fields) {
 					boolean success = hasFS.get(f);
-					FieldClassPair fcp = new FieldClassPair(f, searchClass);
-					// System.out.println("Getting "+fcp);
-					int currentGood = goodMethods.get(fcp);
-					int currentBad = badMethods.get(fcp);
-					Set<String> s = methodsToFind.get(fcp);
-					s.remove(m.getName() + m.getDesc());
-					if (success) {
-						goodMethods.put(fcp, currentGood + 1);
-					}
-					else {
-						badMethods.put(fcp, currentBad + 1);
+					for (IClass c : supertypes) {
+						FieldClassPair fcp = new FieldClassPair(f, c);
+						// System.out.println("Getting "+fcp);
+						int currentGood = goodMethods.get(fcp);
+						int currentBad = badMethods.get(fcp);
+						Set<String> s = methodsToFind.get(fcp);
+						s.remove(m.getName() + m.getDesc());
+						if (success && c.equals(searchClass)) {
+							goodMethods.put(fcp, currentGood + 1);
+						}
+						else if (!m.getName().equals("<init>")) {
+							badMethods.put(fcp, currentBad + 1);
+						}
 					}
 				}
 			}
@@ -251,8 +251,11 @@ public class AdapterDetector {
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
 				for (FieldClassPair fcp : methodsToFind.keySet()) {
+					if (fcp.getField().getType().equals(fcp.getSupertype().getName()))
+						continue;
 					int good = goodMethods.get(fcp);
 					int bad = badMethods.get(fcp) + methodsToFind.get(fcp).size();
+					// System.out.println(good+" "+bad);
 					if (good >= bad && good > 0) {
 						// it's an adapter!
 						IClass adapter = c;
@@ -266,8 +269,8 @@ public class AdapterDetector {
 							IRelation adapts = new Relation(adapter, adaptee, RelationType.ASSOCIATES, model);
 							model.addRelation(new AdaptsRelation(adapts));
 						}
-						else
-							System.out.println(adapter.getName() + " adapts for " + target.getName());
+						// else
+							// System.out.println(adapter.getName() + " adapts for " + target.getName());
 					}
 				}
 			}
