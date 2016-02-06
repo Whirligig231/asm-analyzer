@@ -2,6 +2,8 @@ package analyzer.client;
 
 import java.io.FilterOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
@@ -23,6 +25,7 @@ import analyzer.visitor.detect.SingletonDetector;
 import analyzer.visitor.output.ClassUmlOutputStream;
 
 public class DesignParser {
+	
 	/**
 	 * Reads in a list of Java Classes and reverse engineers their design.
 	 * 
@@ -33,19 +36,43 @@ public class DesignParser {
 	public static void main(String[] args) throws IOException{
 		
 		IModel model = new Model();
+		
+		Map<String, Integer> params = new HashMap<>();
+		params.put("decorator-threshold", 3);
+		params.put("adapter-threshold", 3);
 				
-		for(String className: args){
-			//System.out.println("Loading class: "+className);
-			IClass classModel = new Class();
-			classModel.setName(ClassNameStandardizer.standardize(className));
-			classModel.setOwner(model);
-			model.addClass(classModel);
+		for (String argument: args) {
+			
+			if (argument.contains("=")) {
+				String pname = argument.substring(0, argument.indexOf('='));
+				String pvalue = argument.substring(argument.indexOf('=') + 1);
+				try {
+					int pnumber = Integer.parseInt(pvalue);
+					params.put(pname, pnumber);
+				}
+				catch (NumberFormatException ex) {
+					System.out.println("// Warning: non-numeric parameter value \"" +
+							pvalue + "\" for parameter \"" + pname + "\" was ignored\n");
+				}
+			}
+			else {
+				//System.out.println("Loading class: "+className);
+				IClass classModel = new Class();
+				classModel.setName(ClassNameStandardizer.standardize(argument));
+				classModel.setOwner(model);
+				model.addClass(classModel);
+			}
+
 		}
 		
-		for(String className: args){
+		for (String argument: args) {
+			
+			if (argument.contains("-"))
+				continue;
+			
 			//System.out.println("Loading class: " + className);
 			// ASM's ClassReader does the heavy lifting of parsing the compiled Java class
-			ClassReader reader=new ClassReader(className);
+			ClassReader reader=new ClassReader(argument);
 			
 			// make class declaration visitor to get superclass and interfaces
 			ClassVisitor decVisitor = new ClassDeclarationVisitor(Opcodes.ASM5, model);
@@ -67,10 +94,10 @@ public class DesignParser {
 		SingletonDetector sd = new SingletonDetector();
 		sd.detect(model);
 		
-		AdapterDetector ad = new AdapterDetector();
+		AdapterDetector ad = new AdapterDetector(params.get("adapter-threshold"));
 		ad.detect(model);
 		
-		DecoratorDetector dd = new DecoratorDetector();
+		DecoratorDetector dd = new DecoratorDetector(params.get("decorator-threshold"));
 		dd.detect(model);
 		
 		// Propagates detection down to subclasses

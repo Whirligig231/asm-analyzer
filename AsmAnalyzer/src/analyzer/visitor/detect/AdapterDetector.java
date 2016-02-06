@@ -105,10 +105,11 @@ public class AdapterDetector {
 	private Set<IField> fields;
 	private Map<FieldClassPair, Set<String>> methodsToFind;
 	private Map<FieldClassPair, Integer> goodMethods;
+	private int threshold;
 	private Map<FieldClassPair, Integer> badMethods;
 	private Map<IField, Boolean> hasFS;
 
-	public AdapterDetector() {
+	public AdapterDetector(int threshold) {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 		this.setupVisitField();
@@ -116,6 +117,8 @@ public class AdapterDetector {
 		this.setupVisitFieldStatement();
 		this.setupPostVisitMethod();
 		this.setupPostMethodsVisitClass();
+		
+		this.threshold = threshold;
 	}
 	
 	public void detect(IModel model) {
@@ -256,7 +259,7 @@ public class AdapterDetector {
 					int good = goodMethods.get(fcp);
 					int bad = badMethods.get(fcp) + methodsToFind.get(fcp).size();
 					// System.out.println(good+" "+bad);
-					if (good >= bad && good > 0) {
+					if (good >= threshold) {
 						// it's an adapter!
 						IClass adapter = c;
 						model.addClass(new AdapterClass(adapter));

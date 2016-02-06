@@ -43,12 +43,13 @@ public class DecoratorDetector {
 	private IMethod currentMethod;
 	private Map<IClass, Set<String>> methodsToFind;
 	private Map<IClass, Integer> goodMethods;
+	private int threshold;
 	private Map<IClass, Integer> badMethods;
 	private Map<IClass, IField> interFields;
 	private IClass searchClass;
 	private boolean hasFS = false, hasMS = false;
 
-	public DecoratorDetector() {
+	public DecoratorDetector(int threshold) {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 		this.setupPostMethodsVisitClass();
@@ -57,6 +58,8 @@ public class DecoratorDetector {
 		this.setupPreVisitMethod();
 		this.setupVisitStatement();
 		this.setupPostVisitMethod();
+		
+		this.threshold = threshold;
 	}
 	
 	public void detect(IModel model) {
@@ -121,7 +124,7 @@ public class DecoratorDetector {
 					good = goodMethods.get(c);
 					bad = badMethods.get(c) + s.size();
 					
-					if (good >= bad && good > 0) {
+					if (good >= threshold) {
 						// c is decorated
 						// System.out.println(currentClass.getName()+" decorates "+c.getName()+" (" + good + "/" + bad + ")");
 						model.addClass(new DecoratorClass(currentClass));
