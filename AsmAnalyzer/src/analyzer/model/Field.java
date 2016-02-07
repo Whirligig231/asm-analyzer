@@ -1,5 +1,9 @@
 package analyzer.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+
 import analyzer.visitor.common.IVisitor;
 
 public class Field implements IField {
@@ -10,9 +14,11 @@ public class Field implements IField {
 	private String type;
 	private IModel model;
 	private String owner;
+	private Collection<String> typeParameters;
 	
 	public Field(IModel model) {
 		this.model = model;
+		this.typeParameters = new ArrayList<String>();
 	}
 
 	@Override
@@ -101,6 +107,16 @@ public class Field implements IField {
 	@Override
 	public void setStatic(boolean isStatic) {
 		this.isStatic = isStatic;
+	}
+
+	@Override
+	public void addTypeParameter(String type) {
+		this.typeParameters.add(type);
+	}
+
+	@Override
+	public Iterator<String> getTypeParameterIterator() {
+		return this.typeParameters.iterator();
 	}
 
 }

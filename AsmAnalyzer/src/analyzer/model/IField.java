@@ -1,5 +1,7 @@
 package analyzer.model;
 
+import java.util.Iterator;
+
 import analyzer.visitor.common.ITraverser;
 
 public interface IField extends ITraverser {
@@ -13,6 +15,9 @@ public interface IField extends ITraverser {
 	public void setAccessLevel(AccessLevel accessLevel);
 	public void setStatic(boolean isStatic);
 	public void setType(String type);
+	
+	public void addTypeParameter(String type);
+	public Iterator<String> getTypeParameterIterator();
 	
 	public IClass getOwner();
 	public void setOwner(IClass owner);

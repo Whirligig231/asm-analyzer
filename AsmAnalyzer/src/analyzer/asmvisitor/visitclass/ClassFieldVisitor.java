@@ -41,18 +41,20 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassModelHolder
 
 		String type = Type.getType(desc).getClassName();
 		
+		IField field = new Field(this.getModel());
+		
 		if (signature != null) {
 			// It's a generic type; find the internal type(s) instead
 			Matcher m = Pattern.compile("L([^<;]+);").matcher(signature);
 			while (m.find()) {
 				this.addAssociate(m.group(1));
+				field.addTypeParameter(ClassNameStandardizer.standardize(m.group(1)));
 			}
 		}
 		else {
 			this.addAssociate(type);
 		}
 
-		IField field = new Field(this.getModel());
 		field.setName(name);
 		field.setAccessLevel(AccessLevel.getFromOpcodes(access));
 		field.setStatic((Opcodes.ACC_STATIC & access) > 0);
