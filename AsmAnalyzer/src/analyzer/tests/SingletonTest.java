@@ -80,10 +80,10 @@ public class SingletonTest {
 		SingletonDetector sd = new SingletonDetector();
 		sd.detect(model);
 		
-		AdapterDetector ad = new AdapterDetector();
+		AdapterDetector ad = new AdapterDetector(3);
 		ad.detect(model);
 		
-		DecoratorDetector dd = new DecoratorDetector();
+		DecoratorDetector dd = new DecoratorDetector(3);
 		dd.detect(model);
 		
 		// Propagates detection down to subclasses

@@ -68,7 +68,7 @@ public class DecoratorTest {
 
 		}
 		
-		DecoratorDetector dd = new DecoratorDetector();
+		DecoratorDetector dd = new DecoratorDetector(3);
 		dd.detect(model);
 		
 		// Propagates detection down to subclasses

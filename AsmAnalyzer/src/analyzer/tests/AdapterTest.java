@@ -67,7 +67,7 @@ public class AdapterTest {
 
 		}
 		
-		AdapterDetector ad = new AdapterDetector();
+		AdapterDetector ad = new AdapterDetector(3);
 		ad.detect(model);
 	}
 
