@@ -38,7 +38,8 @@ import analyzer.visitor.detect.AdapterDetector;
 public class CompositeDetectorTest {
 	
 	private void detect(IModel model) {
-		// TODO: Create a CompositeDetector and run the model through it
+		CompositeDetector cd = new CompositeDetector();
+		cd.detect(model);
 	}
 	
 	private IClass newClass(IModel model, String name) {
@@ -123,7 +124,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertTrue(model.getClass("IComp") instanceof ComponentClass);
+		assertTrue(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertTrue(model.getClass("Comp") instanceof CompositeClass);
 		assertTrue(model.getClass("Leaf") instanceof LeafClass);
 		
@@ -184,7 +185,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertTrue(model.getClass("IComp") instanceof ComponentClass);
+		assertTrue(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertTrue(model.getClass("Comp") instanceof CompositeClass);
 		assertTrue(model.getClass("Leaf") instanceof LeafClass);
 		
@@ -255,7 +256,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertTrue(model.getClass("IComp") instanceof ComponentClass);
+		assertTrue(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertTrue(model.getClass("Comp") instanceof CompositeClass);
 		assertTrue(model.getClass("CompTwo") instanceof CompositeClass);
 		assertTrue(model.getClass("Leaf") instanceof LeafClass);
@@ -327,7 +328,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertTrue(model.getClass("IComp") instanceof ComponentClass);
+		assertTrue(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertTrue(model.getClass("Comp") instanceof CompositeClass);
 		assertTrue(model.getClass("Leaf") instanceof LeafClass);
 		
@@ -372,7 +373,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertFalse(model.getClass("IComp") instanceof ComponentClass);
+		assertFalse(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertFalse(model.getClass("Comp") instanceof CompositeClass);
 		
 	}
@@ -432,7 +433,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertFalse(model.getClass("IComp") instanceof ComponentClass);
+		assertFalse(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertFalse(model.getClass("Comp") instanceof CompositeClass);
 		assertFalse(model.getClass("Leaf") instanceof LeafClass);
 		
@@ -478,7 +479,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertFalse(model.getClass("IComp") instanceof ComponentClass);
+		assertFalse(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertFalse(model.getClass("Comp") instanceof CompositeClass);
 		assertFalse(model.getClass("Leaf") instanceof LeafClass);
 		
