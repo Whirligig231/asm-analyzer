@@ -2,23 +2,9 @@ package analyzer.tests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.Opcodes;
 
-import analyzer.asmvisitor.visitclass.ClassDeclarationVisitor;
-import analyzer.asmvisitor.visitclass.ClassFieldVisitor;
-import analyzer.asmvisitor.visitclass.ClassMethodVisitor;
-import analyzer.asmvisitor.visitclass.ClassStatementsVisitor;
-import analyzer.common.ClassNameStandardizer;
 import analyzer.model.Class;
 import analyzer.model.Field;
 import analyzer.model.FieldStatement;
@@ -32,8 +18,10 @@ import analyzer.model.Method;
 import analyzer.model.MethodStatement;
 import analyzer.model.Model;
 import analyzer.model.StatementType;
-import analyzer.model.pattern.IAnnotatedClass;
-import analyzer.visitor.detect.AdapterDetector;
+import analyzer.model.pattern.CompositeClass;
+import analyzer.model.pattern.CompositeComponentClass;
+import analyzer.model.pattern.LeafClass;
+import analyzer.visitor.detect.CompositeDetector;
 
 public class CompositeDetectorTest {
 	

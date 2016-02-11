@@ -27,6 +27,20 @@ public class Class implements IClass {
 		this.fields = new HashMap<>();
 		this.interfaces = new ArrayList<>();
 	}
+	
+	@Override
+	public boolean equals(Object o){ //TODO: Fix this incredibly dirty implementation that Steven implemented because he's lazy af
+		if(o instanceof Class){
+			Class oClass = (Class) o;
+			return this.name.equals(oClass.name) && 
+					((this.superClass == null && oClass.superClass == null) ||
+					this.superClass.equals(oClass.superClass)) &&
+					this.accessLevel == oClass.accessLevel;
+		}else{
+			return false;
+		}
+	}
+	
 
 	@Override
 	public String getName() {
