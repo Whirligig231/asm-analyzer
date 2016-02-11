@@ -1,6 +1,5 @@
 package analyzer.model;
 
-import java.util.Iterator;
 import java.util.ListIterator;
 
 import analyzer.visitor.common.ITraverser;

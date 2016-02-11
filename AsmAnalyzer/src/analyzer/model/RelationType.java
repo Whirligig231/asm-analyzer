@@ -1,7 +1,5 @@
 package analyzer.model;
 
-import org.objectweb.asm.Opcodes;
-
 public enum RelationType {
 	EXTENDS ("extends"),
 	IMPLEMENTS ("implements"),

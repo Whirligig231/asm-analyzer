@@ -4,7 +4,6 @@ import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 import analyzer.model.IMethod;

@@ -1,6 +1,5 @@
 package analyzer.client;
 
-import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +18,7 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.visitor.detect.AdapterDetector;
+import analyzer.visitor.detect.CompositeDetector;
 import analyzer.visitor.detect.DecoratorDetector;
 import analyzer.visitor.detect.DecoratorSubclassDetector;
 import analyzer.visitor.detect.SingletonDetector;
@@ -103,6 +103,10 @@ public class DesignParser {
 		// Propagates detection down to subclasses
 		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
 		dsd.detect(model);
+		
+
+		CompositeDetector cd = new CompositeDetector();
+		cd.detect(model);
 		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
 		
