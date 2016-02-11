@@ -1,7 +1,6 @@
 package analyzer.tests;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -24,7 +23,6 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.model.pattern.IAnnotatedClass;
-import analyzer.model.pattern.SingletonClass;
 import analyzer.visitor.detect.AdapterDetector;
 import analyzer.visitor.detect.DecoratorDetector;
 import analyzer.visitor.detect.DecoratorSubclassDetector;

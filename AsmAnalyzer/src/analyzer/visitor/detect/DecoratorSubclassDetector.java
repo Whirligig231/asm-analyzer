@@ -1,34 +1,8 @@
 package analyzer.visitor.detect;
 
-import java.io.FilterOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import analyzer.common.ClassNameStandardizer;
-import analyzer.model.AccessLevel;
 import analyzer.model.IClass;
-import analyzer.model.IField;
-import analyzer.model.IFieldStatement;
-import analyzer.model.IMethod;
-import analyzer.model.IMethodStatement;
 import analyzer.model.IModel;
-import analyzer.model.IRelation;
-import analyzer.model.IStatement;
-import analyzer.model.Relation;
-import analyzer.model.RelationType;
-import analyzer.model.StatementType;
-import analyzer.model.pattern.ComponentClass;
-import analyzer.model.pattern.DecoratesRelation;
 import analyzer.model.pattern.DecoratorClass;
-import analyzer.model.pattern.SingletonClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
 import analyzer.visitor.common.IVisitor;

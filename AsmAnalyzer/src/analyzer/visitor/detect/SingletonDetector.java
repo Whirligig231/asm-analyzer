@@ -1,11 +1,5 @@
 package analyzer.visitor.detect;
 
-import java.io.FilterOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.AccessLevel;
 import analyzer.model.IClass;
@@ -13,10 +7,8 @@ import analyzer.model.IField;
 import analyzer.model.IFieldStatement;
 import analyzer.model.IMethod;
 import analyzer.model.IModel;
-import analyzer.model.IRelation;
 import analyzer.model.IStatement;
 import analyzer.model.StatementType;
-import analyzer.model.pattern.IAnnotatedClass;
 import analyzer.model.pattern.SingletonClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;

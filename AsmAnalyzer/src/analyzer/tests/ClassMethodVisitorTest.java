@@ -22,7 +22,6 @@ import analyzer.common.ClassNameStandardizer;
 import analyzer.model.AccessLevel;
 import analyzer.model.Class;
 import analyzer.model.IClass;
-import analyzer.model.IField;
 import analyzer.model.IMethod;
 import analyzer.model.IModel;
 import analyzer.model.IRelation;

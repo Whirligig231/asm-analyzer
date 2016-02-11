@@ -1,6 +1,5 @@
 package analyzer.visitor.detect;
 
-import java.util.Set;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -9,9 +8,7 @@ import java.util.Set;
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.IClass;
 import analyzer.model.IField;
-import analyzer.model.IMethod;
 import analyzer.model.IModel;
-import analyzer.model.IStatement;
 import analyzer.model.pattern.AnnotatedClass;
 import analyzer.model.pattern.CompositeClass;
 import analyzer.model.pattern.CompositeComponentClass;
@@ -28,10 +25,8 @@ public class CompositeDetector {
 	private final IVisitor visitor;
 	private IModel model;
 	private IClass currentClass;
-	private IField instanceField;
 	private IClass component;
 	private Set<IClass> supertypes;
-	private boolean tpContainsSuper;
 	private Set<IClass> compChildClasses;
 	private Set<IClass> leafs = new HashSet<IClass>();
 
@@ -41,8 +36,6 @@ public class CompositeDetector {
 		this.setupPostMethodsVisitClass();
 		this.setupPreVisitModel();
 		this.setupVisitField();
-		this.setupPreVisitMethod();
-		this.setupVisitStatement();
 	}
 	
 	public void detect(IModel model) {
@@ -88,16 +81,6 @@ public class CompositeDetector {
 			}
 		};
 		this.visitor.addVisit(VisitType.PostVisit, IClass.class, command);
-	}
-	
-	private void setupPreVisitMethod() {
-		IVisitMethod command = new IVisitMethod() {
-			@Override
-			public void execute(ITraverser t) {
-				//TODO: implement if needed
-			}
-		};
-		this.visitor.addVisit(VisitType.PreVisit, IMethod.class, command);
 	}
 	
 	 public static <T> Iterable<T> in(final Iterator<T> iterator) {
@@ -181,24 +164,5 @@ public class CompositeDetector {
 			supertypes.addAll(getSupertypes(c.getSuperClass()));
 		}
 		return supertypes;
-	}
-	
-	private void setupVisitStatement() {
-		IVisitMethod command = new IVisitMethod() {
-			@Override
-			public void execute(ITraverser t) {
-				//TODO: implement if needed
-				/*IStatement c = (IStatement)t;
-				
-				if (c instanceof IFieldStatement) {
-					IFieldStatement fs = (IFieldStatement)c;
-					if (CompositeDetector.this.methodIsInstance
-							&& fs.getType() == StatementType.GET_FIELD
-							&& fs.getField() == CompositeDetector.this.instanceField)
-						CompositeDetector.this.hasInstanceGetter = true;
-				}*/
-			}
-		};
-		this.visitor.addVisit(VisitType.Visit, IStatement.class, command);
 	}
 }

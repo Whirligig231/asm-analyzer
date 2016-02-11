@@ -1,5 +1,12 @@
 package lab13.problem;
 
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
+
+import java.io.File;
+import java.io.IOException;
+
 /*
  * Copyright (c) 2008, 2010, Oracle and/or its affiliates. All rights reserved.
  *
@@ -33,15 +40,15 @@ package lab13.problem;
  * Modified By: 
  * 		Chandan R. Rupakheti
  */
-
-import java.nio.file.*;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.WatchEvent;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import static java.nio.file.StandardWatchEventKinds.*;
-
-import java.io.*;
 
 /**
  * This class has been modified from the original WatchDir program found at: 

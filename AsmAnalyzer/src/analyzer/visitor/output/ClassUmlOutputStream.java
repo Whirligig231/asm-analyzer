@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.IClass;
@@ -14,7 +13,6 @@ import analyzer.model.IMethod;
 import analyzer.model.IModel;
 import analyzer.model.IRelation;
 import analyzer.model.RelationType;
-import analyzer.model.pattern.AnnotatedRelation;
 import analyzer.model.pattern.IAnnotatedClass;
 import analyzer.model.pattern.IAnnotatedRelation;
 import analyzer.visitor.common.ITraverser;
