@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.1.1">
+<diagram program="umlet" version="13.3">
   <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -2185,12 +2185,12 @@ analyzer.model.pattern::IAnnotatedRelation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2700</x>
+      <x>2646</x>
       <y>2214</y>
-      <w>252</w>
+      <w>306</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>analyzer.model.pattern::ComponentClass
+    <panel_attributes>analyzer.model.pattern::DecoratorComponentClass
 --
 --
 +ComponentClass(IClass decorated): ctor
@@ -2644,11 +2644,11 @@ analyzer.model.pattern::IAnnotatedRelation
     <coordinates>
       <x>2619</x>
       <y>2241</y>
-      <w>99</w>
+      <w>45</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>30.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -2659,7 +2659,7 @@ analyzer.model.pattern::IAnnotatedRelation
       <h>576</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;620.0;480.0;620.0;480.0;80.0;1680.0;90.0;1680.0;10.0</additional_attributes>
+    <additional_attributes>10.0;620.0;480.0;620.0;480.0;80.0;1680.0;80.0;1680.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -2682,5 +2682,197 @@ analyzer.model.pattern::IAnnotatedRelation
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;100.0;90.0;100.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5319</x>
+      <y>1278</y>
+      <w>306</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.detect::CompositeDetector
+--
+-visitor: IVisitor
+-model: IModel
+-currentClass: IClass
+-searchClass: IClass
+-supertypes: Set&lt;IClass&gt;
+-fields: Set&lt;IField&gt;
+-methodsToFind: Map&lt;FieldClassPair, Set&lt;String&gt;&gt;
+-goodMethods: Map&lt;FieldClassPair, Integer&gt;
+-badMethods: Map&lt;FieldClassPair, Integer&gt;
+-hasFS: Map&lt;IField, Boolean&gt;
+--
++CompositeDetector(): ctor
++detect(IModel model): void
+-setupPreVisitClass(): void
+-loadSupertypes(IClass c): void
+-setupVisitField(): void
+-setupPreVisitMethod(): void
+-setupVisitFieldStatement(): void
+-setupPostVisitMethod(): void
+-setupPostMethodsVisitClass(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4230</x>
+      <y>1413</y>
+      <w>837</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>910.0;10.0;910.0;350.0;10.0;350.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5148</x>
+      <y>1215</y>
+      <w>396</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4941</x>
+      <y>1152</y>
+      <w>396</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;390.0;10.0;390.0;170.0;420.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3222</x>
+      <y>1602</y>
+      <w>2214</w>
+      <h>999</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>2440.0;10.0;2440.0;1090.0;10.0;1090.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2988</x>
+      <y>2565</y>
+      <w>243</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::CompositeClass
+--
+--
++CompositeClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2961</x>
+      <y>2331</y>
+      <w>45</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0;30.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2988</x>
+      <y>2655</y>
+      <w>315</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::CompositeComponentClass
+--
+--
++CompositeComponentClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2988</x>
+      <y>2745</y>
+      <w>207</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::LeafClass
+--
+--
++LeafClass(IClass decorated): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2961</x>
+      <y>2592</y>
+      <w>45</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;30.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2961</x>
+      <y>2682</y>
+      <w>45</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;30.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3294</x>
+      <y>2574</y>
+      <w>99</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;90.0;100.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3186</x>
+      <y>2655</y>
+      <w>207</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;110.0;210.0;110.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5175</x>
+      <y>1197</y>
+      <w>387</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
