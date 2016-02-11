@@ -539,7 +539,7 @@ public class CompositeDetectorTest {
 		
 		this.detect(model);
 		
-		assertFalse(model.getClass("IComp") instanceof ComponentClass);
+		assertFalse(model.getClass("IComp") instanceof CompositeComponentClass);
 		assertFalse(model.getClass("Comp") instanceof CompositeClass);
 		assertFalse(model.getClass("Leaf") instanceof LeafClass);
 		
