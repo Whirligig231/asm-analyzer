@@ -103,7 +103,6 @@ public class DesignParser {
 		// Propagates detection down to subclasses
 		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
 		dsd.detect(model);
-		
 
 		CompositeDetector cd = new CompositeDetector();
 		cd.detect(model);

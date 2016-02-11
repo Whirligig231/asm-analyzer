@@ -2684,40 +2684,6 @@ analyzer.model.pattern::IAnnotatedRelation
     <additional_attributes>10.0;100.0;90.0;100.0;90.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>5319</x>
-      <y>1278</y>
-      <w>306</w>
-      <h>333</h>
-    </coordinates>
-    <panel_attributes>analyzer.visitor.detect::CompositeDetector
---
--visitor: IVisitor
--model: IModel
--currentClass: IClass
--searchClass: IClass
--supertypes: Set&lt;IClass&gt;
--fields: Set&lt;IField&gt;
--methodsToFind: Map&lt;FieldClassPair, Set&lt;String&gt;&gt;
--goodMethods: Map&lt;FieldClassPair, Integer&gt;
--badMethods: Map&lt;FieldClassPair, Integer&gt;
--hasFS: Map&lt;IField, Boolean&gt;
---
-+CompositeDetector(): ctor
-+detect(IModel model): void
--setupPreVisitClass(): void
--loadSupertypes(IClass c): void
--setupVisitField(): void
--setupPreVisitMethod(): void
--setupVisitFieldStatement(): void
--setupPostVisitMethod(): void
--setupPostMethodsVisitClass(): void
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>4230</x>
@@ -2754,12 +2720,12 @@ analyzer.model.pattern::IAnnotatedRelation
     <id>Relation</id>
     <coordinates>
       <x>3222</x>
-      <y>1602</y>
+      <y>1557</y>
       <w>2214</w>
-      <h>999</h>
+      <h>1044</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
-    <additional_attributes>2440.0;10.0;2440.0;1090.0;10.0;1090.0</additional_attributes>
+    <additional_attributes>2440.0;10.0;2440.0;1140.0;10.0;1140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -2874,5 +2840,36 @@ analyzer.model.pattern::IAnnotatedRelation
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5319</x>
+      <y>1278</y>
+      <w>369</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.detect::CompositeDetector
+--
+-visitor: IVisitor
+-model: IModel
+-currentClass: IClass
+-component: IClass
+-supertypes: Set&lt;IClass&gt;
+-compChildClasses: Set&lt;IClass&gt;
+-leafs = new HashSet&lt;IClass&gt;(): Set&lt;IClass&gt;
+--
++CompositeDetector(): ctor
++detect(IModel model): void
+-setupPreVisitClass(): void
+-setupPostMethodsVisitClass(): void
++in(final Iterator&lt;T&gt; iterator): Iterable&lt;T&gt;
+-setupVisitField(): void
+-setupPreVisitModel(): void
++isCollectionOfObject(Collection c, String className): boolean
+-getSupertypes(IClass c): Set&lt;IClass&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
