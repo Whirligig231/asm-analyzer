@@ -106,9 +106,12 @@ public class CompositeDetector {
 			public void execute(ITraverser t) {
 				IField f = (IField)t;
 				Iterator<String> tpIterator = f.getTypeParameterIterator();
+				//System.out.println("Checking type parameters for " + f.getName());
 				for(String typeParameter : in(tpIterator)){
+					//System.out.println("Type parameter: "+typeParameter);
 					for(IClass superType : CompositeDetector.this.supertypes){
-						if(superType.getName() == typeParameter) {
+						if(superType.getName().equals(typeParameter)) {
+							//System.out.println("FOUND IT");
 							CompositeDetector.this.component = superType; //If it matches the composite pattern, set the component
 							
 							//Now, loop through all classes in the model and add leafs as required
@@ -125,6 +128,10 @@ public class CompositeDetector {
 									CompositeDetector.this.compChildClasses.add(modelClass);
 								}
 							}
+						}
+						else {
+							//System.out.println("We want "+superType.getName());
+							//System.out.println("But this is "+typeParameter);
 						}
 					}
 				}

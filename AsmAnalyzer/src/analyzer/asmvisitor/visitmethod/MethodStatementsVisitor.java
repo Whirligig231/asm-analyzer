@@ -63,7 +63,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 	public void visitFieldInsn(int opcode, String owner, String name, String desc) {
 		super.visitFieldInsn(opcode, owner, name, desc);
 		
-		String type = Type.getType(desc).getClassName();
+		String type = ClassNameStandardizer.standardize(Type.getType(desc).getClassName());
 		
 		IClass destClass = this.model.getClass(ClassNameStandardizer.standardize(owner));
 		if (destClass == null) {
@@ -75,6 +75,7 @@ public class MethodStatementsVisitor extends MethodVisitor implements IClassMode
 		
 		IField destField = destClass.getField(name, type);
 		if (destField == null) {
+			//System.out.println("Re-creating field " + name + ": " + type);
 			destField = new Field(this.getModel());
 			destField.setOwner(destClass);
 			destField.setName(name);

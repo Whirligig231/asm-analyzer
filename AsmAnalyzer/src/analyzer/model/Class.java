@@ -75,6 +75,7 @@ public class Class implements IClass {
 
 	@Override
 	public void addField(IField field) {
+		//System.out.println(field.getName() + ": " + field.getType() + " added");
 		this.fields.put(field.getName() + ": " + field.getType(), field);
 	}
 

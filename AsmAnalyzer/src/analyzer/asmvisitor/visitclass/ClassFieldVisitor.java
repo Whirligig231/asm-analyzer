@@ -48,6 +48,7 @@ public class ClassFieldVisitor extends ClassVisitor implements IClassModelHolder
 			Matcher m = Pattern.compile("L([^<;]+);").matcher(signature);
 			while (m.find()) {
 				this.addAssociate(m.group(1));
+				//System.out.println("ADD PARAMETER TO "+name);
 				field.addTypeParameter(ClassNameStandardizer.standardize(m.group(1)));
 			}
 		}
