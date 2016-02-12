@@ -1,0 +1,121 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+lab72_problem_sprites_NullIterator [
+	label = "{lab72.problem.sprites.NullIterator||public hasNext() : boolean\lpublic next() : java.lang.Object\lpublic \<init\>() : void\l}"
+]
+lab72_problem_sprites_TowerSprite [
+	label = "{lab72.problem.sprites.TowerSprite\n\<\<Composite\>\>||public \<init\>(double, double, double, double) : void\lnull addSprite(lab72.problem.sprites.ISprite) : void\l}"
+, color="#ffff00"]
+lab72_problem_sprites_RectangleSprite [
+	label = "{lab72.problem.sprites.RectangleSprite\n\<\<Leaf\>\>|null shape : java_awt_Shape\l|public \<init\>(double, double, double, double) : void\lpublic move(java.awt.Dimension) : void\lnull computeNewBoundsAfterMoving(java.awt.Dimension) : java.awt.geom.Rectangle2D\l}"
+, color="#ffff00"]
+lab72_problem_sprites_PyramidSprite [
+	label = "{lab72.problem.sprites.PyramidSprite\n\<\<Composite\>\>||public \<init\>(double, double, double, double) : void\lnull addSprite(lab72.problem.sprites.ISprite) : void\l}"
+, color="#ffff00"]
+lab72_problem_sprites_CompositeSprite [
+	label = "{lab72.problem.sprites.CompositeSprite\n\<\<Composite\>\>|private sprites : java_util_Collection\l|public addSprite(lab72.problem.sprites.ISprite) : void\lpublic iterator() : java.util.Iterator\lpublic \<init\>() : void\lpublic move(java.awt.Dimension) : void\lpublic getShape() : java.awt.Shape\l}"
+, color="#ffff00"]
+lab72_problem_sprites_AbstractSprite [
+	label = "{lab72.problem.sprites.AbstractSprite\n\<\<Leaf\>\>|protected dy : double\lprotected dx : double\lprotected shape : java_awt_Shape\l|public \<init\>(double, double, double, double) : void\lpublic iterator() : java.util.Iterator\lpublic getShape() : java.awt.Shape\lpublic move(java.awt.Dimension) : void\lprotected computeNewBoundsAfterMoving(java.awt.Dimension) : java.awt.geom.Rectangle2D\l}"
+, color="#ffff00"]
+lab72_problem_sprites_ConcentricSprite [
+	label = "{lab72.problem.sprites.ConcentricSprite\n\<\<Composite\>\>||public \<init\>(double, double, double, double) : void\lnull addSprite(lab72.problem.sprites.ISprite) : void\l}"
+, color="#ffff00"]
+lab72_problem_sprites_SpriteFactory [
+	label = "{lab72.problem.sprites.SpriteFactory|public DX : double\lprivate random : java_util_Random\lprivate sprites : java_util_List\lpublic DY : double\lpublic WIDTH : double\lpublic HEIGHT : double\l|public createRandomSprite(java.awt.Dimension) : lab72.problem.sprites.ISprite\lpublic computeRandomLocation(java.awt.Dimension) : java.awt.geom.Point2D\ldefault \<clinit\>() : void\lpublic \<init\>() : void\l}"
+]
+lab72_problem_sprites_ISprite [
+	label = "{lab72.problem.sprites.ISprite\n\<\<Component\>\>||public move(java.awt.Dimension) : void\lpublic getShape() : java.awt.Shape\l}"
+, color="#ffff00"]
+lab72_problem_sprites_CompositeIterator [
+	label = "{lab72.problem.sprites.CompositeIterator|private stack : java_util_Stack\l|public \<init\>(java.util.Iterator) : void\lpublic next() : java.lang.Iterable\lpublic hasNext() : boolean\lpublic next() : java.lang.Object\l}"
+]
+lab72_problem_sprites_CircleSprite [
+	label = "{lab72.problem.sprites.CircleSprite\n\<\<Leaf\>\>|null shape : java_awt_Shape\l|public \<init\>(double, double, double, double) : void\lpublic move(java.awt.Dimension) : void\lnull computeNewBoundsAfterMoving(java.awt.Dimension) : java.awt.geom.Rectangle2D\l}"
+, color="#ffff00"]
+lab72_problem_sprites_CompositeSprite -> lab72_problem_sprites_ISprite [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+lab72_problem_sprites_CompositeSprite -> lab72_problem_sprites_ISprite [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+lab72_problem_sprites_CircleSprite -> lab72_problem_sprites_AbstractSprite [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+lab72_problem_sprites_ConcentricSprite -> lab72_problem_sprites_CompositeSprite [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+lab72_problem_sprites_PyramidSprite -> lab72_problem_sprites_CompositeSprite [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+lab72_problem_sprites_RectangleSprite -> lab72_problem_sprites_AbstractSprite [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+lab72_problem_sprites_TowerSprite -> lab72_problem_sprites_CompositeSprite [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+lab72_problem_sprites_CompositeSprite -> lab72_problem_sprites_CompositeIterator [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+lab72_problem_sprites_AbstractSprite -> lab72_problem_sprites_ISprite [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+lab72_problem_sprites_TowerSprite -> lab72_problem_sprites_PyramidSprite [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+lab72_problem_sprites_SpriteFactory -> lab72_problem_sprites_ISprite [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+lab72_problem_sprites_PyramidSprite -> lab72_problem_sprites_RectangleSprite [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+lab72_problem_sprites_ConcentricSprite -> lab72_problem_sprites_CircleSprite [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+lab72_problem_sprites_AbstractSprite -> lab72_problem_sprites_NullIterator [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+lab72_problem_sprites_TowerSprite -> lab72_problem_sprites_ConcentricSprite [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+}
