@@ -16,7 +16,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class SingletonDetector implements IDetector {
+public class SingletonPatternDetector implements IPatternDetector {
 	
 	private final IVisitor visitor;
 	private IModel model;
@@ -26,7 +26,7 @@ public class SingletonDetector implements IDetector {
 	private boolean hasPrivateCtor;
 	private boolean hasInstanceGetter;
 
-	public SingletonDetector() {
+	public SingletonPatternDetector() {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 		this.setupPostMethodsVisitClass();
@@ -45,10 +45,10 @@ public class SingletonDetector implements IDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
-				SingletonDetector.this.currentClass = c;
-				SingletonDetector.this.hasInstanceGetter = false;
-				SingletonDetector.this.hasPrivateCtor = false;
-				SingletonDetector.this.instanceField = null;
+				SingletonPatternDetector.this.currentClass = c;
+				SingletonPatternDetector.this.hasInstanceGetter = false;
+				SingletonPatternDetector.this.hasPrivateCtor = false;
+				SingletonPatternDetector.this.instanceField = null;
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IClass.class, command);
@@ -58,11 +58,11 @@ public class SingletonDetector implements IDetector {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				if (SingletonDetector.this.instanceField != null
-						&& SingletonDetector.this.hasPrivateCtor
-						&& SingletonDetector.this.hasInstanceGetter) {
-					IClass annotated = new SingletonClass(SingletonDetector.this.currentClass);
-					SingletonDetector.this.model.addClass(annotated);
+				if (SingletonPatternDetector.this.instanceField != null
+						&& SingletonPatternDetector.this.hasPrivateCtor
+						&& SingletonPatternDetector.this.hasInstanceGetter) {
+					IClass annotated = new SingletonClass(SingletonPatternDetector.this.currentClass);
+					SingletonPatternDetector.this.model.addClass(annotated);
 					// System.out.println(currentClass.getName() + " IS A SINGLETON! DECORATING!");
 				}
 			}
@@ -77,12 +77,12 @@ public class SingletonDetector implements IDetector {
 				IMethod c = (IMethod)t;
 				if (c.getAccessLevel() == AccessLevel.PRIVATE
 						&& c.getName().equals("<init>"))
-					SingletonDetector.this.hasPrivateCtor = true;
+					SingletonPatternDetector.this.hasPrivateCtor = true;
 				
-				SingletonDetector.this.methodIsInstance =
+				SingletonPatternDetector.this.methodIsInstance =
 						c.getAccessLevel() == AccessLevel.PUBLIC
 						&& c.isStatic()
-						&& ClassNameStandardizer.standardize(c.getReturnType()).equals(SingletonDetector.this.currentClass.getName());
+						&& ClassNameStandardizer.standardize(c.getReturnType()).equals(SingletonPatternDetector.this.currentClass.getName());
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IMethod.class, command);
@@ -95,8 +95,8 @@ public class SingletonDetector implements IDetector {
 				IField c = (IField)t;
 				if (c.isStatic()
 						&& c.getAccessLevel() == AccessLevel.PRIVATE
-						&& ClassNameStandardizer.standardize(c.getType()).equals(SingletonDetector.this.currentClass.getName()))
-					SingletonDetector.this.instanceField = c;
+						&& ClassNameStandardizer.standardize(c.getType()).equals(SingletonPatternDetector.this.currentClass.getName()))
+					SingletonPatternDetector.this.instanceField = c;
 			}
 		};
 		this.visitor.addVisit(VisitType.Visit, IField.class, command);
@@ -106,7 +106,7 @@ public class SingletonDetector implements IDetector {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				SingletonDetector.this.model = (IModel)t;
+				SingletonPatternDetector.this.model = (IModel)t;
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IModel.class, command);
@@ -121,10 +121,10 @@ public class SingletonDetector implements IDetector {
 				
 				if (c instanceof IFieldStatement) {
 					IFieldStatement fs = (IFieldStatement)c;
-					if (SingletonDetector.this.methodIsInstance
+					if (SingletonPatternDetector.this.methodIsInstance
 							&& fs.getType() == StatementType.GET_FIELD
-							&& fs.getField() == SingletonDetector.this.instanceField)
-						SingletonDetector.this.hasInstanceGetter = true;
+							&& fs.getField() == SingletonPatternDetector.this.instanceField)
+						SingletonPatternDetector.this.hasInstanceGetter = true;
 				}
 			}
 		};

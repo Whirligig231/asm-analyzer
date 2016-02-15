@@ -23,7 +23,7 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.model.pattern.IAnnotatedClass;
-import analyzer.visitor.detect.AdapterDetector;
+import analyzer.visitor.detect.AdapterPatternDetector;
 
 public class AdapterTest {
 	IModel model = new Model();
@@ -67,7 +67,7 @@ public class AdapterTest {
 
 		}
 		
-		AdapterDetector ad = new AdapterDetector(3);
+		AdapterPatternDetector ad = new AdapterPatternDetector(3);
 		ad.detect(model);
 	}
 

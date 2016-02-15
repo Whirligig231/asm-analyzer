@@ -24,7 +24,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class AdapterDetector implements IDetector  {
+public class AdapterPatternDetector implements IPatternDetector  {
 	
 	private static final class FieldClassPair {
 		
@@ -94,7 +94,7 @@ public class AdapterDetector implements IDetector  {
 	private Map<FieldClassPair, Integer> badMethods;
 	private Map<IField, Boolean> hasFS;
 
-	public AdapterDetector(int threshold) {
+	public AdapterPatternDetector(int threshold) {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 		this.setupVisitField();

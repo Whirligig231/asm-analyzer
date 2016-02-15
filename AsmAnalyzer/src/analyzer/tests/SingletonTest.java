@@ -23,10 +23,10 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.model.pattern.IAnnotatedClass;
-import analyzer.visitor.detect.AdapterDetector;
-import analyzer.visitor.detect.DecoratorDetector;
-import analyzer.visitor.detect.DecoratorSubclassDetector;
-import analyzer.visitor.detect.SingletonDetector;
+import analyzer.visitor.detect.AdapterPatternDetector;
+import analyzer.visitor.detect.DecoratorPatternComponentDetector;
+import analyzer.visitor.detect.DecoratorPatternSubclassDetector;
+import analyzer.visitor.detect.SingletonPatternDetector;
 
 public class SingletonTest {
 	ClassDeclarationVisitor cdv;
@@ -75,17 +75,17 @@ public class SingletonTest {
 
 		}
 
-		SingletonDetector sd = new SingletonDetector();
+		SingletonPatternDetector sd = new SingletonPatternDetector();
 		sd.detect(model);
 		
-		AdapterDetector ad = new AdapterDetector(3);
+		AdapterPatternDetector ad = new AdapterPatternDetector(3);
 		ad.detect(model);
 		
-		DecoratorDetector dd = new DecoratorDetector(3);
+		DecoratorPatternComponentDetector dd = new DecoratorPatternComponentDetector(3);
 		dd.detect(model);
 		
 		// Propagates detection down to subclasses
-		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
+		DecoratorPatternSubclassDetector dsd = new DecoratorPatternSubclassDetector();
 		dsd.detect(model);
 		
 		

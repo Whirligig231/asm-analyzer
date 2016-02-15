@@ -21,12 +21,12 @@ import analyzer.model.StatementType;
 import analyzer.model.pattern.CompositeClass;
 import analyzer.model.pattern.CompositeComponentClass;
 import analyzer.model.pattern.LeafClass;
-import analyzer.visitor.detect.CompositeDetector;
+import analyzer.visitor.detect.CompositePatternDetector;
 
 public class CompositeDetectorTest {
 	
 	private void detect(IModel model) {
-		CompositeDetector cd = new CompositeDetector();
+		CompositePatternDetector cd = new CompositePatternDetector();
 		cd.detect(model);
 	}
 	

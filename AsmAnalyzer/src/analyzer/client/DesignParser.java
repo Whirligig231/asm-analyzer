@@ -20,12 +20,12 @@ import analyzer.model.Class;
 import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
-import analyzer.visitor.detect.AdapterDetector;
-import analyzer.visitor.detect.CompositeDetector;
-import analyzer.visitor.detect.DecoratorDetector;
-import analyzer.visitor.detect.DecoratorSubclassDetector;
-import analyzer.visitor.detect.IDetector;
-import analyzer.visitor.detect.SingletonDetector;
+import analyzer.visitor.detect.AdapterPatternDetector;
+import analyzer.visitor.detect.CompositePatternDetector;
+import analyzer.visitor.detect.DecoratorPatternComponentDetector;
+import analyzer.visitor.detect.DecoratorPatternSubclassDetector;
+import analyzer.visitor.detect.IPatternDetector;
+import analyzer.visitor.detect.SingletonPatternDetector;
 import analyzer.visitor.output.ClassUmlOutputStream;
 
 public class DesignParser {
@@ -95,14 +95,14 @@ public class DesignParser {
 
 		}
 		
-		Queue<IDetector> detectors = new LinkedList<IDetector>();
-		detectors.offer(new SingletonDetector());
-		detectors.offer(new AdapterDetector(params.get("adapter-threshold")));
-		detectors.offer(new DecoratorDetector(params.get("decorator-threshold")));
-		detectors.offer(new DecoratorSubclassDetector());
-		detectors.offer(new CompositeDetector());
+		Queue<IPatternDetector> detectors = new LinkedList<IPatternDetector>();
+		detectors.offer(new SingletonPatternDetector());
+		detectors.offer(new AdapterPatternDetector(params.get("adapter-threshold")));
+		detectors.offer(new DecoratorPatternComponentDetector(params.get("decorator-threshold")));
+		detectors.offer(new DecoratorPatternSubclassDetector());
+		detectors.offer(new CompositePatternDetector());
 		
-		for(IDetector detector : in(detectors.iterator())){
+		for(IPatternDetector detector : in(detectors.iterator())){
 			detector.detect(model);
 		}
 		

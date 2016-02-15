@@ -25,7 +25,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class DecoratorDetector implements IDetector  {
+public class DecoratorPatternComponentDetector implements IPatternDetector  {
 	
 	private final IVisitor visitor;
 	private IModel model;
@@ -39,7 +39,7 @@ public class DecoratorDetector implements IDetector  {
 	private IClass searchClass;
 	private boolean hasFS = false, hasMS = false;
 
-	public DecoratorDetector(int threshold) {
+	public DecoratorPatternComponentDetector(int threshold) {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 		this.setupPostMethodsVisitClass();
@@ -62,13 +62,13 @@ public class DecoratorDetector implements IDetector  {
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
 				// System.out.println("WE ARE NOW VISITING: "+c.getName());
-				DecoratorDetector.this.currentClass = c;
-				DecoratorDetector.this.methodsToFind = new HashMap<>();
-				DecoratorDetector.this.interFields = new HashMap<>();
-				DecoratorDetector.this.goodMethods = new HashMap<>();
-				DecoratorDetector.this.badMethods = new HashMap<>();
+				DecoratorPatternComponentDetector.this.currentClass = c;
+				DecoratorPatternComponentDetector.this.methodsToFind = new HashMap<>();
+				DecoratorPatternComponentDetector.this.interFields = new HashMap<>();
+				DecoratorPatternComponentDetector.this.goodMethods = new HashMap<>();
+				DecoratorPatternComponentDetector.this.badMethods = new HashMap<>();
 				
-				DecoratorDetector.this.addInterfaces(c);
+				DecoratorPatternComponentDetector.this.addInterfaces(c);
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IClass.class, command);
@@ -205,7 +205,7 @@ public class DecoratorDetector implements IDetector  {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				DecoratorDetector.this.model = (IModel)t;
+				DecoratorPatternComponentDetector.this.model = (IModel)t;
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IModel.class, command);

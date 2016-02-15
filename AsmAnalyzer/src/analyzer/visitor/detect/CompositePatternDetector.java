@@ -19,7 +19,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class CompositeDetector implements IDetector  {
+public class CompositePatternDetector implements IPatternDetector  {
 	
 	
 	private final IVisitor visitor;
@@ -30,7 +30,7 @@ public class CompositeDetector implements IDetector  {
 	private Set<IClass> compChildClasses;
 	private Set<IClass> leafs = new HashSet<IClass>();
 
-	public CompositeDetector() {
+	public CompositePatternDetector() {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 		this.setupPostMethodsVisitClass();
@@ -47,11 +47,11 @@ public class CompositeDetector implements IDetector  {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
-				CompositeDetector.this.component = null;
-				CompositeDetector.this.leafs = new HashSet<IClass>();
-				CompositeDetector.this.compChildClasses = new HashSet<IClass>();
-				CompositeDetector.this.currentClass = c;
-				CompositeDetector.this.supertypes = getSupertypes(c);
+				CompositePatternDetector.this.component = null;
+				CompositePatternDetector.this.leafs = new HashSet<IClass>();
+				CompositePatternDetector.this.compChildClasses = new HashSet<IClass>();
+				CompositePatternDetector.this.currentClass = c;
+				CompositePatternDetector.this.supertypes = getSupertypes(c);
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IClass.class, command);
@@ -61,20 +61,20 @@ public class CompositeDetector implements IDetector  {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				if (CompositeDetector.this.component != null
-						&& CompositeDetector.this.currentClass != null
-						&& !CompositeDetector.this.leafs.isEmpty()) {
-					AnnotatedClass annotatedCompositeClass = new CompositeClass(CompositeDetector.this.currentClass);
-					CompositeDetector.this.model.addClass(annotatedCompositeClass);
-					AnnotatedClass annotatedComponentClass = new CompositeComponentClass(CompositeDetector.this.component);
-					CompositeDetector.this.model.addClass(annotatedComponentClass);
-					for(IClass leaf : CompositeDetector.this.leafs){
+				if (CompositePatternDetector.this.component != null
+						&& CompositePatternDetector.this.currentClass != null
+						&& !CompositePatternDetector.this.leafs.isEmpty()) {
+					AnnotatedClass annotatedCompositeClass = new CompositeClass(CompositePatternDetector.this.currentClass);
+					CompositePatternDetector.this.model.addClass(annotatedCompositeClass);
+					AnnotatedClass annotatedComponentClass = new CompositeComponentClass(CompositePatternDetector.this.component);
+					CompositePatternDetector.this.model.addClass(annotatedComponentClass);
+					for(IClass leaf : CompositePatternDetector.this.leafs){
 						AnnotatedClass annotatedLeafClass = new LeafClass(leaf);
-						CompositeDetector.this.model.addClass(annotatedLeafClass);
+						CompositePatternDetector.this.model.addClass(annotatedLeafClass);
 					}
-					for(IClass comp : CompositeDetector.this.compChildClasses){
+					for(IClass comp : CompositePatternDetector.this.compChildClasses){
 						AnnotatedClass annotatedCompositeChildClass = new CompositeClass(comp);
-						CompositeDetector.this.model.addClass(annotatedCompositeChildClass);
+						CompositePatternDetector.this.model.addClass(annotatedCompositeChildClass);
 					}
 					 //System.out.println(currentClass.getName() + " IS Composite! DECORATING!  Num leafs: " + CompositeDetector.this.leafs.size());
 				}
@@ -109,23 +109,23 @@ public class CompositeDetector implements IDetector  {
 				//System.out.println("Checking type parameters for " + f.getName());
 				for(String typeParameter : in(tpIterator)){
 					//System.out.println("Type parameter: "+typeParameter);
-					for(IClass superType : CompositeDetector.this.supertypes){
+					for(IClass superType : CompositePatternDetector.this.supertypes){
 						if(superType.getName().equals(typeParameter)) {
 							//System.out.println("FOUND IT");
-							CompositeDetector.this.component = superType; //If it matches the composite pattern, set the component
+							CompositePatternDetector.this.component = superType; //If it matches the composite pattern, set the component
 							
 							//Now, loop through all classes in the model and add leafs as required
-							for(IClass modelClass : in(CompositeDetector.this.model.getClassIterator())){
+							for(IClass modelClass : in(CompositePatternDetector.this.model.getClassIterator())){
 								Set<IClass> modelClassSupertypes = getSupertypes(modelClass);
 								
 								if (modelClassSupertypes.contains(superType) && 
-										!modelClass.equals(CompositeDetector.this.currentClass) &&
-										!getSupertypes(modelClass).contains(CompositeDetector.this.currentClass)){
-									CompositeDetector.this.leafs.add(modelClass);
+										!modelClass.equals(CompositePatternDetector.this.currentClass) &&
+										!getSupertypes(modelClass).contains(CompositePatternDetector.this.currentClass)){
+									CompositePatternDetector.this.leafs.add(modelClass);
 								}
 								
-								if(modelClassSupertypes.contains(CompositeDetector.this.currentClass)){
-									CompositeDetector.this.compChildClasses.add(modelClass);
+								if(modelClassSupertypes.contains(CompositePatternDetector.this.currentClass)){
+									CompositePatternDetector.this.compChildClasses.add(modelClass);
 								}
 							}
 						}
@@ -144,7 +144,7 @@ public class CompositeDetector implements IDetector  {
 		IVisitMethod command = new IVisitMethod() {
 			@Override
 			public void execute(ITraverser t) {
-				CompositeDetector.this.model = (IModel)t;
+				CompositePatternDetector.this.model = (IModel)t;
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IModel.class, command);

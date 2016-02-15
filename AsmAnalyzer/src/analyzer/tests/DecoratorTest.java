@@ -23,8 +23,8 @@ import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.model.pattern.IAnnotatedClass;
-import analyzer.visitor.detect.DecoratorDetector;
-import analyzer.visitor.detect.DecoratorSubclassDetector;
+import analyzer.visitor.detect.DecoratorPatternComponentDetector;
+import analyzer.visitor.detect.DecoratorPatternSubclassDetector;
 
 public class DecoratorTest {
 	IModel model = new Model();
@@ -68,11 +68,11 @@ public class DecoratorTest {
 
 		}
 		
-		DecoratorDetector dd = new DecoratorDetector(3);
+		DecoratorPatternComponentDetector dd = new DecoratorPatternComponentDetector(3);
 		dd.detect(model);
 		
 		// Propagates detection down to subclasses
-		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
+		DecoratorPatternSubclassDetector dsd = new DecoratorPatternSubclassDetector();
 		dsd.detect(model);
 	}
 

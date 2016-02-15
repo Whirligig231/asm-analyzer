@@ -9,12 +9,12 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class DecoratorSubclassDetector implements IDetector  {
+public class DecoratorPatternSubclassDetector implements IPatternDetector  {
 	
 	private final IVisitor visitor;
 	private IModel model;
 
-	public DecoratorSubclassDetector() {
+	public DecoratorPatternSubclassDetector() {
 		this.visitor = new Visitor();
 		this.setupPreVisitClass();
 	}
