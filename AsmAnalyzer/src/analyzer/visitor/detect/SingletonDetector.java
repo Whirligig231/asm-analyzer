@@ -16,7 +16,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class SingletonDetector {
+public class SingletonDetector implements IDetector {
 	
 	private final IVisitor visitor;
 	private IModel model;

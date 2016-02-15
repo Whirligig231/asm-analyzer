@@ -9,7 +9,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class DecoratorSubclassDetector {
+public class DecoratorSubclassDetector implements IDetector  {
 	
 	private final IVisitor visitor;
 	private IModel model;

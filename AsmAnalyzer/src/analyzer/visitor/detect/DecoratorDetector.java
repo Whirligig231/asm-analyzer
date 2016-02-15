@@ -25,7 +25,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class DecoratorDetector {
+public class DecoratorDetector implements IDetector  {
 	
 	private final IVisitor visitor;
 	private IModel model;

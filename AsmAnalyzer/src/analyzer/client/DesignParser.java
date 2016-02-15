@@ -1,8 +1,13 @@
 package analyzer.client;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
@@ -21,6 +26,7 @@ import analyzer.visitor.detect.AdapterDetector;
 import analyzer.visitor.detect.CompositeDetector;
 import analyzer.visitor.detect.DecoratorDetector;
 import analyzer.visitor.detect.DecoratorSubclassDetector;
+import analyzer.visitor.detect.IDetector;
 import analyzer.visitor.detect.SingletonDetector;
 import analyzer.visitor.output.ClassUmlOutputStream;
 
@@ -91,21 +97,16 @@ public class DesignParser {
 
 		}
 		
-		SingletonDetector sd = new SingletonDetector();
-		sd.detect(model);
+		Queue<IDetector> detectors = new LinkedList<IDetector>();
+		detectors.offer(new SingletonDetector());
+		detectors.offer(new AdapterDetector(params.get("adapter-threshold")));
+		detectors.offer(new DecoratorDetector(params.get("decorator-threshold")));
+		detectors.offer(new DecoratorSubclassDetector());
+		detectors.offer(new CompositeDetector());
 		
-		AdapterDetector ad = new AdapterDetector(params.get("adapter-threshold"));
-		ad.detect(model);
-		
-		DecoratorDetector dd = new DecoratorDetector(params.get("decorator-threshold"));
-		dd.detect(model);
-		
-		// Propagates detection down to subclasses
-		DecoratorSubclassDetector dsd = new DecoratorSubclassDetector();
-		dsd.detect(model);
-
-		CompositeDetector cd = new CompositeDetector();
-		cd.detect(model);
+		for(IDetector detector : in(detectors.iterator())){
+			detector.detect(model);
+		}
 		
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(System.out);
 		
@@ -116,4 +117,20 @@ public class DesignParser {
 		classUmlOutputStream.close();
 		
 	}
+	 public static <T> Iterable<T> in(final Iterator<T> iterator) {
+		    assert iterator != null;
+		    class SingleUseIterable implements Iterable<T> {
+		      private boolean used = false;
+
+		      @Override
+		      public Iterator<T> iterator() {
+		        if (used) {
+		          throw new IllegalStateException("SingleUseIterable already invoked");
+		        }
+		        used = true;
+		        return iterator;
+		      }
+		    }
+		    return new SingleUseIterable();
+		  }
 }

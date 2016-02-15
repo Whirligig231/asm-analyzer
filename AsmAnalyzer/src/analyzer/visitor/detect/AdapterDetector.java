@@ -24,7 +24,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class AdapterDetector {
+public class AdapterDetector implements IDetector  {
 	
 	private static final class FieldClassPair {
 		
