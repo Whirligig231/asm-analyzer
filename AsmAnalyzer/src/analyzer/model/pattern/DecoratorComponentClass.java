@@ -4,9 +4,9 @@ import java.awt.Color;
 
 import analyzer.model.IClass;
 
-public class ComponentClass extends AnnotatedClass {
+public class DecoratorComponentClass extends AnnotatedClass {
 
-	public ComponentClass(IClass decorated) {
+	public DecoratorComponentClass(IClass decorated) {
 		super(decorated, "Component", Color.green);
 	}
 

@@ -175,6 +175,10 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 					if (relation instanceof IAnnotatedRelation) {
 						IAnnotatedRelation ar = (IAnnotatedRelation)relation;
 						write("\n\tlabel = \"\\<\\<" + ar.getAnnotation() + "\\>\\>\"");
+						write(String.format(", color=\"#%02x%02x%02x\"", 
+								ar.getColor().getRed(),
+								ar.getColor().getGreen(),
+								ar.getColor().getBlue()));
 					}
 					
 					write("\n]\n\n");

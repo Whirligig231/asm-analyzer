@@ -16,7 +16,7 @@ import analyzer.model.IModel;
 import analyzer.model.IStatement;
 import analyzer.model.Relation;
 import analyzer.model.RelationType;
-import analyzer.model.pattern.ComponentClass;
+import analyzer.model.pattern.DecoratorComponentClass;
 import analyzer.model.pattern.DecoratesRelation;
 import analyzer.model.pattern.DecoratorClass;
 import analyzer.visitor.common.ITraverser;
@@ -118,7 +118,7 @@ public class DecoratorPatternComponentDetector implements IPatternDetector  {
 						// c is decorated
 						// System.out.println(currentClass.getName()+" decorates "+c.getName()+" (" + good + "/" + bad + ")");
 						model.addClass(new DecoratorClass(currentClass));
-						model.addClass(new ComponentClass(c));
+						model.addClass(new DecoratorComponentClass(c));
 						Relation r = new Relation(currentClass, c, RelationType.ASSOCIATES, model);
 						DecoratesRelation dr = new DecoratesRelation(r);
 						model.addRelation(dr);

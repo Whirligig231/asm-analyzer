@@ -1,5 +1,7 @@
 package analyzer.model.pattern;
 
+import java.awt.Color;
+
 import analyzer.model.IClass;
 import analyzer.model.IRelation;
 import analyzer.model.RelationType;
@@ -9,10 +11,16 @@ public class AnnotatedRelation implements IAnnotatedRelation {
 	
 	private IRelation decorated;
 	private String annotation;
+	private Color color;
 
-	public AnnotatedRelation(IRelation decorated, String annotation) {
+	public AnnotatedRelation(IRelation decorated, String annotation, Color color) {
 		this.decorated = decorated;
 		this.annotation = annotation;
+		this.color = color;
+	}
+	
+	public AnnotatedRelation(IRelation decorated, String annotation) {
+		this(decorated, annotation, Color.BLACK);
 	}
 
 	@Override
@@ -63,6 +71,10 @@ public class AnnotatedRelation implements IAnnotatedRelation {
 	@Override
 	public int hashCode() {
 		return this.decorated.hashCode();
+	}
+
+	public Color getColor() {
+		return color;
 	}
 	
 }
