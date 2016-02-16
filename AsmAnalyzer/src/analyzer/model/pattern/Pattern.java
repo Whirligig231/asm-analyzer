@@ -40,10 +40,7 @@ public class Pattern implements IPattern {
 
 	@Override
 	public void accept(IVisitor v) {
-		v.preVisit(this);
-		for (IClass c : this.classes)
-			c.accept(v);
-		v.postVisit(this);
+		v.visit(this);
 	}
 
 }
