@@ -18,6 +18,8 @@ import analyzer.model.IStatement;
 import analyzer.model.Relation;
 import analyzer.model.RelationType;
 import analyzer.model.pattern.DecoratorComponentClass;
+import analyzer.model.pattern.DecoratorPattern;
+import analyzer.model.pattern.IPattern;
 import analyzer.model.pattern.DecoratesRelation;
 import analyzer.model.pattern.DecoratorClass;
 import analyzer.visitor.common.ITraverser;
@@ -125,6 +127,10 @@ public class DecoratorPatternComponentDetector extends ObservablePatternDetector
 						DecoratesRelation dr = new DecoratesRelation(r);
 						model.addRelation(dr);
 						
+						IPattern pattern = new DecoratorPattern();
+						pattern.addClass(currentClass);
+						pattern.addClass(c);
+						model.addPattern(pattern);
 					}
 					else {
 						Iterator<String> it = s.iterator();

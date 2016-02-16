@@ -13,6 +13,8 @@ import analyzer.model.IModel;
 import analyzer.model.pattern.AnnotatedClass;
 import analyzer.model.pattern.CompositeClass;
 import analyzer.model.pattern.CompositeComponentClass;
+import analyzer.model.pattern.CompositePattern;
+import analyzer.model.pattern.IPattern;
 import analyzer.model.pattern.LeafClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
@@ -70,14 +72,23 @@ public class CompositePatternDetector extends ObservablePatternDetector  {
 					CompositePatternDetector.this.model.addClass(annotatedCompositeClass);
 					AnnotatedClass annotatedComponentClass = new CompositeComponentClass(CompositePatternDetector.this.component);
 					CompositePatternDetector.this.model.addClass(annotatedComponentClass);
+					
+					IPattern p = new CompositePattern();
+					p.addClass(annotatedComponentClass);
+					p.addClass(annotatedCompositeClass);
+					
 					for(IClass leaf : CompositePatternDetector.this.leafs){
 						AnnotatedClass annotatedLeafClass = new LeafClass(leaf);
 						CompositePatternDetector.this.model.addClass(annotatedLeafClass);
+						p.addClass(annotatedLeafClass);
 					}
 					for(IClass comp : CompositePatternDetector.this.compChildClasses){
 						AnnotatedClass annotatedCompositeChildClass = new CompositeClass(comp);
 						CompositePatternDetector.this.model.addClass(annotatedCompositeChildClass);
+						p.addClass(annotatedCompositeChildClass);
 					}
+					
+					model.addPattern(p);
 					 //System.out.println(currentClass.getName() + " IS Composite! DECORATING!  Num leafs: " + CompositeDetector.this.leafs.size());
 				}
 			}

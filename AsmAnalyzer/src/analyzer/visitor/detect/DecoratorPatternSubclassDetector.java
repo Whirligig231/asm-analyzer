@@ -1,10 +1,13 @@
 package analyzer.visitor.detect;
 
+import java.util.Iterator;
 import java.util.Observable;
 
 import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.model.pattern.DecoratorClass;
+import analyzer.model.pattern.DecoratorPattern;
+import analyzer.model.pattern.IPattern;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
 import analyzer.visitor.common.IVisitor;
@@ -32,20 +35,35 @@ public class DecoratorPatternSubclassDetector extends ObservablePatternDetector 
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
 				classVisitUpdate(c.getName());
-				if (isDecorator(c))
+				
+				IPattern p = getDecorator(c);
+				
+				if (p != null) {
 					model.addClass(new DecoratorClass(c));
+					p.addClass(c);
+				}
 			}
 		};
 		this.visitor.addVisit(VisitType.PreVisit, IClass.class, command);
 	}
 
-	private boolean isDecorator(IClass c) {
+	private IPattern getDecorator(IClass c) {
 		IClass superClass = c.getSuperClass();
 		if (superClass == null)
-			return false;
-		if (superClass instanceof DecoratorClass)
-			return true;
-		return isDecorator(superClass);
+			return null;
+		if (superClass instanceof DecoratorClass) {
+			Iterator<IPattern> it = model.getPatternIterator();
+			while (it.hasNext()) {
+				IPattern p = it.next();
+				if (!(p instanceof DecoratorPattern))
+					continue;
+				for (IClass c2 : p) {
+					if (c2.equals(superClass))
+						return p;
+				}
+			}
+		}
+		return getDecorator(superClass);
 	}
 	
 

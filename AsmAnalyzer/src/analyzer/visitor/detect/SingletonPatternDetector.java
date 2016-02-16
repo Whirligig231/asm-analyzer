@@ -11,7 +11,9 @@ import analyzer.model.IMethod;
 import analyzer.model.IModel;
 import analyzer.model.IStatement;
 import analyzer.model.StatementType;
+import analyzer.model.pattern.IPattern;
 import analyzer.model.pattern.SingletonClass;
+import analyzer.model.pattern.SingletonPattern;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
 import analyzer.visitor.common.IVisitor;
@@ -66,6 +68,9 @@ public class SingletonPatternDetector extends ObservablePatternDetector {
 						&& SingletonPatternDetector.this.hasInstanceGetter) {
 					IClass annotated = new SingletonClass(SingletonPatternDetector.this.currentClass);
 					SingletonPatternDetector.this.model.addClass(annotated);
+					IPattern pattern = new SingletonPattern();
+					pattern.addClass(annotated);
+					SingletonPatternDetector.this.model.addPattern(pattern);
 					// System.out.println(currentClass.getName() + " IS A SINGLETON! DECORATING!");
 				}
 			}

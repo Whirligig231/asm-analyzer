@@ -17,7 +17,10 @@ import analyzer.model.Relation;
 import analyzer.model.RelationType;
 import analyzer.model.pattern.AdapteeClass;
 import analyzer.model.pattern.AdapterClass;
+import analyzer.model.pattern.AdapterPattern;
 import analyzer.model.pattern.AdaptsRelation;
+import analyzer.model.pattern.IPattern;
+import analyzer.model.pattern.SingletonPattern;
 import analyzer.model.pattern.TargetClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;
@@ -253,7 +256,11 @@ public class AdapterPatternDetector extends ObservablePatternDetector  {
 						IClass target = fcp.getSupertype();
 						model.addClass(new TargetClass(target));
 						IClass adaptee = model.getClass(fcp.getField().getType());
+						IPattern pattern = new AdapterPattern();
+						pattern.addClass(adapter);
+						pattern.addClass(target);
 						if (adaptee != null) {
+							pattern.addClass(adaptee);
 							// System.out.println(adapter.getName() + " adapts " + adaptee.getName() + " " + fcp.getField().getName() + " for " + target.getName());
 							model.addClass(new AdapteeClass(adaptee));
 							IRelation adapts = new Relation(adapter, adaptee, RelationType.ASSOCIATES, model);
@@ -261,6 +268,7 @@ public class AdapterPatternDetector extends ObservablePatternDetector  {
 						}
 						// else
 							// System.out.println(adapter.getName() + " adapts for " + target.getName());
+						AdapterPatternDetector.this.model.addPattern(pattern);
 					}
 				}
 			}
