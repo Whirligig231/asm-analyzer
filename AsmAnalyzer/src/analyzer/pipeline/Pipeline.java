@@ -29,23 +29,25 @@ public class Pipeline extends Observable implements IPipeline, Observer {
 		int totalPhases = this.phases.size();
 		int currentPhase = 0;
 		for (IPhase phase : this.phases) {
-			this.currentProgress = ((float)currentPhase) / totalPhases;
+			this.currentProgress = ((float)currentPhase * 100) / totalPhases;
 			this.changeLoading();
 			phase.run();
 			currentPhase++;
 		}
-		this.currentProgress = 1;
+		this.currentProgress = 100;
 		this.currentMessage = "Done!";
 		this.changeLoading();
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
+//		System.out.println("Update in Pipeline");
 		this.currentMessage = arg.toString();
 		this.changeLoading();
 	}
 	
 	private void changeLoading() {
+//		System.out.println("Notify observers from Pipeline");
 		this.setChanged();
 		this.notifyObservers(new LoadingInfo(this.currentProgress, this.currentMessage));
 	}

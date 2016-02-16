@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Observer;
 import java.util.Properties;
 
 import javax.swing.Box;
@@ -24,6 +25,14 @@ import javax.swing.JProgressBar;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import analyzer.model.IModel;
+import analyzer.model.Model;
+import analyzer.pipeline.AsmReaderPhase;
+import analyzer.pipeline.DetectorPhase;
+import analyzer.pipeline.IPipeline;
+import analyzer.pipeline.Pipeline;
+import analyzer.visitor.detect.SingletonPatternDetector;
+
 public class LandingFrame extends JFrame {
 
 	private static final long serialVersionUID = 322559617349772310L;
@@ -32,7 +41,16 @@ public class LandingFrame extends JFrame {
 	private Properties config;
 	private JFileChooser fc;
 	
+	private Observer lo;
+	private IPipeline pipeline;
+	private IModel model;
+
+	private IErrorHandler errorHandler;
+	
 	public LandingFrame() {
+		
+		this.errorHandler = new DialogErrorHandler(this);
+		
 		this.setTitle("Design Parser");
 		this.setSize(300, 170);
 		this.setLocationRelativeTo(null); // Center frame on the screen
@@ -61,12 +79,12 @@ public class LandingFrame extends JFrame {
 		JComponent bottom = new JPanel();
 		bottom.setLayout(new BoxLayout(bottom, BoxLayout.PAGE_AXIS));
 		
-		JComponent loadingText = new JLabel("Loading text will go here ...");
+		JLabel loadingText = new JLabel("Loading ...");
 		bottom.add(loadingText);
 		bottom.add(Box.createVerticalStrut(5));
 		
 		JProgressBar loadingBar = new JProgressBar();
-		loadingBar.setValue(40);
+		loadingBar.setValue(0);
 		bottom.add(loadingBar);
 		
 		bottom.setVisible(false);
@@ -84,6 +102,7 @@ public class LandingFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				LandingFrame.this.getConfigFile();
+				LandingFrame.this.setupPipeline();
 			}
 			
 		});
@@ -92,11 +111,13 @@ public class LandingFrame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(top, "If glycolysis is tearing glucose apart, what's analysis?");
 				bottom.setVisible(true);
+				LandingFrame.this.executePipeline();
 			}
 			
 		});
+		
+		this.lo = new LoadingObserver(loadingText, loadingBar);
 		
 		this.fc = new JFileChooser();
 		FileFilter filter = 
@@ -132,8 +153,29 @@ public class LandingFrame extends JFrame {
 	}
 	
 	private void error(String errorMsg) {
-		JOptionPane.showMessageDialog(this, "Error: " + errorMsg, "An error occurred", 
-				JOptionPane.ERROR_MESSAGE);
+		this.errorHandler.handleError(errorMsg);
+	}
+
+	private void setupPipeline() {
+		this.model = new Model();
+		this.pipeline = new Pipeline();
+		
+		AsmReaderPhase arp = new AsmReaderPhase(this.model);
+		String[] classes = new String[100];
+		for (int i=0;i<100;i++) classes[i] = "javax.swing.JComponent";
+		arp.setClasses(classes);
+		this.pipeline.addPhase(arp);
+		
+		this.pipeline.addPhase(new DetectorPhase(new SingletonPatternDetector(), model));
+		
+		this.pipeline.addObserver(this.lo);
+		
+	}
+	
+	private void executePipeline() {
+		Runnable pipelineRunner = new PipelineRunner(this.pipeline, this.errorHandler);
+		Thread t = new Thread(pipelineRunner);
+		t.start();
 	}
 
 }

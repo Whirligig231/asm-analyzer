@@ -71,6 +71,8 @@ public class AsmReaderPhase extends Observable implements IPhase, Observer {
 			ClassNotifyingVisitor notifyVisitor = new ClassNotifyingVisitor(Opcodes.ASM5, statementsVisitor);
 			notifyVisitor.addObserver(this);
 			
+//			System.out.println("ACCEPT "+className);
+			
 			// Tell the Reader to use our (heavily decorated) ClassVisitor to visit the class
 			reader.accept(notifyVisitor, ClassReader.EXPAND_FRAMES);
 
@@ -80,6 +82,9 @@ public class AsmReaderPhase extends Observable implements IPhase, Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
+//		System.out.println("Update in AsmReaderPhase");
+//		System.out.println("Notify observers from AsmReaderPhase");
+		this.setChanged();
 		this.notifyObservers(arg);
 	}
 

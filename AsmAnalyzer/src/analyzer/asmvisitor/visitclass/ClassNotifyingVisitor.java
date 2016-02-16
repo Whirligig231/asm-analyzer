@@ -32,6 +32,7 @@ public class ClassNotifyingVisitor extends ClassVisitor {
 
 		super.visit(version, access, name, signature, superName, interfaces);
 		
+//		System.out.println("Visiting in ClassNotifyingVisitor");
 		this.observable.classVisitUpdate(name);
 		
 	}
