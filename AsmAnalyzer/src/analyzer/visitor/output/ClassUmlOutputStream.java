@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Observable;
+import java.util.Observer;
 
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.IClass;
@@ -26,8 +28,11 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 	
 	private Collection<String> classNames;
 	
+	private final ClassOutputObservable observable;
+	
 	public ClassUmlOutputStream(OutputStream out) throws IOException {
 		super(out);
+		this.observable = new ClassOutputObservable();
 		this.visitor = new Visitor();
 		this.setupPostFieldsVisitClass();
 		this.setupPostMethodsVisitClass();
@@ -66,6 +71,8 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 				
 				if (!ClassUmlOutputStream.this.classNames.contains(c.getName()))
 					return;
+				
+				observable.classVisitUpdate(c.getName());
 				
 				String line = String.format("%s [\n\tlabel = \"{%s%s|", ClassNameStandardizer.standardize(c.getName()), ClassNameStandardizer.standardize(c.getName()).replaceAll("_", "."), ClassUmlOutputStream.this.getAnnotation(c));
 				write(line);
@@ -227,6 +234,10 @@ public class ClassUmlOutputStream extends FilterOutputStream {
 					ac.getColor().getBlue());
 		}
 		return out;
+	}
+
+	public void addObserver(Observer observer) {
+		this.observable.addObserver(observer);
 	}
 	
 }

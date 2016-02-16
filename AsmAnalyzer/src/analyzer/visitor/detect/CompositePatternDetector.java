@@ -3,6 +3,7 @@ package analyzer.visitor.detect;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Observable;
 import java.util.Set;
 
 import analyzer.common.ClassNameStandardizer;
@@ -19,7 +20,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class CompositePatternDetector implements IPatternDetector  {
+public class CompositePatternDetector extends ObservablePatternDetector  {
 	
 	
 	private final IVisitor visitor;
@@ -47,6 +48,7 @@ public class CompositePatternDetector implements IPatternDetector  {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
+				classVisitUpdate(c.getName());
 				CompositePatternDetector.this.component = null;
 				CompositePatternDetector.this.leafs = new HashSet<IClass>();
 				CompositePatternDetector.this.compChildClasses = new HashSet<IClass>();

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Observable;
 import java.util.Set;
 
 import analyzer.model.IClass;
@@ -24,7 +25,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class AdapterPatternDetector implements IPatternDetector  {
+public class AdapterPatternDetector extends ObservablePatternDetector  {
 	
 	private static final class FieldClassPair {
 		
@@ -116,6 +117,7 @@ public class AdapterPatternDetector implements IPatternDetector  {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
+				classVisitUpdate(c.getName());
 				// System.out.println("\n\n\n\nNOW IN CLASS: "+c.getName()+"\n-----------\n\n\n\n");
 				currentClass = c;
 				supertypes = new HashSet<>();

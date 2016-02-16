@@ -1,5 +1,7 @@
 package analyzer.visitor.detect;
 
+import java.util.Observable;
+
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.AccessLevel;
 import analyzer.model.IClass;
@@ -16,7 +18,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class SingletonPatternDetector implements IPatternDetector {
+public class SingletonPatternDetector extends ObservablePatternDetector {
 	
 	private final IVisitor visitor;
 	private IModel model;
@@ -45,6 +47,7 @@ public class SingletonPatternDetector implements IPatternDetector {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
+				classVisitUpdate(c.getName());
 				SingletonPatternDetector.this.currentClass = c;
 				SingletonPatternDetector.this.hasInstanceGetter = false;
 				SingletonPatternDetector.this.hasPrivateCtor = false;

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Observable;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -25,7 +26,7 @@ import analyzer.visitor.common.IVisitor;
 import analyzer.visitor.common.VisitType;
 import analyzer.visitor.common.Visitor;
 
-public class DecoratorPatternComponentDetector implements IPatternDetector  {
+public class DecoratorPatternComponentDetector extends ObservablePatternDetector  {
 	
 	private final IVisitor visitor;
 	private IModel model;
@@ -61,6 +62,7 @@ public class DecoratorPatternComponentDetector implements IPatternDetector  {
 			@Override
 			public void execute(ITraverser t) {
 				IClass c = (IClass)t;
+				classVisitUpdate(c.getName());
 				// System.out.println("WE ARE NOW VISITING: "+c.getName());
 				DecoratorPatternComponentDetector.this.currentClass = c;
 				DecoratorPatternComponentDetector.this.methodsToFind = new HashMap<>();

@@ -1,29 +1,41 @@
 package analyzer.pipeline;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Observable;
+import java.util.Observer;
 
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.IModel;
 import analyzer.visitor.output.ClassUmlOutputStream;
 
-public class DotGenerator {
+public class DotGeneratorPhase extends Observable implements IPhase, Observer {
 	
 	private IModel model;
 	private String outputDir, pathToDot;
-	
-	public DotGenerator(IModel model, String outputDir, String pathToDot) {
+	private String[] classes;
+
+	public DotGeneratorPhase(IModel model, String outputDir, String pathToDot) {
 		this.model = model;
 		this.outputDir = outputDir;
 		this.pathToDot = pathToDot;
 	}
 	
-	public void generateDiagram(String[] classes) throws IOException, InterruptedException {
+	public String[] getClasses() {
+		return classes;
+	}
+
+	public void setClasses(String[] classes) {
+		this.classes = classes;
+	}
+
+	@Override
+	public void run() throws IOException, InterruptedException, IllegalStateException {
 		
 		OutputStream os = new FileOutputStream(outputDir + "/output.dot");
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(os);
+		classUmlOutputStream.addObserver(this);
 		
 		for (String className : classes) {
 			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
@@ -40,6 +52,11 @@ public class DotGenerator {
 			throw new IllegalStateException("DOT has unexpectedly failed");
 		}
 		
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		this.notifyObservers(arg);
 	}
 
 }
