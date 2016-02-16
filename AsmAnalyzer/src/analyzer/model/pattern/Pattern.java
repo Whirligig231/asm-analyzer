@@ -1,6 +1,7 @@
 package analyzer.model.pattern;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -16,6 +17,7 @@ public class Pattern implements IPattern {
 	public Pattern(String name, Color color) {
 		this.name = name;
 		this.color = color;
+		this.classes = new ArrayList<>();
 	}
 
 	@Override

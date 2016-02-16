@@ -44,12 +44,14 @@ public class DotGeneratorPhase extends Observable implements IPhase, Observer {
 		classUmlOutputStream.close();
 		
 		Runtime rt = Runtime.getRuntime();
-		Process pr = rt.exec(this.pathToDot + " " + outputDir + "/output.dot -o " + outputDir
-				+ "/output.png -Tpng");
+		String cmd = this.pathToDot + " \"" + outputDir + "/output.dot\" -o \"" + outputDir
+				+ "/output.png\" -Tpng";
+		Process pr = rt.exec(cmd);
 		
 		int returnValue = pr.waitFor();
 		if (returnValue != 0) {
-			throw new IllegalStateException("DOT has unexpectedly failed");
+			throw new IllegalStateException("DOT has unexpectedly failed (\"" + cmd +
+					"\" returned code " + returnValue + ")");
 		}
 		
 	}

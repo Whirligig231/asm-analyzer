@@ -1,0 +1,38 @@
+digraph G {
+rankdir=BT;
+
+node [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+shape = "record"
+]
+edge [
+fontname = "Bitstream Vera Sans"
+fontsize = 8
+]
+java_io_Reader [
+	label = "{java.io.Reader\n\<\<Component\>\>|protected lock : java_lang_Object\lprivate skipBuffer : char[]\lprivate maxSkipBufferSize : int\l|public read(char[], int, int) : int\lpublic read(char[]) : int\lpublic read() : int\lpublic markSupported() : boolean\lpublic mark(int) : void\lprotected \<init\>(java.lang.Object) : void\lpublic read(java.nio.CharBuffer) : int\lpublic reset() : void\lprotected \<init\>() : void\lpublic ready() : boolean\lpublic skip(long) : long\lpublic close() : void\l}"
+, color="#00ff00"]
+java_io_BufferedReader [
+	label = "{java.io.BufferedReader\n\<\<Decorator\>\>|private markedChar : int\lprivate cb : char[]\lprivate nextChar : int\lprivate UNMARKED : int\lprivate in : java_io_Reader\lnull lock : java_lang_Object\lprivate INVALIDATED : int\lprivate defaultCharBufferSize : int\lprivate defaultExpectedLineLength : int\lprivate markedSkipLF : boolean\lprivate readAheadLimit : int\lprivate nChars : int\lprivate skipLF : boolean\l|private read1(char[], int, int) : int\lpublic readLine() : java.lang.String\lpublic mark(int) : void\lnull \<init\>(java.io.BufferedReader) : void\lpublic ready() : boolean\lpublic skip(long) : long\ldefault readLine(boolean) : java.lang.String\lpublic read(char[], int, int) : int\lpublic lines() : java.util.stream.Stream\lpublic \<init\>(java.io.Reader, int) : void\lpublic read() : int\lpublic markSupported() : boolean\ldefault \<clinit\>() : void\lpublic reset() : void\lprivate ensureOpen() : void\lpublic \<init\>(java.io.Reader) : void\lprivate fill() : void\lpublic close() : void\l}"
+, color="#00ff00"]
+java_lang_Runtime [
+	label = "{java.lang.Runtime\n\<\<Singleton\>\>|private currentRuntime : java_lang_Runtime\l|public gc() : void\lpublic getRuntime() : java.lang.Runtime\lpublic exec(java.lang.String[], java.lang.String[], java.io.File) : java.lang.Process\lpublic traceMethodCalls(boolean) : void\lpublic addShutdownHook(java.lang.Thread) : void\lpublic runFinalization() : void\lpublic loadLibrary(java.lang.String) : void\lprivate runFinalization0() : void\lpublic getLocalizedOutputStream(java.io.OutputStream) : java.io.OutputStream\lpublic availableProcessors() : int\lpublic maxMemory() : long\lpublic halt(int) : void\ldefault load0(java.lang.Class, java.lang.String) : void\lpublic removeShutdownHook(java.lang.Thread) : boolean\lpublic exec(java.lang.String, java.lang.String[]) : java.lang.Process\lpublic exec(java.lang.String[]) : java.lang.Process\lpublic traceInstructions(boolean) : void\lpublic exec(java.lang.String) : java.lang.Process\lpublic freeMemory() : long\lpublic totalMemory() : long\lpublic exit(int) : void\ldefault loadLibrary0(java.lang.Class, java.lang.String) : void\lpublic exec(java.lang.String, java.lang.String[], java.io.File) : java.lang.Process\lpublic load(java.lang.String) : void\lpublic getLocalizedInputStream(java.io.InputStream) : java.io.InputStream\lpublic runFinalizersOnExit(boolean) : void\lpublic exec(java.lang.String[], java.lang.String[]) : java.lang.Process\ldefault \<clinit\>() : void\lprivate \<init\>() : void\l}"
+, color="#0000ff"]
+java_io_BufferedReader -> java_io_Reader [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_lang_Runtime -> java_lang_Runtime [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+java_io_BufferedReader -> java_io_Reader [
+	arrowhead = "vee"
+	style = "solid"
+	label = "\<\<decorates\>\>", color="#000000"
+]
+
+}

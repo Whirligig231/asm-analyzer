@@ -29,7 +29,10 @@ import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.pipeline.AsmReaderPhase;
 import analyzer.pipeline.DetectorPhase;
+import analyzer.pipeline.IPhase;
+import analyzer.pipeline.IPhaseFactory;
 import analyzer.pipeline.IPipeline;
+import analyzer.pipeline.PhaseFactory;
 import analyzer.pipeline.Pipeline;
 import analyzer.visitor.detect.SingletonPatternDetector;
 
@@ -121,7 +124,7 @@ public class LandingFrame extends JFrame {
 		
 		this.fc = new JFileChooser();
 		FileFilter filter = 
-				new FileNameExtensionFilter("Java Properties Files (.properties)", ".properties");
+				new FileNameExtensionFilter("Java Properties Files (.properties)", "properties");
 		fc.addChoosableFileFilter(filter);
 		fc.setFileFilter(filter);
 		
@@ -157,18 +160,33 @@ public class LandingFrame extends JFrame {
 	}
 
 	private void setupPipeline() {
+		
 		this.model = new Model();
-		this.pipeline = new Pipeline();
-		
-		AsmReaderPhase arp = new AsmReaderPhase(this.model);
-		String[] classes = new String[100];
-		for (int i=0;i<100;i++) classes[i] = "javax.swing.JComponent";
-		arp.setClasses(classes);
-		this.pipeline.addPhase(arp);
-		
-		this.pipeline.addPhase(new DetectorPhase(new SingletonPatternDetector(), model));
-		
+		this.pipeline = new Pipeline();		
 		this.pipeline.addObserver(this.lo);
+		IPhaseFactory factory = new PhaseFactory();
+		
+		String phaseLine = this.config.getProperty("Phases");
+		if (phaseLine == null) {
+			this.error("Phases must be set");
+			return;
+		}
+		
+		String[] phases = phaseLine.split("[;, ]");
+		for (String phaseName : phases) {
+			if (phaseName.equals(""))
+				continue;
+			
+			IPhase phase;
+			try {
+				phase = factory.makePhase(phaseName, this.model, this.config);
+				this.pipeline.addPhase(phase);
+			} catch (Exception e) {
+				this.error(e.getMessage());
+				return;
+			}
+		}
+
 		
 	}
 	
