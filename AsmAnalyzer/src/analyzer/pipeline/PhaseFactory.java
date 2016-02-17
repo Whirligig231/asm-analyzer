@@ -16,13 +16,7 @@ public class PhaseFactory implements IPhaseFactory {
 		
 		switch (phaseType) {
 		case "Class-Loading":
-			AsmReaderPhase phase = new AsmReaderPhase(model, properties.getProperty("Input-Folder"));
-			String classes = properties.getProperty("Input-Classes");
-			if (classes == null) {
-				throw new IOException("Input-Classes must be set");
-			}
-			String[] classNames = classes.split("[;, ]");
-			phase.setClasses(classNames);
+			AsmReaderPhase phase = new AsmReaderPhase(model, properties);
 			return phase;
 		case "Decorator-Detection":
 			int dThreshold = this.getIntProperty(properties, "Decorator-MethodDelegation", 3);
@@ -35,21 +29,7 @@ public class PhaseFactory implements IPhaseFactory {
 		case "Composite-Detection":
 			return new DetectorPhase(new CompositePatternDetector(), model);
 		case "DOT-Generation":
-			String outputDir = properties.getProperty("Output-Directory");
-			if (outputDir == null) {
-				throw new IOException("Output-Directory must be set");
-			}
-			String dotPath = properties.getProperty("Dot-Path");
-			if (dotPath == null) {
-				throw new IOException("Dot-Path must be set");
-			}
-			DotGeneratorPhase dotPhase = new DotGeneratorPhase(model, outputDir, dotPath);
-			String dotClasses = properties.getProperty("Input-Classes");
-			if (dotClasses == null) {
-				throw new IOException("Input-Classes must be set");
-			}
-			String[] dotClassNames = dotClasses.split("[;, ]");
-			dotPhase.setClasses(dotClassNames);
+			DotGeneratorPhase dotPhase = new DotGeneratorPhase(model, properties);
 			return dotPhase;
 		default:
 			throw new UnsupportedOperationException("Unknown phase type "+phaseType);

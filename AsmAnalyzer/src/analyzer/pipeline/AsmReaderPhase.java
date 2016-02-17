@@ -4,8 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Properties;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
@@ -24,26 +28,23 @@ import analyzer.model.IModel;
 public class AsmReaderPhase extends Observable implements IPhase, Observer {
 	
 	private IModel model;
-	private String folder;
-	private String[] classes;
+	private Properties properties;
 
-	public AsmReaderPhase(IModel model, String folder) {
+	public AsmReaderPhase(IModel model, Properties properties) {
 		this.model = model;
-		this.folder = folder;
-	}
-	
-	public String[] getClasses() {
-		return classes;
-	}
-
-	public void setClasses(String[] classes) {
-		this.classes = classes;
+		this.properties = properties;
 	}
 
 	@Override
 	public void run() throws IOException {
 		
-		for (String className: this.classes) {
+		String classes = properties.getProperty("Input-Classes");
+		if (classes == null) {
+			throw new IOException("Input-Classes must be set");
+		}
+		String[] classNames = classes.split("[;, ]");
+		
+		/*for (String className: classNames) {
 
 			if (model.getClass(ClassNameStandardizer.standardize(className)) == null)
 				continue;
@@ -53,12 +54,16 @@ public class AsmReaderPhase extends Observable implements IPhase, Observer {
 			classModel.setOwner(model);
 			model.addClass(classModel);
 
-		}
+		}*/
 		
-		if (this.folder != null)
-			this.readClasses(new File(this.folder));
+		String folder = properties.getProperty("Input-Folder");
 		
-		for (String className: this.classes) {
+		Collection<String> newClassNames = new ArrayList<>(Arrays.asList(classNames));
+		
+		if (folder != null)
+			this.readClasses(new File(folder), newClassNames);
+		
+		for (String className: classNames) {
 
 			// ASM's ClassReader does the heavy lifting of parsing the compiled Java class
 			ClassReader reader=new ClassReader(className);
@@ -66,6 +71,16 @@ public class AsmReaderPhase extends Observable implements IPhase, Observer {
 
 		}
 		
+		StringBuilder sb = new StringBuilder();
+		boolean first = true;
+		for (String className : newClassNames) {
+			if (!first)
+				sb.append(";");
+			sb.append(className);
+			first = false;
+		}
+		
+		properties.setProperty("Input-Classes", sb.toString());
 	}
 
 	@Override
@@ -101,14 +116,17 @@ public class AsmReaderPhase extends Observable implements IPhase, Observer {
 		
 	}
 	
-	private void readClasses(File file) throws FileNotFoundException, IOException {
+	private void readClasses(File file, Collection<String> newClassNames)
+			throws FileNotFoundException, IOException {
 		
 		if (file.isDirectory()) {
 			for (File item : file.listFiles())
-				this.readClasses(item);
+				this.readClasses(item, newClassNames);
 		}
 		else if (file.getName().endsWith(".class")) {
-			this.readClass(new ClassReader(new FileInputStream(file)));
+			ClassReader reader = new ClassReader(new FileInputStream(file));
+			newClassNames.add(reader.getClassName());
+			this.readClass(reader);
 		}
 		
 	}

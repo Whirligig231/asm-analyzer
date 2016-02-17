@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Properties;
 
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.IClass;
@@ -15,36 +16,36 @@ import analyzer.visitor.output.ClassUmlOutputStream;
 public class DotGeneratorPhase extends Observable implements IPhase, Observer {
 	
 	private IModel model;
-	private String outputDir, pathToDot;
-	private String[] classes;
+	private Properties properties;
 
-	public DotGeneratorPhase(IModel model, String outputDir, String pathToDot) {
+	public DotGeneratorPhase(IModel model, Properties properties) {
 		this.model = model;
-		this.outputDir = outputDir;
-		this.pathToDot = pathToDot;
-	}
-	
-	public String[] getClasses() {
-		return classes;
-	}
-
-	public void setClasses(String[] classes) {
-		this.classes = classes;
+		this.properties = properties;
 	}
 
 	@Override
 	public void run() throws IOException, InterruptedException, IllegalStateException {
 		
+		String outputDir = properties.getProperty("Output-Directory");
+		if (outputDir == null) {
+			throw new IOException("Output-Directory must be set");
+		}
+		String dotPath = properties.getProperty("Dot-Path");
+		if (dotPath == null) {
+			throw new IOException("Dot-Path must be set");
+		}
+		String dotClasses = properties.getProperty("Input-Classes");
+		if (dotClasses == null) {
+			throw new IOException("Input-Classes must be set");
+		}
+		String[] dotClassNames = dotClasses.split("[;, ]");
+		
 		OutputStream os = new FileOutputStream(outputDir + "/output.dot");
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(os);
 		classUmlOutputStream.addObserver(this);
 		
-		//for (String className : classes) {
-		//	classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
-		//}
-		Iterator<IClass> it = model.getClassIterator();
-		while (it.hasNext()) {
-			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(it.next().getName()));
+		for (String className : dotClassNames) {
+			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
 		}
 		classUmlOutputStream.write(model);
 		classUmlOutputStream.close();
@@ -53,7 +54,7 @@ public class DotGeneratorPhase extends Observable implements IPhase, Observer {
 		this.notifyObservers("Running DOT ...");
 		
 		Runtime rt = Runtime.getRuntime();
-		String cmd = this.pathToDot + " \"" + outputDir + "/output.dot\" -o \"" + outputDir
+		String cmd = dotPath + " \"" + outputDir + "/output.dot\" -o \"" + outputDir
 				+ "/output.png\" -Tpng";
 		Process pr = rt.exec(cmd);
 		
