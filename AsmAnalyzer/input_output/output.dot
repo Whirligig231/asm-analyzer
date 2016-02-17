@@ -10,18 +10,447 @@ edge [
 fontname = "Bitstream Vera Sans"
 fontsize = 8
 ]
+java_io_PrintStream [
+	label = "{java.io.PrintStream||null print(char) : void\lnull println(long) : void\lnull println(java.lang.String) : void\l}"
+]
+problem_DecryptionInputStreamTest [
+	label = "{problem.DecryptionInputStreamTest|private encryption : problem_IEncryption\l|public testReadSeveral() : void\lpublic setUp() : void\lpublic \<init\>() : void\lpublic tearDown() : void\lpublic testOneByOne() : void\l}"
+]
+java_io_FilterOutputStream [
+	label = "{java.io.FilterOutputStream||null write(int) : void\lnull \<init\>(java.io.OutputStream) : void\l}"
+]
+java_lang_StringBuilder [
+	label = "{java.lang.StringBuilder||null \<init\>(java.lang.String) : void\lnull append(java.lang.String) : java.lang.StringBuilder\lnull toString() : java.lang.String\lnull append(double) : java.lang.StringBuilder\lnull \<init\>() : void\l}"
+]
+problem_DecryptionInputStream [
+	label = "{problem.DecryptionInputStream|private decryption : problem_IDecryption\l|public read(byte[], int, int) : int\lpublic read() : int\lpublic \<init\>(java.io.InputStream) : void\l}"
+]
+java_lang_SecurityException [
+	label = "{java.lang.SecurityException||null \<init\>(java.lang.String) : void\l}"
+]
+problem_IDecryption [
+	label = "{problem.IDecryption||public decrypt(char) : char\l}"
+]
+java_lang_SecurityManager [
+	label = "{java.lang.SecurityManager||null checkPermission(java.security.Permission) : void\lnull checkExit(int) : void\lnull checkLink(java.lang.String) : void\l}"
+]
+java_io_FileOutputStream [
+	label = "{java.io.FileOutputStream||null \<init\>(java.lang.String) : void\l}"
+]
+java_io_ByteArrayOutputStream [
+	label = "{java.io.ByteArrayOutputStream||null toString() : java.lang.String\lnull \<init\>() : void\l}"
+]
+org_junit_Assert [
+	label = "{org.junit.Assert||null assertArrayEquals(byte[], byte[]) : void\lnull assertEquals(java.lang.Object, java.lang.Object) : void\lnull assertNotEquals(java.lang.String, long, long) : void\lnull assertEquals(long, long) : void\lnull assertEquals(java.lang.String, long, long) : void\l}"
+]
+edu_roshulman_csse374_editor_TextEditor [
+	label = "{edu.roshulman.csse374.editor.TextEditor||null \<init\>(java.io.InputStream, java.io.OutputStream) : void\lnull execute() : void\l}"
+]
+headfirst_decorator_starbuzz_Milk [
+	label = "{headfirst.decorator.starbuzz.Milk\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
+, color="#00ff00"]
+headfirst_decorator_starbuzz_CondimentDecorator [
+	label = "{headfirst.decorator.starbuzz.CondimentDecorator||public \<init\>() : void\lpublic getDescription() : java.lang.String\l}"
+]
+problem_IEncryption [
+	label = "{problem.IEncryption||public encrypt(char) : char\l}"
+]
 java_io_Reader [
 	label = "{java.io.Reader\n\<\<Component\>\>|protected lock : java_lang_Object\lprivate skipBuffer : char[]\lprivate maxSkipBufferSize : int\l|public read(char[], int, int) : int\lpublic read(char[]) : int\lpublic read() : int\lpublic markSupported() : boolean\lpublic mark(int) : void\lprotected \<init\>(java.lang.Object) : void\lpublic read(java.nio.CharBuffer) : int\lpublic reset() : void\lprotected \<init\>() : void\lpublic ready() : boolean\lpublic skip(long) : long\lpublic close() : void\l}"
 , color="#00ff00"]
 java_io_BufferedReader [
 	label = "{java.io.BufferedReader\n\<\<Decorator\>\>|private markedChar : int\lprivate cb : char[]\lprivate nextChar : int\lprivate UNMARKED : int\lprivate in : java_io_Reader\lnull lock : java_lang_Object\lprivate INVALIDATED : int\lprivate defaultCharBufferSize : int\lprivate defaultExpectedLineLength : int\lprivate markedSkipLF : boolean\lprivate readAheadLimit : int\lprivate nChars : int\lprivate skipLF : boolean\l|private read1(char[], int, int) : int\lpublic readLine() : java.lang.String\lpublic mark(int) : void\lnull \<init\>(java.io.BufferedReader) : void\lpublic ready() : boolean\lpublic skip(long) : long\ldefault readLine(boolean) : java.lang.String\lpublic read(char[], int, int) : int\lpublic lines() : java.util.stream.Stream\lpublic \<init\>(java.io.Reader, int) : void\lpublic read() : int\lpublic markSupported() : boolean\ldefault \<clinit\>() : void\lpublic reset() : void\lprivate ensureOpen() : void\lpublic \<init\>(java.io.Reader) : void\lprivate fill() : void\lpublic close() : void\l}"
 , color="#00ff00"]
+java_io_FileInputStream [
+	label = "{java.io.FileInputStream||null \<init\>(java.lang.String) : void\l}"
+]
+java_lang_System [
+	label = "{java.lang.System|null out : java_io_PrintStream\l|null getSecurityManager() : java.lang.SecurityManager\lnull arraycopy(java.lang.Object, int, java.lang.Object, int, int) : void\l}"
+]
+headfirst_decorator_starbuzz_Whip [
+	label = "{headfirst.decorator.starbuzz.Whip\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
+, color="#00ff00"]
 java_lang_Runtime [
 	label = "{java.lang.Runtime\n\<\<Singleton\>\>|private currentRuntime : java_lang_Runtime\l|public gc() : void\lpublic getRuntime() : java.lang.Runtime\lpublic exec(java.lang.String[], java.lang.String[], java.io.File) : java.lang.Process\lpublic traceMethodCalls(boolean) : void\lpublic addShutdownHook(java.lang.Thread) : void\lpublic runFinalization() : void\lpublic loadLibrary(java.lang.String) : void\lprivate runFinalization0() : void\lpublic getLocalizedOutputStream(java.io.OutputStream) : java.io.OutputStream\lpublic availableProcessors() : int\lpublic maxMemory() : long\lpublic halt(int) : void\ldefault load0(java.lang.Class, java.lang.String) : void\lpublic removeShutdownHook(java.lang.Thread) : boolean\lpublic exec(java.lang.String, java.lang.String[]) : java.lang.Process\lpublic exec(java.lang.String[]) : java.lang.Process\lpublic traceInstructions(boolean) : void\lpublic exec(java.lang.String) : java.lang.Process\lpublic freeMemory() : long\lpublic totalMemory() : long\lpublic exit(int) : void\ldefault loadLibrary0(java.lang.Class, java.lang.String) : void\lpublic exec(java.lang.String, java.lang.String[], java.io.File) : java.lang.Process\lpublic load(java.lang.String) : void\lpublic getLocalizedInputStream(java.io.InputStream) : java.io.InputStream\lpublic runFinalizersOnExit(boolean) : void\lpublic exec(java.lang.String[], java.lang.String[]) : java.lang.Process\ldefault \<clinit\>() : void\lprivate \<init\>() : void\l}"
 , color="#0000ff"]
-java_io_BufferedReader -> java_io_Reader [
+sun_reflect_Reflection [
+	label = "{sun.reflect.Reflection||null getCallerClass() : java.lang.Class\l}"
+]
+java_io_File [
+	label = "{java.io.File|null separatorChar : char\l|null \<init\>(java.lang.String) : void\lnull isAbsolute() : boolean\l}"
+]
+puzzle_LongDivision [
+	label = "{puzzle.LongDivision||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+java_util_stream_StreamSupport [
+	label = "{java.util.stream.StreamSupport||null stream(java.util.Spliterator, boolean) : java.util.stream.Stream\l}"
+]
+java_io_OutputStream [
+	label = "{java.io.OutputStream||null write(int) : void\lnull write(byte[], int, int) : void\l}"
+]
+java_nio_CharBuffer [
+	label = "{java.nio.CharBuffer||null put(char[], int, int) : java.nio.CharBuffer\lnull remaining() : int\l}"
+]
+java_io_FilterInputStream [
+	label = "{java.io.FilterInputStream||null read(byte[], int, int) : int\lnull read() : int\lnull \<init\>(java.io.InputStream) : void\l}"
+]
+java_lang_ClassLoader [
+	label = "{java.lang.ClassLoader||null loadLibrary(java.lang.Class, java.lang.String, boolean) : void\l}"
+]
+java_lang_Object [
+	label = "{java.lang.Object||null \<init\>() : void\l}"
+]
+temp_UpperCaseInputStream [
+	label = "{temp.UpperCaseInputStream||public read(byte[], int, int) : int\lpublic read() : int\lpublic \<init\>(java.io.InputStream) : void\l}"
+]
+problem_TextEditorApp [
+	label = "{problem.TextEditorApp||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+java_lang_IndexOutOfBoundsException [
+	label = "{java.lang.IndexOutOfBoundsException||null \<init\>() : void\l}"
+]
+headfirst_decorator_starbuzz_Decaf [
+	label = "{headfirst.decorator.starbuzz.Decaf|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
+]
+temp_UpperCaseDriver [
+	label = "{temp.UpperCaseDriver||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+java_io_IOException [
+	label = "{java.io.IOException||null \<init\>(java.lang.String) : void\l}"
+]
+java_lang_Shutdown [
+	label = "{java.lang.Shutdown||null setRunFinalizersOnExit(boolean) : void\lnull halt(int) : void\lnull exit(int) : void\l}"
+]
+headfirst_decorator_starbuzz_HouseBlend [
+	label = "{headfirst.decorator.starbuzz.HouseBlend|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
+]
+java_lang_NullPointerException [
+	label = "{java.lang.NullPointerException||null \<init\>() : void\l}"
+]
+problem_SubstitutionCipher [
+	label = "{problem.SubstitutionCipher|private encryptionKey : char[]\lprivate decryptionKey : char[]\l|public decrypt(char) : char\lpublic encrypt(char) : char\lpublic \<init\>() : void\l}"
+]
+java_lang_String [
+	label = "{java.lang.String||null indexOf(int) : int\lnull valueOf(java.lang.Object) : java.lang.String\lnull length() : int\lnull getBytes() : byte[]\lnull \<init\>(char[], int, int) : void\l}"
+]
+java_lang_ApplicationShutdownHooks [
+	label = "{java.lang.ApplicationShutdownHooks||null add(java.lang.Thread) : void\lnull remove(java.lang.Thread) : boolean\l}"
+]
+headfirst_decorator_starbuzz_Soy [
+	label = "{headfirst.decorator.starbuzz.Soy\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
+, color="#00ff00"]
+headfirst_decorator_starbuzz_Mocha [
+	label = "{headfirst.decorator.starbuzz.Mocha\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
+, color="#00ff00"]
+java_io_InputStream [
+	label = "{java.io.InputStream||null read(byte[], int, int) : int\lnull read() : int\lnull close() : void\l}"
+]
+java_io_ByteArrayInputStream [
+	label = "{java.io.ByteArrayInputStream||null \<init\>(byte[]) : void\l}"
+]
+java_lang_RuntimePermission [
+	label = "{java.lang.RuntimePermission||null \<init\>(java.lang.String) : void\l}"
+]
+headfirst_decorator_starbuzz_DarkRoast [
+	label = "{headfirst.decorator.starbuzz.DarkRoast|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
+]
+java_util_StringTokenizer [
+	label = "{java.util.StringTokenizer||null countTokens() : int\lnull nextToken() : java.lang.String\lnull \<init\>(java.lang.String) : void\lnull hasMoreTokens() : boolean\l}"
+]
+java_util_Spliterators [
+	label = "{java.util.Spliterators||null spliteratorUnknownSize(java.util.Iterator, int) : java.util.Spliterator\l}"
+]
+headfirst_decorator_starbuzz_Espresso [
+	label = "{headfirst.decorator.starbuzz.Espresso|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
+]
+headfirst_decorator_starbuzz_StarbuzzCoffee [
+	label = "{headfirst.decorator.starbuzz.StarbuzzCoffee||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+]
+problem_EncryptionOutputStream [
+	label = "{problem.EncryptionOutputStream|private encryption : problem_IEncryption\l|public write(int) : void\lpublic write(byte[], int, int) : void\lpublic \<init\>(java.io.OutputStream) : void\l}"
+]
+problem_EncryptionOutputStreamTest [
+	label = "{problem.EncryptionOutputStreamTest|private decryption : problem_IDecryption\l|public testWriteSeveral() : void\lpublic setUp() : void\lpublic \<init\>() : void\lpublic tearDown() : void\lpublic testOneByOne() : void\l}"
+]
+headfirst_decorator_starbuzz_Beverage [
+	label = "{headfirst.decorator.starbuzz.Beverage\n\<\<Component\>\>|default description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\lpublic getDescription() : java.lang.String\l}"
+, color="#00ff00"]
+java_lang_StringBuffer [
+	label = "{java.lang.StringBuffer||null append(char[], int, int) : java.lang.StringBuffer\lnull \<init\>(int) : void\lnull toString() : java.lang.String\lnull length() : int\l}"
+]
+java_lang_ProcessBuilder [
+	label = "{java.lang.ProcessBuilder||null directory(java.io.File) : java.lang.ProcessBuilder\lnull environment(java.lang.String[]) : java.lang.ProcessBuilder\lnull \<init\>(java.lang.String[]) : void\lnull start() : java.lang.Process\l}"
+]
+java_lang_IllegalArgumentException [
+	label = "{java.lang.IllegalArgumentException||null \<init\>(java.lang.String) : void\l}"
+]
+java_lang_Character [
+	label = "{java.lang.Character||null toUpperCase(int) : int\l}"
+]
+java_lang_Math [
+	label = "{java.lang.Math||null min(long, long) : long\lnull min(int, int) : int\l}"
+]
+java_lang_UnsatisfiedLinkError [
+	label = "{java.lang.UnsatisfiedLinkError||null \<init\>(java.lang.String) : void\l}"
+]
+problem_SubstitutionCipherTest [
+	label = "{problem.SubstitutionCipherTest|private substitutionCipher : problem_SubstitutionCipher\l|public testAToZ() : void\lpublic setUp() : void\lpublic testNonAlphabet() : void\lpublic \<init\>() : void\lpublic testaToz() : void\lpublic tearDown() : void\l}"
+]
+headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Whip [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Milk -> java_lang_StringBuilder [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Espresso -> headfirst_decorator_starbuzz_Beverage [
 	arrowhead = "empty"
 	style = "solid"
+]
+
+problem_EncryptionOutputStreamTest -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Whip -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "vee"
+	style = "solid"
+	label = "\<\<decorates\>\>", color="#000000"
+]
+
+problem_EncryptionOutputStreamTest -> java_io_ByteArrayOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_IDecryption -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_Soy -> java_lang_StringBuilder [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_EncryptionOutputStreamTest -> problem_EncryptionOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_SubstitutionCipherTest -> org_junit_Assert [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_EncryptionOutputStreamTest -> problem_SubstitutionCipher [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_TextEditorApp -> edu_roshulman_csse374_editor_TextEditor [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Mocha [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_EncryptionOutputStreamTest -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+problem_DecryptionInputStreamTest -> java_io_ByteArrayInputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_Reader -> java_lang_Math [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+temp_UpperCaseDriver -> java_lang_System [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_EncryptionOutputStreamTest -> org_junit_Assert [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_EncryptionOutputStreamTest -> java_io_OutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_BufferedReader -> java_lang_Math [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Mocha -> headfirst_decorator_starbuzz_CondimentDecorator [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_Mocha -> java_lang_StringBuilder [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> java_io_PrintStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+temp_UpperCaseInputStream -> java_io_FilterInputStream [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_lang_Runtime -> java_lang_UnsatisfiedLinkError [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_SubstitutionCipherTest -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Soy [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_DecryptionInputStreamTest -> problem_IEncryption [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+temp_UpperCaseInputStream -> java_io_FilterInputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_HouseBlend [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_DarkRoast [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_DecryptionInputStreamTest -> org_junit_Assert [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Whip -> headfirst_decorator_starbuzz_CondimentDecorator [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+problem_EncryptionOutputStreamTest -> problem_IDecryption [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_Soy -> headfirst_decorator_starbuzz_CondimentDecorator [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_io_BufferedReader -> java_io_IOException [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_BufferedReader -> java_lang_System [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_SubstitutionCipher -> problem_IDecryption [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+temp_UpperCaseDriver -> java_io_InputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Mocha -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_Reader -> java_nio_CharBuffer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+temp_UpperCaseDriver -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_Reader -> java_io_IOException [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+temp_UpperCaseDriver -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_Mocha -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "vee"
+	style = "solid"
+	label = "\<\<decorates\>\>", color="#000000"
+]
+
+temp_UpperCaseDriver -> java_io_FileInputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_DecryptionInputStreamTest -> problem_SubstitutionCipher [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+problem_TextEditorApp -> problem_EncryptionOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_BufferedReader -> java_lang_StringBuffer [
+	arrowhead = "vee"
+	style = "dashed"
 ]
 
 java_lang_Runtime -> java_lang_Runtime [
@@ -29,10 +458,302 @@ java_lang_Runtime -> java_lang_Runtime [
 	style = "solid"
 ]
 
+problem_IEncryption -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_io_Reader -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+problem_DecryptionInputStream -> problem_IDecryption [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_TextEditorApp -> problem_DecryptionInputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_BufferedReader -> java_io_Reader [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+problem_EncryptionOutputStream -> problem_SubstitutionCipher [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_IllegalArgumentException [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Decaf -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+problem_DecryptionInputStreamTest -> problem_DecryptionInputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+temp_UpperCaseInputStream -> java_io_InputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+temp_UpperCaseInputStream -> java_lang_Character [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+puzzle_LongDivision -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+problem_TextEditorApp -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Espresso [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Soy -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "vee"
+	style = "solid"
+	label = "\<\<decorates\>\>", color="#000000"
+]
+
+problem_SubstitutionCipher -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_lang_Runtime -> java_io_OutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_Shutdown [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_HouseBlend -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_io_BufferedReader -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_SecurityManager [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_Reader -> java_lang_Object [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> java_lang_System [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_Whip -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+puzzle_LongDivision -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_ApplicationShutdownHooks [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_ProcessBuilder [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_TextEditorApp -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_lang_Runtime -> java_lang_StringBuilder [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Milk -> headfirst_decorator_starbuzz_CondimentDecorator [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_StarbuzzCoffee -> java_lang_StringBuilder [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
 java_io_BufferedReader -> java_io_Reader [
 	arrowhead = "vee"
 	style = "solid"
 	label = "\<\<decorates\>\>", color="#000000"
+]
+
+problem_EncryptionOutputStream -> java_io_FilterOutputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_DecryptionInputStream -> java_io_FilterInputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_System [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Soy -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+puzzle_LongDivision -> java_io_PrintStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_util_StringTokenizer [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_DecryptionInputStreamTest -> java_lang_Object [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_lang_Runtime -> java_io_File [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_SubstitutionCipher -> problem_IEncryption [
+	arrowhead = "empty"
+	style = "dashed"
+]
+
+temp_UpperCaseDriver -> java_io_PrintStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_Whip -> java_lang_StringBuilder [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_EncryptionOutputStream -> problem_IEncryption [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+java_lang_Runtime -> java_lang_RuntimePermission [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_io_BufferedReader -> java_lang_IllegalArgumentException [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_io_InputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_DecryptionInputStreamTest -> java_io_InputStream [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+java_lang_Runtime -> java_lang_ClassLoader [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+problem_DecryptionInputStreamTest -> java_lang_String [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+headfirst_decorator_starbuzz_CondimentDecorator -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_Milk -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "vee"
+	style = "solid"
+	label = "\<\<decorates\>\>", color="#000000"
+]
+
+problem_SubstitutionCipherTest -> problem_SubstitutionCipher [
+	arrowhead = "vee"
+	style = "solid"
+]
+
+headfirst_decorator_starbuzz_DarkRoast -> headfirst_decorator_starbuzz_Beverage [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_lang_Runtime -> sun_reflect_Reflection [
+	arrowhead = "vee"
+	style = "dashed"
+]
+
+puzzle_LongDivision -> java_lang_System [
+	arrowhead = "vee"
+	style = "dashed"
 ]
 
 }

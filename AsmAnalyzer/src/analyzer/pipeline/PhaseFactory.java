@@ -16,7 +16,7 @@ public class PhaseFactory implements IPhaseFactory {
 		
 		switch (phaseType) {
 		case "Class-Loading":
-			AsmReaderPhase phase = new AsmReaderPhase(model);
+			AsmReaderPhase phase = new AsmReaderPhase(model, properties.getProperty("Input-Folder"));
 			String classes = properties.getProperty("Input-Classes");
 			if (classes == null) {
 				throw new IOException("Input-Classes must be set");

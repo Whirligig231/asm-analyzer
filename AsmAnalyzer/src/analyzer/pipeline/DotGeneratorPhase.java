@@ -3,10 +3,12 @@ package analyzer.pipeline;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
 
 import analyzer.common.ClassNameStandardizer;
+import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.visitor.output.ClassUmlOutputStream;
 
@@ -37,11 +39,18 @@ public class DotGeneratorPhase extends Observable implements IPhase, Observer {
 		ClassUmlOutputStream classUmlOutputStream = new ClassUmlOutputStream(os);
 		classUmlOutputStream.addObserver(this);
 		
-		for (String className : classes) {
-			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
+		//for (String className : classes) {
+		//	classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(className));
+		//}
+		Iterator<IClass> it = model.getClassIterator();
+		while (it.hasNext()) {
+			classUmlOutputStream.addClassName(ClassNameStandardizer.standardize(it.next().getName()));
 		}
 		classUmlOutputStream.write(model);
 		classUmlOutputStream.close();
+		
+		this.setChanged();
+		this.notifyObservers("Running DOT ...");
 		
 		Runtime rt = Runtime.getRuntime();
 		String cmd = this.pathToDot + " \"" + outputDir + "/output.dot\" -o \"" + outputDir
@@ -58,6 +67,7 @@ public class DotGeneratorPhase extends Observable implements IPhase, Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
+		this.setChanged();
 		this.notifyObservers(arg);
 	}
 
