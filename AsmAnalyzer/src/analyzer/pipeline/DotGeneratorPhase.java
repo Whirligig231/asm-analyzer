@@ -3,13 +3,11 @@ package analyzer.pipeline;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Properties;
 
 import analyzer.common.ClassNameStandardizer;
-import analyzer.model.IClass;
 import analyzer.model.IModel;
 import analyzer.visitor.output.ClassUmlOutputStream;
 

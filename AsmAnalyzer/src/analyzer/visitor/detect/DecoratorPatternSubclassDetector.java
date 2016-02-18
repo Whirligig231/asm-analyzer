@@ -1,7 +1,6 @@
 package analyzer.visitor.detect;
 
 import java.util.Iterator;
-import java.util.Observable;
 
 import analyzer.model.IClass;
 import analyzer.model.IModel;

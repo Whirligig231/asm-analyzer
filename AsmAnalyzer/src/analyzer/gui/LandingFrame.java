@@ -1,7 +1,6 @@
 package analyzer.gui;
 
 import java.awt.BorderLayout;
-import java.awt.TrayIcon.MessageType;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -19,7 +18,6 @@ import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.filechooser.FileFilter;
@@ -27,14 +25,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import analyzer.model.IModel;
 import analyzer.model.Model;
-import analyzer.pipeline.AsmReaderPhase;
-import analyzer.pipeline.DetectorPhase;
 import analyzer.pipeline.IPhase;
 import analyzer.pipeline.IPhaseFactory;
 import analyzer.pipeline.IPipeline;
 import analyzer.pipeline.PhaseFactory;
 import analyzer.pipeline.Pipeline;
-import analyzer.visitor.detect.SingletonPatternDetector;
 
 public class LandingFrame extends JFrame {
 

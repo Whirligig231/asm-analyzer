@@ -3,7 +3,6 @@ package analyzer.visitor.detect;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Observable;
 import java.util.Set;
 
 import analyzer.common.ClassNameStandardizer;

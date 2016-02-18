@@ -1,7 +1,5 @@
 package analyzer.visitor.detect;
 
-import java.util.Observable;
-
 import analyzer.common.ClassNameStandardizer;
 import analyzer.model.AccessLevel;
 import analyzer.model.IClass;

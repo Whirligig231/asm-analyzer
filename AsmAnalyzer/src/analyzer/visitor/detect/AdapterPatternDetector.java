@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Observable;
 import java.util.Set;
 
 import analyzer.model.IClass;
@@ -20,7 +19,6 @@ import analyzer.model.pattern.AdapterClass;
 import analyzer.model.pattern.AdapterPattern;
 import analyzer.model.pattern.AdaptsRelation;
 import analyzer.model.pattern.IPattern;
-import analyzer.model.pattern.SingletonPattern;
 import analyzer.model.pattern.TargetClass;
 import analyzer.visitor.common.ITraverser;
 import analyzer.visitor.common.IVisitMethod;

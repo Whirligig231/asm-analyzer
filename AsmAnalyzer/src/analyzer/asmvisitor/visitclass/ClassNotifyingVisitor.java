@@ -3,20 +3,6 @@ package analyzer.asmvisitor.visitclass;
 import java.util.Observer;
 
 import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.MethodVisitor;
-
-import analyzer.asmvisitor.visitmethod.MethodStatementsVisitor;
-import analyzer.common.ClassNameStandardizer;
-import analyzer.model.AccessLevel;
-import analyzer.model.Class;
-import analyzer.model.IClass;
-import analyzer.model.IClassModelHolder;
-import analyzer.model.IMethod;
-import analyzer.model.IMethodHolder;
-import analyzer.model.IModel;
-import analyzer.model.IRelation;
-import analyzer.model.Relation;
-import analyzer.model.RelationType;
 
 public class ClassNotifyingVisitor extends ClassVisitor {
 	

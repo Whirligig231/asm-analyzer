@@ -20,9 +20,6 @@ import analyzer.asmvisitor.visitclass.ClassFieldVisitor;
 import analyzer.asmvisitor.visitclass.ClassMethodVisitor;
 import analyzer.asmvisitor.visitclass.ClassNotifyingVisitor;
 import analyzer.asmvisitor.visitclass.ClassStatementsVisitor;
-import analyzer.common.ClassNameStandardizer;
-import analyzer.model.Class;
-import analyzer.model.IClass;
 import analyzer.model.IModel;
 
 public class AsmReaderPhase extends Observable implements IPhase, Observer {
