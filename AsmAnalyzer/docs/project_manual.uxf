@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.3">
+<diagram program="umlet" version="14.1.1">
   <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -1125,87 +1125,26 @@ problem.asm.model::IFieldStatement
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2502</x>
-      <y>1575</y>
-      <w>207</w>
-      <h>180</h>
-    </coordinates>
-    <panel_attributes>/problem.asm.pattern::Pattern/
---
-~classes: ArrayList&lt;IClass&gt;
---
-+Pattern(): ctor
-+getClasses(): Collection&lt;IClass&gt;
-+getColor(): Color
-+getName(): String
-+addClass(IClass clazz): void
-+removeClass(IClass clazz): void
-+accept(IVisitor v): void
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2502</x>
-      <y>1377</y>
-      <w>207</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
-problem.asm.pattern::IPattern
---
---
-+getClasses(): Collection&lt;IClass&gt;
-+getColor(): Color
-+getName(): String
-+addClass(IClass clazz): void
-+removeClass(IClass clazz): void
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2493</x>
-      <y>1809</y>
-      <w>234</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>problem.asm.pattern::SingletonPattern
---
---
-+getColor(): Color
-+getName(): String
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>2592</x>
       <y>1512</y>
       <w>27</w>
-      <h>81</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2592</x>
       <y>1746</y>
-      <w>27</w>
-      <h>81</h>
+      <w>72</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;60.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1301,10 +1240,10 @@ problem.asm.pattern::IPattern
       <x>1791</x>
       <y>1341</y>
       <w>828</w>
-      <h>54</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0;900.0;10.0;900.0;40.0</additional_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0;900.0;10.0;900.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1504,10 +1443,10 @@ problem.asm.model::IMethod
       <x>2439</x>
       <y>945</y>
       <w>243</w>
-      <h>450</h>
+      <h>486</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;400.0;250.0;400.0;250.0;480.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;400.0;250.0;400.0;250.0;520.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1798,12 +1737,12 @@ problem.asm.model::IMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4041</x>
+      <x>4023</x>
       <y>1278</y>
       <w>225</w>
       <h>288</h>
     </coordinates>
-    <panel_attributes>problem.asm::SingletonDetector
+    <panel_attributes>problem.asm::SingletonPatternDetector
 --
 -visitor: IVisitor
 -model: IModel
@@ -1864,11 +1803,11 @@ problem.asm.model::IMethod
     <coordinates>
       <x>3600</x>
       <y>1152</y>
-      <w>459</w>
+      <w>441</w>
       <h>297</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;430.0;10.0;430.0;310.0;490.0;310.0</additional_attributes>
+    <additional_attributes>10.0;10.0;430.0;10.0;430.0;310.0;470.0;310.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1911,17 +1850,6 @@ problem.asm.model::IMethod
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>1960.0;170.0;1960.0;130.0;1540.0;130.0;1540.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>3690</x>
-      <y>1215</y>
-      <w>396</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -2060,11 +1988,11 @@ problem.asm.model::IMethod
     <coordinates>
       <x>3465</x>
       <y>1179</y>
-      <w>594</w>
+      <w>576</w>
       <h>126</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;610.0;10.0;610.0;120.0;640.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;610.0;10.0;610.0;120.0;620.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -2080,7 +2008,7 @@ problem.asm.model::IMethod
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2871</x>
+      <x>2907</x>
       <y>1674</y>
       <w>414</w>
       <h>405</h>
@@ -2249,7 +2177,7 @@ analyzer.model.pattern::IAnnotatedRelation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2916</x>
+      <x>2952</x>
       <y>1611</y>
       <w>27</w>
       <h>81</h>
@@ -2430,12 +2358,12 @@ analyzer.model.pattern::IAnnotatedRelation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4320</x>
+      <x>4266</x>
       <y>1278</y>
-      <w>261</w>
+      <w>351</w>
       <h>369</h>
     </coordinates>
-    <panel_attributes>analyzer.visitor.detect::DecoratorDetector
+    <panel_attributes>analyzer.visitor.detect::DecoratorPatternComponentDetector
 --
 -visitor: IVisitor
 -model: IModel
@@ -2466,12 +2394,12 @@ analyzer.model.pattern::IAnnotatedRelation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4626</x>
+      <x>4635</x>
       <y>1278</y>
       <w>306</w>
       <h>333</h>
     </coordinates>
-    <panel_attributes>analyzer.visitor.detect::AdapterDetector
+    <panel_attributes>analyzer.visitor.detect::AdapterPatternDetector
 --
 -visitor: IVisitor
 -model: IModel
@@ -2502,10 +2430,10 @@ analyzer.model.pattern::IAnnotatedRelation
     <coordinates>
       <x>4977</x>
       <y>1278</y>
-      <w>297</w>
+      <w>342</w>
       <h>144</h>
     </coordinates>
-    <panel_attributes>analyzer.visitor.detect::DecoratorSubclassDetector
+    <panel_attributes>analyzer.visitor.detect::DecoratorPatternSubclassDetector
 --
 -visitor: IVisitor
 -model: IModel
@@ -2523,44 +2451,33 @@ analyzer.model.pattern::IAnnotatedRelation
     <coordinates>
       <x>4095</x>
       <y>1197</y>
-      <w>387</w>
+      <w>360</w>
       <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>4068</x>
-      <y>1215</y>
-      <w>396</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>380.0;90.0;380.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>3978</x>
       <y>1152</y>
-      <w>360</w>
+      <w>306</w>
       <h>297</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;340.0;10.0;340.0;310.0;380.0;310.0</additional_attributes>
+    <additional_attributes>10.0;10.0;310.0;10.0;310.0;310.0;320.0;310.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4455</x>
+      <x>4428</x>
       <y>1197</y>
-      <w>387</w>
+      <w>414</w>
       <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>410.0;90.0;410.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>440.0;90.0;440.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -2576,68 +2493,46 @@ analyzer.model.pattern::IAnnotatedRelation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4275</x>
+      <x>4248</x>
       <y>1152</y>
-      <w>369</w>
+      <w>405</w>
       <h>297</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;360.0;10.0;360.0;310.0;390.0;310.0</additional_attributes>
+    <additional_attributes>10.0;10.0;420.0;10.0;420.0;310.0;430.0;310.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4590</x>
+      <x>4617</x>
       <y>1152</y>
-      <w>405</w>
+      <w>378</w>
       <h>171</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;400.0;10.0;400.0;170.0;430.0;170.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>4437</x>
-      <y>1215</y>
-      <w>369</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>390.0;70.0;390.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>4779</x>
-      <y>1215</y>
-      <w>396</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0;370.0;170.0;400.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2664</x>
       <y>1539</y>
-      <w>1395</w>
+      <w>1377</w>
       <h>900</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>60.0;890.0;10.0;890.0;10.0;980.0;1000.0;980.0;1010.0;10.0;1530.0;10.0</additional_attributes>
+    <additional_attributes>60.0;890.0;10.0;890.0;10.0;980.0;1000.0;980.0;1000.0;10.0;1510.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2619</x>
       <y>1611</y>
-      <w>1719</w>
+      <w>1665</w>
       <h>918</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>100.0;600.0;10.0;600.0;10.0;1000.0;1090.0;1000.0;1100.0;10.0;1890.0;10.0</additional_attributes>
+    <additional_attributes>100.0;600.0;10.0;600.0;10.0;1000.0;1090.0;1000.0;1090.0;10.0;1830.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -2697,35 +2592,24 @@ analyzer.model.pattern::IAnnotatedRelation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>5148</x>
-      <y>1215</y>
-      <w>396</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>420.0;70.0;420.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>4941</x>
       <y>1152</y>
-      <w>396</w>
+      <w>432</w>
       <h>171</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;390.0;10.0;390.0;170.0;420.0;170.0</additional_attributes>
+    <additional_attributes>10.0;10.0;440.0;10.0;440.0;170.0;460.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>3222</x>
       <y>1557</y>
-      <w>2214</w>
+      <w>2250</w>
       <h>1044</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
-    <additional_attributes>2440.0;10.0;2440.0;1140.0;10.0;1140.0</additional_attributes>
+    <additional_attributes>2480.0;10.0;2480.0;1140.0;10.0;1140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -2844,12 +2728,12 @@ analyzer.model.pattern::IAnnotatedRelation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5319</x>
+      <x>5355</x>
       <y>1278</y>
       <w>369</w>
       <h>288</h>
     </coordinates>
-    <panel_attributes>analyzer.visitor.detect::CompositeDetector
+    <panel_attributes>analyzer.visitor.detect::CompositePatternDetector
 --
 -visitor: IVisitor
 -model: IModel
@@ -2871,5 +2755,800 @@ analyzer.model.pattern::IAnnotatedRelation
 --
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4662</x>
+      <y>783</y>
+      <w>234</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.visitor.detect::IPatternDetector
+--
+--
++detect(IModel model): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4635</x>
+      <y>963</y>
+      <w>297</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>/analyzer.visitor.detect::ObservablePatternDetector/
+--
+--
++detect(IModel model): void
+#classVisitUpdate(String className): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4761</x>
+      <y>1035</y>
+      <w>27</w>
+      <h>261</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4761</x>
+      <y>855</y>
+      <w>27</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3312</x>
+      <y>576</y>
+      <w>1413</w>
+      <h>558</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>1550.0;230.0;1550.0;10.0;10.0;10.0;10.0;600.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5022</x>
+      <y>963</y>
+      <w>270</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.detect::CompositeDetector
+--
+-detectors: Collection&lt;IPatternDetector&gt;
+--
++CompositeDetector(): ctor
++addDetector(IPatternDetector detector): void
++detect(IModel model): void
++update(Observable o, Object arg): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5373</x>
+      <y>963</y>
+      <w>288</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.detect::DecoratorPatternDetector
+--
+--
++DecoratorPatternDetector(int threshold): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4923</x>
+      <y>972</y>
+      <w>117</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4887</x>
+      <y>792</y>
+      <w>198</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;190.0;200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5283</x>
+      <y>963</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2502</x>
+      <y>1413</y>
+      <w>216</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.model.pattern::IPattern
+--
+--
++getName(): String
++getColor(): Color
++addClass(IClass classModel): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2502</x>
+      <y>1566</y>
+      <w>234</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::Pattern
+--
+-classes: Collection&lt;IClass&gt;
+-name: String
+-color: Color
+--
++Pattern(String name, Color color): ctor
++iterator(): Iterator&lt;IClass&gt;
++getName(): String
++getColor(): Color
++addClass(IClass classModel): void
++accept(IVisitor v): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2646</x>
+      <y>1917</y>
+      <w>243</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::SingletonPattern
+--
+--
++SingletonPattern(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2646</x>
+      <y>1773</y>
+      <w>234</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::AdapterPattern
+--
+--
++AdapterPattern(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2646</x>
+      <y>1845</y>
+      <w>252</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::CompositePattern
+--
+--
++CompositePattern(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2646</x>
+      <y>1989</y>
+      <w>252</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.model.pattern::DecoratorPattern
+--
+--
++DecoratorPattern(): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2592</x>
+      <y>1782</y>
+      <w>72</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;60.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2592</x>
+      <y>1845</y>
+      <w>72</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;60.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2601</x>
+      <y>1917</y>
+      <w>63</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;50.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3672</x>
+      <y>1701</y>
+      <w>279</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.visitor.output::ClassOutputObservable
+--
+--
++classVisitUpdate(String className): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3798</x>
+      <y>1512</y>
+      <w>27</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7065</x>
+      <y>621</y>
+      <w>297</w>
+      <h>261</h>
+    </coordinates>
+    <panel_attributes>analyzer.gui::LandingFrame
+--
+-serialVersionUID = 322559617349772310L: long
+-analyze: JButton
+-config: Properties
+-fc: JFileChooser
+-lo: Observer
+-pipeline: IPipeline
+-model: IModel
+-errorHandler: IErrorHandler
+--
++LandingFrame(): ctor
+-getConfigFile(): void
+-loadConfig(File configFile): void
+-error(String errorMsg): void
+-setupPipeline(): void
+-executePipeline(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7425</x>
+      <y>765</y>
+      <w>360</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>analyzer.gui::LoadingObserver
+--
+-label: JLabel
+-progress: JProgressBar
+--
++LoadingObserver(JLabel label, JProgressBar progress): ctor
++update(Observable o, Object arg): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6696</x>
+      <y>963</y>
+      <w>369</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>analyzer.gui::PipelineRunner
+--
+-pipeline: IPipeline
+-handler: IErrorHandler
+--
++PipelineRunner(IPipeline pipeline, IErrorHandler handler): ctor
++run(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7425</x>
+      <y>963</y>
+      <w>243</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>analyzer.gui::DialogErrorHandler
+--
+-frame: JFrame
+--
++DialogErrorHandler(JFrame frame): ctor
++handleError(String errorMsg): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7128</x>
+      <y>963</y>
+      <w>216</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.gui::IErrorHandler
+--
+--
++handleError(String errorMsg): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7137</x>
+      <y>486</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>analyzer.gui::GuiDesignParser
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5823</x>
+      <y>1116</y>
+      <w>378</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>analyzer.pipeline::AsmReaderPhase
+--
+-model: IModel
+-properties: Properties
+--
++AsmReaderPhase(IModel model, Properties properties): ctor
++run(): void
++update(Observable o, Object arg): void
+-readClass(ClassReader reader): void
+-readClasses(File file, Collection&lt;String&gt; newClassNames): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6390</x>
+      <y>1134</y>
+      <w>243</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>analyzer.pipeline::Pipeline
+--
+-phases: Queue&lt;IPhase&gt;
+-currentProgress: float
+-currentMessage: String
+--
++Pipeline(): ctor
++addPhase(IPhase phase): void
++run(): void
++update(Observable o, Object arg): void
+-changeLoading(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5769</x>
+      <y>1341</y>
+      <w>432</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>analyzer.pipeline::DetectorPhase
+--
+-detector: IPatternDetector
+-model: IModel
+--
++DetectorPhase(ObservablePatternDetector detector, IModel model): ctor
++update(Observable o, Object arg): void
++run(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5832</x>
+      <y>1539</y>
+      <w>369</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>analyzer.pipeline::DotGeneratorPhase
+--
+-model: IModel
+-properties: Properties
+--
++DotGeneratorPhase(IModel model, Properties properties): ctor
++run(): void
++update(Observable o, Object arg): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7425</x>
+      <y>567</y>
+      <w>297</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>analyzer.pipeline::LoadingInfo
+--
+-progress: float
+-message: String
+--
++LoadingInfo(float progress, String message): ctor
++getProgress(): float
++getMessage(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6390</x>
+      <y>963</y>
+      <w>243</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.pipeline::IPipeline
+--
+--
++addObserver(Observer observer): void
++addPhase(IPhase phase): void
++run(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6030</x>
+      <y>963</y>
+      <w>243</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.pipeline::IPhase
+--
+--
++addObserver(Observer observer): void
++run(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6102</x>
+      <y>657</y>
+      <w>450</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+analyzer.pipeline::IPhaseFactory
+--
+--
++makePhase(String phaseType, IModel model, Properties properties): IPhase
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6102</x>
+      <y>783</y>
+      <w>450</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>analyzer.pipeline::PhaseFactory
+--
+--
++makePhase(String phaseType, IModel model, Properties properties): IPhase
+-getIntProperty(Properties properties, String key, int defaultValue): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6192</x>
+      <y>1053</y>
+      <w>72</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6192</x>
+      <y>1116</y>
+      <w>72</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;260.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6192</x>
+      <y>1341</y>
+      <w>72</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;230.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6507</x>
+      <y>1062</y>
+      <w>27</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6264</x>
+      <y>963</y>
+      <w>144</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;200.0;60.0;200.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6174</x>
+      <y>855</y>
+      <w>27</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6624</x>
+      <y>963</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>7056</x>
+      <y>963</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>7227</x>
+      <y>873</y>
+      <w>27</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6588</x>
+      <y>819</y>
+      <w>495</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>530.0;10.0;10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6543</x>
+      <y>657</y>
+      <w>540</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>7218</x>
+      <y>540</y>
+      <w>27</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>7335</x>
+      <y>963</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>7353</x>
+      <y>774</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6327</x>
+      <y>729</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>7470</x>
+      <y>684</y>
+      <w>27</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4869</x>
+      <y>1035</y>
+      <w>936</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1020.0;340.0;1020.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3906</x>
+      <y>1512</y>
+      <w>1944</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;2140.0;160.0</additional_attributes>
   </element>
 </diagram>

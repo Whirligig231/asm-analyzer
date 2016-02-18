@@ -80,8 +80,20 @@ In this milestone, Christian added the logic for Adapter and Decorator detection
 
 ## Milestone 6
 
-![UML Class Diagram for Milestone 6](./AsmAnalyzer/docs/project_manual.png)
+![UML Class Diagram for Milestone 6](./AsmAnalyzer/old_diagrams/project_manual_06.png)
 
 In this milestone, we switched roles; Steven implemented the CompositeDetector, while Christian created test cases and kept our documentation up to date. On the implementation side, there were only two small changes to existing code (besides the obvious change of adding the new detector to main()): ComponentClass was renamed to DecoratorComponentClass, as the Composite pattern uses its own component class; and generic type parameter information was added to IField. Otherwise, our design had evolved to the point where no significant changes were necessary in order to implement the new detector and its annotations.
 
 Our method of testing also changed: rather than trying to perform integration testing with the new detector, as we knew our existing systems were working for the other detectors, we merely unit-tested the CompositeDetector itself, adding test cases for it.
+
+## Milestone 7
+
+![UML Class Diagram for Milestone 7](./AsmAnalyzer/docs/project_manual.png)
+
+In this milestone, Christian first made some necessary changes to the existing code, adding Patterns back as their own class for use in the pattern tree in the GUI. He also changed the existing pattern detectors and output stream to use the Observer pattern, reporting back on what they are currently visiting for use in the loading bar.
+
+Christian then implemented a GUI with a phase/pipeline system to automatically load a config file (.properties) and run it through various phases. The phases again use the Observer pattern to report back to the GUI. A Factory is used to generate these phases.
+
+In order for errors to be reported correctly, a modular system for choosing an error reporting method (console, dialog, etc.) was needed. For this we used the Strategy pattern; IErrorHandler acts as a strategy for handling an error given the error string.
+
+Steven then implemented the rest of the GUI. ***STEVEN: Please put info here about how you did it!***
