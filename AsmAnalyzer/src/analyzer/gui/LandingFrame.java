@@ -23,6 +23,7 @@ import javax.swing.JProgressBar;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import analyzer.common.ThreadObservableWrapper;
 import analyzer.model.IModel;
 import analyzer.model.Model;
 import analyzer.pipeline.IPhase;
@@ -41,7 +42,7 @@ public class LandingFrame extends JFrame {
 	
 	private Observer lo;
 	private IPipeline pipeline;
-	private IModel model;
+	public IModel model;
 
 	private IErrorHandler errorHandler;
 	
@@ -188,7 +189,20 @@ public class LandingFrame extends JFrame {
 	private void executePipeline() {
 		Runnable pipelineRunner = new PipelineRunner(this.pipeline, this.errorHandler);
 		Thread t = new Thread(pipelineRunner);
+		ThreadObservableWrapper tow = new ThreadObservableWrapper(t);
 		t.start();
+		/*
+		try {
+			t.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+
+		JFrame results = new ResultFrame(this.model, this.config);
+		results.setVisible(true);
+		results.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
+		
 	}
 
 }

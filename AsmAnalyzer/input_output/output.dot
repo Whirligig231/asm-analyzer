@@ -10,225 +10,120 @@ edge [
 fontname = "Bitstream Vera Sans"
 fontsize = 8
 ]
-problem_DecryptionInputStreamTest [
-	label = "{problem.DecryptionInputStreamTest|private encryption : problem_IEncryption\l|public testReadSeveral() : void\lpublic setUp() : void\lpublic \<init\>() : void\lpublic tearDown() : void\lpublic testOneByOne() : void\l}"
+analyzer_model_pattern_CompositeClass [
+	label = "{analyzer.model.pattern.CompositeClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_TargetClass [
+	label = "{analyzer.model.pattern.TargetClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_DecoratorClass [
+	label = "{analyzer.model.pattern.DecoratorClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_DecoratorPattern [
+	label = "{analyzer.model.pattern.DecoratorPattern||public \<init\>() : void\l}"
 ]
-problem_DecryptionInputStream [
-	label = "{problem.DecryptionInputStream|private decryption : problem_IDecryption\l|public read(byte[], int, int) : int\lpublic read() : int\lpublic \<init\>(java.io.InputStream) : void\l}"
-]
-problem_IDecryption [
-	label = "{problem.IDecryption||public decrypt(char) : char\l}"
-]
-headfirst_decorator_starbuzz_Milk [
-	label = "{headfirst.decorator.starbuzz.Milk\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
-, color="#00ff00"]
-headfirst_decorator_starbuzz_CondimentDecorator [
-	label = "{headfirst.decorator.starbuzz.CondimentDecorator||public \<init\>() : void\lpublic getDescription() : java.lang.String\l}"
-]
-problem_IEncryption [
-	label = "{problem.IEncryption||public encrypt(char) : char\l}"
+analyzer_model_pattern_Pattern [
+	label = "{analyzer.model.pattern.Pattern|private classes : java_util_Collection\lprivate name : java_lang_String\lprivate color : java_awt_Color\l|public \<init\>(java.lang.String, java.awt.Color) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getName() : java.lang.String\lpublic iterator() : java.util.Iterator\lpublic getColor() : java.awt.Color\lpublic addClass(analyzer.model.IClass) : void\l}"
 ]
 java_io_Reader [
 	label = "{java.io.Reader\n\<\<Component\>\>|protected lock : java_lang_Object\lprivate skipBuffer : char[]\lprivate maxSkipBufferSize : int\l|public read(char[], int, int) : int\lpublic read(char[]) : int\lpublic read() : int\lpublic markSupported() : boolean\lpublic mark(int) : void\lprotected \<init\>(java.lang.Object) : void\lpublic read(java.nio.CharBuffer) : int\lpublic reset() : void\lprotected \<init\>() : void\lpublic ready() : boolean\lpublic skip(long) : long\lpublic close() : void\l}"
 , color="#00ff00"]
+analyzer_model_pattern_AdapterPattern [
+	label = "{analyzer.model.pattern.AdapterPattern||public \<init\>() : void\l}"
+]
 java_io_BufferedReader [
 	label = "{java.io.BufferedReader\n\<\<Decorator\>\>|private markedChar : int\lprivate cb : char[]\lprivate nextChar : int\lprivate UNMARKED : int\lprivate in : java_io_Reader\lnull lock : java_lang_Object\lprivate INVALIDATED : int\lprivate defaultCharBufferSize : int\lprivate defaultExpectedLineLength : int\lprivate markedSkipLF : boolean\lprivate readAheadLimit : int\lprivate nChars : int\lprivate skipLF : boolean\l|private read1(char[], int, int) : int\lpublic readLine() : java.lang.String\lpublic mark(int) : void\lnull \<init\>(java.io.BufferedReader) : void\lpublic ready() : boolean\lpublic skip(long) : long\ldefault readLine(boolean) : java.lang.String\lpublic read(char[], int, int) : int\lpublic lines() : java.util.stream.Stream\lpublic \<init\>(java.io.Reader, int) : void\lpublic read() : int\lpublic markSupported() : boolean\ldefault \<clinit\>() : void\lpublic reset() : void\lprivate ensureOpen() : void\lpublic \<init\>(java.io.Reader) : void\lprivate fill() : void\lpublic close() : void\l}"
 , color="#00ff00"]
-headfirst_decorator_starbuzz_Whip [
-	label = "{headfirst.decorator.starbuzz.Whip\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
-, color="#00ff00"]
+analyzer_model_pattern_SingletonClass [
+	label = "{analyzer.model.pattern.SingletonClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_SingletonPattern [
+	label = "{analyzer.model.pattern.SingletonPattern||public \<init\>() : void\l}"
+]
+org_objectweb_asm_ClassVisitor [
+	label = "{org.objectweb.asm.ClassVisitor\n\<\<Class\>\>|protected api : int\lprotected cv : org_objectweb_asm_ClassVisitor\l|public visitTypeAnnotation(int, org.objectweb.asm.TypePath, java.lang.String, boolean) : org.objectweb.asm.AnnotationVisitor\lpublic visit(int, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : void\lpublic visitEnd() : void\lpublic \<init\>(int) : void\lpublic visitAttribute(org.objectweb.asm.Attribute) : void\lpublic \<init\>(int, org.objectweb.asm.ClassVisitor) : void\lpublic visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[]) : org.objectweb.asm.MethodVisitor\lpublic visitOuterClass(java.lang.String, java.lang.String, java.lang.String) : void\lpublic visitAnnotation(java.lang.String, boolean) : org.objectweb.asm.AnnotationVisitor\lpublic visitInnerClass(java.lang.String, java.lang.String, java.lang.String, int) : void\lpublic visitSource(java.lang.String, java.lang.String) : void\lpublic visitField(int, java.lang.String, java.lang.String, java.lang.String, java.lang.Object) : org.objectweb.asm.FieldVisitor\l}"
+, color="#00ffff"]
 java_lang_Runtime [
 	label = "{java.lang.Runtime\n\<\<Singleton\>\>|private currentRuntime : java_lang_Runtime\l|public gc() : void\lpublic getRuntime() : java.lang.Runtime\lpublic exec(java.lang.String[], java.lang.String[], java.io.File) : java.lang.Process\lpublic traceMethodCalls(boolean) : void\lpublic addShutdownHook(java.lang.Thread) : void\lpublic runFinalization() : void\lpublic loadLibrary(java.lang.String) : void\lprivate runFinalization0() : void\lpublic getLocalizedOutputStream(java.io.OutputStream) : java.io.OutputStream\lpublic availableProcessors() : int\lpublic maxMemory() : long\lpublic halt(int) : void\ldefault load0(java.lang.Class, java.lang.String) : void\lpublic removeShutdownHook(java.lang.Thread) : boolean\lpublic exec(java.lang.String, java.lang.String[]) : java.lang.Process\lpublic exec(java.lang.String[]) : java.lang.Process\lpublic traceInstructions(boolean) : void\lpublic exec(java.lang.String) : java.lang.Process\lpublic freeMemory() : long\lpublic totalMemory() : long\lpublic exit(int) : void\ldefault loadLibrary0(java.lang.Class, java.lang.String) : void\lpublic exec(java.lang.String, java.lang.String[], java.io.File) : java.lang.Process\lpublic load(java.lang.String) : void\lpublic getLocalizedInputStream(java.io.InputStream) : java.io.InputStream\lpublic runFinalizersOnExit(boolean) : void\lpublic exec(java.lang.String[], java.lang.String[]) : java.lang.Process\ldefault \<clinit\>() : void\lprivate \<init\>() : void\l}"
 , color="#0000ff"]
-puzzle_LongDivision [
-	label = "{puzzle.LongDivision||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+analyzer_model_pattern_AdapterClass [
+	label = "{analyzer.model.pattern.AdapterClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_IAnnotatedRelation [
+	label = "{analyzer.model.pattern.IAnnotatedRelation||public getAnnotation() : java.lang.String\lpublic getColor() : java.awt.Color\l}"
 ]
-temp_UpperCaseInputStream [
-	label = "{temp.UpperCaseInputStream||public read(byte[], int, int) : int\lpublic read() : int\lpublic \<init\>(java.io.InputStream) : void\l}"
+analyzer_model_pattern_DecoratorComponentClass [
+	label = "{analyzer.model.pattern.DecoratorComponentClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_CompositeComponentClass [
+	label = "{analyzer.model.pattern.CompositeComponentClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_CompositePattern [
+	label = "{analyzer.model.pattern.CompositePattern||public \<init\>() : void\l}"
 ]
-problem_TextEditorApp [
-	label = "{problem.TextEditorApp||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+analyzer_model_pattern_IPattern [
+	label = "{analyzer.model.pattern.IPattern||public getName() : java.lang.String\lpublic getColor() : java.awt.Color\lpublic addClass(analyzer.model.IClass) : void\l}"
 ]
-headfirst_decorator_starbuzz_Decaf [
-	label = "{headfirst.decorator.starbuzz.Decaf|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
+analyzer_model_pattern_IAnnotatedClass [
+	label = "{analyzer.model.pattern.IAnnotatedClass\n\<\<Class\>\>||public getAnnotation() : java.lang.String\lpublic getColor() : java.awt.Color\l}"
+, color="#00ffff"]
+analyzer_model_pattern_ClassClass [
+	label = "{analyzer.model.pattern.ClassClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_AnnotatedRelation [
+	label = "{analyzer.model.pattern.AnnotatedRelation|private annotation : java_lang_String\lprivate color : java_awt_Color\lprivate decorated : analyzer_model_IRelation\l|public hashCode() : int\lpublic \<init\>(analyzer.model.IRelation, java.lang.String, java.awt.Color) : void\lpublic getSecondClass() : analyzer.model.IClass\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getType() : analyzer.model.RelationType\lpublic setFirstClass(analyzer.model.IClass) : void\lpublic \<init\>(analyzer.model.IRelation, java.lang.String) : void\lpublic getColor() : java.awt.Color\lpublic equals(java.lang.Object) : boolean\lpublic setSecondClass(analyzer.model.IClass) : void\lpublic getFirstClass() : analyzer.model.IClass\lpublic setType(analyzer.model.RelationType) : void\lpublic getAnnotation() : java.lang.String\l}"
 ]
-temp_UpperCaseDriver [
-	label = "{temp.UpperCaseDriver||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
+analyzer_model_pattern_ClassPattern [
+	label = "{analyzer.model.pattern.ClassPattern\n\<\<Class\>\>||public \<init\>() : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_AdaptsRelation [
+	label = "{analyzer.model.pattern.AdaptsRelation||public \<init\>(analyzer.model.IRelation) : void\l}"
 ]
-headfirst_decorator_starbuzz_HouseBlend [
-	label = "{headfirst.decorator.starbuzz.HouseBlend|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
+analyzer_model_pattern_LeafClass [
+	label = "{analyzer.model.pattern.LeafClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_AnnotatedClass [
+	label = "{analyzer.model.pattern.AnnotatedClass\n\<\<Class\>\>|private annotation : java_lang_String\lprivate color : java_awt_Color\lprivate decorated : analyzer_model_IClass\l|public getAccessLevel() : analyzer.model.AccessLevel\lpublic getFieldIterator() : java.util.Iterator\lpublic setAccessLevel(analyzer.model.AccessLevel) : void\lpublic accept(analyzer.visitor.common.IVisitor) : void\lpublic getOwner() : analyzer.model.IModel\lpublic addField(analyzer.model.IField) : void\lpublic addInterface(analyzer.model.IClass) : void\lpublic getInterfacesIterator() : java.util.Iterator\lpublic getField(java.lang.String, java.lang.String) : analyzer.model.IField\lpublic getColor() : java.awt.Color\lpublic setName(java.lang.String) : void\lpublic setSuperClass(analyzer.model.IClass) : void\lpublic getMethodIterator() : java.util.Iterator\lpublic \<init\>(analyzer.model.IClass, java.lang.String, java.awt.Color) : void\lpublic setOwner(analyzer.model.IModel) : void\lpublic getName() : java.lang.String\lpublic getSuperClass() : analyzer.model.IClass\lpublic addMethod(analyzer.model.IMethod) : void\lpublic getAnnotation() : java.lang.String\lpublic getMethod(java.lang.String, java.lang.String) : analyzer.model.IMethod\l}"
+, color="#00ffff"]
+analyzer_model_pattern_AdapteeClass [
+	label = "{analyzer.model.pattern.AdapteeClass\n\<\<Class\>\>||public \<init\>(analyzer.model.IClass) : void\l}"
+, color="#00ffff"]
+analyzer_model_pattern_DecoratesRelation [
+	label = "{analyzer.model.pattern.DecoratesRelation||public \<init\>(analyzer.model.IRelation) : void\l}"
 ]
-problem_SubstitutionCipher [
-	label = "{problem.SubstitutionCipher|private encryptionKey : char[]\lprivate decryptionKey : char[]\l|public decrypt(char) : char\lpublic encrypt(char) : char\lpublic \<init\>() : void\l}"
-]
-headfirst_decorator_starbuzz_Soy [
-	label = "{headfirst.decorator.starbuzz.Soy\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
-, color="#00ff00"]
-headfirst_decorator_starbuzz_Mocha [
-	label = "{headfirst.decorator.starbuzz.Mocha\n\<\<Decorator\>\>|default beverage : headfirst_decorator_starbuzz_Beverage\l|public \<init\>(headfirst.decorator.starbuzz.Beverage) : void\lpublic cost() : double\lpublic getDescription() : java.lang.String\l}"
-, color="#00ff00"]
-headfirst_decorator_starbuzz_DarkRoast [
-	label = "{headfirst.decorator.starbuzz.DarkRoast|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
-]
-headfirst_decorator_starbuzz_Espresso [
-	label = "{headfirst.decorator.starbuzz.Espresso|null description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\l}"
-]
-headfirst_decorator_starbuzz_StarbuzzCoffee [
-	label = "{headfirst.decorator.starbuzz.StarbuzzCoffee||public main(java.lang.String[]) : void\lpublic \<init\>() : void\l}"
-]
-problem_EncryptionOutputStream [
-	label = "{problem.EncryptionOutputStream|private encryption : problem_IEncryption\l|public write(int) : void\lpublic write(byte[], int, int) : void\lpublic \<init\>(java.io.OutputStream) : void\l}"
-]
-problem_EncryptionOutputStreamTest [
-	label = "{problem.EncryptionOutputStreamTest|private decryption : problem_IDecryption\l|public testWriteSeveral() : void\lpublic setUp() : void\lpublic \<init\>() : void\lpublic tearDown() : void\lpublic testOneByOne() : void\l}"
-]
-headfirst_decorator_starbuzz_Beverage [
-	label = "{headfirst.decorator.starbuzz.Beverage\n\<\<Component\>\>|default description : java_lang_String\l|public cost() : double\lpublic \<init\>() : void\lpublic getDescription() : java.lang.String\l}"
-, color="#00ff00"]
-problem_SubstitutionCipherTest [
-	label = "{problem.SubstitutionCipherTest|private substitutionCipher : problem_SubstitutionCipher\l|public testAToZ() : void\lpublic setUp() : void\lpublic testNonAlphabet() : void\lpublic \<init\>() : void\lpublic testaToz() : void\lpublic tearDown() : void\l}"
-]
-headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Soy [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_DecryptionInputStreamTest -> problem_SubstitutionCipher [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-headfirst_decorator_starbuzz_Whip -> headfirst_decorator_starbuzz_Beverage [
-	arrowhead = "vee"
-	style = "solid"
-	label = "\<\<decorates\>\>", color="#000000"
-]
-
-headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Mocha [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_DecryptionInputStreamTest -> problem_DecryptionInputStream [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-headfirst_decorator_starbuzz_HouseBlend -> headfirst_decorator_starbuzz_Beverage [
+analyzer_model_pattern_TargetClass -> analyzer_model_pattern_AnnotatedClass [
 	arrowhead = "empty"
 	style = "solid"
 ]
 
-headfirst_decorator_starbuzz_Decaf -> headfirst_decorator_starbuzz_Beverage [
+analyzer_model_pattern_DecoratorComponentClass -> analyzer_model_pattern_AnnotatedClass [
 	arrowhead = "empty"
 	style = "solid"
 ]
 
-headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_DarkRoast [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_DecryptionInputStream -> problem_IDecryption [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-headfirst_decorator_starbuzz_Milk -> headfirst_decorator_starbuzz_CondimentDecorator [
+analyzer_model_pattern_ClassClass -> analyzer_model_pattern_AnnotatedClass [
 	arrowhead = "empty"
 	style = "solid"
 ]
 
-problem_TextEditorApp -> problem_DecryptionInputStream [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_SubstitutionCipher -> problem_IEncryption [
-	arrowhead = "empty"
-	style = "dashed"
-]
-
-problem_SubstitutionCipher -> problem_IDecryption [
-	arrowhead = "empty"
-	style = "dashed"
-]
-
-headfirst_decorator_starbuzz_Mocha -> headfirst_decorator_starbuzz_Beverage [
-	arrowhead = "vee"
-	style = "solid"
-	label = "\<\<decorates\>\>", color="#000000"
-]
-
-headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Beverage [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_EncryptionOutputStreamTest -> problem_IDecryption [
+org_objectweb_asm_ClassVisitor -> org_objectweb_asm_ClassVisitor [
 	arrowhead = "vee"
 	style = "solid"
 ]
 
-java_io_BufferedReader -> java_io_Reader [
+analyzer_model_pattern_CompositeComponentClass -> analyzer_model_pattern_AnnotatedClass [
 	arrowhead = "empty"
 	style = "solid"
 ]
 
-headfirst_decorator_starbuzz_CondimentDecorator -> headfirst_decorator_starbuzz_Beverage [
+analyzer_model_pattern_SingletonClass -> analyzer_model_pattern_AnnotatedClass [
 	arrowhead = "empty"
 	style = "solid"
 ]
 
-headfirst_decorator_starbuzz_DarkRoast -> headfirst_decorator_starbuzz_Beverage [
+analyzer_model_pattern_DecoratesRelation -> analyzer_model_pattern_AnnotatedRelation [
 	arrowhead = "empty"
 	style = "solid"
-]
-
-problem_DecryptionInputStreamTest -> problem_IEncryption [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-java_io_BufferedReader -> java_io_Reader [
-	arrowhead = "vee"
-	style = "solid"
-	label = "\<\<decorates\>\>", color="#000000"
-]
-
-problem_SubstitutionCipherTest -> problem_SubstitutionCipher [
-	arrowhead = "vee"
-	style = "solid"
-]
-
-headfirst_decorator_starbuzz_Mocha -> headfirst_decorator_starbuzz_CondimentDecorator [
-	arrowhead = "empty"
-	style = "solid"
-]
-
-headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_HouseBlend [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-headfirst_decorator_starbuzz_Espresso -> headfirst_decorator_starbuzz_Beverage [
-	arrowhead = "empty"
-	style = "solid"
-]
-
-problem_EncryptionOutputStream -> problem_IEncryption [
-	arrowhead = "vee"
-	style = "solid"
-]
-
-problem_EncryptionOutputStreamTest -> problem_SubstitutionCipher [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-problem_EncryptionOutputStream -> problem_SubstitutionCipher [
-	arrowhead = "vee"
-	style = "dashed"
 ]
 
 java_lang_Runtime -> java_lang_Runtime [
@@ -236,46 +131,60 @@ java_lang_Runtime -> java_lang_Runtime [
 	style = "solid"
 ]
 
-headfirst_decorator_starbuzz_Soy -> headfirst_decorator_starbuzz_CondimentDecorator [
+analyzer_model_pattern_CompositeClass -> analyzer_model_pattern_AnnotatedClass [
 	arrowhead = "empty"
 	style = "solid"
 ]
 
-problem_TextEditorApp -> problem_EncryptionOutputStream [
-	arrowhead = "vee"
+analyzer_model_pattern_Pattern -> analyzer_model_pattern_IPattern [
+	arrowhead = "empty"
 	style = "dashed"
 ]
 
-headfirst_decorator_starbuzz_Milk -> headfirst_decorator_starbuzz_Beverage [
+analyzer_model_pattern_DecoratorPattern -> analyzer_model_pattern_Pattern [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+analyzer_model_pattern_AdapterClass -> analyzer_model_pattern_AnnotatedClass [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+analyzer_model_pattern_ClassPattern -> analyzer_model_pattern_Pattern [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+analyzer_model_pattern_SingletonPattern -> analyzer_model_pattern_Pattern [
+	arrowhead = "empty"
+	style = "solid"
+]
+
+java_io_BufferedReader -> java_io_Reader [
 	arrowhead = "vee"
 	style = "solid"
 	label = "\<\<decorates\>\>", color="#000000"
 ]
 
-headfirst_decorator_starbuzz_Whip -> headfirst_decorator_starbuzz_CondimentDecorator [
+java_io_BufferedReader -> java_io_Reader [
 	arrowhead = "empty"
 	style = "solid"
 ]
 
-headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Espresso [
-	arrowhead = "vee"
-	style = "dashed"
-]
-
-headfirst_decorator_starbuzz_Soy -> headfirst_decorator_starbuzz_Beverage [
-	arrowhead = "vee"
+analyzer_model_pattern_CompositePattern -> analyzer_model_pattern_Pattern [
+	arrowhead = "empty"
 	style = "solid"
-	label = "\<\<decorates\>\>", color="#000000"
 ]
 
-problem_EncryptionOutputStreamTest -> problem_EncryptionOutputStream [
-	arrowhead = "vee"
-	style = "dashed"
+analyzer_model_pattern_LeafClass -> analyzer_model_pattern_AnnotatedClass [
+	arrowhead = "empty"
+	style = "solid"
 ]
 
-headfirst_decorator_starbuzz_StarbuzzCoffee -> headfirst_decorator_starbuzz_Whip [
-	arrowhead = "vee"
-	style = "dashed"
+analyzer_model_pattern_DecoratorClass -> analyzer_model_pattern_AnnotatedClass [
+	arrowhead = "empty"
+	style = "solid"
 ]
 
 }

@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import analyzer.model.IModel;
 import analyzer.visitor.detect.AdapterPatternDetector;
+import analyzer.visitor.detect.ClassPatternDetector;
 import analyzer.visitor.detect.CompositePatternDetector;
 import analyzer.visitor.detect.DecoratorPatternDetector;
 import analyzer.visitor.detect.SingletonPatternDetector;
@@ -28,6 +29,8 @@ public class PhaseFactory implements IPhaseFactory {
 			return new DetectorPhase(new SingletonPatternDetector(), model);
 		case "Composite-Detection":
 			return new DetectorPhase(new CompositePatternDetector(), model);
+		case "Class-Detection":
+			return new DetectorPhase(new ClassPatternDetector(), model);
 		case "DOT-Generation":
 			DotGeneratorPhase dotPhase = new DotGeneratorPhase(model, properties);
 			return dotPhase;
